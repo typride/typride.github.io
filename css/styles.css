@@ -1,9 +1,8 @@
-  
   /* Keyframe for fade-in animation */
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px); /* Optional slide-up effect */
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -16,8 +15,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
-
+  
 /* Fade-in effect */
 .fade-in {
     animation: fadeIn 1.5s ease forwards;
