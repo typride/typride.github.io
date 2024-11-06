@@ -20,7 +20,7 @@
 .fade-in {
     animation: fadeIn 1.5s ease forwards;
   }
-  
+
   /* Grid layout for experience section */
   .experience-grid {
     display: grid;
@@ -64,3 +64,20 @@
     height: 50px;
     margin-bottom: 15px;
   }
+
+  /* Styling for wide image at the top of the card */
+.project-image-wide {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the width without stretching */
+}
+
+/* Optional: Styling adjustments for the project card */
+.project-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image edges stay rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
