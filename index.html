@@ -3,11 +3,131 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap CSS (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   </body>
+  
+
+
+  <body>
+
+    <!-- About Section -->
+    <section id="about" class="container my-5 pt-5 hidden">
+        <div class="row align-items-center">
+            <!-- Profile Image -->
+            <div class="col-md-4 fade-in">
+                <img src="images/Tyler.jpg" class="img-fluid rounded mb-3 w-75" alt="Your Name">
+            </div>
+    
+            <!-- About Text -->
+            <div class="col-md-8 fade-in">
+                <h2>About Me</h2>
+                <p>Science, engineering, entrepreneurship, writing, and.. looking for the next venture.</p>
+                <p>While working as a research assistant in a Neuroscience addiction lab and for the Institute for Arctic and Alpine Research (where I went to the Arctic Circle!), I helped build a Futurism startup aimed at educating people about emerging trends. From that foray into science and trend analysis at a startup, I sprung into tech. Working my way from FutureScope to Google as a Technical Writer intern, then the  Privacy Co. as a Digital Product Manager and finally Technical Writing at Microsoft for immersive technologies like the HoloLens, Microsoft Mixed Reality, and Microsoft Mesh.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container-fluid my-5 hidden">
+        <h2 class="container mb-5">Experience</h2>
+        <div class="container">
+            <div class="experience-grid">
+                
+                <!-- Company Row -->
+                <div class="company">FutureScope</div>
+                <div class="company">Google</div>
+                <div class="company">Publist</div>
+                <div class="company">Privacy Co.</div>
+                <div class="company">Microsoft</div>
+                
+                <!-- Role Row -->
+                <div class="role">Head Writer</div>
+                <div class="role">Technical Writer Intern</div>
+                <div class="role">Content Manager</div>
+                <div class="role">Digital Product Manager</div>
+                <div class="role">Technical Writer I & II</div>
+                
+                <!-- Date Row -->
+                <div class="date">Oct 2016 — May 2019</div>
+                <div class="date">May 2019 — Aug 2019</div>
+                <div class="date">Aug 2019 — Dec 2019</div>
+                <div class="date">Sep 2020 — Feb 2022</div>
+                <div class="date">Feb 2022 — Oct 2024</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5 hidden">
+        <h2 class=" mb-4">Projects</h2>
+        <div class="row">
+            
+            <!-- Project 1 -->
+            <div class="col-12 mb-4">
+                <div class="card d-flex flex-row align-items-center project-card">
+                    
+                    <!-- Project Image -->
+                    <img src="images/Tyler.jpg" class="project-image" alt="Project 1">
+                    
+                    <!-- Title and Description Box -->
+                    <div class="card-body">
+                        <h5 class="card-title">Project Title 1</h5>
+                        <p class="card-text">Brief description of Project 1.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="col-12 mb-4">
+                <div class="card d-flex flex-row align-items-center project-card">
+                    
+                    <!-- Project Image -->
+                    <img src="images/Tylerjpg" class="project-image" alt="Project 2">
+                    
+                    <!-- Title and Description Box -->
+                    <div class="card-body">
+                        <h5 class="card-title">Project Title 2</h5>
+                        <p class="card-text">Brief description of Project 2.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional projects... -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">Contact</h2>
+        <p class="text-center">Feel free to reach out via email at [Your Email] or connect on [LinkedIn/other platforms].</p>
+    </section>
+
+        <!-- Bootstrap JavaScript (CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Link to external JavaScript file -->
+        <script src="scripts/scripts.js"></script>
+    </body>
 </html>
