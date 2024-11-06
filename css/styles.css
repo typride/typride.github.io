@@ -1,133 +1,68 @@
-/* Ensure the image is a square with rounded corners */
-.rounded {
-    border-radius: px; /* Adjust as desired for softer or sharper corners */
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-    text-align: left;
-    margin-left: 0;
-}
-
-/* Default: Hide horizontal scrollbar */
-#experience .d-flex {
-    overflow-x: hidden !important; /* Hides scrollbar on larger screens */
-}
-
-/* On smaller screens, enable scrolling only when necessary */
-@media (max-width: 768px) {
-    #experience .d-flex {
-        overflow-x: auto !important; /* Allows horizontal scrollbar only on smaller screens if content overflows */
-        -webkit-overflow-scrolling: touch !important; /* Smooth scrolling for touch devices */
-    }
-}
-
-/* Use !important after lightblue, for example to override Bootstrap*/
-body {
-    background-color: lightblue;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
+  
+  /* Keyframe for fade-in animation */
+  @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px); /* Slight slide-up effect */
+      opacity: 0;
+      transform: translateY(20px); /* Optional slide-up effect */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  
+  /* Initial hidden state for elements */
+  .hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-/* Apply the fade-in animation */
+
+/* Fade-in effect */
 .fade-in {
-    animation: fadeIn 1.5s ease-in-out forwards; /* Adjust timing as needed */
-    opacity: 0; /* Start hidden */
-}
-
-
-/* Define the grid layout */
-.experience-grid {
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  /* Grid layout for experience section */
+  .experience-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Five equal-width columns */
-    gap: 1px; /* Adjust gap between columns as needed */
-}
-
-/* Style each row and align text to the left */
-.company, .role, .date {
+    gap: 1px;
+  }
+  
+  .company, .role, .date {
     padding: 0.5px;
-    text-align: left; /* Align text to the left */
-    font-weight: Normal;
-}
-
-/* Different styles for each row type */
-.company {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.role {
-    font-size: 1rem;
-    font-style: Normal;
-}
-
-.date {
-    font-size: 0.9rem;
-    color: #555; /* Optional: lighter color for dates */
-}
-
-
-/* Initial hidden state */
-.fade-in-on-scroll {
-    opacity: 0;
-    transform: translateY(20px); /* Optional slide-up effect */
-    transition: opacity 1.5s ease, transform 1.5s ease;
-}
-
-/* Initial hidden state */
-.hidden {
-    opacity: 0;
-    transform: translateY(20px); /* Optional slide-up effect */
-    transition: opacity 1.5s ease, transform 1.5s ease;
-}
-
-/* Visible state for About Me */
-.fade-in-about {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Visible state for Experience with delay */
-.fade-in-experience {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s; /* Delay to start after About Me animation finishes */
-}
-
-/* Visible state for Project with delay */
-.fade-in-project {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s; /* Delay to start after About Me animation finishes */
-}
-
-
-/* Project card styling */
-.project-card {
-    flex-direction: row; /* Aligns image and text side by side */
-    border: none; /* Optional: remove card border */
-}
-
-/* Project image settings */
-.project-image {
-    width: 150px; /* Adjust width as needed */
-    height: 150px; /* Maintain a square shape */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 15px; /* Space between image and text */
-    border-radius: 8px; /* Optional: rounded corners */
-}
-
-/* Card body styling */
-.card-body {
-    padding: 10px; /* Adjust padding for a tighter layout */
-}
+    text-align: left;
+  }
+  
+  /* Rounded corners for images */
+  .rounded {
+    border-radius: 8px; /* Adjust as needed for softer or sharper corners */
+  }
+  
+  /* Project card styling */
+  .project-card {
+    flex-direction: row;
+    border: none;
+  }
+  
+  .project-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+  }
+  
+  /* Contact card hover effect */
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon styling */
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
