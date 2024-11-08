@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Blog & Project Deep Dives</title>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+<body>
+    <!-- Navbar (you can copy this from your main page or link to it) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Logo.png" alt="My Portfolio Logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Section -->
+    <section id="blog" class="container my-5 pt-5">
+        <div class="d-flex justify-content-end mb-4">
+            <input type="text" id="searchInput" class="form-control search-bar" placeholder="Search...">
+        </div>
+        <!--
+        <h2 class="mb-4">Blog</h2>
+        
+        <div class="row" id="blogPosts">
+            <div class="col-md-6 mb-4 blog-item">
+                <div class="card">
+                    <img src="images/article1.jpg" class="card-img-top" alt="Article 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Title 1</h5>
+                        <p class="card-text">A brief overview of the article content goes here.</p>
+                        <a href="blogs/blog-1.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+-->
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h2 class="mb-4">Project Deep Dives</h2>
+        <div class="row" id="projectItems">
+            <!-- Project 1 -->
+            <div class="col-md-6 mb-4 project-item">
+                <div class="card">
+                    <img src="images/blogs-projects/graphs-data.png" class="card-img-top" alt="project-data-analysis">
+                    <div class="card-body">
+                        <h5 class="card-title">GigSecure: Smart Contracts for Freelancers and Clients</h5>
+                        <p class="card-text">This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency. Using a factory contract, clients can initiate smart contracts with freelancers, secure funds in escrow, and handle milestones and payment releases automatically. The React frontend integrates seamlessly with MetaMask, allowing users to connect wallets, initiate and track contracts, and ensure payment flows securely and transparently. Designed for efficient collaboration, the DApp demonstrates expertise in Solidity, Ethereum, and decentralized finance solutions.</p>
+                        <a href="blogs/smart-contracts-for-gig-economy.html" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="col-md-6 mb-4 project-item">
+                <div class="card">
+                    <img src="images/blogs-projects/graphs-data.png" class="card-img-top" alt="project-data-analysis">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Analysis with Python</h5>
+                        <p class="card-text">See what the best insurance for your vehicle is and explore the analysis behind the conclusions.</p>
+                        <a href="blogs/data-analysis.html" class="btn btn-primary">Read the post</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional projects can go here -->
+        </div>
+    </section>
+
+    <!-- Bootstrap JavaScript (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>

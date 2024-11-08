@@ -9,7 +9,7 @@
       transform: translateY(0);
     }
   }
-  
+
   /* Initial hidden state for elements */
   .hidden {
     opacity: 0;
@@ -80,4 +80,190 @@
     border-radius: 8px;
     overflow: hidden; /* Ensures image edges stay rounded */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+body {
+    padding-top: 100x; /* Adjust this value based on the height of your navbar */
+}
+
+/* Project card styling */
+.project-card {
+    border: none;
+    overflow: hidden;
+    flex-direction: row; /* Ensure row layout */
+}
+
+
+/* Standard project image for other projects */
+.project-image {
+    width: 150px; /* Fixed width for regular images */
+    min-width: 200px;
+    aspect-ratio: 4 / 3; /* Set a 4:3 aspect ratio for consistency */
+    object-fit: cover; /* Crop to fill the container */
+    border-radius: 0px;
+    height: auto; /* Maintain the aspect ratio based on width */
+}
+
+/* Default styles for larger screens */
+.project-image {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Spacing and formatting for converted Markdown content */
+
+/* Space after main blog title */
+h1 {
+    margin-bottom: 2rem;
+}
+
+/* Styling headers within the Markdown content */
+#blog-post-content h1 {
+    margin-bottom: 1.5rem;
+}
+
+#blog-post-content h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#blog-post-content h3,
+#blog-post-content h4,
+#blog-post-content h5,
+#blog-post-content h6 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Paragraph spacing */
+#blog-post-content p {
+    margin-bottom: 1rem;
+}
+
+
+
+/* List styling */
+#blog-post-content ul,
+#blog-post-content ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+/* Modern table styling */
+#blog-post-content table {
+    width: 100%;
+    border-collapse: separate; /* Keeps borders between cells */
+    border-spacing: 0; /* Removes space between cells */
+    margin: 1.5rem 0;
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 3px; /* Rounded corners for a modern feel */
+    overflow: hidden; /* Prevents overflow on rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header styling */
+#blog-post-content th {
+    background-color: #f3f4f6; /* Light gray header background */
+    color: #333; /* Darker text for contrast */
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0; /* Subtle bottom border for header */
+}
+
+/* Cell styling */
+#blog-post-content td {
+    padding: 1rem;
+    color: #555; /* Slightly muted text color */
+    border-bottom: 1px solid #e0e0e0; /* Light bottom border for separation */
+}
+
+/* Alternating row colors for better readability */
+#blog-post-content tr:nth-child(odd) td {
+    background-color: #fafafa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #blog-post-content table {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll on small screens */
+        white-space: nowrap;
+    }
+    
+    #blog-post-content th, #blog-post-content td {
+        padding: 0.75rem; /* Adjust padding for smaller screens */
+    }
+}
+
+
+.project-date,
+.post-date {
+    font-size: 0.85rem; /* Slightly smaller text size */
+    color: #777; /* Muted color for a subtle look */
+    margin-bottom: 0.5rem; /* Space below the date */
+}
+
+
+
+/* Subtle image plate effect for images */
+.image-plate {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08), /* Soft shadow for depth */
+                0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtle layering */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Optional: light border for definition */
+    border-radius: 8px; /* Smooth rounded corners */
+    transition: transform 0.2s ease; /* Smooth hover animation */
+    overflow: hidden; /* Ensures rounded corners */
+}
+
+/* Slightly lift effect on hover for interactivity */
+.image-plate:hover {
+    transform: translateY(-2px); /* Minor lift on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Ensure our custom width overrides Bootstrap's default width for form-control */
+.d-flex .search-bar.form-control {
+    width: 120px !important; /* Small initial width */
+    max-width: 250px; /* Prevents expanding beyond this on larger screens */
+    transition: width 0.3s ease; /* Smooth expansion */
+    border: 1px solid #ccc;
+    margin-left: auto; /* Aligns the search bar to the right */
+}
+
+/* Expand to a moderate width on focus */
+.d-flex .search-bar.form-control:focus {
+    width: 250px !important; /* Expands only to this width on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Notice Bar */
+.notice-bar {
+    background-color: #fff9c4; /* Subtle muted yellow */
+    color: #333; /* Dark text for readability */
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0px; /* Adjusts navbar to sit below the notice bar */
+    width: 100%;
+    z-index: 999; /* Slightly below the notice bar */
+}
+
+/* Offset body content to account for the fixed notice bar and navbar */
+body {
+    padding-top: 40px; /* Adjust based on the combined height of the notice bar and navbar */
 }

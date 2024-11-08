@@ -9,27 +9,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Bootstrap JavaScript (CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JavaScript file -->
+        <script src="scripts/scripts.js"></script>
     <title>My Portfolio</title>
   </head>
   
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">My Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+    
+    <div class="header-container">
+        <!-- Notice Bar -->
+        <div class="notice-bar">
+            ⚠️ This website is a work in progress. Some features may not be fully implemented.
         </div>
-      </div>
-    </nav>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="w-5" alt="My Portfolio Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+
 
     <!-- About Section -->
     <section id="about" class="container my-5 pt-5 hidden">
@@ -84,6 +100,7 @@
             <img src="images/Microsoft-header-image.png" class="project-image-wide" alt="Microsoft Learn docs">
             <div class="card-body">
               <h5 class="card-title">Microsoft Mesh + HoloLens</h5>
+              <p class="project-date"> Feb 2022-Oct 2024</p>
               <p class="card-text">At Microsoft I worked on Mixed Reality, HoloLens and MRTK (Mixed Reality Toolkit) then Microsoft Mesh where I brought my augmented reality experience to corporate, developer, and end-user audiences. During my tenure, I led the architecting, creation, and maintenance of content docsets for User, IT Admin, and Business Decision Maker peronas across platforms like Microsoft Learn (10k visitors/month), Microsoft Support (140k page views/month), and Microsoft Adoption. To grow adoption of immersive experiences and technologies, I worked cross-functionally (UI/Design, Engineering, PM, UX Research) to implement process and create tools (Power Platform, Azure DevOps, One Customer Voice) that enhanced productivity, organizational visibility, and stakeholder feedback.</p>
               <a href="https://learn.microsoft.com/en-us/mesh/" class="btn btn-primary">View Project</a>
             </div>
@@ -91,31 +108,49 @@
         </div>
         <!-- Project 2 -->
         <div class="col-12 mb-4">
-          <div class="card d-flex flex-row align-items-center project-card">
-            <img src="images/Tyler.jpg" class="project-image" alt="Project 2">
+            <div class="card d-flex flex-row align-items-stretch project-card">
+              <img src="images/blogs-projects/gigsecure-small.png" class="project-image" alt="Project 2">
+              <div class="card-body">
+                <h5 class="card-title">GigSecure: Smart Contracts for Freelancers and Clients</h5>
+                <p class="card-text">This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency. Using a factory contract, clients can initiate smart contracts with freelancers, secure funds in escrow, and handle milestones and payment releases automatically. The React frontend integrates seamlessly with MetaMask, allowing users to connect wallets, initiate and track contracts, and ensure payment flows securely and transparently. Designed for efficient collaboration, the DApp demonstrates expertise in Solidity, Ethereum, and decentralized finance solutions.</p>
+                <a href="blogs/smart-contracts-for-gig-economy.html" class="btn btn-primary">View Written Article</a>
+              </div>
+            </div>
+          </div>
+        <!-- Project 3 -->
+        <div class="col-12 mb-4">
+          <div class="card d-flex flex-row align-items-stretch project-card">
+            <img src="images/blogs-projects/data-writing.png" class="project-image" alt="Project 2">
             <div class="card-body">
-              <h5 class="card-title">Project Title 2</h5>
-              <p class="card-text">Brief description of Project 2.</p>
-              <a href="#" class="btn btn-primary">View Written Article</a>
-              <a href="#" class="btn btn-primary">View Analysis (Python)</a>
+              <h5 class="card-title">Data Analysis & Writing</h5>
+              <p class="card-text">As a challenge, I was tasked with creating a written piece to go along with the data analysis that you can see above. The challenge was to interpret the data and write an article in a style that matched other articles from "company x" that would be useful, unique, and insightful for their readership. The article ends at about 600 words, which was the cap for the challenge, so I end the article prematurely. Due to the repetitive nature of listing off and formatting data, the article was left unfinished with the assumption that readers could envision what other data could be included and what it would look like.</p>
+              <a href="blogs/data-analysis.html" class="btn btn-primary">View Written Article</a>
             </div>
           </div>
         </div>
+        <!-- Project 4 -->
+        <div class="col-12 mb-4">
+            <div class="card d-flex flex-row align-items-stretch project-card">
+              <img src="images/blogs-projects/alaska-tundra-tyler.png" class="project-image" alt="Project 3">
+              <div class="card-body">
+                <h5 class="card-title">Research</h5>
+                <p class="card-text">Biogenic volatile organic compound ambient mixing ratios and emission rates in the Alaskan Arctic tundra. Abstract: Rapid Arctic warming, a lengthening growing season, and increasing abundance of biogenic volatile organic compounds (BVOC)-emitting shrubs are all anticipated to increase atmospheric BVOCs in the Arctic atmosphere, with implications for atmospheric oxidation processes and climate feedbacks. Quantifying these changes requires an accurate understanding of the underlying processes driving BVOC emissions in the Arctic. https://bg.copernicus.org/articles/17/6219/2020/</p>
+                <a href="https://bg.copernicus.org/articles/17/6219/2020/" class="btn btn-primary">View Research Publication</a>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="container-fluid my-5 text-center">
       <h2 class="text-center mb-4">Connect with Me</h2>
-      <div class="d-flex justify-content-center gap-4 mt-3">
+      <div class="d-flex justify-content-center gap-4 mt-3"> 
         <a href="https://www.linkedin.com/in/typride" target="_blank" class="text-dark"><i class="fab fa-linkedin fa-2x"></i></a>
         <a href="https://github.com/typride" target="_blank" class="text-dark"><i class="fab fa-github fa-2x"></i></a>
       </div>
     </section>
 
-    <!-- Bootstrap JavaScript (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript file -->
-    <script src="scripts/scripts.js"></script>
+
   </body>
 </html>
