@@ -111,6 +111,15 @@ body {
     object-fit: cover;
 }
 
+.blog-post-image {
+    max-width: 100%; /* Limits width to the container */
+    max-height: 500px; /* Sets a max height; adjust as needed */
+    width: auto; /* Ensures the aspect ratio is preserved */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain; /* Ensures the whole image fits within the set dimensions */
+}
+
 
 /* Spacing and formatting for converted Markdown content */
 

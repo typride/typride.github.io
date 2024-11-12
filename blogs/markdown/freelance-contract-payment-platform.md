@@ -63,3 +63,10 @@ This project is a decentralized freelance contract platform that enables clients
 </table>
 
 <img src="../../images/blogs-projects/gigsecure.png" class="container project-image image-plate" alt="Project 2">
+
+
+## User flow & tech used
+
+<img src="../../images/blogs-projects/Arhitecture-1-background.png" class="blog-post-image container project-image image-plate" alt="Architecture and user flow.">
+
+<img src="../../images/blogs-projects/Architecture-2-background.png" class="blog-post-image container project-image image-plate" alt="Architecture and user flow.">
