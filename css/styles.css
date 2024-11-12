@@ -120,6 +120,27 @@ body {
     object-fit: contain; /* Ensures the whole image fits within the set dimensions */
 }
 
+/* Set fixed dimensions for blog post and project cards */
+.card {
+    height: 100%; /* Ensures card fills the container height */
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; /* Set a minimum height for cards */
+}
+
+.card-img-top {
+    height: 200px; /* Set a fixed height for images; adjust as needed */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 
 /* Spacing and formatting for converted Markdown content */
 
