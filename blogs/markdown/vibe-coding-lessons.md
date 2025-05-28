@@ -120,15 +120,15 @@ This keeps the architecture legible to agents. I even use LLMs to generate Merma
 
 ### 🧠 Human Involvement Summary
 
-| Stage                 | Human Role                                      |
-|----------------------|--------------------------------------------------|
-| Initiative Definition| Write scratchpad, define goals                   |
-| Plan Review          | Validate or edit agent-generated steps           |
-| Context Curation     | Keep changelogs, rules, docs accurate            |
-| Code Review          | Review AI-generated code before merge            |
-| Impact Validation    | Validate behavior, performance, side effects     |
-| Documentation Review | Final pass on AI-generated docs or diagrams      |
-| Strategy + Direction | Prioritize roadmap, resolve ambiguity            |
+| Stage                  | Human Role                                      |
+|------------------------|-------------------------------------------------|
+| Initiative Definition  | Write scratchpad, define goals                  |
+| Plan Review            | Validate or edit agent-generated steps          |
+| Context Curation       | Keep changelogs, rules, docs accurate           |
+| Code Review            | Review AI-generated code before merge           |
+| Impact Validation      | Validate behavior, performance, side effects    |
+| Documentation Review   | Final pass on AI-generated docs or diagrams     |
+| Strategy + Direction   | Prioritize roadmap, resolve ambiguity           |
 
 ---
 
