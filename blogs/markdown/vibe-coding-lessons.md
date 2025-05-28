@@ -120,15 +120,15 @@ This keeps the architecture legible to agents. I even use LLMs to generate Merma
 
 ### 🧠 Human Involvement Summary
 
-| Stage                     | Human Role                                     |
-|--------------------------|------------------------------------------------|
-| Initiative Definition    | Write scratchpad, define goals                 |
-| Plan Review              | Validate or edit agent-generated steps         |
-| Context Curation         | Keep changelogs, rules, docs accurate          |
-| Code Review              | Review AI-generated code before merge          |
-| Impact Validation        | Validate behavior, performance, side effects   |
-| Documentation Review     | Final pass on AI-generated docs or diagrams    |
-| Strategy + Direction     | Prioritize roadmap, resolve ambiguity          |
+| Stage                 | Human Role                                      |
+|----------------------|--------------------------------------------------|
+| Initiative Definition| Write scratchpad, define goals                   |
+| Plan Review          | Validate or edit agent-generated steps           |
+| Context Curation     | Keep changelogs, rules, docs accurate            |
+| Code Review          | Review AI-generated code before merge            |
+| Impact Validation    | Validate behavior, performance, side effects     |
+| Documentation Review | Final pass on AI-generated docs or diagrams      |
+| Strategy + Direction | Prioritize roadmap, resolve ambiguity            |
 
 ---
 
@@ -173,7 +173,3 @@ This confirmed what I’ve been learning firsthand: **context is everything.**
 Agentic coding isn’t about replacing devs — it’s about **augmenting them**. But just like humans, AI performs best with structure, feedback, and clarity.
 
 If you treat your codebase like a railway system and your AI like a train that needs rails — you’ll build systems that are fast, safe, and scalable.
-
-Let me know if you’ve built anything like this — or if you want to see examples of my planner rules, scratchpads, or changelogs. I’m happy to share more.
-
-#agenticdevelopment #cursor #developerworkflow #aidevelopment #softwareengineering
