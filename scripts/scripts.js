@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (aboutSection) {
             aboutSection.classList.add("fade-in");
             console.log("About section fading in");
-        } else {
-            console.warn("Warning: About section not found.");
         }
 
         // Delay for Experience items fade-in, if any
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     setTimeout(() => {
                         item.classList.remove("hidden");
                         item.classList.add("fade-in");
-                        console.log(`Fading in experience item ${index + 1}`);
                     }, index * 300);
                 });
 
@@ -36,14 +33,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     setTimeout(() => {
                         projectsSection.classList.remove("hidden");
                         projectsSection.classList.add("fade-in");
-                        console.log("Projects section fading in");
                     }, experienceItems.length * 300 + 600);
-                } else {
-                    console.warn("Warning: Projects section not found.");
                 }
             }, 1500);
-        } else {
-            console.warn("Warning: No experience items found.");
+        } else if (projectsSection) {
+            // If no experience items but projects section exists, fade it in
+            setTimeout(() => {
+                projectsSection.classList.remove("hidden");
+                projectsSection.classList.add("fade-in");
+            }, 1500);
         }
 
         // Set the "hasVisited" flag in localStorage
@@ -85,39 +83,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Search Functionality
     const searchInput = document.getElementById("searchInput");
-    const blogItems = document.querySelectorAll(".blog-item");
-    const projectItems = document.querySelectorAll(".project-item");
-
+    
     if (searchInput) {
         searchInput.addEventListener("input", function() {
             const searchTerm = searchInput.value.toLowerCase();
-            console.log("Search term:", searchTerm);
-
-            // Filter blog items
-            blogItems.forEach(item => {
-                const title = item.querySelector(".card-title").textContent.toLowerCase();
-                const content = item.querySelector(".card-text").textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || content.includes(searchTerm)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-
-            // Filter project items
-            projectItems.forEach(item => {
-                const title = item.querySelector(".card-title").textContent.toLowerCase();
-                const content = item.querySelector(".card-text").textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || content.includes(searchTerm)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
+            
+            // First look for blog-item class
+            const blogItems = document.querySelectorAll(".blog-item");
+            if (blogItems.length > 0) {
+                blogItems.forEach(item => {
+                    const title = item.querySelector(".card-title");
+                    const content = item.querySelector(".card-text");
+                    
+                    if (title && content) {
+                        const titleText = title.textContent.toLowerCase();
+                        const contentText = content.textContent.toLowerCase();
+                        
+                        if (titleText.includes(searchTerm) || contentText.includes(searchTerm)) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    }
+                });
+            }
+            
+            // Then look for project-item class
+            const projectItems = document.querySelectorAll(".project-item");
+            if (projectItems.length > 0) {
+                projectItems.forEach(item => {
+                    const title = item.querySelector(".card-title");
+                    const content = item.querySelector(".card-text");
+                    
+                    if (title && content) {
+                        const titleText = title.textContent.toLowerCase();
+                        const contentText = content.textContent.toLowerCase();
+                        
+                        if (titleText.includes(searchTerm) || contentText.includes(searchTerm)) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    }
+                });
+            }
         });
-    } else {
-        console.warn("Warning: Search input not found.");
     }
 });
