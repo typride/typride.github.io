@@ -45,7 +45,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const converter = new showdown.Converter();
             // Replace with the path to your Markdown file
-            fetch('markdown/vibe-coding-lessons.md')
+            fetch('markdown/digital-literacy-blog.md')
                 .then(response => response.text())
                 .then(markdown => {
                     const htmlContent = converter.makeHtml(markdown);
