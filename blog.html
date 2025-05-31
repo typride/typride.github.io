@@ -10,7 +10,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/scripts.js"></script>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Blog & Project Deep Dives</title>
+    <title>Blog</title>
+    <style>
+        .category-badge {
+            font-size: 0.75rem;
+            margin-right: 5px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .category-tech { background-color: #dff0d8; color: #3c763d; }
+        .category-data { background-color: #d9edf7; color: #31708f; }
+        .category-crypto { background-color: #fcf8e3; color: #8a6d3b; }
+        .category-career { background-color: #f2dede; color: #a94442; }
+        .category-writing { background-color: #e8eaf6; color: #3949ab; }
+        .category-filter {
+            margin-right: 5px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        .category-filter.active {
+            box-shadow: 0 0 0 2px rgba(0,123,255,.5);
+        }
+        .filters-bar {
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Notice Bar -->
@@ -30,8 +56,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#blog">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -39,76 +64,163 @@
 
     <!-- Blog Section -->
     <section id="blog" class="container my-5 pt-5">
-        <div class="d-flex justify-content-end mb-4">
-            <input type="text" id="searchInput" class="form-control search-bar" placeholder="Search...">
-        </div>
         <h2 class="mb-4">Blog</h2>
         
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="filters-bar">
+                    <button class="btn btn-sm btn-outline-secondary category-filter active" data-category="all">All</button>
+                    <button class="btn btn-sm btn-outline-secondary category-filter" data-category="tech">Technology</button>
+                    <button class="btn btn-sm btn-outline-secondary category-filter" data-category="data">Data Analysis</button>
+                    <button class="btn btn-sm btn-outline-secondary category-filter" data-category="crypto">Blockchain</button>
+                    <button class="btn btn-sm btn-outline-secondary category-filter" data-category="career">Career</button>
+                    <button class="btn btn-sm btn-outline-secondary category-filter" data-category="writing">Writing</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control search-bar" placeholder="Search by title or content...">
+                    <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
         <div class="row" id="blogPosts">
-            <div class="col-md-6 mb-4 blog-item">
+            <!-- Digital Literacy Article -->
+            <div class="col-md-6 mb-4 blog-item" data-categories="tech career writing">
                 <div class="card">
                     <img src="images/blogs-projects/digital-literacy.jpg" class="card-img-top" alt="Digital Literacy">
                     <div class="card-body">
                         <h5 class="card-title">Digital Literacy in the Modern Age</h5>
                         <p class="post-date">May 15, 2023</p>
+                        <div class="mb-2">
+                            <span class="category-badge category-tech">Technology</span>
+                            <span class="category-badge category-career">Career</span>
+                            <span class="category-badge category-writing">Writing</span>
+                        </div>
                         <p class="card-text">Exploring what it means to be digitally literate in today's rapidly evolving technological landscape.</p>
-                        <a href="digital-literacy-blog.md" class="btn btn-primary">Read More</a>
+                        <a href="blogs/digital-literacy.html" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
+
+            <!-- GigSecure Project -->
+            <div class="col-md-6 mb-4 blog-item" data-categories="tech crypto">
+                <div class="card">
+                    <img src="images/blogs-projects/gigsecure.png" class="card-img-top" alt="GigSecure Smart Contracts">
+                    <div class="card-body">
+                        <h5 class="card-title">GigSecure: Smart Contracts for Freelancers and Clients</h5>
+                        <p class="post-date">March 10, 2023</p>
+                        <div class="mb-2">
+                            <span class="category-badge category-tech">Technology</span>
+                            <span class="category-badge category-crypto">Blockchain</span>
+                        </div>
+                        <p class="card-text">This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency.</p>
+                        <a href="blogs/smart-contracts-for-gig-economy.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analysis Project -->
+            <div class="col-md-6 mb-4 blog-item" data-categories="data tech">
+                <div class="card">
+                    <img src="images/blogs-projects/graphs-data.png" class="card-img-top" alt="Data Analysis">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Analysis with Python</h5>
+                        <p class="post-date">January 20, 2023</p>
+                        <div class="mb-2">
+                            <span class="category-badge category-data">Data Analysis</span>
+                            <span class="category-badge category-tech">Technology</span>
+                        </div>
+                        <p class="card-text">See what the best insurance for your vehicle is and explore the analysis behind the conclusions.</p>
+                        <a href="blogs/data-analysis.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vibe Coding Lessons -->
+            <div class="col-md-6 mb-4 blog-item" data-categories="tech writing">
+                <div class="card">
+                    <img src="images/blogs-projects/vibe-coding-lessons-header.png" class="card-img-top" alt="Vibe Coding Lessons">
+                    <div class="card-body">
+                        <h5 class="card-title">Vibe Coding Lessons with Cursor</h5>
+                        <p class="post-date">April 5, 2023</p>
+                        <div class="mb-2">
+                            <span class="category-badge category-tech">Technology</span>
+                            <span class="category-badge category-writing">Writing</span>
+                        </div>
+                        <p class="card-text">Lessons from vibe coding at scale with burgeoning codebase.</p>
+                        <a href="blogs/vibe-coding-lessons.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResults" class="alert alert-info mt-4 d-none">
+            No blog posts match your search. Try different keywords or clear your search.
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h2 class="mb-4">Project Deep Dives</h2>
-        <div class="row" id="projectItems">
-            <!-- Project 1 -->
-            <div class="col-md-6 mb-4 project-item">
-                <div class="card">
-                    <img src="images/blogs-projects/gigsecure.png" class="card-img-top" alt="project-data-analysis">
-                    <div class="card-body">
-                        <h5 class="card-title">GigSecure: Smart Contracts for Freelancers and Clients</h5>
-                        <p class="card-text">This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency. Using a factory contract, clients can initiate smart contracts with freelancers, secure funds in escrow, and handle milestones and payment releases automatically. The React frontend integrates seamlessly with MetaMask, allowing users to connect wallets, initiate and track contracts, and ensure payment flows securely and transparently. Designed for efficient collaboration, the DApp demonstrates expertise in Solidity, Ethereum, and decentralized finance solutions.</p>
-                        <a href="blogs/smart-contracts-for-gig-economy.html" class="btn btn-primary">Read the post</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="col-md-6 mb-4 project-item">
-                <div class="card">
-                    <img src="images/blogs-projects/graphs-data.png" class="card-img-top" alt="project-data-analysis">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Analysis with Python</h5>
-                        <p class="card-text">See what the best insurance for your vehicle is and explore the analysis behind the conclusions.</p>
-                        <a href="blogs/data-analysis.html" class="btn btn-primary">Read the post</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="col-md-6 mb-4 project-item">
-                <div class="card">
-                    <img src="images/blogs-projects/vibe-coding-lessons-header.png" class="card-img-top" alt="vibe coding lessons diagram">
-                    <div class="card-body">
-                        <h5 class="card-title">Vibe Coding Lessons with Cursor</h5>
-                        <p class="card-text">Lessons from vibe coding at scale with burgeoning codebase.</p>
-                        <a href="blogs/vibe-coding-lessons.html" class="btn btn-primary">Read the post</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="col-md-6 mb-4 project-item">
-                <div class="card">
-                    <img src="images/digital-literacy.png" class="card-img-top" alt="project-data-analysis">
-                    <div class="card-body">
-                        <h5 class="card-title">The value of digital literacy with context</h5>
-                        <p class="card-text">Why is digital literacy valuable and how did I define my path to optimize for it. And how can you?</p>
-                        <a href="blogs/data-analysis.html" class="btn btn-primary">Read the post</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Additional projects can go here -->
-        </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearButton = document.getElementById('clearSearch');
+            const blogItems = document.querySelectorAll('.blog-item');
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const noResults = document.getElementById('noResults');
+            
+            let activeCategory = 'all';
+            
+            // Clear search button
+            clearButton.addEventListener('click', function() {
+                searchInput.value = '';
+                filterItems();
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', filterItems);
+            
+            // Category filter functionality
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    categoryFilters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    activeCategory = this.getAttribute('data-category');
+                    filterItems();
+                });
+            });
+            
+            // Filter items based on search and category
+            function filterItems() {
+                const searchTerm = searchInput.value.toLowerCase();
+                let visibleCount = 0;
+                
+                blogItems.forEach(item => {
+                    const title = item.querySelector('.card-title').textContent.toLowerCase();
+                    const content = item.querySelector('.card-text').textContent.toLowerCase();
+                    const categories = item.getAttribute('data-categories').split(' ');
+                    
+                    const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
+                    const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+                    
+                    if (matchesSearch && matchesCategory) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show "no results" message if needed
+                if (visibleCount === 0) {
+                    noResults.classList.remove('d-none');
+                } else {
+                    noResults.classList.add('d-none');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
