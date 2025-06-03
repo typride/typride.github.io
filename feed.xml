@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Tyler Milligan's Blog</title>
+  <description>Thoughts on technology, digital literacy, data analysis, and more</description>
+  <link>https://typride.github.io</link>
+  <atom:link href="https://typride.github.io/feed.xml" rel="self" type="application/rss+xml" />
+  <pubDate>Sat, 01 Jun 2024 12:00:00 GMT</pubDate>
+  <lastBuildDate>Sat, 01 Jun 2024 12:00:00 GMT</lastBuildDate>
+  <language>en-us</language>
+  
+  <item>
+    <title>Digital Literacy in the Modern Age</title>
+    <description>Exploring what it means to be digitally literate in today's rapidly evolving technological landscape.</description>
+    <pubDate>Mon, 15 May 2023 12:00:00 GMT</pubDate>
+    <link>https://typride.github.io/blogs/digital-literacy.html</link>
+    <guid>https://typride.github.io/blogs/digital-literacy.html</guid>
+    <category>Technology</category>
+    <category>Career</category>
+    <category>Writing</category>
+  </item>
+  
+  <item>
+    <title>Vibe Coding Lessons with Cursor</title>
+    <description>Lessons from vibe coding at scale with burgeoning codebase.</description>
+    <pubDate>Wed, 5 Apr 2023 12:00:00 GMT</pubDate>
+    <link>https://typride.github.io/blogs/vibe-coding-lessons.html</link>
+    <guid>https://typride.github.io/blogs/vibe-coding-lessons.html</guid>
+    <category>Technology</category>
+    <category>Writing</category>
+  </item>
+  
+  <item>
+    <title>GigSecure: Smart Contracts for Freelancers and Clients</title>
+    <description>This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency.</description>
+    <pubDate>Fri, 10 Mar 2023 12:00:00 GMT</pubDate>
+    <link>https://typride.github.io/blogs/smart-contracts-for-gig-economy.html</link>
+    <guid>https://typride.github.io/blogs/smart-contracts-for-gig-economy.html</guid>
+    <category>Technology</category>
+    <category>Blockchain</category>
+  </item>
+  
+  <item>
+    <title>Data Analysis with Python</title>
+    <description>See what the best insurance for your vehicle is and explore the analysis behind the conclusions.</description>
+    <pubDate>Fri, 20 Jan 2023 12:00:00 GMT</pubDate>
+    <link>https://typride.github.io/blogs/data-analysis.html</link>
+    <guid>https://typride.github.io/blogs/data-analysis.html</guid>
+    <category>Data Analysis</category>
+    <category>Technology</category>
+  </item>
+  
+</channel>
+</rss> 

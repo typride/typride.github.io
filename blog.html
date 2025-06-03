@@ -3,14 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tyler Milligan's blog on technology, digital literacy, data analysis, and more. Explore articles on career development, blockchain, and writing.">
+    <meta name="author" content="Tyler Milligan">
+    <meta name="keywords" content="technology, digital literacy, data analysis, blockchain, career development, technical writing">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://typride.github.io/blog.html">
+    <meta property="og:title" content="Tyler Milligan's Blog">
+    <meta property="og:description" content="Thoughts on technology, digital literacy, data analysis, and more">
+    <meta property="og:image" content="https://typride.github.io/images/blogs-projects/agentic-observability-header.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://typride.github.io/blog.html">
+    <meta property="twitter:title" content="Tyler Milligan's Blog">
+    <meta property="twitter:description" content="Thoughts on technology, digital literacy, data analysis, and more">
+    <meta property="twitter:image" content="https://typride.github.io/images/blogs-projects/agentic-observability-header.png">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Tyler Milligan's Blog" href="https://typride.github.io/feed.xml">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/scripts.js"></script>
+    
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Blog</title>
+    
+    <title>Tyler Milligan's Blog</title>
     <style>
         .category-badge {
             font-size: 0.75rem;
@@ -36,6 +65,59 @@
             padding: 10px 0;
             margin-bottom: 20px;
         }
+        .subscribe-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            color: white;
+            transition: transform 0.2s;
+        }
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+        .btn-twitter { background-color: #1DA1F2; }
+        .btn-facebook { background-color: #4267B2; }
+        .btn-linkedin { background-color: #0077B5; }
+        .btn-copy { background-color: #6c757d; }
+        .social-banner {
+            padding: 10px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .follow-section {
+            margin-top: 20px;
+        }
+        .follow-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .follow-option {
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .follow-option i {
+            margin-right: 8px;
+        }
+        .rss-option { background-color: #f26522; }
+        .feedly-option { background-color: #2bb24c; }
     </style>
 </head>
 <body>
@@ -64,7 +146,26 @@
 
     <!-- Blog Section -->
     <section id="blog" class="container my-5 pt-5">
-        <h2 class="mb-4">Blog</h2>
+        <div class="social-banner d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">Blog</h2>
+            <div class="social-actions">
+                <a href="feed.xml" target="_blank" class="btn btn-sm btn-outline-secondary me-2" title="Subscribe via RSS">
+                    <i class="fas fa-rss"></i> RSS
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://typride.github.io/blog.html&text=Check out Tyler Milligan's blog" target="_blank" class="share-btn btn-twitter" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://typride.github.io/blog.html" target="_blank" class="share-btn btn-facebook" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://typride.github.io/blog.html&title=Tyler Milligan's Blog" target="_blank" class="share-btn btn-linkedin" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <button id="copyLink" class="share-btn btn-copy" title="Copy link">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+        </div>
         
         <div class="row mb-4">
             <div class="col-md-8">
@@ -161,6 +262,38 @@
         <div id="noResults" class="alert alert-info mt-4 d-none">
             No blog posts match your search. Try different keywords or clear your search.
         </div>
+
+        <!-- Subscribe Card -->
+        <div class="subscribe-card mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Stay Updated</h4>
+                    <p>Get notified when I publish new articles on technology, digital literacy, data analysis, and more.</p>
+                    
+                    <!-- Follow.it Form -->
+                    <form action="https://api.follow.it/subscription-form/eGtXQzBhbjg3aWFDcnFMMC9DeHUvMjdVdXZaNEhIbmtCSFVEcE8rMHFPa1o3Q3JnajZnMTBLbzZyZnM4ditYdXRuZGphdXJnZlliVndHbXlDQ29NdnpIYjZnNVVrZzBIc01rTUtvdHpSRlNUQkRhM25IM2V6REJlYW1PVDliZ0p8ZEdOdFRzdTRiQkIzbTlydkorRTUxU1RqclZzTlZLQUo2L2gzVHNlU2pBUT0=/8" method="post">
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                        <div class="form-text">No spam, unsubscribe at any time.</div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="follow-section">
+                        <h5>Alternative Ways to Follow</h5>
+                        <div class="follow-options">
+                            <a href="feed.xml" class="follow-option rss-option" target="_blank">
+                                <i class="fas fa-rss"></i> RSS Feed
+                            </a>
+                            <a href="https://feedly.com/i/subscription/feed/https://typride.github.io/feed.xml" class="follow-option feedly-option" target="_blank">
+                                <i class="fas fa-rss-square"></i> Follow in Feedly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -170,8 +303,24 @@
             const blogItems = document.querySelectorAll('.blog-item');
             const categoryFilters = document.querySelectorAll('.category-filter');
             const noResults = document.getElementById('noResults');
+            const copyLinkBtn = document.getElementById('copyLink');
             
             let activeCategory = 'all';
+            
+            // Copy link functionality
+            copyLinkBtn.addEventListener('click', function() {
+                navigator.clipboard.writeText(window.location.href).then(function() {
+                    // Show a tooltip or notification
+                    const originalTitle = copyLinkBtn.getAttribute('title');
+                    copyLinkBtn.setAttribute('title', 'Link copied!');
+                    copyLinkBtn.style.backgroundColor = '#28a745';
+                    
+                    setTimeout(function() {
+                        copyLinkBtn.setAttribute('title', originalTitle);
+                        copyLinkBtn.style.backgroundColor = '#6c757d';
+                    }, 2000);
+                });
+            });
             
             // Clear search button
             clearButton.addEventListener('click', function() {
