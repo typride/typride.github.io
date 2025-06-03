@@ -10,6 +10,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <title>Digital Literacy in the Modern Age</title>
+    <style>
+        .share-section {
+            margin: 2rem 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .share-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            color: white;
+            transition: transform 0.2s;
+        }
+        .share-button:hover {
+            transform: translateY(-3px);
+        }
+        .twitter-share { background-color: #1DA1F2; }
+        .facebook-share { background-color: #4267B2; }
+        .linkedin-share { background-color: #0077B5; }
+        .copy-link { background-color: #6c757d; }
+    </style>
 </head>
 <body>
     <div class="header-container">
@@ -29,7 +54,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../blog.html">Back to Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../feed.xml" target="_blank"><i class="fas fa-rss"></i> Subscribe</a></li>
                 </ul>
             </div>
         </div>
@@ -39,6 +66,41 @@
     <!-- Blog Content Section -->
     <section class="container my-5 pt-5">
         <div id="blog-post-content" class="markdown-content"></div>
+        
+        <!-- Share Section -->
+        <div class="share-section">
+            <h5>Share this article</h5>
+            <div class="d-flex mt-3">
+                <a href="https://twitter.com/intent/tweet?url=https://typride.github.io/blogs/digital-literacy.html&text=Digital Literacy in the Modern Age" target="_blank" class="share-button twitter-share" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://typride.github.io/blogs/digital-literacy.html" target="_blank" class="share-button facebook-share" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://typride.github.io/blogs/digital-literacy.html&title=Digital Literacy in the Modern Age" target="_blank" class="share-button linkedin-share" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <button id="copyLink" class="share-button copy-link" title="Copy link">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Subscribe Section -->
+        <div class="card my-4 bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Enjoyed this article?</h5>
+                <p class="card-text">Get notified when I publish more content on technology, digital literacy, and more.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="../feed.xml" class="btn btn-sm btn-outline-secondary" target="_blank">
+                        <i class="fas fa-rss"></i> RSS Feed
+                    </a>
+                    <a href="https://feedly.com/i/subscription/feed/https://typride.github.io/feed.xml" class="btn btn-sm btn-outline-success" target="_blank">
+                        <i class="fas fa-rss-square"></i> Follow in Feedly
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -52,6 +114,24 @@
                     document.getElementById("blog-post-content").innerHTML = htmlContent;
                 })
                 .catch(error => console.error('Error loading Markdown file:', error));
+            
+            // Copy link functionality
+            const copyLinkBtn = document.getElementById('copyLink');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    navigator.clipboard.writeText(window.location.href).then(function() {
+                        // Visual feedback
+                        const originalTitle = copyLinkBtn.getAttribute('title');
+                        copyLinkBtn.setAttribute('title', 'Link copied!');
+                        copyLinkBtn.style.backgroundColor = '#28a745';
+                        
+                        setTimeout(function() {
+                            copyLinkBtn.setAttribute('title', originalTitle);
+                            copyLinkBtn.style.backgroundColor = '#6c757d';
+                        }, 2000);
+                    });
+                });
+            }
         });
     </script>
 </body>
