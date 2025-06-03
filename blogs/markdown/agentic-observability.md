@@ -77,17 +77,17 @@ The extensive logging throughout the API routes provided critical insights into 
 
 ```javascript
 // In backend/routes/api.js
-router.get("/production-data/wells", authMiddleware, async (req, res) => {
+router.get("/xxxxx/xxxx", authMiddleware, async (req, res) => {
   const { apis } = req.query;
   
   try {
     // Processing logic...
-    logger.info(`Found ${result.recordset.length} production records`);
+    logger.info(`Found ${result.recordset.length} xxxxxx records`);
     res.json(result.recordset);
   } catch (error) {
-    logger.error('Error fetching API production history:', error);
+    logger.error('Error fetching xxx xxxx history:', error);
     res.status(500).json({ 
-      error: 'Failed to fetch production history',
+      error: 'Failed to fetch xxxxxxxx history',
       details: error.message
     });
   }
@@ -136,13 +136,13 @@ Logs throughout the system revealed how data flowed between components:
 
 ```javascript
 // Frontend component logs
-logger.info(`Starting export process for ${wells.length} wells`);
+logger.info(`Starting export process for ${xxxx.length} wells`);
 
 // API middleware logs
 logger.debug(`Request received with correlation ID: ${req.correlationId}`);
 
 // Backend service logs
-logger.info(`Processing export job with ${wells.length} wells, ID: ${jobId}`);
+logger.info(`Processing export job with ${xxxx.length} xxxx, ID: ${jobId}`);
 
 // Database logs
 logger.debug(`Executing query: ${queryString}`);
@@ -219,7 +219,7 @@ This approach ensured methodical development of the background export feature:
 The `project_structure.md` document was crucial for understanding where new code should be placed:
 
 ```
-minerals-insight-webv1/
+xxxxx-xxxx-xxxx/
 ├── backend/                  # Node.js backend application
 │   ├── routes/               # API routes
 │   ├── services/             # Business logic services
@@ -253,20 +253,20 @@ Structured logging was crucial in preventing hallucination (making incorrect ass
 
 1. **API Endpoints**: Instead of guessing the correct API structure, logs showed actual request patterns:
    ```javascript
-   logger.info(`Fetching production data for wells with APIs: ${apiNumbers.join(',')}`);
+   logger.info(`Fetching xxxxx with APIs: ${xxxxx.join(',')}`);
    ```
 
 2. **Data Structures**: Logs revealed the actual structure of production records:
    ```javascript
-   logger.debug('Production record sample:', JSON.stringify(productionData[0]));
+   logger.debug('xxxxxx record sample:', JSON.stringify(xxxxx[0]));
    ```
 
 3. **Error Patterns**: Logs showed common failure modes and how they were handled:
    ```javascript
-   logger.error(`Error in production data fetch: ${error.message}`, { 
+   logger.error(`Error in xxxxx fetch: ${error.message}`, { 
      correlationId,
-     component: 'API',
-     action: 'FetchProduction'
+     component: 'xxx',
+     action: 'xxxxxxx'
    });
    ```
 
@@ -401,8 +401,8 @@ async function processExportJob(jobId) {
     action: 'StartProcessing',
     jobId,
     parameters: {
-      includeWells: job.params.includeWells,
-      includeProduction: job.params.includeProduction,
+      includexxx: job.params.includexxx,
+      includexxxxxxx: job.params.includexxxxx,
       wellCount: job.params.wells.length
     }
   });
@@ -539,7 +539,7 @@ By implementing these patterns consistently throughout your codebase, you create
 
 ## Copyright Notice
 
-© 2024 Tyler Pride Milligan. All rights reserved.
+© 2025 Tyler Pride Milligan. All rights reserved.
 
 The concept of "Agentic Observability" as described in this document, including the patterns, methodologies, and frameworks for enabling AI agents to understand systems through structured logging, is the intellectual property of the author. This includes the specific implementation patterns, metrics, and visualization approaches presented herein.
 
@@ -592,7 +592,7 @@ For projects implementing this methodology, include the following in your NOTICE
 
 ```
 This project implements the "Agentic Observability" methodology developed by Tyler Pride Milligan.
-Copyright © 2024 Tyler Pride Milligan. All rights reserved.
+Copyright © 2025 Tyler Pride Milligan. All rights reserved.
 Original publication: https://typride.github.io/blogs/agentic-observability
 ```
 
