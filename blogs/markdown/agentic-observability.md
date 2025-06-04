@@ -4,7 +4,7 @@
 
 Building complex features in modern web applications requires a deep understanding of the system's architecture, data flow, and error handling patterns. When leveraging AI assistance for development tasks, the ability of the AI to "observe" and understand the system becomes critical. This concept, which I call "agentic observability," is fundamental to effective AI-assisted development.
 
-This document examines how the structured logging infrastructure in the Minerals Insight application enabled the successful implementation of a background export feature, highlighting how proper observability practices empower AI agents to understand, plan, and execute complex development tasks.
+This document examines how the structured logging infrastructure in the XXXXXXX enabled the successful implementation of a background export feature, highlighting how proper observability practices empower AI agents to understand, plan, and execute complex development tasks.
 
 ## Agentic Observability Concept Visualization
 
@@ -59,7 +59,7 @@ This document examines how the structured logging infrastructure in the Minerals
 
 ## The Challenge: Background Export Feature
 
-The task was to implement a background export feature for the Minerals Insight application that would:
+The task was to implement a background export feature for XXXXXXXXX that would:
 
 1. Move resource-intensive export operations to the backend
 2. Provide real-time progress updates to the user
@@ -136,7 +136,7 @@ Logs throughout the system revealed how data flowed between components:
 
 ```javascript
 // Frontend component logs
-logger.info(`Starting export process for ${xxxx.length} wells`);
+logger.info(`Starting export process for ${xxxx.length} XXXXX`);
 
 // API middleware logs
 logger.debug(`Request received with correlation ID: ${req.correlationId}`);
@@ -535,7 +535,7 @@ By implementing these patterns consistently throughout your codebase, you create
 
 ---
 
-*This document was created to highlight how the logging infrastructure in the Minerals Insight application enabled effective AI-assisted development of the background export feature.*
+*This document was created to highlight how the logging infrastructure enabled effective AI-assisted development of the background export feature.*
 
 ## Copyright Notice
 
