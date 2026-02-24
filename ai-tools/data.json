@@ -32,7 +32,15 @@
         "Complex applications often need significant manual cleanup",
         "Browser-based environment has limitations",
         "Can burn through tokens quickly on iteration"
-      ]
+      ],
+      "tags": [
+        "code-generation",
+        "saas",
+        "agents"
+      ],
+      "connectionCount": 3,
+      "x": 19.5,
+      "y": -516.5
     },
     {
       "id": "chatgpt",
@@ -67,7 +75,17 @@
         "Context window limitations for very long conversations",
         "Can be confidently wrong on niche topics",
         "Rate limits on newest models even for paid users"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "code-generation",
+        "multi-modal",
+        "summarization",
+        "research"
+      ],
+      "connectionCount": 15,
+      "x": 163.7,
+      "y": -444.2
     },
     {
       "id": "claude",
@@ -101,7 +119,17 @@
         "Can be overly cautious or hedging",
         "Smaller plugin/integration ecosystem than ChatGPT",
         "Rate limits on free tier are tighter"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "code-generation",
+        "multi-modal",
+        "summarization",
+        "research"
+      ],
+      "connectionCount": 7,
+      "x": 228.3,
+      "y": -380.7
     },
     {
       "id": "clay",
@@ -136,7 +164,16 @@
         "Credit system can be confusing to predict costs",
         "Learning curve for advanced enrichment workflows",
         "Data quality varies by source and region"
-      ]
+      ],
+      "tags": [
+        "data-enrichment",
+        "lead-generation",
+        "saas",
+        "agents"
+      ],
+      "connectionCount": 2,
+      "x": -296.9,
+      "y": -338.4
     },
     {
       "id": "consensus",
@@ -171,7 +208,17 @@
         "Coverage depends on available open-access papers",
         "Consensus meter can oversimplify nuanced topics",
         "Limited to scientific literature (not industry reports or grey literature)"
-      ]
+      ],
+      "tags": [
+        "research",
+        "literature-review",
+        "citations",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 2,
+      "x": -206.1,
+      "y": 339.6
     },
     {
       "id": "copy-ai",
@@ -202,7 +249,16 @@
       "cons": [
         "Long-form content quality is inconsistent",
         "Less powerful than ChatGPT for complex tasks"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "copywriting",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 1,
+      "x": 312.4,
+      "y": 281.3
     },
     {
       "id": "crewai",
@@ -238,7 +294,16 @@
         "Enterprise pricing is opaque",
         "Debugging multi-agent interactions can be challenging",
         "Less mature than LangChain"
-      ]
+      ],
+      "tags": [
+        "framework",
+        "agents",
+        "open-source",
+        "team-collaboration"
+      ],
+      "connectionCount": 2,
+      "x": -418.1,
+      "y": 238.4
     },
     {
       "id": "cursor",
@@ -273,7 +338,17 @@
         "Occasional hallucinations in very large codebases",
         "Premium models can be slow during peak usage",
         "Subscription cost adds up for individual developers"
-      ]
+      ],
+      "tags": [
+        "ide",
+        "code-generation",
+        "ai-pair-programming",
+        "code-review",
+        "agents"
+      ],
+      "connectionCount": 8,
+      "x": 21.0,
+      "y": -443.7
     },
     {
       "id": "dalle-3",
@@ -304,7 +379,16 @@
       "cons": [
         "More conservative content policy than some competitors",
         "Less artistically impressive than Midjourney"
-      ]
+      ],
+      "tags": [
+        "text-to-image",
+        "image-generation",
+        "free-tier",
+        "api-available"
+      ],
+      "connectionCount": 3,
+      "x": 312.7,
+      "y": -268.1
     },
     {
       "id": "deepseek",
@@ -335,7 +419,18 @@
         "Web version raises privacy concerns",
         "Censors politically sensitive topics",
         "Smaller ecosystem than OpenAI or Anthropic"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "code-generation",
+        "open-source",
+        "self-hostable",
+        "api-available",
+        "free-tier"
+      ],
+      "connectionCount": 1,
+      "x": 238.5,
+      "y": -474.5
     },
     {
       "id": "descript",
@@ -367,7 +462,18 @@
       "cons": [
         "Can be slow to export long videos",
         "Advanced features require the Pro plan"
-      ]
+      ],
+      "tags": [
+        "video-editing",
+        "audio-editing",
+        "transcription",
+        "voice-cloning",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 4,
+      "x": -152.4,
+      "y": -377.7
     },
     {
       "id": "elevenlabs",
@@ -399,7 +505,18 @@
       "cons": [
         "Raises ethical concerns around voice cloning misuse",
         "Can be expensive for high-volume usage"
-      ]
+      ],
+      "tags": [
+        "voice-synthesis",
+        "voice-cloning",
+        "api-available",
+        "free-tier",
+        "saas",
+        "translation"
+      ],
+      "connectionCount": 6,
+      "x": 416.3,
+      "y": 51.9
     },
     {
       "id": "elicit",
@@ -434,7 +551,17 @@
         "Summaries can miss nuance in complex studies",
         "Limited to academic papers (not patents, reports, etc.)",
         "Plus plan needed for serious research volume"
-      ]
+      ],
+      "tags": [
+        "literature-review",
+        "research",
+        "summarization",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 3,
+      "x": -131.2,
+      "y": 382.5
     },
     {
       "id": "gemini",
@@ -466,7 +593,18 @@
       "cons": [
         "Best features require Google One AI Premium subscription",
         "Can occasionally produce inaccurate information"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "multi-modal",
+        "research",
+        "google-ecosystem",
+        "real-time",
+        "summarization"
+      ],
+      "connectionCount": 2,
+      "x": 138.2,
+      "y": -461.9
     },
     {
       "id": "github-copilot",
@@ -500,7 +638,16 @@
         "Less codebase-aware than Cursor for large projects",
         "Suggestions can be repetitive",
         "Free tier has limited chat requests"
-      ]
+      ],
+      "tags": [
+        "ide",
+        "code-generation",
+        "ai-pair-programming",
+        "code-review"
+      ],
+      "connectionCount": 4,
+      "x": 48.6,
+      "y": -435.5
     },
     {
       "id": "grammarly",
@@ -532,7 +679,17 @@
       "cons": [
         "Can be overly prescriptive and change the author's voice",
         "Advanced features require the paid plan"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "browser-extension",
+        "free-tier",
+        "saas",
+        "team-collaboration"
+      ],
+      "connectionCount": 3,
+      "x": 394.8,
+      "y": 312.8
     },
     {
       "id": "grok",
@@ -562,7 +719,16 @@
       "cons": [
         "Requires an X subscription for full access",
         "Looser moderation can be a double-edged sword"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "real-time",
+        "text-to-image",
+        "saas"
+      ],
+      "connectionCount": 1,
+      "x": 200.3,
+      "y": -339.2
     },
     {
       "id": "jasper",
@@ -594,7 +760,17 @@
       "cons": [
         "Expensive compared to using ChatGPT directly",
         "Output can sometimes feel generic without good prompting"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "copywriting",
+        "brand-voice",
+        "enterprise",
+        "seo"
+      ],
+      "connectionCount": 2,
+      "x": 334.8,
+      "y": 287.9
     },
     {
       "id": "kling-ai",
@@ -625,7 +801,15 @@
       "cons": [
         "Interface is primarily in Chinese",
         "Less widely available outside of Asia"
-      ]
+      ],
+      "tags": [
+        "text-to-video",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 2,
+      "x": 484.8,
+      "y": -83.5
     },
     {
       "id": "langchain",
@@ -661,7 +845,17 @@
         "Learning curve is steep for the full framework",
         "Can add unnecessary complexity vs direct API calls",
         "Performance overhead from abstraction layers"
-      ]
+      ],
+      "tags": [
+        "framework",
+        "agents",
+        "open-source",
+        "api-available",
+        "rag"
+      ],
+      "connectionCount": 2,
+      "x": -301.2,
+      "y": 291.4
     },
     {
       "id": "lovable",
@@ -692,7 +886,16 @@
       "cons": [
         "Generated code can require cleanup for production",
         "Limited customization compared to hand-coded apps"
-      ]
+      ],
+      "tags": [
+        "code-generation",
+        "no-code",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 2,
+      "x": 28.6,
+      "y": -513.6
     },
     {
       "id": "make",
@@ -727,7 +930,16 @@
         "Learning curve is steeper than Zapier for beginners",
         "Documentation can be inconsistent",
         "Less name recognition means fewer community resources"
-      ]
+      ],
+      "tags": [
+        "workflow-automation",
+        "no-code",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 2,
+      "x": 157.1,
+      "y": 375.9
     },
     {
       "id": "mem",
@@ -760,7 +972,15 @@
         "Limited formatting and page hierarchy",
         "Smaller integration ecosystem",
         "AI organization can sometimes misconnect unrelated notes"
-      ]
+      ],
+      "tags": [
+        "summarization",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 1,
+      "x": -58.8,
+      "y": 412.6
     },
     {
       "id": "midjourney",
@@ -794,7 +1014,14 @@
         "Discord-based workflow is clunky",
         "Less control over precise details than competitors",
         "No API for programmatic access"
-      ]
+      ],
+      "tags": [
+        "image-generation",
+        "saas"
+      ],
+      "connectionCount": 4,
+      "x": 295.9,
+      "y": -311.7
     },
     {
       "id": "n8n",
@@ -829,7 +1056,19 @@
         "Self-hosting requires DevOps knowledge",
         "Cloud pricing can escalate with high execution volumes",
         "UI can feel cluttered for very large workflows"
-      ]
+      ],
+      "tags": [
+        "workflow-automation",
+        "open-source",
+        "self-hostable",
+        "agents",
+        "low-code",
+        "api-available",
+        "free-tier"
+      ],
+      "connectionCount": 6,
+      "x": 214.2,
+      "y": 386.5
     },
     {
       "id": "notebooklm",
@@ -864,7 +1103,16 @@
         "Can't connect to live data or APIs",
         "Audio generation takes time",
         "No collaboration features yet"
-      ]
+      ],
+      "tags": [
+        "summarization",
+        "research",
+        "rag",
+        "education"
+      ],
+      "connectionCount": 4,
+      "x": -18.2,
+      "y": 409.3
     },
     {
       "id": "notion-ai",
@@ -895,7 +1143,16 @@
       "cons": [
         "Only available within the Notion ecosystem",
         "Requires a Notion subscription"
-      ]
+      ],
+      "tags": [
+        "text-generation",
+        "summarization",
+        "saas",
+        "team-collaboration"
+      ],
+      "connectionCount": 3,
+      "x": -32.6,
+      "y": 511.1
     },
     {
       "id": "perplexity",
@@ -929,7 +1186,16 @@
         "Source quality varies",
         "Can oversimplify complex topics",
         "Free tier Pro Search is limited"
-      ]
+      ],
+      "tags": [
+        "research",
+        "summarization",
+        "real-time",
+        "rag"
+      ],
+      "connectionCount": 7,
+      "x": -418.0,
+      "y": 115.4
     },
     {
       "id": "runway",
@@ -960,7 +1226,16 @@
       "cons": [
         "Can be slow to render videos",
         "Credits are consumed quickly on the free tier"
-      ]
+      ],
+      "tags": [
+        "text-to-video",
+        "video-editing",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 3,
+      "x": 392.7,
+      "y": -68.0
     },
     {
       "id": "sora",
@@ -990,7 +1265,14 @@
       "cons": [
         "Limited to short clips",
         "Requires ChatGPT Plus or Pro subscription"
-      ]
+      ],
+      "tags": [
+        "text-to-video",
+        "saas"
+      ],
+      "connectionCount": 2,
+      "x": 391.6,
+      "y": -117.0
     },
     {
       "id": "stable-diffusion",
@@ -1021,7 +1303,17 @@
       "cons": [
         "Requires technical knowledge to set up and run",
         "Requires a capable GPU for local inference"
-      ]
+      ],
+      "tags": [
+        "text-to-image",
+        "open-source",
+        "self-hostable",
+        "fine-tuning",
+        "free-tier"
+      ],
+      "connectionCount": 2,
+      "x": 420.3,
+      "y": -261.0
     },
     {
       "id": "suno",
@@ -1052,7 +1344,15 @@
       "cons": [
         "Limited control over specific musical elements",
         "Copyright and ownership of generated music is complex"
-      ]
+      ],
+      "tags": [
+        "music-generation",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 3,
+      "x": 446.7,
+      "y": 125.9
     },
     {
       "id": "surfer-seo",
@@ -1083,7 +1383,15 @@
       "cons": [
         "Expensive for individual bloggers",
         "Focuses primarily on on-page SEO, not technical SEO"
-      ]
+      ],
+      "tags": [
+        "seo",
+        "content-optimization",
+        "saas"
+      ],
+      "connectionCount": 2,
+      "x": -390.7,
+      "y": -61.5
     },
     {
       "id": "udio",
@@ -1113,7 +1421,15 @@
       "cons": [
         "Similar to Suno in many ways, making the choice difficult",
         "Copyright concerns similar to other AI music tools"
-      ]
+      ],
+      "tags": [
+        "music-generation",
+        "free-tier",
+        "saas"
+      ],
+      "connectionCount": 2,
+      "x": 400.8,
+      "y": 34.6
     },
     {
       "id": "v0",
@@ -1146,7 +1462,15 @@
         "Limited to React/Next.js ecosystem",
         "Complex interactivity sometimes needs manual fixes",
         "Free tier has limited generations"
-      ]
+      ],
+      "tags": [
+        "code-generation",
+        "saas",
+        "agents"
+      ],
+      "connectionCount": 3,
+      "x": -25.8,
+      "y": -482.5
     },
     {
       "id": "windsurf",
@@ -1179,7 +1503,16 @@
         "Smaller community and fewer resources",
         "Extension ecosystem not as mature",
         "Occasional context confusion in large codebases"
-      ]
+      ],
+      "tags": [
+        "ide",
+        "code-generation",
+        "ai-pair-programming",
+        "agents"
+      ],
+      "connectionCount": 2,
+      "x": -40.5,
+      "y": -388.0
     },
     {
       "id": "zapier",
@@ -1214,7 +1547,16 @@
         "Limited branching and complex logic support",
         "Each Zap is linear -- not great for complex workflows",
         "Debugging failed Zaps can be frustrating"
-      ]
+      ],
+      "tags": [
+        "workflow-automation",
+        "no-code",
+        "saas",
+        "free-tier"
+      ],
+      "connectionCount": 3,
+      "x": 247.9,
+      "y": 379.5
     }
   ],
   "edges": [
@@ -1535,13 +1877,13 @@
       "name": "Academic Writing Workflow",
       "description": "Accelerate academic writing while maintaining rigor and originality. Uses AI to assist with literature review, evidence synthesis, outlining, and drafting, while keeping the human researcher in control of intellectual content. Can reduce literature review time by 50% and overall writing time by 30-40 hours per paper.",
       "toolIds": [
-        "perplexity",
         "consensus",
-        "grammarly",
-        "notebooklm",
         "elicit",
+        "notebooklm",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "grammarly",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -1615,12 +1957,12 @@
       "name": "AI-Powered Business Intelligence and Reporting",
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "toolIds": [
-        "gemini",
-        "make",
-        "zapier",
         "n8n",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "make",
+        "gemini",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -1686,11 +2028,11 @@
       "name": "AI-Powered Code Review and Documentation",
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "toolIds": [
-        "github-copilot",
-        "cursor",
-        "claude",
         "windsurf",
-        "chatgpt"
+        "github-copilot",
+        "chatgpt",
+        "cursor",
+        "claude"
       ],
       "stepEdges": [
         {
@@ -1741,11 +2083,11 @@
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "toolIds": [
-        "dalle-3",
-        "midjourney",
         "stable-diffusion",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "midjourney",
+        "dalle-3"
       ],
       "stepEdges": [
         {
@@ -1805,11 +2147,11 @@
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "toolIds": [
-        "make",
-        "zapier",
         "n8n",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "make",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -1861,13 +2203,13 @@
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "toolIds": [
-        "clay",
-        "perplexity",
-        "make",
-        "zapier",
         "n8n",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "clay",
+        "make",
+        "perplexity",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -1930,13 +2272,13 @@
       "name": "AI Newsletter Automation",
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "toolIds": [
-        "perplexity",
-        "make",
-        "zapier",
         "n8n",
-        "grammarly",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "grammarly",
+        "make",
+        "perplexity",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -1999,11 +2341,11 @@
       "name": "Codebase Migration",
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "toolIds": [
-        "perplexity",
-        "github-copilot",
-        "cursor",
         "windsurf",
-        "chatgpt"
+        "github-copilot",
+        "chatgpt",
+        "cursor",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -2066,12 +2408,12 @@
       "name": "Content Creation Pipeline",
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "toolIds": [
-        "perplexity",
-        "v0",
-        "midjourney",
         "bolt",
+        "v0",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "midjourney",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -2133,13 +2475,13 @@
       "name": "Deep Research and Knowledge Synthesis",
       "description": "Conduct comprehensive research on any topic by combining AI search, academic databases, document analysis, and report generation. Used by analysts, researchers, and consultants to compress days of research into hours while producing better-cited, more thorough reports.",
       "toolIds": [
-        "gemini",
-        "perplexity",
         "consensus",
-        "notebooklm",
         "elicit",
+        "chatgpt",
+        "notebooklm",
         "claude",
-        "chatgpt"
+        "perplexity",
+        "gemini"
       ],
       "stepEdges": [
         {
@@ -2205,16 +2547,16 @@
       "name": "Faceless YouTube Channel Automation",
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "toolIds": [
+        "elevenlabs",
         "descript",
-        "perplexity",
-        "chatgpt",
-        "kling-ai",
+        "runway",
         "n8n",
-        "zapier",
+        "chatgpt",
         "sora",
         "claude",
-        "runway",
-        "elevenlabs"
+        "kling-ai",
+        "perplexity",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -2290,12 +2632,12 @@
       "name": "Hyper-Personalized Outbound Sales",
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "toolIds": [
+        "n8n",
+        "chatgpt",
+        "claude",
         "clay",
         "make",
-        "zapier",
-        "n8n",
-        "claude",
-        "chatgpt"
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -2354,13 +2696,13 @@
       "name": "Idea to Deployed App",
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "toolIds": [
-        "v0",
         "bolt",
-        "github-copilot",
-        "cursor",
-        "claude",
         "windsurf",
-        "chatgpt"
+        "github-copilot",
+        "v0",
+        "chatgpt",
+        "cursor",
+        "claude"
       ],
       "stepEdges": [
         {
@@ -2440,11 +2782,11 @@
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "toolIds": [
         "descript",
-        "make",
-        "zapier",
         "n8n",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "make",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -2506,9 +2848,9 @@
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "toolIds": [
         "notebooklm",
-        "claude",
+        "chatgpt",
         "perplexity",
-        "chatgpt"
+        "claude"
       ],
       "stepEdges": [
         {
@@ -2573,12 +2915,12 @@
       "name": "SEO Blog Factory",
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "toolIds": [
-        "perplexity",
         "surfer-seo",
-        "grammarly",
         "jasper",
+        "chatgpt",
         "claude",
-        "chatgpt"
+        "grammarly",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -2642,13 +2984,13 @@
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "toolIds": [
         "descript",
-        "make",
-        "n8n",
-        "zapier",
-        "claude",
         "runway",
+        "n8n",
+        "chatgpt",
+        "claude",
         "copy-ai",
-        "chatgpt"
+        "make",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -2712,15 +3054,15 @@
       "name": "Vibe Coding \u2014 Full-Stack App Development",
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "toolIds": [
-        "gemini",
-        "v0",
-        "lovable",
         "bolt",
+        "windsurf",
         "github-copilot",
+        "chatgpt",
+        "v0",
         "cursor",
         "claude",
-        "windsurf",
-        "chatgpt"
+        "lovable",
+        "gemini"
       ],
       "stepEdges": [
         {
@@ -2870,6 +3212,64 @@
       "count": 1
     }
   ],
+  "catCenters": {
+    "coding-assistant": {
+      "x": 0.0,
+      "y": -450.0
+    },
+    "chatbot": {
+      "x": 195.2,
+      "y": -405.4
+    },
+    "image-generation": {
+      "x": 351.8,
+      "y": -280.6
+    },
+    "video-generation": {
+      "x": 438.7,
+      "y": -100.1
+    },
+    "audio-generation": {
+      "x": 438.7,
+      "y": 100.1
+    },
+    "writing-assistant": {
+      "x": 351.8,
+      "y": 280.6
+    },
+    "automation": {
+      "x": 195.2,
+      "y": 405.4
+    },
+    "productivity": {
+      "x": 0.0,
+      "y": 450.0
+    },
+    "research": {
+      "x": -195.2,
+      "y": 405.4
+    },
+    "agent-framework": {
+      "x": -351.8,
+      "y": 280.6
+    },
+    "search": {
+      "x": -438.7,
+      "y": 100.1
+    },
+    "seo": {
+      "x": -438.7,
+      "y": -100.1
+    },
+    "sales": {
+      "x": -351.8,
+      "y": -280.6
+    },
+    "video-editing": {
+      "x": -195.2,
+      "y": -405.4
+    }
+  },
   "stats": {
     "toolCount": 37,
     "workflowCount": 18,
