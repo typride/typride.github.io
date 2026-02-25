@@ -1877,13 +1877,13 @@
       "name": "Academic Writing Workflow",
       "description": "Accelerate academic writing while maintaining rigor and originality. Uses AI to assist with literature review, evidence synthesis, outlining, and drafting, while keeping the human researcher in control of intellectual content. Can reduce literature review time by 50% and overall writing time by 30-40 hours per paper.",
       "toolIds": [
-        "consensus",
-        "elicit",
-        "notebooklm",
-        "chatgpt",
-        "claude",
         "grammarly",
-        "perplexity"
+        "claude",
+        "elicit",
+        "perplexity",
+        "consensus",
+        "notebooklm",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -1912,7 +1912,9 @@
           "alternatives": [
             "perplexity"
           ],
-          "description": "Find the most relevant papers for your research question. Extract key findings and create a structured summary of the existing literature."
+          "description": "Find the most relevant papers for your research question. Extract key findings and create a structured summary of the existing literature.",
+          "input": "A research question or hypothesis",
+          "output": "Structured summary of relevant papers and key findings"
         },
         {
           "name": "Evidence synthesis",
@@ -1920,7 +1922,9 @@
             "consensus"
           ],
           "alternatives": [],
-          "description": "Find the scientific consensus on key claims in your paper. Identify where there is strong agreement and where open research questions remain."
+          "description": "Find the scientific consensus on key claims in your paper. Identify where there is strong agreement and where open research questions remain.",
+          "input": "Key claims and questions from literature review",
+          "output": "Consensus view with supporting and conflicting evidence"
         },
         {
           "name": "Deep source analysis",
@@ -1930,7 +1934,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Upload key sources and ask detailed questions to identify connections between papers, find contradictions, and map how sources support your thesis."
+          "description": "Upload key sources and ask detailed questions to identify connections between papers, find contradictions, and map how sources support your thesis.",
+          "input": "Key source documents (PDFs, papers)",
+          "output": "Cross-source analysis with connections and contradictions"
         },
         {
           "name": "Drafting and revision",
@@ -1940,7 +1946,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Draft sections of the paper with AI assistance, improve the clarity of arguments, and refine transitions between sections. Always review and revise AI-generated content critically."
+          "description": "Draft sections of the paper with AI assistance, improve the clarity of arguments, and refine transitions between sections. Always review and revise AI-generated content critically.",
+          "input": "Research synthesis and outline",
+          "output": "Complete paper draft"
         },
         {
           "name": "Final editing and plagiarism check",
@@ -1948,7 +1956,9 @@
             "grammarly"
           ],
           "alternatives": [],
-          "description": "Correct grammar, improve clarity, and run the plagiarism checker to ensure originality."
+          "description": "Correct grammar, improve clarity, and run the plagiarism checker to ensure originality.",
+          "input": "Paper draft",
+          "output": "Publication-ready paper"
         }
       ]
     },
@@ -1957,12 +1967,12 @@
       "name": "AI-Powered Business Intelligence and Reporting",
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "toolIds": [
-        "n8n",
-        "chatgpt",
-        "claude",
+        "zapier",
         "make",
+        "claude",
+        "n8n",
         "gemini",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -1988,7 +1998,9 @@
             "zapier",
             "make"
           ],
-          "description": "Automatically pull data from CRM, analytics, and financial systems on a scheduled basis, aggregating it into a structured format for analysis."
+          "description": "Automatically pull data from CRM, analytics, and financial systems on a scheduled basis, aggregating it into a structured format for analysis.",
+          "input": "CRM, analytics, and financial data sources",
+          "output": "Aggregated structured data"
         },
         {
           "name": "AI-powered analysis",
@@ -1999,7 +2011,9 @@
             "chatgpt",
             "claude"
           ],
-          "description": "Feed the aggregated data to a multimodal LLM to identify trends, anomalies, and key insights. Compare performance against targets and previous periods."
+          "description": "Feed the aggregated data to a multimodal LLM to identify trends, anomalies, and key insights. Compare performance against targets and previous periods.",
+          "input": "Aggregated business data",
+          "output": "Trend analysis with anomalies and key insights"
         },
         {
           "name": "Report generation",
@@ -2009,7 +2023,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Transform the analysis into a well-written executive report with clear narrative, key takeaways, and recommended actions."
+          "description": "Transform the analysis into a well-written executive report with clear narrative, key takeaways, and recommended actions.",
+          "input": "Analysis and insights",
+          "output": "Executive report with narrative and recommendations"
         },
         {
           "name": "Automated distribution",
@@ -2019,7 +2035,9 @@
           "alternatives": [
             "zapier"
           ],
-          "description": "Automatically send the completed report to relevant stakeholders via email or Slack."
+          "description": "Automatically send the completed report to relevant stakeholders via email or Slack.",
+          "input": "Completed report",
+          "output": "Report delivered to stakeholders"
         }
       ]
     },
@@ -2029,10 +2047,10 @@
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "toolIds": [
         "windsurf",
-        "github-copilot",
-        "chatgpt",
+        "claude",
         "cursor",
-        "claude"
+        "chatgpt",
+        "github-copilot"
       ],
       "stepEdges": [
         {
@@ -2053,7 +2071,9 @@
           "alternatives": [
             "cursor"
           ],
-          "description": "GitHub Copilot's code review feature analyzes pull requests, identifying potential bugs, security issues, and style violations. It leaves inline comments with fix suggestions."
+          "description": "GitHub Copilot's code review feature analyzes pull requests, identifying potential bugs, security issues, and style violations. It leaves inline comments with fix suggestions.",
+          "input": "Pull request with code changes",
+          "output": "Review comments with bug reports and suggestions"
         },
         {
           "name": "Documentation generation",
@@ -2063,7 +2083,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Feed functions and modules to an LLM to generate comprehensive docstrings, README sections, and API documentation that explains the why, not just the what."
+          "description": "Feed functions and modules to an LLM to generate comprehensive docstrings, README sections, and API documentation that explains the why, not just the what.",
+          "input": "Source code files and modules",
+          "output": "Docstrings, README sections, and API docs"
         },
         {
           "name": "Test generation",
@@ -2074,7 +2096,9 @@
             "windsurf",
             "github-copilot"
           ],
-          "description": "Use an AI editor to generate unit and integration tests. Describe the expected behavior and the AI writes comprehensive test suites covering edge cases."
+          "description": "Use an AI editor to generate unit and integration tests. Describe the expected behavior and the AI writes comprehensive test suites covering edge cases.",
+          "input": "Source code with documentation",
+          "output": "Unit and integration test suites"
         }
       ]
     },
@@ -2083,10 +2107,10 @@
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "toolIds": [
+        "midjourney",
+        "claude",
         "stable-diffusion",
         "chatgpt",
-        "claude",
-        "midjourney",
         "dalle-3"
       ],
       "stepEdges": [
@@ -2112,7 +2136,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Describe the visual concept and generate 5 detailed image generation prompts optimized for the target tool (Midjourney, DALL-E, or Stable Diffusion)."
+          "description": "Describe the visual concept and generate 5 detailed image generation prompts optimized for the target tool (Midjourney, DALL-E, or Stable Diffusion).",
+          "input": "Creative brief or visual concept description",
+          "output": "5 optimized image generation prompts"
         },
         {
           "name": "Artistic image generation",
@@ -2120,7 +2146,9 @@
             "midjourney"
           ],
           "alternatives": [],
-          "description": "Generate initial concepts using Midjourney for the highest artistic quality. Use variation and upscale commands to iterate and refine the best results."
+          "description": "Generate initial concepts using Midjourney for the highest artistic quality. Use variation and upscale commands to iterate and refine the best results.",
+          "input": "Optimized prompts",
+          "output": "High-quality artistic image concepts"
         },
         {
           "name": "Precise iterations with text",
@@ -2130,7 +2158,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "For images requiring precise text or specific compositional elements, use DALL-E 3 via ChatGPT for more controllable output."
+          "description": "For images requiring precise text or specific compositional elements, use DALL-E 3 via ChatGPT for more controllable output.",
+          "input": "Refined prompts needing text accuracy",
+          "output": "Images with accurate text and precise composition"
         },
         {
           "name": "Custom brand fine-tuning",
@@ -2138,7 +2168,9 @@
             "stable-diffusion"
           ],
           "alternatives": [],
-          "description": "For brand-specific or highly customized outputs, use Stable Diffusion with a fine-tuned LoRA model trained on brand assets."
+          "description": "For brand-specific or highly customized outputs, use Stable Diffusion with a fine-tuned LoRA model trained on brand assets.",
+          "input": "Brand assets and style references",
+          "output": "Brand-consistent, customized visual assets"
         }
       ]
     },
@@ -2147,11 +2179,11 @@
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "toolIds": [
-        "n8n",
-        "chatgpt",
+        "zapier",
         "claude",
         "make",
-        "zapier"
+        "n8n",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2173,7 +2205,9 @@
             "zapier",
             "make"
           ],
-          "description": "Incoming support tickets are classified by type, urgency, and sentiment using an LLM. Simple FAQs are routed to the AI agent; complex issues go to humans."
+          "description": "Incoming support tickets are classified by type, urgency, and sentiment using an LLM. Simple FAQs are routed to the AI agent; complex issues go to humans.",
+          "input": "Incoming support ticket",
+          "output": "Classified and routed ticket"
         },
         {
           "name": "AI agent response",
@@ -2183,7 +2217,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "A custom GPT trained on product documentation, FAQs, and previous support tickets generates a response. It can access order history and account data via function calling."
+          "description": "A custom GPT trained on product documentation, FAQs, and previous support tickets generates a response. It can access order history and account data via function calling.",
+          "input": "Classified ticket with customer context",
+          "output": "Draft response to customer"
         },
         {
           "name": "Human escalation",
@@ -2194,7 +2230,9 @@
             "n8n",
             "make"
           ],
-          "description": "If the AI agent cannot resolve the issue or detects high customer frustration, the ticket is automatically escalated to a human agent with a full context summary."
+          "description": "If the AI agent cannot resolve the issue or detects high customer frustration, the ticket is automatically escalated to a human agent with a full context summary.",
+          "input": "Unresolved ticket with AI context",
+          "output": "Escalated ticket with full conversation summary for human agent"
         }
       ]
     },
@@ -2203,13 +2241,13 @@
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "toolIds": [
-        "n8n",
-        "chatgpt",
-        "claude",
         "clay",
+        "zapier",
         "make",
+        "claude",
+        "n8n",
         "perplexity",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2235,7 +2273,9 @@
             "zapier",
             "make"
           ],
-          "description": "Monitor a CRM or lead capture form for new leads and trigger the enrichment pipeline automatically."
+          "description": "Monitor a CRM or lead capture form for new leads and trigger the enrichment pipeline automatically.",
+          "input": "New lead from CRM or capture form",
+          "output": "Triggered enrichment workflow"
         },
         {
           "name": "Data enrichment",
@@ -2243,7 +2283,9 @@
             "clay"
           ],
           "alternatives": [],
-          "description": "Automatically enrich the lead with company data, contact information, LinkedIn profile, recent news, and technology stack from 50+ data sources."
+          "description": "Automatically enrich the lead with company data, contact information, LinkedIn profile, recent news, and technology stack from 50+ data sources.",
+          "input": "Basic lead information (name, company)",
+          "output": "Fully enriched lead profile with 50+ data points"
         },
         {
           "name": "Contextual research",
@@ -2253,7 +2295,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Research recent news and developments about the prospect's company, identifying potential pain points and relevant triggers for outreach."
+          "description": "Research recent news and developments about the prospect's company, identifying potential pain points and relevant triggers for outreach.",
+          "input": "Company name and industry",
+          "output": "Recent developments, pain points, and outreach triggers"
         },
         {
           "name": "Personalization brief",
@@ -2263,7 +2307,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Synthesize the enrichment data and research into a concise brief for the sales rep, including suggested talking points and a personalized first line."
+          "description": "Synthesize the enrichment data and research into a concise brief for the sales rep, including suggested talking points and a personalized first line.",
+          "input": "Enriched data and contextual research",
+          "output": "Sales brief with talking points and personalized messaging"
         }
       ]
     },
@@ -2272,13 +2318,13 @@
       "name": "AI Newsletter Automation",
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "toolIds": [
-        "n8n",
-        "chatgpt",
-        "claude",
         "grammarly",
+        "zapier",
         "make",
+        "claude",
+        "n8n",
         "perplexity",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2304,7 +2350,9 @@
             "zapier",
             "make"
           ],
-          "description": "A scheduled workflow monitors configured RSS feeds, Reddit subreddits, and news APIs for relevant articles and discussions. It scores and filters items by relevance and engagement."
+          "description": "A scheduled workflow monitors configured RSS feeds, Reddit subreddits, and news APIs for relevant articles and discussions. It scores and filters items by relevance and engagement.",
+          "input": "Configured RSS feeds, Reddit subreddits, and news sources",
+          "output": "Curated list of top articles and discussions"
         },
         {
           "name": "Research and summarization",
@@ -2314,7 +2362,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "For each curated item, gather additional context, find related sources, and generate a concise summary with citations."
+          "description": "For each curated item, gather additional context, find related sources, and generate a concise summary with citations.",
+          "input": "Curated articles and topics",
+          "output": "Summarized items with context and citations"
         },
         {
           "name": "Newsletter drafting",
@@ -2324,7 +2374,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Assemble the curated items into a coherent newsletter draft, writing introductions, transitions, and a personal editorial note in the creator's voice."
+          "description": "Assemble the curated items into a coherent newsletter draft, writing introductions, transitions, and a personal editorial note in the creator's voice.",
+          "input": "Summarized items",
+          "output": "Complete newsletter draft"
         },
         {
           "name": "Human review and send",
@@ -2332,7 +2384,9 @@
             "grammarly"
           ],
           "alternatives": [],
-          "description": "The editor reviews the draft, makes final edits for tone and accuracy, and approves for sending via email platform."
+          "description": "The editor reviews the draft, makes final edits for tone and accuracy, and approves for sending via email platform.",
+          "input": "Newsletter draft",
+          "output": "Published newsletter"
         }
       ]
     },
@@ -2342,10 +2396,10 @@
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "toolIds": [
         "windsurf",
-        "github-copilot",
-        "chatgpt",
+        "perplexity",
         "cursor",
-        "perplexity"
+        "chatgpt",
+        "github-copilot"
       ],
       "stepEdges": [
         {
@@ -2370,7 +2424,9 @@
           "alternatives": [
             "windsurf"
           ],
-          "description": "Use an AI editor's chat to explore the codebase, understand dependencies, and map out what needs to change"
+          "description": "Use an AI editor's chat to explore the codebase, understand dependencies, and map out what needs to change",
+          "input": "Existing codebase + migration goal",
+          "output": "Migration plan with affected files and dependencies"
         },
         {
           "name": "Research the target",
@@ -2380,7 +2436,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Search for migration guides, breaking changes, and best practices for the target framework or version"
+          "description": "Search for migration guides, breaking changes, and best practices for the target framework or version",
+          "input": "Migration goal (e.g., 'React 17 to React 19')",
+          "output": "Migration guide, known issues, and patterns"
         },
         {
           "name": "Execute bulk changes",
@@ -2390,7 +2448,9 @@
           "alternatives": [
             "windsurf"
           ],
-          "description": "Use agentic multi-file editing to apply the migration across the codebase -- renaming, API changes, pattern updates"
+          "description": "Use agentic multi-file editing to apply the migration across the codebase -- renaming, API changes, pattern updates",
+          "input": "Migration plan + codebase",
+          "output": "Migrated codebase"
         },
         {
           "name": "Verify and fix",
@@ -2399,7 +2459,9 @@
             "github-copilot"
           ],
           "alternatives": [],
-          "description": "Run tests, fix failures with AI assistance, and use code review to catch anything missed"
+          "description": "Run tests, fix failures with AI assistance, and use code review to catch anything missed",
+          "input": "Migrated codebase + test results",
+          "output": "Verified, passing codebase"
         }
       ]
     },
@@ -2408,12 +2470,12 @@
       "name": "Content Creation Pipeline",
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "toolIds": [
-        "bolt",
-        "v0",
-        "chatgpt",
-        "claude",
         "midjourney",
-        "perplexity"
+        "claude",
+        "v0",
+        "perplexity",
+        "bolt",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2438,7 +2500,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Gather current information, statistics, and angles for the content piece"
+          "description": "Gather current information, statistics, and angles for the content piece",
+          "input": "Content topic or brief",
+          "output": "Research notes with sources and key angles"
         },
         {
           "name": "Write the draft",
@@ -2448,7 +2512,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Generate the first draft using a conversational AI, iterating on structure, tone, and messaging"
+          "description": "Generate the first draft using a conversational AI, iterating on structure, tone, and messaging",
+          "input": "Research notes + content brief",
+          "output": "First draft of the content"
         },
         {
           "name": "Create visual assets",
@@ -2456,7 +2522,9 @@
             "midjourney"
           ],
           "alternatives": [],
-          "description": "Generate hero images, illustrations, or social media graphics to accompany the content"
+          "description": "Generate hero images, illustrations, or social media graphics to accompany the content",
+          "input": "Content theme and visual direction",
+          "output": "Images and graphics"
         },
         {
           "name": "Build the page",
@@ -2466,7 +2534,9 @@
           "alternatives": [
             "bolt"
           ],
-          "description": "If the content needs a web presence, generate a landing page or blog layout"
+          "description": "If the content needs a web presence, generate a landing page or blog layout",
+          "input": "Final content + imagery",
+          "output": "Deployed content page"
         }
       ]
     },
@@ -2475,13 +2545,13 @@
       "name": "Deep Research and Knowledge Synthesis",
       "description": "Conduct comprehensive research on any topic by combining AI search, academic databases, document analysis, and report generation. Used by analysts, researchers, and consultants to compress days of research into hours while producing better-cited, more thorough reports.",
       "toolIds": [
-        "consensus",
-        "elicit",
-        "chatgpt",
-        "notebooklm",
         "claude",
+        "elicit",
+        "gemini",
         "perplexity",
-        "gemini"
+        "consensus",
+        "notebooklm",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2507,7 +2577,9 @@
             "chatgpt",
             "gemini"
           ],
-          "description": "Use Perplexity Pro Search to get an initial overview of the topic, identify key subtopics, and find the most authoritative sources. Save cited sources for deeper reading."
+          "description": "Use Perplexity Pro Search to get an initial overview of the topic, identify key subtopics, and find the most authoritative sources. Save cited sources for deeper reading.",
+          "input": "A research question or topic",
+          "output": "Topic overview with key subtopics and source list"
         },
         {
           "name": "Academic literature review",
@@ -2517,7 +2589,9 @@
           "alternatives": [
             "consensus"
           ],
-          "description": "For topics requiring scientific evidence, search academic databases for relevant papers. Extract key findings, methodologies, and conclusions from the most relevant studies."
+          "description": "For topics requiring scientific evidence, search academic databases for relevant papers. Extract key findings, methodologies, and conclusions from the most relevant studies.",
+          "input": "Key subtopics and research questions",
+          "output": "Structured summary of relevant papers and findings"
         },
         {
           "name": "Deep document analysis",
@@ -2527,7 +2601,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Upload the most important papers, reports, and articles to NotebookLM. Ask detailed questions to extract specific information and generate an Audio Overview for high-level synthesis."
+          "description": "Upload the most important papers, reports, and articles to NotebookLM. Ask detailed questions to extract specific information and generate an Audio Overview for high-level synthesis.",
+          "input": "Papers, reports, and articles from prior steps",
+          "output": "Detailed Q&A extracts and audio synthesis"
         },
         {
           "name": "Report generation",
@@ -2538,7 +2614,9 @@
             "claude",
             "chatgpt"
           ],
-          "description": "Use Gemini's Deep Research mode or Claude to generate a comprehensive, well-structured report drawing on all research gathered in previous steps."
+          "description": "Use Gemini's Deep Research mode or Claude to generate a comprehensive, well-structured report drawing on all research gathered in previous steps.",
+          "input": "All research notes and extracted findings",
+          "output": "Comprehensive, well-cited research report"
         }
       ]
     },
@@ -2547,16 +2625,16 @@
       "name": "Faceless YouTube Channel Automation",
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "toolIds": [
-        "elevenlabs",
-        "descript",
-        "runway",
-        "n8n",
-        "chatgpt",
         "sora",
-        "claude",
         "kling-ai",
+        "claude",
+        "runway",
+        "elevenlabs",
+        "n8n",
+        "zapier",
         "perplexity",
-        "zapier"
+        "chatgpt",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -2586,7 +2664,9 @@
             "claude",
             "perplexity"
           ],
-          "description": "Identify trending topics in your niche, research the subject thoroughly, and write a complete video script with a compelling hook, structured content, and a call to action."
+          "description": "Identify trending topics in your niche, research the subject thoroughly, and write a complete video script with a compelling hook, structured content, and a call to action.",
+          "input": "Niche and content strategy",
+          "output": "Complete video script with hook, content, and CTA"
         },
         {
           "name": "AI voiceover generation",
@@ -2594,7 +2674,9 @@
             "elevenlabs"
           ],
           "alternatives": [],
-          "description": "Generate a natural-sounding voiceover from the script. Choose a voice that matches the channel's brand and adjust pacing and emphasis."
+          "description": "Generate a natural-sounding voiceover from the script. Choose a voice that matches the channel's brand and adjust pacing and emphasis.",
+          "input": "Video script",
+          "output": "Natural AI voiceover audio file"
         },
         {
           "name": "Visual content generation",
@@ -2605,7 +2687,9 @@
             "sora",
             "kling-ai"
           ],
-          "description": "Generate B-roll footage and visual content using AI text-to-video and image-to-video tools. Supplement with stock footage as needed."
+          "description": "Generate B-roll footage and visual content using AI text-to-video and image-to-video tools. Supplement with stock footage as needed.",
+          "input": "Script scenes and visual descriptions",
+          "output": "B-roll video clips and visual assets"
         },
         {
           "name": "Video assembly and editing",
@@ -2613,7 +2697,9 @@
             "descript"
           ],
           "alternatives": [],
-          "description": "Assemble the voiceover, visuals, and music. Add captions, transitions, and branding elements. Export the final video."
+          "description": "Assemble the voiceover, visuals, and music. Add captions, transitions, and branding elements. Export the final video.",
+          "input": "Voiceover, visuals, and music",
+          "output": "Complete edited video ready for upload"
         },
         {
           "name": "Automated publishing",
@@ -2623,7 +2709,9 @@
           "alternatives": [
             "zapier"
           ],
-          "description": "Automatically upload the finished video to YouTube with an AI-generated title, description, and tags optimized for search."
+          "description": "Automatically upload the finished video to YouTube with an AI-generated title, description, and tags optimized for search.",
+          "input": "Finished video and metadata",
+          "output": "Published YouTube video"
         }
       ]
     },
@@ -2632,12 +2720,12 @@
       "name": "Hyper-Personalized Outbound Sales",
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "toolIds": [
-        "n8n",
-        "chatgpt",
-        "claude",
         "clay",
+        "zapier",
+        "claude",
         "make",
-        "zapier"
+        "n8n",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -2658,7 +2746,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Work with an LLM to define a precise ICP based on best existing customers. Identify firmographic, technographic, and behavioral signals that indicate a high-value prospect."
+          "description": "Work with an LLM to define a precise ICP based on best existing customers. Identify firmographic, technographic, and behavioral signals that indicate a high-value prospect.",
+          "input": "Customer data and sales history",
+          "output": "Detailed ICP with qualifying signals"
         },
         {
           "name": "Lead list building and enrichment",
@@ -2666,7 +2756,9 @@
             "clay"
           ],
           "alternatives": [],
-          "description": "Build a targeted lead list using the ICP criteria. Enrich each lead with data from 50+ sources, including LinkedIn activity, recent news, job postings, and technology stack."
+          "description": "Build a targeted lead list using the ICP criteria. Enrich each lead with data from 50+ sources, including LinkedIn activity, recent news, job postings, and technology stack.",
+          "input": "ICP criteria",
+          "output": "Enriched lead list with 50+ data points per prospect"
         },
         {
           "name": "AI-powered personalization",
@@ -2676,7 +2768,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Use an AI agent to research each prospect and write a personalized first line for each outreach email, referencing specific information about the prospect's company or role."
+          "description": "Use an AI agent to research each prospect and write a personalized first line for each outreach email, referencing specific information about the prospect's company or role.",
+          "input": "Enriched lead data",
+          "output": "Personalized outreach messaging for each prospect"
         },
         {
           "name": "Automated outreach sequencing",
@@ -2687,7 +2781,9 @@
             "zapier",
             "make"
           ],
-          "description": "Push the enriched and personalized leads to an outreach tool, triggering a multi-step email and LinkedIn sequence."
+          "description": "Push the enriched and personalized leads to an outreach tool, triggering a multi-step email and LinkedIn sequence.",
+          "input": "Personalized leads and messaging",
+          "output": "Active multi-channel outreach sequences"
         }
       ]
     },
@@ -2696,13 +2792,13 @@
       "name": "Idea to Deployed App",
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "toolIds": [
-        "bolt",
         "windsurf",
-        "github-copilot",
+        "claude",
         "v0",
-        "chatgpt",
         "cursor",
-        "claude"
+        "bolt",
+        "chatgpt",
+        "github-copilot"
       ],
       "stepEdges": [
         {
@@ -2731,7 +2827,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Describe the application to a chatbot and iterate on requirements, user stories, and technical architecture"
+          "description": "Describe the application to a chatbot and iterate on requirements, user stories, and technical architecture",
+          "input": "A product idea or problem statement",
+          "output": "Requirements doc, user stories, tech stack decision"
         },
         {
           "name": "Generate UI prototype",
@@ -2741,7 +2839,9 @@
           "alternatives": [
             "bolt"
           ],
-          "description": "Use an AI UI generator to quickly create the visual design and component structure"
+          "description": "Use an AI UI generator to quickly create the visual design and component structure",
+          "input": "Requirements and UI descriptions",
+          "output": "React components, page layouts, design system"
         },
         {
           "name": "Scaffold the full stack",
@@ -2751,7 +2851,9 @@
           "alternatives": [
             "v0"
           ],
-          "description": "If the app needs a backend, use a full-stack generator to create API routes, database schema, and auth"
+          "description": "If the app needs a backend, use a full-stack generator to create API routes, database schema, and auth",
+          "input": "UI prototype + backend requirements",
+          "output": "Full-stack application with frontend, API, and database"
         },
         {
           "name": "Iterate and refine",
@@ -2762,7 +2864,9 @@
             "windsurf",
             "github-copilot"
           ],
-          "description": "Bring the generated code into an AI-native editor for real development -- refactoring, bug fixes, feature additions, tests"
+          "description": "Bring the generated code into an AI-native editor for real development -- refactoring, bug fixes, feature additions, tests",
+          "input": "Generated application code",
+          "output": "Production-quality codebase with tests"
         },
         {
           "name": "AI code review",
@@ -2772,7 +2876,9 @@
           "alternatives": [
             "cursor"
           ],
-          "description": "Use AI to review the final code for bugs, security issues, and best practices before shipping"
+          "description": "Use AI to review the final code for bugs, security issues, and best practices before shipping",
+          "input": "Pull request with changes",
+          "output": "Reviewed, approved code"
         }
       ]
     },
@@ -2781,12 +2887,12 @@
       "name": "Podcast Production and Content Repurposing",
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "toolIds": [
-        "descript",
-        "n8n",
-        "chatgpt",
+        "zapier",
         "claude",
         "make",
-        "zapier"
+        "n8n",
+        "chatgpt",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -2809,7 +2915,9 @@
             "descript"
           ],
           "alternatives": [],
-          "description": "Record the podcast and use AI to automatically remove filler words, silences, and background noise. Edit the transcript to make cuts and rearrange segments."
+          "description": "Record the podcast and use AI to automatically remove filler words, silences, and background noise. Edit the transcript to make cuts and rearrange segments.",
+          "input": "Raw podcast recording",
+          "output": "Cleaned, edited podcast episode"
         },
         {
           "name": "Show notes and content generation",
@@ -2819,7 +2927,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Feed the cleaned transcript to generate show notes, chapter breakdown with timestamps, a blog post summary, and key quotes."
+          "description": "Feed the cleaned transcript to generate show notes, chapter breakdown with timestamps, a blog post summary, and key quotes.",
+          "input": "Episode transcript",
+          "output": "Show notes, blog post, chapter breakdown, and quotes"
         },
         {
           "name": "Social media clip creation",
@@ -2827,7 +2937,9 @@
             "descript"
           ],
           "alternatives": [],
-          "description": "Identify the 5 most engaging clips and export them with animated captions for Instagram Reels, TikTok, and YouTube Shorts."
+          "description": "Identify the 5 most engaging clips and export them with animated captions for Instagram Reels, TikTok, and YouTube Shorts.",
+          "input": "Full episode video/audio",
+          "output": "5+ captioned short-form clips"
         },
         {
           "name": "Multi-platform distribution",
@@ -2838,7 +2950,9 @@
             "zapier",
             "make"
           ],
-          "description": "Publish the episode to all podcast platforms, schedule the social media clips, and send the newsletter with show notes."
+          "description": "Publish the episode to all podcast platforms, schedule the social media clips, and send the newsletter with show notes.",
+          "input": "Episode, clips, and show notes",
+          "output": "Published across podcast platforms, social media, and email"
         }
       ]
     },
@@ -2847,10 +2961,10 @@
       "name": "Research to Report",
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "toolIds": [
-        "notebooklm",
+        "claude",
         "chatgpt",
-        "perplexity",
-        "claude"
+        "notebooklm",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -2879,7 +2993,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Search the web for relevant, current information with citations"
+          "description": "Search the web for relevant, current information with citations",
+          "input": "A research question or topic",
+          "output": "Curated sources with summaries and links"
         },
         {
           "name": "Analyze and synthesize",
@@ -2889,7 +3005,9 @@
           "alternatives": [
             "chatgpt"
           ],
-          "description": "Feed the sources into a long-context model for deep analysis, comparison, and synthesis across sources"
+          "description": "Feed the sources into a long-context model for deep analysis, comparison, and synthesis across sources",
+          "input": "Sources and summaries from search",
+          "output": "Structured analysis with key findings and themes"
         },
         {
           "name": "Verify with source documents",
@@ -2897,7 +3015,9 @@
             "notebooklm"
           ],
           "alternatives": [],
-          "description": "Upload original PDFs or documents to a grounded tool to fact-check the analysis against primary sources"
+          "description": "Upload original PDFs or documents to a grounded tool to fact-check the analysis against primary sources",
+          "input": "Original source documents + draft analysis",
+          "output": "Verified findings with source citations"
         },
         {
           "name": "Draft the report",
@@ -2906,7 +3026,9 @@
             "chatgpt"
           ],
           "alternatives": [],
-          "description": "Use a conversational AI to write the final report, iterating on structure, tone, and completeness"
+          "description": "Use a conversational AI to write the final report, iterating on structure, tone, and completeness",
+          "input": "Verified analysis and findings",
+          "output": "Polished report document"
         }
       ]
     },
@@ -2916,11 +3038,11 @@
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "toolIds": [
         "surfer-seo",
-        "jasper",
-        "chatgpt",
-        "claude",
         "grammarly",
-        "perplexity"
+        "claude",
+        "perplexity",
+        "chatgpt",
+        "jasper"
       ],
       "stepEdges": [
         {
@@ -2945,7 +3067,9 @@
           "alternatives": [
             "perplexity"
           ],
-          "description": "Identify target keywords with high search volume and low competition. Analyze the top 10 ranking pages to understand content structure, word count, and semantic terms required to rank."
+          "description": "Identify target keywords with high search volume and low competition. Analyze the top 10 ranking pages to understand content structure, word count, and semantic terms required to rank.",
+          "input": "A topic or niche to target",
+          "output": "Content brief with target keywords, structure, and semantic terms"
         },
         {
           "name": "AI-assisted drafting",
@@ -2956,7 +3080,9 @@
             "claude",
             "jasper"
           ],
-          "description": "Generate a structured outline and first draft based on the SEO content brief. Include required semantic keywords, headings, and internal linking suggestions."
+          "description": "Generate a structured outline and first draft based on the SEO content brief. Include required semantic keywords, headings, and internal linking suggestions.",
+          "input": "Content brief from keyword research",
+          "output": "Complete first draft with SEO-optimized structure"
         },
         {
           "name": "Real-time content optimization",
@@ -2964,7 +3090,9 @@
             "surfer-seo"
           ],
           "alternatives": [],
-          "description": "Paste the draft into the Content Editor and optimize in real-time until the content score reaches the target threshold."
+          "description": "Paste the draft into the Content Editor and optimize in real-time until the content score reaches the target threshold.",
+          "input": "First draft",
+          "output": "SEO-optimized article hitting target content score"
         },
         {
           "name": "Editing and polish",
@@ -2974,7 +3102,9 @@
           "alternatives": [
             "claude"
           ],
-          "description": "Run the final draft through a grammar and style checker to correct errors, improve clarity, and ensure the tone matches the brand voice."
+          "description": "Run the final draft through a grammar and style checker to correct errors, improve clarity, and ensure the tone matches the brand voice.",
+          "input": "SEO-optimized draft",
+          "output": "Publish-ready blog post"
         }
       ]
     },
@@ -2983,14 +3113,14 @@
       "name": "Social Media Content Engine",
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "toolIds": [
-        "descript",
+        "zapier",
+        "claude",
         "runway",
         "n8n",
-        "chatgpt",
-        "claude",
-        "copy-ai",
         "make",
-        "zapier"
+        "chatgpt",
+        "copy-ai",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -3013,7 +3143,9 @@
             "descript"
           ],
           "alternatives": [],
-          "description": "Upload the source video or podcast. Descript automatically transcribes the content and identifies the most engaging segments."
+          "description": "Upload the source video or podcast. Descript automatically transcribes the content and identifies the most engaging segments.",
+          "input": "Long-form video or audio recording",
+          "output": "Full transcript with highlighted key segments"
         },
         {
           "name": "Platform-specific content generation",
@@ -3024,7 +3156,9 @@
             "claude",
             "copy-ai"
           ],
-          "description": "Feed the transcript to an LLM to generate platform-specific content -- LinkedIn posts (professional), Twitter/X threads (punchy), Instagram captions (visual, emotional), and TikTok hooks."
+          "description": "Feed the transcript to an LLM to generate platform-specific content -- LinkedIn posts (professional), Twitter/X threads (punchy), Instagram captions (visual, emotional), and TikTok hooks.",
+          "input": "Transcript and key segments",
+          "output": "Platform-specific content for 5+ social platforms"
         },
         {
           "name": "Short-form video clips",
@@ -3034,7 +3168,9 @@
           "alternatives": [
             "runway"
           ],
-          "description": "Use AI to identify and export the 5 most engaging 30-60 second clips with auto-generated captions and branding."
+          "description": "Use AI to identify and export the 5 most engaging 30-60 second clips with auto-generated captions and branding.",
+          "input": "Original video recording",
+          "output": "5+ short-form clips ready for Reels, TikTok, and Shorts"
         },
         {
           "name": "Automated scheduling and publishing",
@@ -3045,7 +3181,9 @@
             "zapier",
             "make"
           ],
-          "description": "Automatically schedule and publish the generated content across all platforms at optimal posting times."
+          "description": "Automatically schedule and publish the generated content across all platforms at optimal posting times.",
+          "input": "Generated content and clips",
+          "output": "Published content across all social platforms"
         }
       ]
     },
@@ -3054,15 +3192,15 @@
       "name": "Vibe Coding \u2014 Full-Stack App Development",
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "toolIds": [
-        "bolt",
         "windsurf",
-        "github-copilot",
-        "chatgpt",
-        "v0",
-        "cursor",
         "claude",
         "lovable",
-        "gemini"
+        "gemini",
+        "v0",
+        "cursor",
+        "bolt",
+        "chatgpt",
+        "github-copilot"
       ],
       "stepEdges": [
         {
@@ -3088,7 +3226,9 @@
             "chatgpt",
             "gemini"
           ],
-          "description": "Describe the application requirements to an LLM and iterate on a detailed technical specification including tech stack, database schema, API design, and component structure."
+          "description": "Describe the application requirements to an LLM and iterate on a detailed technical specification including tech stack, database schema, API design, and component structure.",
+          "input": "A product idea or problem statement",
+          "output": "Technical spec with architecture, schema, and component breakdown"
         },
         {
           "name": "Scaffold the prototype",
@@ -3099,7 +3239,9 @@
             "bolt",
             "v0"
           ],
-          "description": "Use an AI app builder to generate the initial application from the spec. Non-developers use Lovable for a full working scaffold; experienced devs can jump straight to Cursor."
+          "description": "Use an AI app builder to generate the initial application from the spec. Non-developers use Lovable for a full working scaffold; experienced devs can jump straight to Cursor.",
+          "input": "Technical specification",
+          "output": "Working application scaffold with UI, routes, and database"
         },
         {
           "name": "Feature development",
@@ -3110,7 +3252,9 @@
             "windsurf",
             "github-copilot"
           ],
-          "description": "Bring the scaffold into an AI-native editor and implement features by describing them in natural language. Cursor's Composer writes and edits code across multiple files simultaneously."
+          "description": "Bring the scaffold into an AI-native editor and implement features by describing them in natural language. Cursor's Composer writes and edits code across multiple files simultaneously.",
+          "input": "Application scaffold",
+          "output": "Feature-complete codebase"
         },
         {
           "name": "Code review and debugging",
@@ -3121,7 +3265,9 @@
             "github-copilot",
             "chatgpt"
           ],
-          "description": "Use an LLM for deep code review, explanation, and debugging. Claude Code can run agentic debugging sessions that autonomously identify and fix issues."
+          "description": "Use an LLM for deep code review, explanation, and debugging. Claude Code can run agentic debugging sessions that autonomously identify and fix issues.",
+          "input": "Feature-complete codebase",
+          "output": "Reviewed, debugged, production-quality code"
         }
       ]
     }
