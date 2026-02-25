@@ -181,7 +181,7 @@
       "label": "Akkio",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 9.6,
       "url": "https://www.akkio.com",
       "description": "Akkio is a no-code AI platform that empowers businesses, particularly media agencies, to leverage advanced forecasting and data analysis. It simplifies the creation and deployment of AI models, enabling users to automate campaign workflows, gain predictive insights, and make informed decisions without extensive data science expertise. Akkio focuses on transforming fragmented data into actionable intelligence across the entire campaign lifecycle.",
@@ -270,7 +270,7 @@
       "label": "Anthropic API",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 8.4,
       "url": "https://www.anthropic.com/api",
       "description": "The Anthropic API provides programmatic access to Anthropic\\'s family of Claude large language models, including the efficient Haiku and powerful Opus series. It offers developers the ability to integrate advanced conversational AI, reasoning, and content generation capabilities into their applications. Its focus on safety and constitutional AI principles sets it apart in the LLM landscape.",
@@ -398,7 +398,7 @@
       "label": "Beautiful.ai",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 6.0,
       "url": "https://www.beautiful.ai",
       "description": "Beautiful.ai is an AI-powered presentation tool that leverages large language models to streamline the creation of professional slide decks. It offers smart slide templates and AI assistance for content generation, drafting, and text refinement, ensuring design consistency and efficiency.",
@@ -566,7 +566,7 @@
       "label": "Brandwatch",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 7.2,
       "url": "https://www.brandwatch.com",
       "description": "Brandwatch is a leading AI-powered consumer intelligence platform that provides deep insights into online conversations. It enables businesses to monitor brand reputation, analyze sentiment, identify trends, and benchmark against competitors across various digital channels. Its advanced AI capabilities deliver efficient, accurate, and comprehensive insights at speed and scale.",
@@ -652,7 +652,7 @@
       "label": "Canva AI",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 10.8,
       "url": "https://www.canva.com/",
       "description": "Canva AI integrates powerful artificial intelligence capabilities directly into the popular design platform, enabling users to generate images from text, write copy with Magic Write, and enhance their designs effortlessly. It democratizes AI-powered content creation, making advanced tools accessible to a broad audience without requiring specialized technical skills. This integration streamlines the design workflow, allowing for rapid prototyping and iteration of visual and textual content within a single environment.",
@@ -815,7 +815,7 @@
       "label": "Chroma",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 7.2,
       "url": "https://www.trychroma.com",
       "description": "Chroma is an open-source AI-native embedding database designed for large language model (LLM) applications. It simplifies the process of building LLM apps by providing tools for storing, embedding, and searching embeddings, enabling LLMs to have state and memory. Chroma focuses on developer productivity and happiness, offering a lightweight yet powerful solution for managing vector embeddings.",
@@ -984,7 +984,7 @@
       "label": "Cohere",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 9.6,
       "url": "https://cohere.com",
       "description": "Cohere provides a powerful enterprise-grade LLM API, specializing in advanced text understanding and Retrieval Augmented Generation (RAG). It enables businesses to build highly accurate and contextually relevant AI applications by leveraging their proprietary data. Cohere stands out for its focus on enterprise security, data privacy, and customizable models, making it a strong choice for complex business use cases.",
@@ -1321,7 +1321,7 @@
       "label": "Databricks AI",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 8.4,
       "url": "https://www.databricks.com",
       "description": "Databricks AI is a unified data and AI platform that enables organizations to build, deploy, and manage AI solutions at scale. Leveraging its Lakehouse architecture and Mosaic AI capabilities, it provides a comprehensive environment for data engineering, machine learning, and generative AI workloads. The platform simplifies the operationalization of AI, offering tools for data governance, model serving, and vector search.",
@@ -1626,7 +1626,7 @@
       "label": "Evidently AI",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 8.4,
       "url": "https://www.evidentlyai.com",
       "description": "Evidently AI is an open-source Python library for ML model monitoring and evaluation. It helps data scientists and ML engineers track data quality, detect data drift, and monitor model performance in production. It supports various model types, including tabular, NLP, and LLM, making it a versatile tool for ensuring the reliability of AI-powered systems.",
@@ -1750,7 +1750,7 @@
       "label": "Figma AI",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 9.6,
       "url": "https://www.figma.com/ai",
       "description": "Figma AI integrates generative artificial intelligence directly into the design workflow, empowering designers with tools for rapid ideation, automated layout suggestions, and intelligent prototyping. It aims to significantly accelerate the design process by handling repetitive tasks and offering creative starting points, allowing design teams to focus on strategic decisions and refinement. This integration enhances collaboration and streamlines the creation of user interfaces and experiences.",
@@ -1838,7 +1838,7 @@
       "label": "Fireworks AI",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 9.6,
       "url": "https://fireworks.ai",
       "description": "Fireworks AI provides a high-performance inference API for open-source large language models (LLMs) and image models, enabling developers to deploy and scale generative AI applications with exceptional speed and cost-efficiency. It stands out by offering a serverless, usage-based pricing model that significantly reduces operational overhead and provides a compelling alternative to more expensive proprietary solutions, making advanced AI accessible for various enterprise needs.",
@@ -1883,7 +1883,7 @@
       "label": "Framer AI",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 9.6,
       "url": "https://www.framer.com",
       "description": "Framer AI is an innovative AI-powered website builder that enables users to create stunning, responsive websites from simple text prompts. It leverages generative design capabilities to automate layout and styling, significantly accelerating the web design workflow. This tool is particularly unique for its blend of designer-friendly interfaces with advanced AI features, making professional web creation accessible.",
@@ -1924,7 +1924,7 @@
       "label": "Galileo AI",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 6.0,
       "url": "https://www.usegalileo.ai",
       "description": "Galileo AI is an innovative AI-powered tool that generates editable UI designs from simple text prompts. It aims to accelerate the design process by providing high-quality, modern interfaces quickly, often integrating seamlessly with design tools like Figma. This allows designers to rapidly prototype and iterate on ideas, transforming conceptual descriptions into tangible design mockups.",
@@ -1964,7 +1964,7 @@
       "label": "Gamma",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 8.4,
       "url": "https://gamma.app",
       "description": "Gamma is an AI-powered presentation and document builder that allows users to create stunning presentations, websites, and documents with ease. It leverages AI to transform raw ideas into visually appealing and dynamic content, eliminating the need for extensive design or coding experience. Gamma focuses on intelligent, effortless, and visually stunning content creation.",
@@ -2090,7 +2090,7 @@
       "label": "Google AI Studio",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 8.4,
       "url": "https://aistudio.google.com",
       "description": "Google AI Studio is a free, web-based development environment designed for rapid prototyping and building applications with Google's Gemini family of models. It offers a user-friendly interface for experimenting with prompts, fine-tuning models, and deploying AI-powered features. Its strength lies in providing direct, accessible interaction with cutting-edge large language models for developers.",
@@ -2257,7 +2257,7 @@
       "label": "Groq",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 9.6,
       "url": "https://groq.com",
       "description": "Groq is an innovative LLM inference platform leveraging custom Language Processing Unit (LPU) hardware to deliver unparalleled speed and low-latency performance for AI applications. Its purpose-built architecture significantly accelerates LLM inference, addressing critical bottlenecks found in traditional GPU-based systems. This focus on inference optimization makes Groq ideal for real-time AI interactions and high-throughput demands.",
@@ -2341,7 +2341,7 @@
       "label": "Hex",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 9.6,
       "url": "https://hex.tech",
       "description": "Hex is a collaborative data workspace for building and sharing data projects. It combines a reactive notebook environment with native app-building and AI agents in a single platform, enabling data teams to work with or without code to explore data, build models, and share insights as interactive web apps.",
@@ -2422,7 +2422,7 @@
       "label": "Hugging Face",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 10.8,
       "url": "https://huggingface.co",
       "description": "Hugging Face is the leading open-source platform for machine learning, providing a vast hub for pre-trained models, datasets, and interactive ML applications called Spaces. It uniquely fosters a collaborative ecosystem where researchers and developers can share, discover, and deploy state-of-the-art AI. Its focus on democratizing AI through open science makes it indispensable for rapid prototyping and production-grade ML solutions.",
@@ -2635,7 +2635,7 @@
       "label": "Julius AI",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 9.6,
       "url": "https://julius.ai",
       "description": "Julius AI is an AI-powered data analyst that allows users to interpret and visualize data from uploaded files using natural language. It transforms spreadsheets into charts, forecasts, and insights instantly, eliminating the need for coding. This tool is designed to make complex data analysis accessible and efficient for a wide range of users.",
@@ -3086,7 +3086,7 @@
       "label": "Meshy",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 6.0,
       "url": "https://www.meshy.ai",
       "description": "Meshy is an AI-powered platform that generates production-ready 3D models from text prompts and images in seconds. It is designed to streamline the 3D asset creation workflow for artists, game developers, and other creative professionals, offering a significant speed advantage over traditional modeling methods.",
@@ -3207,7 +3207,7 @@
       "label": "Mistral AI",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 9.6,
       "url": "https://mistral.ai",
       "description": "Mistral AI is a prominent European provider of open-weight large language models, offering both powerful API access and self-hostable model versions. Its focus on efficiency and performance makes it a strong contender for developers seeking cost-effective and customizable LLM solutions. The company distinguishes itself by releasing models with permissive licenses, fostering innovation and broader adoption in the AI community.",
@@ -3249,7 +3249,7 @@
       "label": "MLflow",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 9.6,
       "url": "https://mlflow.org",
       "description": "MLflow is an open-source platform designed to manage the end-to-end machine learning lifecycle. It provides tools for tracking experiments, packaging ML code into reproducible runs, deploying models, and managing a central model registry. Its strength lies in its vendor-agnostic approach, allowing seamless integration across various ML frameworks and cloud environments, making it a highly flexible choice for MLOps.",
@@ -3292,7 +3292,7 @@
       "label": "Modal",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 8.4,
       "url": "https://modal.com",
       "description": "Modal is a serverless cloud platform designed for AI and machine learning workloads. It enables developers to run inference, training, and batch processing with sub-second cold starts, instant autoscaling, and a developer experience that feels local. It emphasizes programmable infrastructure, high performance, elastic GPU scaling, and unified observability.",
@@ -3509,7 +3509,7 @@
       "label": "Obviously AI",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 8.4,
       "url": "https://obviously.ai",
       "description": "Obviously AI is a no-code platform that allows business analysts to build and deploy predictive AI models in minutes, without writing any code. It is designed for speed and ease of use, enabling users to go from raw data to actionable insights quickly. The platform automates the machine learning workflow, from data preparation to model building and deployment.",
@@ -3546,7 +3546,7 @@
       "label": "OpenAI API",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 14.4,
       "url": "https://platform.openai.com",
       "description": "The OpenAI API provides programmatic access to OpenAI's cutting-edge AI models, including GPT-4 for advanced language tasks, DALL-E 3 for image generation, and Whisper for speech-to-text transcription. It serves as a foundational platform for developers to integrate powerful AI capabilities into their applications and services. Its comprehensive suite of models makes it a versatile choice for a wide range of AI-driven solutions.",
@@ -3591,7 +3591,7 @@
       "label": "OpenRouter",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 12.0,
       "url": "https://openrouter.ai",
       "description": "OpenRouter is a unified API gateway and marketplace that provides access to over 200 large language models (LLMs) from various providers through a single, OpenAI-compatible API. It acts as an abstraction layer, simplifying LLM integration for developers while offering features like model routing and cost optimization to manage expenses and improve performance.",
@@ -3761,7 +3761,7 @@
       "label": "Pinecone",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 10.8,
       "url": "https://www.pinecone.io/",
       "description": "Pinecone is a fully managed vector database designed for high-performance similarity search and Retrieval-Augmented Generation (RAG) use cases. It allows developers to store, index, and search high-dimensional embeddings at scale, enabling AI applications to be more knowledgeable and performant without managing infrastructure.",
@@ -3846,7 +3846,7 @@
       "label": "Qdrant",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 7.2,
       "url": "https://qdrant.tech",
       "description": "Qdrant is an open-source vector similarity search engine and database. It provides a production-ready service for semantic search, recommendation systems, and other AI-powered applications. Qdrant is designed for high performance and scalability, handling millions of vectors and complex queries with ease.",
@@ -4010,7 +4010,7 @@
       "label": "Relume",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 6.0,
       "url": "https://www.relume.io/",
       "description": "Relume is an AI-powered tool designed to accelerate website design and development by instantly generating sitemaps, wireframes, and style guides for marketing websites. It integrates directly with Webflow and Figma, allowing designers to efficiently translate concepts into functional designs. Its focus on speed and integration makes it a valuable asset for streamlining the initial stages of web project creation.",
@@ -4054,7 +4054,7 @@
       "label": "Replicate",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 8.4,
       "url": "https://replicate.com",
       "description": "Replicate provides a cloud API for running and deploying machine learning models, simplifying access to powerful AI capabilities without complex infrastructure management. It enables developers to run open-source models or deploy custom ones with a single line of code, making it a versatile platform for integrating AI into applications.",
@@ -4188,7 +4188,7 @@
       "label": "Rows AI",
       "category": "data-analysis",
       "categoryName": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "size": 8.4,
       "url": "https://rows.com",
       "description": "Rows AI is an AI-powered spreadsheet that automates data analysis and visualization without requiring code, formulas, or menus. It allows users to import, transform, and surface insights from various data sources, including PDFs, databases, analytics tools, APIs, and bank accounts, by simply asking in plain language. Its unique selling proposition lies in combining the familiar spreadsheet interface with advanced AI capabilities for seamless data handling.",
@@ -4271,7 +4271,7 @@
       "label": "Semgrep",
       "category": "security",
       "categoryName": "Security & Compliance",
-      "color": "#6b7280",
+      "color": "#fbbf24",
       "size": 7.2,
       "url": "https://semgrep.dev",
       "description": "Semgrep is a fast, open-source static analysis tool for finding bugs, enforcing code standards, and securing code. It combines the speed of grep with the semantic understanding of code, making it a powerful tool for developers and security teams to find and fix vulnerabilities early in the development lifecycle.",
@@ -4393,7 +4393,7 @@
       "label": "Smartling",
       "category": "other",
       "categoryName": "Other",
-      "color": "#6b7280",
+      "color": "#94a3b8",
       "size": 6.0,
       "url": "https://www.smartling.com/",
       "description": "Smartling is an AI-powered translation management platform designed for enterprises to streamline global content localization. It leverages large language models (LLMs) and machine translation to deliver high-quality, on-brand translations with automated workflows, improving efficiency and consistency for global growth.",
@@ -4436,7 +4436,7 @@
       "label": "Snyk AI",
       "category": "security",
       "categoryName": "Security & Compliance",
-      "color": "#6b7280",
+      "color": "#fbbf24",
       "size": 7.2,
       "url": "https://snyk.io",
       "description": "Snyk AI is an AI-powered developer security platform designed to integrate security directly into the development workflow for code, containers, and Infrastructure as Code (IaC). It leverages advanced AI to proactively identify and fix vulnerabilities, enabling developers to build secure applications faster without compromising innovation.",
@@ -4477,7 +4477,7 @@
       "label": "Socket.dev",
       "category": "security",
       "categoryName": "Security & Compliance",
-      "color": "#6b7280",
+      "color": "#fbbf24",
       "size": 8.4,
       "url": "https://socket.dev",
       "description": "Socket.dev provides AI-powered supply chain security for npm and PyPI packages, proactively detecting and blocking malicious behavior, vulnerabilities, and supply chain attacks. It offers deep visibility into open-source dependencies, protecting against threats like malware, typosquats, and compromised packages. Its AI-driven scanner helps developers secure their code and prevent critical security issues before they impact their applications.",
@@ -5096,7 +5096,7 @@
       "label": "Together AI",
       "category": "llm-platform",
       "categoryName": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "size": 8.4,
       "url": "https://together.ai",
       "description": "Together AI provides a robust cloud platform for developers to deploy, fine-tune, and serve open-source large language models efficiently. It stands out by offering competitive pricing and high-performance inference, making advanced LLM capabilities accessible without the overhead of managing complex infrastructure. Its focus on open-source models empowers users with flexibility and transparency, fostering innovation in AI development.",
@@ -5137,7 +5137,7 @@
       "label": "Tome",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 8.4,
       "url": "https://www.tomeapp.com/",
       "description": "Tome is an AI-native storytelling and presentation platform that enables users to create professional and engaging decks instantly using AI prompts. It focuses on intuitive design, real-time collaboration, and personalized suggestions, aiming to streamline content creation for sales, marketing, and general communication.",
@@ -5214,7 +5214,7 @@
       "label": "Uizard",
       "category": "design",
       "categoryName": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "size": 9.6,
       "url": "https://uizard.io",
       "description": "Uizard is an AI-powered design tool that rapidly transforms hand-drawn sketches, screenshots, or text prompts into editable wireframes, mockups, and prototypes. It streamlines the initial stages of UI/UX design, allowing designers and non-designers alike to quickly visualize and iterate on ideas. Its unique selling point is its ability to convert diverse inputs into functional designs with AI assistance, significantly accelerating the design process.",
@@ -5339,7 +5339,7 @@
       "label": "Weaviate",
       "category": "dev-tools",
       "categoryName": "Developer Tools & Infrastructure",
-      "color": "#6b7280",
+      "color": "#4ade80",
       "size": 10.8,
       "url": "https://weaviate.io",
       "description": "Weaviate is an open-source vector database designed to store, index, and search high-dimensional vector embeddings efficiently. It integrates built-in machine learning models for tasks like classification and question answering, enabling developers to build intelligent applications with semantic search and Retrieval Augmented Generation (RAG) capabilities. Its modular architecture allows for flexible deployment and scaling, making it a robust choice for AI-powered data management.",
@@ -5383,7 +5383,7 @@
       "label": "Weights & Biases",
       "category": "ml-ops",
       "categoryName": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "size": 7.2,
       "url": "https://wandb.ai/",
       "description": "Weights & Biases (W&B) is a comprehensive MLOps platform designed for machine learning practitioners. It provides tools for experiment tracking, model versioning, data visualization, and collaborative model development. W&B helps teams streamline their ML workflows, ensuring reproducibility and efficient management of AI models from development to production.",
@@ -6925,13 +6925,13 @@
       "name": "Academic Writing Workflow",
       "description": "Accelerate academic writing while maintaining rigor and originality. Uses AI to assist with literature review, evidence synthesis, outlining, and drafting, while keeping the human researcher in control of intellectual content. Can reduce literature review time by 50% and overall writing time by 30-40 hours per paper.",
       "toolIds": [
-        "perplexity",
-        "elicit",
-        "claude",
-        "grammarly",
         "consensus",
         "notebooklm",
-        "chatgpt"
+        "claude",
+        "elicit",
+        "chatgpt",
+        "perplexity",
+        "grammarly"
       ],
       "stepEdges": [
         {
@@ -7015,12 +7015,12 @@
       "name": "AI-Powered Business Intelligence and Reporting",
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "toolIds": [
-        "n8n",
+        "gemini",
         "claude",
         "zapier",
         "chatgpt",
-        "make",
-        "gemini"
+        "n8n",
+        "make"
       ],
       "stepEdges": [
         {
@@ -7094,11 +7094,11 @@
       "name": "AI-Powered Code Review and Documentation",
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "toolIds": [
-        "cursor",
         "claude",
         "chatgpt",
-        "windsurf",
-        "github-copilot"
+        "github-copilot",
+        "cursor",
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -7155,17 +7155,17 @@
       "name": "AI-Powered Competitive Intelligence Workflow",
       "description": "A systematic workflow for continuously monitoring and analyzing competitors using AI agents and data analysis tools. This process automates the collection of competitor activities and provides strategic insights to inform business decisions.",
       "toolIds": [
-        "metagpt",
-        "autogen",
+        "crewai",
+        "julius-ai",
         "claude",
+        "gemini",
+        "autogen",
         "chatgpt",
         "brandwatch",
-        "hex",
+        "metagpt",
         "databricks-ai",
-        "gemini",
-        "crewai",
-        "tavily",
-        "julius-ai"
+        "hex",
+        "tavily"
       ],
       "stepEdges": [
         {
@@ -7376,11 +7376,11 @@
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "toolIds": [
-        "midjourney",
+        "stable-diffusion",
         "claude",
+        "midjourney",
         "chatgpt",
-        "dalle-3",
-        "stable-diffusion"
+        "dalle-3"
       ],
       "stepEdges": [
         {
@@ -7448,15 +7448,15 @@
       "name": "AI-Powered Customer Feedback Analysis Pipeline",
       "description": "An automated pipeline that collects customer feedback from various sources, analyzes it for sentiment and key themes, and routes insights to the appropriate teams. This workflow helps product and support teams stay on top of customer needs and prioritize improvements.",
       "toolIds": [
-        "n8n",
+        "julius-ai",
         "claude",
+        "cohere",
         "zapier",
         "chatgpt",
         "hex",
+        "n8n",
         "databricks-ai",
-        "cohere",
-        "make",
-        "julius-ai"
+        "make"
       ],
       "stepEdges": [
         {
@@ -7568,10 +7568,10 @@
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "toolIds": [
-        "n8n",
         "claude",
         "zapier",
         "chatgpt",
+        "n8n",
         "make"
       ],
       "stepEdges": [
@@ -7630,13 +7630,13 @@
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "toolIds": [
-        "perplexity",
-        "n8n",
         "claude",
         "zapier",
+        "perplexity",
         "chatgpt",
-        "make",
-        "clay"
+        "n8n",
+        "clay",
+        "make"
       ],
       "stepEdges": [
         {
@@ -7707,12 +7707,12 @@
       "name": "AI Newsletter Automation",
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "toolIds": [
-        "perplexity",
-        "n8n",
         "claude",
-        "grammarly",
         "zapier",
+        "perplexity",
         "chatgpt",
+        "grammarly",
+        "n8n",
         "make"
       ],
       "stepEdges": [
@@ -7784,18 +7784,18 @@
       "name": "AI-Powered Meeting Workflow",
       "description": "A complete, automated workflow for preparing, running, and following up on meetings using AI. This process automates transcription, summarization, and action item tracking, saving significant time and ensuring that key decisions and tasks are never missed.",
       "toolIds": [
-        "fathom",
-        "perplexity",
-        "n8n",
-        "claude",
-        "tldv",
-        "make",
         "fireflies-ai",
+        "fathom",
+        "claude",
+        "gemini",
+        "otter-ai",
+        "tldv",
         "chatgpt",
+        "perplexity",
         "zapier",
         "grain",
-        "gemini",
-        "otter-ai"
+        "n8n",
+        "make"
       ],
       "stepEdges": [
         {
@@ -7902,18 +7902,18 @@
       "name": "AI Video Production Pipeline",
       "description": "A fully-automated pipeline for creating short-form videos, from script to final edit. This workflow is ideal for producing content for platforms like TikTok, YouTube Shorts, and Instagram Reels, leveraging AI for every step of the creative process.",
       "toolIds": [
-        "copy-ai",
-        "claude",
         "descript",
-        "elevenlabs",
-        "sora",
         "runway",
-        "kling-ai",
-        "chatgpt",
-        "play-ht",
-        "resemble-ai",
+        "claude",
         "luma-ai",
-        "jasper"
+        "sora",
+        "play-ht",
+        "chatgpt",
+        "jasper",
+        "elevenlabs",
+        "kling-ai",
+        "copy-ai",
+        "resemble-ai"
       ],
       "stepEdges": [
         {
@@ -8025,11 +8025,11 @@
       "name": "Codebase Migration",
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "toolIds": [
-        "cursor",
-        "perplexity",
         "chatgpt",
-        "windsurf",
-        "github-copilot"
+        "perplexity",
+        "github-copilot",
+        "cursor",
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -8100,12 +8100,12 @@
       "name": "Content Creation Pipeline",
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "toolIds": [
-        "perplexity",
-        "midjourney",
+        "v0",
         "claude",
         "bolt",
+        "midjourney",
         "chatgpt",
-        "v0"
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -8175,13 +8175,13 @@
       "name": "Deep Research and Knowledge Synthesis",
       "description": "Conduct comprehensive research on any topic by combining AI search, academic databases, document analysis, and report generation. Used by analysts, researchers, and consultants to compress days of research into hours while producing better-cited, more thorough reports.",
       "toolIds": [
-        "perplexity",
-        "elicit",
-        "claude",
         "consensus",
         "notebooklm",
+        "gemini",
+        "claude",
+        "elicit",
         "chatgpt",
-        "gemini"
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -8255,16 +8255,16 @@
       "name": "Faceless YouTube Channel Automation",
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "toolIds": [
-        "perplexity",
-        "n8n",
-        "claude",
-        "descript",
-        "elevenlabs",
-        "sora",
         "runway",
-        "kling-ai",
+        "claude",
+        "sora",
         "chatgpt",
-        "zapier"
+        "perplexity",
+        "zapier",
+        "elevenlabs",
+        "kling-ai",
+        "n8n",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -8350,12 +8350,12 @@
       "name": "Hyper-Personalized Outbound Sales",
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "toolIds": [
-        "n8n",
         "claude",
         "zapier",
         "chatgpt",
-        "make",
-        "clay"
+        "n8n",
+        "clay",
+        "make"
       ],
       "stepEdges": [
         {
@@ -8422,13 +8422,13 @@
       "name": "Idea to Deployed App",
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "toolIds": [
-        "cursor",
+        "v0",
         "claude",
         "bolt",
         "chatgpt",
-        "v0",
-        "windsurf",
-        "github-copilot"
+        "github-copilot",
+        "cursor",
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -8517,11 +8517,11 @@
       "name": "Podcast Production and Content Repurposing",
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "toolIds": [
-        "n8n",
         "claude",
-        "descript",
         "zapier",
         "chatgpt",
+        "n8n",
+        "descript",
         "make"
       ],
       "stepEdges": [
@@ -8591,10 +8591,10 @@
       "name": "Research to Report",
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "toolIds": [
-        "chatgpt",
         "notebooklm",
-        "perplexity",
-        "claude"
+        "claude",
+        "chatgpt",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -8667,12 +8667,12 @@
       "name": "SEO Blog Factory",
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "toolIds": [
-        "perplexity",
-        "claude",
-        "grammarly",
-        "chatgpt",
         "surfer-seo",
-        "jasper"
+        "claude",
+        "chatgpt",
+        "perplexity",
+        "jasper",
+        "grammarly"
       ],
       "stepEdges": [
         {
@@ -8743,13 +8743,13 @@
       "name": "Social Media Content Engine",
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "toolIds": [
-        "copy-ai",
-        "n8n",
-        "claude",
         "descript",
         "runway",
+        "claude",
         "chatgpt",
         "zapier",
+        "n8n",
+        "copy-ai",
         "make"
       ],
       "stepEdges": [
@@ -8822,15 +8822,15 @@
       "name": "Vibe Coding \u2014 Full-Stack App Development",
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "toolIds": [
-        "cursor",
+        "v0",
+        "gemini",
         "claude",
         "bolt",
         "chatgpt",
-        "v0",
-        "windsurf",
+        "github-copilot",
         "lovable",
-        "gemini",
-        "github-copilot"
+        "cursor",
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -8918,7 +8918,7 @@
     {
       "slug": "llm-platform",
       "name": "LLM Platforms & APIs",
-      "color": "#6b7280",
+      "color": "#22d3ee",
       "count": 11
     },
     {
@@ -8930,13 +8930,13 @@
     {
       "slug": "design",
       "name": "Design & Creative",
-      "color": "#6b7280",
+      "color": "#f472b6",
       "count": 10
     },
     {
       "slug": "data-analysis",
       "name": "Data Analysis & BI",
-      "color": "#6b7280",
+      "color": "#fb923c",
       "count": 8
     },
     {
@@ -8966,7 +8966,7 @@
     {
       "slug": "ml-ops",
       "name": "MLOps & Model Training",
-      "color": "#6b7280",
+      "color": "#c084fc",
       "count": 6
     },
     {
@@ -9002,13 +9002,13 @@
     {
       "slug": "security",
       "name": "Security & Compliance",
-      "color": "#6b7280",
+      "color": "#fbbf24",
       "count": 3
     },
     {
       "slug": "dev-tools",
       "name": "Developer Tools & Infrastructure",
-      "color": "#6b7280",
+      "color": "#4ade80",
       "count": 1
     },
     {
@@ -9026,7 +9026,7 @@
     {
       "slug": "other",
       "name": "Other",
-      "color": "#6b7280",
+      "color": "#94a3b8",
       "count": 1
     }
   ],
