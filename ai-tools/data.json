@@ -6927,11 +6927,11 @@
       "toolIds": [
         "consensus",
         "claude",
-        "elicit",
         "chatgpt",
         "perplexity",
+        "notebooklm",
         "grammarly",
-        "notebooklm"
+        "elicit"
       ],
       "stepEdges": [
         {
@@ -7015,12 +7015,12 @@
       "name": "AI-Powered Business Intelligence and Reporting",
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "toolIds": [
-        "make",
-        "claude",
-        "zapier",
-        "chatgpt",
         "n8n",
-        "gemini"
+        "claude",
+        "chatgpt",
+        "make",
+        "gemini",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -7095,10 +7095,10 @@
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "toolIds": [
         "cursor",
-        "chatgpt",
         "windsurf",
+        "github-copilot",
         "claude",
-        "github-copilot"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7157,15 +7157,15 @@
       "toolIds": [
         "crewai",
         "brandwatch",
-        "hex",
-        "tavily",
-        "autogen",
-        "chatgpt",
         "metagpt",
-        "julius-ai",
+        "tavily",
         "claude",
+        "chatgpt",
+        "hex",
         "databricks-ai",
-        "gemini"
+        "gemini",
+        "autogen",
+        "julius-ai"
       ],
       "stepEdges": [
         {
@@ -7274,8 +7274,8 @@
       "name": "AI-Powered Contract Review Workflow",
       "description": "An efficient workflow for legal teams to analyze, review, and manage contracts using specialized AI tools. This process accelerates due to diligence, identifies risks, and ensures compliance by automating the extraction and analysis of key contract data.",
       "toolIds": [
-        "spellbook",
         "harvey-ai",
+        "spellbook",
         "casetext-cocounsel"
       ],
       "stepEdges": [
@@ -7376,11 +7376,11 @@
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "toolIds": [
-        "midjourney",
+        "stable-diffusion",
+        "claude",
         "chatgpt",
         "dalle-3",
-        "claude",
-        "stable-diffusion"
+        "midjourney"
       ],
       "stepEdges": [
         {
@@ -7448,15 +7448,15 @@
       "name": "AI-Powered Customer Feedback Analysis Pipeline",
       "description": "An automated pipeline that collects customer feedback from various sources, analyzes it for sentiment and key themes, and routes insights to the appropriate teams. This workflow helps product and support teams stay on top of customer needs and prioritize improvements.",
       "toolIds": [
-        "make",
         "n8n",
-        "claude",
         "cohere",
-        "hex",
+        "claude",
         "chatgpt",
-        "julius-ai",
+        "hex",
+        "make",
+        "databricks-ai",
         "zapier",
-        "databricks-ai"
+        "julius-ai"
       ],
       "stepEdges": [
         {
@@ -7568,11 +7568,11 @@
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "toolIds": [
+        "n8n",
         "claude",
-        "make",
-        "zapier",
         "chatgpt",
-        "n8n"
+        "make",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -7630,13 +7630,13 @@
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "toolIds": [
-        "make",
-        "claude",
-        "zapier",
-        "chatgpt",
-        "perplexity",
         "n8n",
-        "clay"
+        "clay",
+        "claude",
+        "chatgpt",
+        "make",
+        "perplexity",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -7707,13 +7707,13 @@
       "name": "AI Newsletter Automation",
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "toolIds": [
-        "make",
+        "n8n",
         "claude",
-        "zapier",
         "chatgpt",
+        "make",
         "perplexity",
-        "grammarly",
-        "n8n"
+        "zapier",
+        "grammarly"
       ],
       "stepEdges": [
         {
@@ -7784,18 +7784,18 @@
       "name": "AI-Powered Meeting Workflow",
       "description": "A complete, automated workflow for preparing, running, and following up on meetings using AI. This process automates transcription, summarization, and action item tracking, saving significant time and ensuring that key decisions and tasks are never missed.",
       "toolIds": [
-        "fathom",
-        "make",
-        "fireflies-ai",
-        "zapier",
         "n8n",
+        "claude",
         "otter-ai",
         "chatgpt",
+        "make",
+        "fireflies-ai",
+        "fathom",
+        "gemini",
+        "tldv",
         "perplexity",
         "grain",
-        "tldv",
-        "claude",
-        "gemini"
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -7903,17 +7903,17 @@
       "description": "A fully-automated pipeline for creating short-form videos, from script to final edit. This workflow is ideal for producing content for platforms like TikTok, YouTube Shorts, and Instagram Reels, leveraging AI for every step of the creative process.",
       "toolIds": [
         "elevenlabs",
-        "resemble-ai",
-        "descript",
-        "sora",
-        "kling-ai",
-        "play-ht",
+        "claude",
+        "luma-ai",
         "chatgpt",
         "jasper",
+        "descript",
+        "resemble-ai",
+        "copy-ai",
+        "kling-ai",
+        "play-ht",
         "runway",
-        "luma-ai",
-        "claude",
-        "copy-ai"
+        "sora"
       ],
       "stepEdges": [
         {
@@ -8026,10 +8026,10 @@
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "toolIds": [
         "cursor",
-        "chatgpt",
-        "perplexity",
         "windsurf",
-        "github-copilot"
+        "github-copilot",
+        "chatgpt",
+        "perplexity"
       ],
       "stepEdges": [
         {
@@ -8100,12 +8100,12 @@
       "name": "Content Creation Pipeline",
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "toolIds": [
-        "midjourney",
-        "v0",
-        "chatgpt",
-        "perplexity",
+        "bolt",
         "claude",
-        "bolt"
+        "chatgpt",
+        "v0",
+        "perplexity",
+        "midjourney"
       ],
       "stepEdges": [
         {
@@ -8177,11 +8177,11 @@
       "toolIds": [
         "consensus",
         "claude",
-        "elicit",
         "chatgpt",
+        "gemini",
         "perplexity",
         "notebooklm",
-        "gemini"
+        "elicit"
       ],
       "stepEdges": [
         {
@@ -8255,16 +8255,16 @@
       "name": "Faceless YouTube Channel Automation",
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "toolIds": [
-        "elevenlabs",
-        "descript",
         "n8n",
-        "sora",
+        "elevenlabs",
+        "claude",
+        "chatgpt",
+        "descript",
+        "perplexity",
         "kling-ai",
         "zapier",
-        "chatgpt",
-        "perplexity",
         "runway",
-        "claude"
+        "sora"
       ],
       "stepEdges": [
         {
@@ -8350,12 +8350,12 @@
       "name": "Hyper-Personalized Outbound Sales",
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "toolIds": [
-        "make",
+        "clay",
         "n8n",
-        "zapier",
-        "chatgpt",
         "claude",
-        "clay"
+        "chatgpt",
+        "make",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -8423,12 +8423,12 @@
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "toolIds": [
         "cursor",
-        "v0",
-        "chatgpt",
         "windsurf",
-        "claude",
         "bolt",
-        "github-copilot"
+        "github-copilot",
+        "claude",
+        "chatgpt",
+        "v0"
       ],
       "stepEdges": [
         {
@@ -8517,12 +8517,12 @@
       "name": "Podcast Production and Content Repurposing",
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "toolIds": [
-        "claude",
         "n8n",
-        "zapier",
-        "make",
+        "claude",
         "chatgpt",
-        "descript"
+        "make",
+        "descript",
+        "zapier"
       ],
       "stepEdges": [
         {
@@ -8591,10 +8591,10 @@
       "name": "Research to Report",
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "toolIds": [
+        "chatgpt",
         "claude",
         "perplexity",
-        "notebooklm",
-        "chatgpt"
+        "notebooklm"
       ],
       "stepEdges": [
         {
@@ -8667,12 +8667,12 @@
       "name": "SEO Blog Factory",
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "toolIds": [
-        "surfer-seo",
+        "claude",
         "chatgpt",
         "jasper",
+        "surfer-seo",
         "perplexity",
-        "grammarly",
-        "claude"
+        "grammarly"
       ],
       "stepEdges": [
         {
@@ -8743,14 +8743,14 @@
       "name": "Social Media Content Engine",
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "toolIds": [
-        "claude",
         "n8n",
-        "zapier",
-        "make",
+        "claude",
         "chatgpt",
-        "runway",
+        "make",
         "descript",
-        "copy-ai"
+        "copy-ai",
+        "zapier",
+        "runway"
       ],
       "stepEdges": [
         {
@@ -8823,14 +8823,14 @@
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "toolIds": [
         "cursor",
-        "lovable",
-        "v0",
-        "chatgpt",
         "windsurf",
-        "claude",
         "bolt",
         "github-copilot",
-        "gemini"
+        "claude",
+        "chatgpt",
+        "lovable",
+        "gemini",
+        "v0"
       ],
       "stepEdges": [
         {
