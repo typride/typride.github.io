@@ -40,8 +40,8 @@
         "enterprise"
       ],
       "connectionCount": 2,
-      "x": 409.2,
-      "y": 158.5
+      "jx": 0.2789,
+      "jy": -0.95
     },
     {
       "id": "adobe-firefly",
@@ -83,8 +83,8 @@
         "adobe-ecosystem"
       ],
       "connectionCount": 2,
-      "x": -98.6,
-      "y": 406.2
+      "jx": -0.4499,
+      "jy": -0.5536
     },
     {
       "id": "aider",
@@ -127,8 +127,8 @@
         "code-editor"
       ],
       "connectionCount": 3,
-      "x": 33.1,
-      "y": -425.3
+      "jx": 0.4729,
+      "jy": 0.3534
     },
     {
       "id": "airtable-ai",
@@ -173,8 +173,8 @@
         "data-analysis"
       ],
       "connectionCount": 3,
-      "x": 444.6,
-      "y": 167.2
+      "jx": 0.7844,
+      "jy": -0.8261
     },
     {
       "id": "akkio",
@@ -220,8 +220,8 @@
         "workflow-automation"
       ],
       "connectionCount": 3,
-      "x": 437.8,
-      "y": -99.4
+      "jx": -0.1562,
+      "jy": -0.9404
     },
     {
       "id": "amazon-q-developer",
@@ -262,8 +262,8 @@
         "code-review"
       ],
       "connectionCount": 2,
-      "x": -39.4,
-      "y": -449.3
+      "jx": -0.5627,
+      "jy": 0.0107
     },
     {
       "id": "anthropic-api",
@@ -304,8 +304,8 @@
         "generative-ai"
       ],
       "connectionCount": 2,
-      "x": 187.2,
-      "y": -414.0
+      "jx": -0.9469,
+      "jy": -0.6023
     },
     {
       "id": "autogen",
@@ -347,8 +347,8 @@
         "orchestration"
       ],
       "connectionCount": 2,
-      "x": 372.8,
-      "y": -274.3
+      "jx": 0.2998,
+      "jy": 0.0899
     },
     {
       "id": "autogpt",
@@ -390,8 +390,8 @@
         "development"
       ],
       "connectionCount": 3,
-      "x": 312.7,
-      "y": -268.1
+      "jx": -0.5591,
+      "jy": 0.1785
     },
     {
       "id": "beautiful-ai",
@@ -431,8 +431,8 @@
         "design"
       ],
       "connectionCount": 0,
-      "x": 462.2,
-      "y": -233.5
+      "jx": 0.6189,
+      "jy": -0.987
     },
     {
       "id": "bland-ai",
@@ -473,8 +473,8 @@
         "voice AI"
       ],
       "connectionCount": 3,
-      "x": -346.9,
-      "y": 252.7
+      "jx": 0.6116,
+      "jy": 0.3963
     },
     {
       "id": "blockade-labs",
@@ -516,8 +516,8 @@
         "creative-tools"
       ],
       "connectionCount": 0,
-      "x": -89.5,
-      "y": 396.8
+      "jx": -0.3195,
+      "jy": -0.689
     },
     {
       "id": "bolt",
@@ -558,8 +558,8 @@
         "agents"
       ],
       "connectionCount": 3,
-      "x": 64.0,
-      "y": -472.9
+      "jx": 0.9144,
+      "jy": -0.3268
     },
     {
       "id": "brandwatch",
@@ -601,8 +601,8 @@
         "AI"
       ],
       "connectionCount": 1,
-      "x": 391.7,
-      "y": -90.1
+      "jx": -0.8145,
+      "jy": -0.8066
     },
     {
       "id": "browserbase",
@@ -644,8 +644,8 @@
         "selenium"
       ],
       "connectionCount": 7,
-      "x": 400.4,
-      "y": -266.1
+      "jx": 0.695,
+      "jy": 0.2075
     },
     {
       "id": "canva-ai",
@@ -686,8 +686,8 @@
         "content-creation"
       ],
       "connectionCount": 4,
-      "x": 461.9,
-      "y": -132.2
+      "jx": 0.6143,
+      "jy": 0.4595
     },
     {
       "id": "capacities",
@@ -723,8 +723,8 @@
         "zettelkasten"
       ],
       "connectionCount": 1,
-      "x": 137.7,
-      "y": -363.8
+      "jx": 0.0725,
+      "jy": 0.9462
     },
     {
       "id": "casetext-cocounsel",
@@ -762,8 +762,8 @@
         "law"
       ],
       "connectionCount": 1,
-      "x": -455.7,
-      "y": 107.4
+      "jx": -0.2429,
+      "jy": 0.1041
     },
     {
       "id": "chatgpt",
@@ -807,8 +807,8 @@
         "research"
       ],
       "connectionCount": 57,
-      "x": 484.8,
-      "y": 116.7
+      "jx": 0.6588,
+      "jy": 0.237
     },
     {
       "id": "chroma",
@@ -848,8 +848,8 @@
         "open-source"
       ],
       "connectionCount": 1,
-      "x": 117.7,
-      "y": 455.8
+      "jx": 0.7234,
+      "jy": 0.1547
     },
     {
       "id": "claude",
@@ -892,8 +892,8 @@
         "research"
       ],
       "connectionCount": 15,
-      "x": 467.3,
-      "y": 36.5
+      "jx": 0.4091,
+      "jy": -0.9084
     },
     {
       "id": "clay",
@@ -936,8 +936,8 @@
         "agents"
       ],
       "connectionCount": 2,
-      "x": -427.8,
-      "y": 195.5
+      "jx": -0.5442,
+      "jy": -0.4212
     },
     {
       "id": "codeium",
@@ -976,8 +976,8 @@
         "developer-tool"
       ],
       "connectionCount": 2,
-      "x": -58.8,
-      "y": -487.4
+      "jx": -0.8404,
+      "jy": -0.5344
     },
     {
       "id": "cohere",
@@ -1018,8 +1018,8 @@
         "enterprise-ai"
       ],
       "connectionCount": 3,
-      "x": 197.6,
-      "y": -402.9
+      "jx": -0.798,
+      "jy": -0.4441
     },
     {
       "id": "composio",
@@ -1057,8 +1057,8 @@
         "automation"
       ],
       "connectionCount": 3,
-      "x": 370.8,
-      "y": -299.5
+      "jx": 0.2714,
+      "jy": -0.2703
     },
     {
       "id": "consensus",
@@ -1102,8 +1102,8 @@
         "saas"
       ],
       "connectionCount": 2,
-      "x": -456.9,
-      "y": 59.4
+      "jx": -0.2596,
+      "jy": -0.581
     },
     {
       "id": "continue-dev",
@@ -1143,8 +1143,8 @@
         "customizable LLM"
       ],
       "connectionCount": 2,
-      "x": -32.6,
-      "y": -388.9
+      "jx": -0.466,
+      "jy": 0.8733
     },
     {
       "id": "copy-ai",
@@ -1183,8 +1183,8 @@
         "saas"
       ],
       "connectionCount": 3,
-      "x": 215.9,
-      "y": 420.7
+      "jx": 0.2961,
+      "jy": 0.2183
     },
     {
       "id": "crewai",
@@ -1228,8 +1228,8 @@
         "team-collaboration"
       ],
       "connectionCount": 10,
-      "x": 305.8,
-      "y": -248.5
+      "jx": -0.6577,
+      "jy": 0.4583
     },
     {
       "id": "cursor",
@@ -1273,8 +1273,8 @@
         "agents"
       ],
       "connectionCount": 15,
-      "x": -47.1,
-      "y": -466.9
+      "jx": -0.6732,
+      "jy": -0.2411
     },
     {
       "id": "dalle-3",
@@ -1313,8 +1313,8 @@
         "api-available"
       ],
       "connectionCount": 7,
-      "x": 1.4,
-      "y": 464.6
+      "jx": 0.979,
+      "jy": 0.28
     },
     {
       "id": "databricks-ai",
@@ -1358,8 +1358,8 @@
         "generative AI"
       ],
       "connectionCount": 2,
-      "x": 75.1,
-      "y": 470.8
+      "jx": 0.1139,
+      "jy": 0.3692
     },
     {
       "id": "deepl",
@@ -1402,8 +1402,8 @@
         "productivity"
       ],
       "connectionCount": 2,
-      "x": 243.2,
-      "y": 444.0
+      "jx": 0.6857,
+      "jy": 0.552
     },
     {
       "id": "deepseek",
@@ -1444,8 +1444,8 @@
         "free-tier"
       ],
       "connectionCount": 2,
-      "x": 400.8,
-      "y": 34.6
+      "jx": -0.5419,
+      "jy": -0.9358
     },
     {
       "id": "descript",
@@ -1487,8 +1487,8 @@
         "saas"
       ],
       "connectionCount": 4,
-      "x": -279.3,
-      "y": -404.3
+      "jx": -0.3691,
+      "jy": -0.4645
     },
     {
       "id": "devin",
@@ -1530,8 +1530,8 @@
         "autonomous agent"
       ],
       "connectionCount": 2,
-      "x": 311.3,
-      "y": -218.6
+      "jx": -0.578,
+      "jy": 0.8858
     },
     {
       "id": "elevenlabs",
@@ -1573,8 +1573,8 @@
         "translation"
       ],
       "connectionCount": 7,
-      "x": 358.8,
-      "y": 304.0
+      "jx": 0.7527,
+      "jy": -0.3706
     },
     {
       "id": "elicit",
@@ -1618,8 +1618,8 @@
         "saas"
       ],
       "connectionCount": 3,
-      "x": -416.9,
-      "y": 85.5
+      "jx": 0.3109,
+      "jy": -0.2087
     },
     {
       "id": "evidently-ai",
@@ -1660,8 +1660,8 @@
         "llm-observability"
       ],
       "connectionCount": 2,
-      "x": 125.1,
-      "y": 439.2
+      "jx": 0.8291,
+      "jy": -0.0823
     },
     {
       "id": "exa-ai",
@@ -1701,8 +1701,8 @@
         "api"
       ],
       "connectionCount": 3,
-      "x": -339.0,
-      "y": 294.4
+      "jx": -0.4702,
+      "jy": -0.5067
     },
     {
       "id": "fathom",
@@ -1742,8 +1742,8 @@
         "summarization"
       ],
       "connectionCount": 2,
-      "x": 141.2,
-      "y": -463.2
+      "jx": 0.1227,
+      "jy": -0.4745
     },
     {
       "id": "figma-ai",
@@ -1789,8 +1789,8 @@
         "automation"
       ],
       "connectionCount": 3,
-      "x": 430.7,
-      "y": -108.7
+      "jx": 0.1692,
+      "jy": 0.7956
     },
     {
       "id": "fireflies-ai",
@@ -1830,8 +1830,8 @@
         "AI-notetaker"
       ],
       "connectionCount": 1,
-      "x": 118.5,
-      "y": -469.3
+      "jx": -0.2012,
+      "jy": -0.5614
     },
     {
       "id": "fireworks-ai",
@@ -1875,8 +1875,8 @@
         "generative-ai"
       ],
       "connectionCount": 3,
-      "x": 323.2,
-      "y": -370.5
+      "jx": 0.9951,
+      "jy": 0.0191
     },
     {
       "id": "framer-ai",
@@ -1916,8 +1916,8 @@
         "design-tool"
       ],
       "connectionCount": 3,
-      "x": 361.6,
-      "y": -227.8
+      "jx": -0.8182,
+      "jy": -0.9058
     },
     {
       "id": "galileo-ai",
@@ -1956,8 +1956,8 @@
         "figma-integration"
       ],
       "connectionCount": 0,
-      "x": 364.3,
-      "y": -146.6
+      "jx": -0.7807,
+      "jy": 0.2549
     },
     {
       "id": "gamma",
@@ -1996,8 +1996,8 @@
         "no-code"
       ],
       "connectionCount": 2,
-      "x": 459.8,
-      "y": -175.3
+      "jx": 0.5842,
+      "jy": -0.1557
     },
     {
       "id": "gemini",
@@ -2039,8 +2039,8 @@
         "summarization"
       ],
       "connectionCount": 15,
-      "x": 377.6,
-      "y": 83.5
+      "jx": -0.8729,
+      "jy": -0.2368
     },
     {
       "id": "github-copilot",
@@ -2082,8 +2082,8 @@
         "code-review"
       ],
       "connectionCount": 19,
-      "x": 69.5,
-      "y": -445.9
+      "jx": 0.9922,
+      "jy": 0.0582
     },
     {
       "id": "google-ai-studio",
@@ -2125,8 +2125,8 @@
         "prompt-engineering"
       ],
       "connectionCount": 2,
-      "x": 319.5,
-      "y": -321.3
+      "jx": 0.9422,
+      "jy": 0.7216
     },
     {
       "id": "grain",
@@ -2168,8 +2168,8 @@
         "productivity"
       ],
       "connectionCount": 2,
-      "x": 64.2,
-      "y": -399.1
+      "jx": -0.977,
+      "jy": 0.4414
     },
     {
       "id": "grammarly",
@@ -2210,8 +2210,8 @@
         "team-collaboration"
       ],
       "connectionCount": 3,
-      "x": 220.6,
-      "y": 410.6
+      "jx": 0.3634,
+      "jy": 0.0739
     },
     {
       "id": "grok",
@@ -2249,8 +2249,8 @@
         "saas"
       ],
       "connectionCount": 1,
-      "x": 406.1,
-      "y": 119.8
+      "jx": -0.4663,
+      "jy": 0.2819
     },
     {
       "id": "groq",
@@ -2291,8 +2291,8 @@
         "low latency"
       ],
       "connectionCount": 3,
-      "x": 199.1,
-      "y": -380.9
+      "jx": -0.7769,
+      "jy": -0.1305
     },
     {
       "id": "harvey-ai",
@@ -2333,8 +2333,8 @@
         "contract review"
       ],
       "connectionCount": 2,
-      "x": -445.2,
-      "y": 163.6
+      "jx": -0.0926,
+      "jy": 0.9076
     },
     {
       "id": "hex",
@@ -2372,8 +2372,8 @@
         "ai"
       ],
       "connectionCount": 3,
-      "x": 501.3,
-      "y": -66.7
+      "jx": 0.7517,
+      "jy": -0.4732
     },
     {
       "id": "hootsuite-ai",
@@ -2414,8 +2414,8 @@
         "scheduling"
       ],
       "connectionCount": 3,
-      "x": 195.3,
-      "y": 360.4
+      "jx": 0.0012,
+      "jy": -0.6427
     },
     {
       "id": "hugging-face",
@@ -2461,8 +2461,8 @@
         "model-hosting"
       ],
       "connectionCount": 4,
-      "x": 311.3,
-      "y": -319.9
+      "jx": 0.8253,
+      "jy": 0.741
     },
     {
       "id": "hume-ai",
@@ -2500,8 +2500,8 @@
         "emotion-detection"
       ],
       "connectionCount": 3,
-      "x": 277.9,
-      "y": 349.4
+      "jx": -0.4031,
+      "jy": 0.2779
     },
     {
       "id": "intercom-fin",
@@ -2543,8 +2543,8 @@
         "chatbot"
       ],
       "connectionCount": 0,
-      "x": 454.0,
-      "y": 51.5
+      "jx": 0.2179,
+      "jy": -0.6943
     },
     {
       "id": "jasper",
@@ -2585,8 +2585,8 @@
         "seo"
       ],
       "connectionCount": 3,
-      "x": 232.0,
-      "y": 410.9
+      "jx": 0.525,
+      "jy": 0.0788
     },
     {
       "id": "jetbrains-ai",
@@ -2627,8 +2627,8 @@
         "debugging"
       ],
       "connectionCount": 2,
-      "x": 39.0,
-      "y": -445.8
+      "jx": 0.5573,
+      "jy": 0.0607
     },
     {
       "id": "julius-ai",
@@ -2667,8 +2667,8 @@
         "no-code"
       ],
       "connectionCount": 3,
-      "x": 378.8,
-      "y": -58.2
+      "jx": -0.9989,
+      "jy": -0.3517
     },
     {
       "id": "kling-ai",
@@ -2706,8 +2706,8 @@
         "free-tier"
       ],
       "connectionCount": 2,
-      "x": -262.5,
-      "y": 465.5
+      "jx": -0.961,
+      "jy": 0.8582
     },
     {
       "id": "krisp-ai",
@@ -2744,8 +2744,8 @@
         "productivity"
       ],
       "connectionCount": 1,
-      "x": 185.6,
-      "y": -383.6
+      "jx": 0.7574,
+      "jy": 0.6633
     },
     {
       "id": "langchain",
@@ -2790,8 +2790,8 @@
         "rag"
       ],
       "connectionCount": 29,
-      "x": 324.9,
-      "y": -342.5
+      "jx": -0.385,
+      "jy": -0.8841
     },
     {
       "id": "lately-ai",
@@ -2831,8 +2831,8 @@
         "marketing"
       ],
       "connectionCount": 2,
-      "x": 248.1,
-      "y": 468.0
+      "jx": 0.756,
+      "jy": 0.8939
     },
     {
       "id": "lavender-ai",
@@ -2872,8 +2872,8 @@
         "AI coach"
       ],
       "connectionCount": 2,
-      "x": -447.7,
-      "y": 223.0
+      "jx": -0.8287,
+      "jy": -0.028
     },
     {
       "id": "lindy-ai",
@@ -2910,8 +2910,8 @@
         "business-automation"
       ],
       "connectionCount": 2,
-      "x": 329.4,
-      "y": 261.5
+      "jx": -0.8616,
+      "jy": 0.5212
     },
     {
       "id": "lovable",
@@ -2950,8 +2950,8 @@
         "free-tier"
       ],
       "connectionCount": 2,
-      "x": 37.2,
-      "y": -502.0
+      "jx": 0.5317,
+      "jy": -0.7432
     },
     {
       "id": "luma-ai",
@@ -2993,8 +2993,8 @@
         "photogrammetry"
       ],
       "connectionCount": 3,
-      "x": -198.7,
-      "y": 412.4
+      "jx": -0.0494,
+      "jy": 0.0996
     },
     {
       "id": "make",
@@ -3037,8 +3037,8 @@
         "free-tier"
       ],
       "connectionCount": 17,
-      "x": 356.8,
-      "y": 277.1
+      "jx": -0.4699,
+      "jy": 0.7449
     },
     {
       "id": "mem",
@@ -3078,8 +3078,8 @@
         "free-tier"
       ],
       "connectionCount": 1,
-      "x": 121.8,
-      "y": -470.3
+      "jx": -0.1537,
+      "jy": -0.5764
     },
     {
       "id": "meshy",
@@ -3117,8 +3117,8 @@
         "image-to-3d"
       ],
       "connectionCount": 0,
-      "x": 424.4,
-      "y": -132.2
+      "jx": 0.0786,
+      "jy": 0.4599
     },
     {
       "id": "metagpt",
@@ -3158,8 +3158,8 @@
         "llm-orchestration"
       ],
       "connectionCount": 2,
-      "x": 310.0,
-      "y": -307.0
+      "jx": -0.5977,
+      "jy": -0.3766
     },
     {
       "id": "midjourney",
@@ -3199,8 +3199,8 @@
         "saas"
       ],
       "connectionCount": 5,
-      "x": 2.2,
-      "y": 466.0
+      "jx": 0.9903,
+      "jy": 0.2998
     },
     {
       "id": "mistral-ai",
@@ -3241,8 +3241,8 @@
         "efficient"
       ],
       "connectionCount": 3,
-      "x": 244.8,
-      "y": -369.3
+      "jx": -0.1238,
+      "jy": 0.0352
     },
     {
       "id": "mlflow",
@@ -3284,8 +3284,8 @@
         "open-source"
       ],
       "connectionCount": 3,
-      "x": 14.0,
-      "y": 406.5
+      "jx": -0.758,
+      "jy": -0.5506
     },
     {
       "id": "modal",
@@ -3328,8 +3328,8 @@
         "Python"
       ],
       "connectionCount": 2,
-      "x": 44.4,
-      "y": 457.4
+      "jx": -0.3238,
+      "jy": 0.1766
     },
     {
       "id": "multion",
@@ -3370,8 +3370,8 @@
         "task-automation"
       ],
       "connectionCount": 4,
-      "x": 314.0,
-      "y": -319.8
+      "jx": -0.5398,
+      "jy": -0.5596
     },
     {
       "id": "n8n",
@@ -3417,8 +3417,8 @@
         "free-tier"
       ],
       "connectionCount": 39,
-      "x": 329.6,
-      "y": 243.4
+      "jx": -0.858,
+      "jy": 0.2622
     },
     {
       "id": "notebooklm",
@@ -3461,8 +3461,8 @@
         "education"
       ],
       "connectionCount": 4,
-      "x": 94.7,
-      "y": -373.2
+      "jx": -0.5421,
+      "jy": 0.8108
     },
     {
       "id": "notion-ai",
@@ -3501,8 +3501,8 @@
         "team-collaboration"
       ],
       "connectionCount": 5,
-      "x": 182.9,
-      "y": -490.1
+      "jx": 0.7193,
+      "jy": -0.8583
     },
     {
       "id": "obviously-ai",
@@ -3538,8 +3538,8 @@
         "data-science"
       ],
       "connectionCount": 2,
-      "x": 412.0,
-      "y": -9.9
+      "jx": -0.524,
+      "jy": 0.338
     },
     {
       "id": "openai-api",
@@ -3583,8 +3583,8 @@
         "nlp"
       ],
       "connectionCount": 7,
-      "x": 213.5,
-      "y": -423.3
+      "jx": -0.5715,
+      "jy": -0.7354
     },
     {
       "id": "openrouter",
@@ -3625,8 +3625,8 @@
         "Cost Optimization"
       ],
       "connectionCount": 5,
-      "x": 314.5,
-      "y": -361.9
+      "jx": 0.871,
+      "jy": 0.1421
     },
     {
       "id": "otter-ai",
@@ -3668,8 +3668,8 @@
         "collaboration"
       ],
       "connectionCount": 1,
-      "x": 128.8,
-      "y": -390.2
+      "jx": -0.0547,
+      "jy": 0.5692
     },
     {
       "id": "perplexity",
@@ -3711,8 +3711,8 @@
         "rag"
       ],
       "connectionCount": 7,
-      "x": -263.1,
-      "y": 286.6
+      "jx": 0.615,
+      "jy": -0.6192
     },
     {
       "id": "phind",
@@ -3753,8 +3753,8 @@
         "debugging"
       ],
       "connectionCount": 2,
-      "x": -362.5,
-      "y": 320.2
+      "jx": -0.8061,
+      "jy": -0.1379
     },
     {
       "id": "pinecone",
@@ -3796,8 +3796,8 @@
         "search"
       ],
       "connectionCount": 4,
-      "x": 438.0,
-      "y": -38.2
+      "jx": -0.1528,
+      "jy": -0.066
     },
     {
       "id": "play-ht",
@@ -3838,8 +3838,8 @@
         "speech-synthesis"
       ],
       "connectionCount": 2,
-      "x": 338.2,
-      "y": 354.2
+      "jx": 0.4582,
+      "jy": 0.3467
     },
     {
       "id": "qdrant",
@@ -3881,8 +3881,8 @@
         "machine-learning"
       ],
       "connectionCount": 1,
-      "x": 516.5,
-      "y": -89.8
+      "jx": 0.9683,
+      "jy": -0.8032
     },
     {
       "id": "qodo",
@@ -3923,8 +3923,8 @@
         "agentic workflows"
       ],
       "connectionCount": 2,
-      "x": -13.6,
-      "y": -472.5
+      "jx": -0.1948,
+      "jy": -0.3214
     },
     {
       "id": "reflect",
@@ -3961,8 +3961,8 @@
         "writing"
       ],
       "connectionCount": 1,
-      "x": 183.2,
-      "y": -465.2
+      "jx": 0.7233,
+      "jy": -0.5027
     },
     {
       "id": "relevance-ai",
@@ -4002,8 +4002,8 @@
         "llm-orchestration"
       ],
       "connectionCount": 5,
-      "x": 308.4,
-      "y": -287.8
+      "jx": -0.6196,
+      "jy": -0.1028
     },
     {
       "id": "relume",
@@ -4046,8 +4046,8 @@
         "webflow"
       ],
       "connectionCount": 0,
-      "x": 408.0,
-      "y": -195.4
+      "jx": -0.1562,
+      "jy": -0.4429
     },
     {
       "id": "replicate",
@@ -4086,8 +4086,8 @@
         "video-generation"
       ],
       "connectionCount": 2,
-      "x": 218.5,
-      "y": -312.5
+      "jx": -0.5004,
+      "jy": 0.8465
     },
     {
       "id": "replit",
@@ -4134,8 +4134,8 @@
         "repls"
       ],
       "connectionCount": 1,
-      "x": -8.0,
-      "y": -399.4
+      "jx": -0.1137,
+      "jy": 0.7227
     },
     {
       "id": "resemble-ai",
@@ -4180,8 +4180,8 @@
         "speaker verification"
       ],
       "connectionCount": 2,
-      "x": 313.1,
-      "y": 267.0
+      "jx": 0.1007,
+      "jy": -0.8988
     },
     {
       "id": "rows-ai",
@@ -4223,8 +4223,8 @@
         "no-code"
       ],
       "connectionCount": 2,
-      "x": 518.6,
-      "y": 13.4
+      "jx": 0.9986,
+      "jy": 0.6721
     },
     {
       "id": "runway",
@@ -4263,8 +4263,8 @@
         "free-tier"
       ],
       "connectionCount": 3,
-      "x": -129.5,
-      "y": 465.1
+      "jx": 0.938,
+      "jy": 0.8527
     },
     {
       "id": "semgrep",
@@ -4301,8 +4301,8 @@
         "code-security"
       ],
       "connectionCount": 1,
-      "x": -399.9,
-      "y": -80.3
+      "jx": 0.6974,
+      "jy": -0.6674
     },
     {
       "id": "shortwave",
@@ -4345,8 +4345,8 @@
         "inbox-management"
       ],
       "connectionCount": 2,
-      "x": 130.6,
-      "y": -470.1
+      "jx": -0.0287,
+      "jy": -0.5725
     },
     {
       "id": "slidesai",
@@ -4385,8 +4385,8 @@
         "text-to-slides"
       ],
       "connectionCount": 1,
-      "x": 118.7,
-      "y": -491.8
+      "jx": -0.1979,
+      "jy": -0.8827
     },
     {
       "id": "smartling",
@@ -4428,8 +4428,8 @@
         "workflow-management"
       ],
       "connectionCount": 0,
-      "x": -149.5,
-      "y": -362.1
+      "jx": -0.2421,
+      "jy": 0.9706
     },
     {
       "id": "snyk-ai",
@@ -4469,8 +4469,8 @@
         "AI security"
       ],
       "connectionCount": 1,
-      "x": -481.6,
-      "y": 6.2
+      "jx": -0.4696,
+      "jy": 0.5681
     },
     {
       "id": "socket-dev",
@@ -4513,8 +4513,8 @@
         "developer-tools"
       ],
       "connectionCount": 2,
-      "x": -455.0,
-      "y": -44.4
+      "jx": -0.09,
+      "jy": -0.154
     },
     {
       "id": "sora",
@@ -4550,8 +4550,8 @@
         "saas"
       ],
       "connectionCount": 2,
-      "x": -131.2,
-      "y": 474.8
+      "jx": 0.9146,
+      "jy": 0.9908
     },
     {
       "id": "sourcegraph-cody",
@@ -4592,8 +4592,8 @@
         "ide-integration"
       ],
       "connectionCount": 2,
-      "x": 7.8,
-      "y": -419.4
+      "jx": 0.1115,
+      "jy": 0.4368
     },
     {
       "id": "spellbook",
@@ -4634,8 +4634,8 @@
         "AI assistant"
       ],
       "connectionCount": 0,
-      "x": 341.4,
-      "y": 196.5
+      "jx": -0.6904,
+      "jy": -0.4066
     },
     {
       "id": "stable-diffusion",
@@ -4675,8 +4675,8 @@
         "free-tier"
       ],
       "connectionCount": 2,
-      "x": -1.5,
-      "y": 456.1
+      "jx": 0.9374,
+      "jy": 0.1584
     },
     {
       "id": "suno",
@@ -4714,8 +4714,8 @@
         "saas"
       ],
       "connectionCount": 3,
-      "x": 312.0,
-      "y": 364.6
+      "jx": 0.0844,
+      "jy": 0.496
     },
     {
       "id": "superhuman-ai",
@@ -4753,8 +4753,8 @@
         "ux"
       ],
       "connectionCount": 3,
-      "x": 70.6,
-      "y": -418.2
+      "jx": -0.8857,
+      "jy": 0.1684
     },
     {
       "id": "surfer-seo",
@@ -4792,8 +4792,8 @@
         "saas"
       ],
       "connectionCount": 2,
-      "x": -351.4,
-      "y": -231.2
+      "jx": 0.0057,
+      "jy": 0.7054
     },
     {
       "id": "sweep",
@@ -4837,8 +4837,8 @@
         "JetBrains IDEs"
       ],
       "connectionCount": 0,
-      "x": -48.0,
-      "y": -385.5
+      "jx": -0.6851,
+      "jy": 0.9216
     },
     {
       "id": "synthesia",
@@ -4880,8 +4880,8 @@
         "corporate-communication"
       ],
       "connectionCount": 5,
-      "x": -254.0,
-      "y": 361.4
+      "jx": -0.8398,
+      "jy": -0.6284
     },
     {
       "id": "tabnine",
@@ -4919,8 +4919,8 @@
         "self-hostable"
       ],
       "connectionCount": 2,
-      "x": 13.3,
-      "y": -425.5
+      "jx": 0.1901,
+      "jy": 0.3504
     },
     {
       "id": "tana",
@@ -4961,8 +4961,8 @@
         "note-taking"
       ],
       "connectionCount": 3,
-      "x": 95.5,
-      "y": -483.2
+      "jx": -0.5296,
+      "jy": -0.7602
     },
     {
       "id": "tavily",
@@ -5003,8 +5003,8 @@
         "API"
       ],
       "connectionCount": 4,
-      "x": -251.5,
-      "y": 294.4
+      "jx": 0.7806,
+      "jy": -0.5076
     },
     {
       "id": "tidio-ai",
@@ -5046,8 +5046,8 @@
         "AI agent"
       ],
       "connectionCount": 2,
-      "x": 451.9,
-      "y": 116.8
+      "jx": 0.189,
+      "jy": 0.2388
     },
     {
       "id": "tldv",
@@ -5088,8 +5088,8 @@
         "sales-enablement"
       ],
       "connectionCount": 3,
-      "x": 121.3,
-      "y": -418.3
+      "jx": -0.1616,
+      "jy": 0.1673
     },
     {
       "id": "together-ai",
@@ -5129,8 +5129,8 @@
         "cloud"
       ],
       "connectionCount": 2,
-      "x": 256.7,
-      "y": -310.9
+      "jx": 0.0456,
+      "jy": 0.8694
     },
     {
       "id": "tome",
@@ -5168,8 +5168,8 @@
         "design"
       ],
       "connectionCount": 2,
-      "x": 377.5,
-      "y": -134.1
+      "jx": -0.5915,
+      "jy": 0.4324
     },
     {
       "id": "udio",
@@ -5206,8 +5206,8 @@
         "saas"
       ],
       "connectionCount": 2,
-      "x": 269.5,
-      "y": 315.3
+      "jx": -0.5226,
+      "jy": -0.2084
     },
     {
       "id": "uizard",
@@ -5248,8 +5248,8 @@
         "mockup"
       ],
       "connectionCount": 3,
-      "x": 442.9,
-      "y": -192.4
+      "jx": 0.3434,
+      "jy": -0.4
     },
     {
       "id": "v0",
@@ -5289,8 +5289,8 @@
         "agents"
       ],
       "connectionCount": 3,
-      "x": -25.7,
-      "y": -414.7
+      "jx": -0.3676,
+      "jy": 0.5037
     },
     {
       "id": "vapi",
@@ -5331,8 +5331,8 @@
         "conversational-ai"
       ],
       "connectionCount": 3,
-      "x": 292.0,
-      "y": -286.4
+      "jx": -0.8549,
+      "jy": -0.0834
     },
     {
       "id": "weaviate",
@@ -5375,8 +5375,8 @@
         "embeddings"
       ],
       "connectionCount": 4,
-      "x": -349.1,
-      "y": -94.9
+      "jx": 0.9969,
+      "jy": 0.9922
     },
     {
       "id": "weights-and-biases",
@@ -5416,8 +5416,8 @@
         "machine-learning"
       ],
       "connectionCount": 1,
-      "x": 7.4,
-      "y": 404.8
+      "jx": -0.8535,
+      "jy": -0.5737
     },
     {
       "id": "windsurf",
@@ -5458,8 +5458,8 @@
         "agents"
       ],
       "connectionCount": 2,
-      "x": -32.9,
-      "y": -389.3
+      "jx": -0.4696,
+      "jy": 0.8665
     },
     {
       "id": "zapier",
@@ -5502,8 +5502,8 @@
         "free-tier"
       ],
       "connectionCount": 34,
-      "x": 443.0,
-      "y": 278.1
+      "jx": 0.7617,
+      "jy": 0.7585
     },
     {
       "id": "zendesk-ai",
@@ -5543,8 +5543,8 @@
         "CRM"
       ],
       "connectionCount": 2,
-      "x": -408.0,
-      "y": 177.1
+      "jx": -0.2609,
+      "jy": -0.6845
     }
   ],
   "edges": [
@@ -6926,12 +6926,12 @@
       "description": "Accelerate academic writing while maintaining rigor and originality. Uses AI to assist with literature review, evidence synthesis, outlining, and drafting, while keeping the human researcher in control of intellectual content. Can reduce literature review time by 50% and overall writing time by 30-40 hours per paper.",
       "toolIds": [
         "consensus",
-        "claude",
-        "chatgpt",
         "perplexity",
         "notebooklm",
+        "claude",
+        "elicit",
         "grammarly",
-        "elicit"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7015,12 +7015,12 @@
       "name": "AI-Powered Business Intelligence and Reporting",
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "toolIds": [
-        "n8n",
-        "claude",
-        "chatgpt",
         "make",
+        "zapier",
+        "claude",
+        "n8n",
         "gemini",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7094,9 +7094,9 @@
       "name": "AI-Powered Code Review and Documentation",
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "toolIds": [
-        "cursor",
-        "windsurf",
         "github-copilot",
+        "windsurf",
+        "cursor",
         "claude",
         "chatgpt"
       ],
@@ -7155,17 +7155,17 @@
       "name": "AI-Powered Competitive Intelligence Workflow",
       "description": "A systematic workflow for continuously monitoring and analyzing competitors using AI agents and data analysis tools. This process automates the collection of competitor activities and provides strategic insights to inform business decisions.",
       "toolIds": [
+        "julius-ai",
         "crewai",
-        "brandwatch",
-        "metagpt",
-        "tavily",
-        "claude",
-        "chatgpt",
         "hex",
-        "databricks-ai",
+        "metagpt",
         "gemini",
+        "databricks-ai",
         "autogen",
-        "julius-ai"
+        "tavily",
+        "brandwatch",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7274,9 +7274,9 @@
       "name": "AI-Powered Contract Review Workflow",
       "description": "An efficient workflow for legal teams to analyze, review, and manage contracts using specialized AI tools. This process accelerates due to diligence, identifies risks, and ensures compliance by automating the extraction and analysis of key contract data.",
       "toolIds": [
-        "harvey-ai",
         "spellbook",
-        "casetext-cocounsel"
+        "casetext-cocounsel",
+        "harvey-ai"
       ],
       "stepEdges": [
         {
@@ -7376,11 +7376,11 @@
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "toolIds": [
-        "stable-diffusion",
-        "claude",
-        "chatgpt",
         "dalle-3",
-        "midjourney"
+        "stable-diffusion",
+        "midjourney",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7448,15 +7448,15 @@
       "name": "AI-Powered Customer Feedback Analysis Pipeline",
       "description": "An automated pipeline that collects customer feedback from various sources, analyzes it for sentiment and key themes, and routes insights to the appropriate teams. This workflow helps product and support teams stay on top of customer needs and prioritize improvements.",
       "toolIds": [
-        "n8n",
-        "cohere",
-        "claude",
-        "chatgpt",
-        "hex",
+        "julius-ai",
         "make",
-        "databricks-ai",
         "zapier",
-        "julius-ai"
+        "hex",
+        "cohere",
+        "databricks-ai",
+        "n8n",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7568,11 +7568,11 @@
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "toolIds": [
+        "make",
+        "zapier",
         "n8n",
         "claude",
-        "chatgpt",
-        "make",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7630,13 +7630,13 @@
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "toolIds": [
-        "n8n",
-        "clay",
-        "claude",
-        "chatgpt",
         "make",
+        "zapier",
+        "clay",
         "perplexity",
-        "zapier"
+        "n8n",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7707,13 +7707,13 @@
       "name": "AI Newsletter Automation",
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "toolIds": [
+        "make",
+        "zapier",
+        "perplexity",
         "n8n",
         "claude",
-        "chatgpt",
-        "make",
-        "perplexity",
-        "zapier",
-        "grammarly"
+        "grammarly",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7784,18 +7784,18 @@
       "name": "AI-Powered Meeting Workflow",
       "description": "A complete, automated workflow for preparing, running, and following up on meetings using AI. This process automates transcription, summarization, and action item tracking, saving significant time and ensuring that key decisions and tasks are never missed.",
       "toolIds": [
-        "n8n",
-        "claude",
-        "otter-ai",
-        "chatgpt",
-        "make",
         "fireflies-ai",
+        "claude",
+        "zapier",
         "fathom",
-        "gemini",
         "tldv",
+        "make",
         "perplexity",
         "grain",
-        "zapier"
+        "otter-ai",
+        "gemini",
+        "n8n",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7902,18 +7902,18 @@
       "name": "AI Video Production Pipeline",
       "description": "A fully-automated pipeline for creating short-form videos, from script to final edit. This workflow is ideal for producing content for platforms like TikTok, YouTube Shorts, and Instagram Reels, leveraging AI for every step of the creative process.",
       "toolIds": [
-        "elevenlabs",
+        "sora",
         "claude",
         "luma-ai",
-        "chatgpt",
-        "jasper",
-        "descript",
         "resemble-ai",
-        "copy-ai",
         "kling-ai",
-        "play-ht",
+        "jasper",
         "runway",
-        "sora"
+        "copy-ai",
+        "chatgpt",
+        "play-ht",
+        "elevenlabs",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -8025,11 +8025,11 @@
       "name": "Codebase Migration",
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "toolIds": [
-        "cursor",
-        "windsurf",
         "github-copilot",
-        "chatgpt",
-        "perplexity"
+        "windsurf",
+        "perplexity",
+        "cursor",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8101,11 +8101,11 @@
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "toolIds": [
         "bolt",
+        "perplexity",
+        "midjourney",
         "claude",
         "chatgpt",
-        "v0",
-        "perplexity",
-        "midjourney"
+        "v0"
       ],
       "stepEdges": [
         {
@@ -8175,13 +8175,13 @@
       "name": "Deep Research and Knowledge Synthesis",
       "description": "Conduct comprehensive research on any topic by combining AI search, academic databases, document analysis, and report generation. Used by analysts, researchers, and consultants to compress days of research into hours while producing better-cited, more thorough reports.",
       "toolIds": [
-        "consensus",
         "claude",
-        "chatgpt",
-        "gemini",
+        "consensus",
         "perplexity",
         "notebooklm",
-        "elicit"
+        "gemini",
+        "elicit",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8255,16 +8255,16 @@
       "name": "Faceless YouTube Channel Automation",
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "toolIds": [
+        "sora",
+        "zapier",
+        "kling-ai",
+        "perplexity",
+        "runway",
         "n8n",
-        "elevenlabs",
         "claude",
         "chatgpt",
-        "descript",
-        "perplexity",
-        "kling-ai",
-        "zapier",
-        "runway",
-        "sora"
+        "elevenlabs",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -8350,12 +8350,12 @@
       "name": "Hyper-Personalized Outbound Sales",
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "toolIds": [
+        "make",
+        "zapier",
         "clay",
         "n8n",
         "claude",
-        "chatgpt",
-        "make",
-        "zapier"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8422,11 +8422,11 @@
       "name": "Idea to Deployed App",
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "toolIds": [
-        "cursor",
-        "windsurf",
-        "bolt",
         "github-copilot",
+        "windsurf",
         "claude",
+        "bolt",
+        "cursor",
         "chatgpt",
         "v0"
       ],
@@ -8517,12 +8517,12 @@
       "name": "Podcast Production and Content Repurposing",
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "toolIds": [
+        "make",
+        "zapier",
+        "chatgpt",
         "n8n",
         "claude",
-        "chatgpt",
-        "make",
-        "descript",
-        "zapier"
+        "descript"
       ],
       "stepEdges": [
         {
@@ -8591,10 +8591,10 @@
       "name": "Research to Report",
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "toolIds": [
-        "chatgpt",
-        "claude",
         "perplexity",
-        "notebooklm"
+        "chatgpt",
+        "notebooklm",
+        "claude"
       ],
       "stepEdges": [
         {
@@ -8667,12 +8667,12 @@
       "name": "SEO Blog Factory",
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "toolIds": [
-        "claude",
-        "chatgpt",
-        "jasper",
         "surfer-seo",
+        "jasper",
         "perplexity",
-        "grammarly"
+        "claude",
+        "grammarly",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8743,14 +8743,14 @@
       "name": "Social Media Content Engine",
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "toolIds": [
-        "n8n",
         "claude",
-        "chatgpt",
-        "make",
-        "descript",
-        "copy-ai",
         "zapier",
-        "runway"
+        "make",
+        "chatgpt",
+        "runway",
+        "n8n",
+        "copy-ai",
+        "descript"
       ],
       "stepEdges": [
         {
@@ -8822,14 +8822,14 @@
       "name": "Vibe Coding \u2014 Full-Stack App Development",
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "toolIds": [
-        "cursor",
-        "windsurf",
-        "bolt",
         "github-copilot",
-        "claude",
-        "chatgpt",
         "lovable",
+        "windsurf",
+        "claude",
+        "bolt",
+        "cursor",
         "gemini",
+        "chatgpt",
         "v0"
       ],
       "stepEdges": [
@@ -9032,88 +9032,88 @@
   ],
   "catCenters": {
     "coding-assistant": {
-      "x": 0.0,
-      "y": -450.0
+      "angle": -1.5708,
+      "count": 16
     },
     "productivity": {
-      "x": 132.6,
-      "y": -430.0
+      "angle": -1.2716,
+      "count": 15
     },
     "llm-platform": {
-      "x": 253.5,
-      "y": -371.8
+      "angle": -0.9724,
+      "count": 11
     },
     "agent-framework": {
-      "x": 351.8,
-      "y": -280.6
+      "angle": -0.6732,
+      "count": 11
     },
     "design": {
-      "x": 418.9,
-      "y": -164.4
+      "angle": -0.374,
+      "count": 10
     },
     "data-analysis": {
-      "x": 448.7,
-      "y": -33.6
+      "angle": -0.0748,
+      "count": 8
     },
     "chatbot": {
-      "x": 438.7,
-      "y": 100.1
+      "angle": 0.2244,
+      "count": 7
     },
     "automation": {
-      "x": 389.7,
-      "y": 225.0
+      "angle": 0.5236,
+      "count": 7
     },
     "audio-generation": {
-      "x": 306.1,
-      "y": 329.9
+      "angle": 0.8228,
+      "count": 6
     },
     "writing-assistant": {
-      "x": 195.2,
-      "y": 405.4
+      "angle": 1.122,
+      "count": 6
     },
     "ml-ops": {
-      "x": 67.1,
-      "y": 445.0
+      "angle": 1.4212,
+      "count": 6
     },
     "image-generation": {
-      "x": -67.1,
-      "y": 445.0
+      "angle": 1.7204,
+      "count": 5
     },
     "video-generation": {
-      "x": -195.2,
-      "y": 405.4
+      "angle": 2.0196,
+      "count": 5
     },
     "search": {
-      "x": -306.1,
-      "y": 329.9
+      "angle": 2.3188,
+      "count": 4
     },
     "sales": {
-      "x": -389.7,
-      "y": 225.0
+      "angle": 2.618,
+      "count": 4
     },
     "research": {
-      "x": -438.7,
-      "y": 100.1
+      "angle": 2.9172,
+      "count": 4
     },
     "security": {
-      "x": -448.7,
-      "y": -33.6
+      "angle": 3.2164,
+      "count": 3
     },
     "dev-tools": {
-      "x": -418.9,
-      "y": -164.4
+      "angle": 3.5156,
+      "count": 1
     },
     "seo": {
-      "x": -351.8,
-      "y": -280.6
+      "angle": 3.8148,
+      "count": 1
     },
     "video-editing": {
-      "x": -253.5,
-      "y": -371.8
+      "angle": 4.114,
+      "count": 1
     },
     "other": {
-      "x": -132.6,
-      "y": -430.0
+      "angle": 4.4132,
+      "count": 1
     }
   },
   "stats": {
