@@ -7167,11 +7167,11 @@
       "toolIds": [
         "grammarly",
         "perplexity",
-        "chatgpt",
         "notebooklm",
-        "consensus",
+        "claude",
+        "chatgpt",
         "elicit",
-        "claude"
+        "consensus"
       ],
       "stepEdges": [
         {
@@ -7258,8 +7258,8 @@
       "toolIds": [
         "aider",
         "cursor",
-        "github-copilot",
-        "sourcegraph-cody"
+        "sourcegraph-cody",
+        "github-copilot"
       ],
       "stepEdges": [
         {
@@ -7327,11 +7327,11 @@
       "wfCategory": "Research & Analysis",
       "toolIds": [
         "zapier",
-        "chatgpt",
         "n8n",
+        "chatgpt",
+        "claude",
         "gemini",
-        "make",
-        "claude"
+        "make"
       ],
       "stepEdges": [
         {
@@ -7406,11 +7406,11 @@
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
-        "chatgpt",
         "github-copilot",
+        "claude",
         "cursor",
-        "windsurf",
-        "claude"
+        "chatgpt",
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -7468,17 +7468,17 @@
       "description": "A systematic workflow for continuously monitoring and analyzing competitors using AI agents and data analysis tools. This process automates the collection of competitor activities and provides strategic insights to inform business decisions.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "autogen",
-        "crewai",
-        "chatgpt",
-        "gemini",
-        "metagpt",
         "databricks-ai",
-        "hex",
-        "brandwatch",
+        "autogen",
+        "metagpt",
         "tavily",
         "julius-ai",
-        "claude"
+        "hex",
+        "claude",
+        "chatgpt",
+        "crewai",
+        "gemini",
+        "brandwatch"
       ],
       "stepEdges": [
         {
@@ -7588,8 +7588,8 @@
       "description": "An efficient workflow for legal teams to analyze, review, and manage contracts using specialized AI tools. This process accelerates due to diligence, identifies risks, and ensures compliance by automating the extraction and analysis of key contract data.",
       "wfCategory": "Operations & Support",
       "toolIds": [
-        "harvey-ai",
         "casetext-cocounsel",
+        "harvey-ai",
         "spellbook"
       ],
       "stepEdges": [
@@ -7691,11 +7691,11 @@
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "wfCategory": "Content & Media",
       "toolIds": [
+        "dalle-3",
+        "claude",
         "chatgpt",
         "midjourney",
-        "dalle-3",
-        "stable-diffusion",
-        "claude"
+        "stable-diffusion"
       ],
       "stepEdges": [
         {
@@ -7766,13 +7766,13 @@
       "toolIds": [
         "zapier",
         "cohere",
-        "chatgpt",
-        "n8n",
         "databricks-ai",
+        "n8n",
         "hex",
-        "make",
         "julius-ai",
-        "claude"
+        "claude",
+        "chatgpt",
+        "make"
       ],
       "stepEdges": [
         {
@@ -7886,10 +7886,10 @@
       "wfCategory": "Operations & Support",
       "toolIds": [
         "zapier",
-        "chatgpt",
         "n8n",
-        "make",
-        "claude"
+        "claude",
+        "chatgpt",
+        "make"
       ],
       "stepEdges": [
         {
@@ -7948,13 +7948,13 @@
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "wfCategory": "Sales & Marketing",
       "toolIds": [
-        "clay",
         "zapier",
-        "chatgpt",
-        "n8n",
-        "make",
         "perplexity",
-        "claude"
+        "n8n",
+        "chatgpt",
+        "claude",
+        "make",
+        "clay"
       ],
       "stepEdges": [
         {
@@ -8028,11 +8028,11 @@
       "toolIds": [
         "zapier",
         "grammarly",
-        "chatgpt",
-        "n8n",
-        "make",
         "perplexity",
-        "claude"
+        "n8n",
+        "chatgpt",
+        "claude",
+        "make"
       ],
       "stepEdges": [
         {
@@ -8105,17 +8105,17 @@
       "wfCategory": "Operations & Support",
       "toolIds": [
         "zapier",
-        "otter-ai",
-        "chatgpt",
         "fathom",
-        "tldv",
-        "grain",
-        "gemini",
+        "perplexity",
         "n8n",
         "fireflies-ai",
+        "tldv",
+        "claude",
+        "chatgpt",
+        "gemini",
+        "otter-ai",
         "make",
-        "perplexity",
-        "claude"
+        "grain"
       ],
       "stepEdges": [
         {
@@ -8224,17 +8224,17 @@
       "wfCategory": "Content & Media",
       "toolIds": [
         "sora",
-        "play-ht",
-        "elevenlabs",
-        "jasper",
-        "descript",
-        "chatgpt",
-        "copy-ai",
         "runway",
         "kling-ai",
-        "luma-ai",
+        "play-ht",
         "resemble-ai",
-        "claude"
+        "descript",
+        "luma-ai",
+        "claude",
+        "chatgpt",
+        "elevenlabs",
+        "copy-ai",
+        "jasper"
       ],
       "stepEdges": [
         {
@@ -8347,11 +8347,11 @@
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
-        "chatgpt",
+        "perplexity",
         "github-copilot",
+        "chatgpt",
         "cursor",
-        "windsurf",
-        "perplexity"
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -8423,12 +8423,12 @@
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "wfCategory": "Content & Media",
       "toolIds": [
+        "perplexity",
         "v0",
         "bolt",
+        "claude",
         "chatgpt",
-        "midjourney",
-        "perplexity",
-        "claude"
+        "midjourney"
       ],
       "stepEdges": [
         {
@@ -8500,12 +8500,12 @@
       "wfCategory": "Research & Analysis",
       "toolIds": [
         "perplexity",
-        "chatgpt",
-        "gemini",
         "notebooklm",
-        "consensus",
+        "chatgpt",
+        "claude",
+        "gemini",
         "elicit",
-        "claude"
+        "consensus"
       ],
       "stepEdges": [
         {
@@ -8580,16 +8580,16 @@
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "sora",
-        "elevenlabs",
         "zapier",
-        "descript",
-        "chatgpt",
-        "n8n",
+        "sora",
         "runway",
-        "kling-ai",
         "perplexity",
-        "claude"
+        "kling-ai",
+        "n8n",
+        "descript",
+        "claude",
+        "chatgpt",
+        "elevenlabs"
       ],
       "stepEdges": [
         {
@@ -8676,12 +8676,12 @@
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "wfCategory": "Sales & Marketing",
       "toolIds": [
-        "clay",
         "zapier",
-        "chatgpt",
         "n8n",
-        "make",
-        "claude"
+        "claude",
+        "chatgpt",
+        "clay",
+        "make"
       ],
       "stepEdges": [
         {
@@ -8751,11 +8751,11 @@
       "toolIds": [
         "v0",
         "bolt",
-        "chatgpt",
         "github-copilot",
+        "claude",
+        "chatgpt",
         "cursor",
-        "windsurf",
-        "claude"
+        "windsurf"
       ],
       "stepEdges": [
         {
@@ -8846,11 +8846,11 @@
       "wfCategory": "Content & Media",
       "toolIds": [
         "zapier",
-        "descript",
-        "chatgpt",
         "n8n",
-        "make",
-        "claude"
+        "descript",
+        "claude",
+        "chatgpt",
+        "make"
       ],
       "stepEdges": [
         {
@@ -8921,16 +8921,16 @@
       "wfCategory": "Other",
       "toolIds": [
         "brandwatch",
-        "jasper",
+        "perplexity",
+        "runway",
+        "claude",
         "chatgpt",
-        "copy-ai",
         "gemini",
         "midjourney",
-        "runway",
-        "perplexity",
         "synthesia",
-        "stable-diffusion",
-        "claude"
+        "copy-ai",
+        "jasper",
+        "stable-diffusion"
       ],
       "stepEdges": [
         {
@@ -9052,8 +9052,8 @@
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "chatgpt",
         "claude",
+        "chatgpt",
         "notebooklm",
         "perplexity"
       ],
@@ -9130,11 +9130,11 @@
       "wfCategory": "Content & Media",
       "toolIds": [
         "grammarly",
-        "jasper",
-        "chatgpt",
         "surfer-seo",
         "perplexity",
-        "claude"
+        "claude",
+        "chatgpt",
+        "jasper"
       ],
       "stepEdges": [
         {
@@ -9207,13 +9207,13 @@
       "wfCategory": "Content & Media",
       "toolIds": [
         "zapier",
-        "descript",
-        "chatgpt",
-        "copy-ai",
-        "n8n",
         "runway",
+        "n8n",
+        "descript",
+        "claude",
+        "chatgpt",
         "make",
-        "claude"
+        "copy-ai"
       ],
       "stepEdges": [
         {
@@ -9286,15 +9286,15 @@
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
+        "lovable",
         "v0",
         "bolt",
-        "chatgpt",
-        "lovable",
-        "gemini",
         "github-copilot",
+        "claude",
+        "chatgpt",
         "cursor",
-        "windsurf",
-        "claude"
+        "gemini",
+        "windsurf"
       ],
       "stepEdges": [
         {
