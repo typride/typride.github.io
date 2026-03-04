@@ -18,13 +18,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
   background: #0f172a; color: #e2e8f0; line-height: 1.7; padding: 0; }
 a { color: #38bdf8; text-decoration: none; }
 a:hover { text-decoration: underline; }
-.topbar { background: #1e293b; border-bottom: 1px solid #334155; padding: 12px 20px;
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.topbar { background: #1e293b; border-bottom: 1px solid #334155; padding: 8px 20px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
 .topbar a.brand { color: #38bdf8; font-weight: 700; font-size: 16px; text-decoration: none; }
 .topbar a.brand:hover { text-decoration: none; opacity: 0.9; }
-.topbar .nav { font-size: 13px; color: #94a3b8; }
-.topbar .nav a { color: #94a3b8; }
-.topbar .nav a:hover { color: #38bdf8; }
+.topbar .site-nav { display: flex; gap: 2px; margin-left: 8px; }
+.topbar .nav-tab { text-decoration: none; font-size: 12px; font-weight: 600; color: #94a3b8;
+  padding: 6px 12px; border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
+.topbar .nav-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
+.topbar .nav-tab.active { color: #38bdf8; background: rgba(56,189,248,0.08); }
+.topbar .nav-tab-accent { color: #38bdf8 !important; border: 1px solid rgba(56,189,248,0.25); }
+.topbar .nav-tab-accent:hover, .topbar .nav-tab-accent.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; }
+.breadcrumb { font-size: 12px; color: #64748b; margin-left: auto; }
+.breadcrumb a { color: #94a3b8; }
+.breadcrumb a:hover { color: #38bdf8; }
 .container { max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; }
 h1 { font-size: 32px; margin-bottom: 4px; }
 h2 { font-size: 20px; margin: 28px 0 12px; color: #f1f5f9; }
@@ -80,13 +87,12 @@ p { font-size: 15px; color: #94a3b8; margin-bottom: 12px; }
 <body>
 <div class="topbar">
   <a href="/" class="brand">The Stack Map</a>
-  <div class="nav">
-    <a href="/">Home</a> &middot;
-    <a href="/compare/">Comparisons</a> &middot;
-    <a href="/quiz/">Find Your Stack</a> &middot;
-    <a href="/category/video-generation/">Video Generation</a> &middot;
-    Runway vs Sora
-  </div>
+  <nav class="site-nav">
+    <a href="/" class="nav-tab">Explore</a>
+    <a href="/compare/" class="nav-tab active">Compare</a>
+    <a href="/quiz/" class="nav-tab nav-tab-accent">Build Your Stack</a>
+  </nav>
+  <span class="breadcrumb"><a href="/category/video-generation/">Video Generation</a> &rsaquo; Runway vs Sora</span>
 </div>
 <div class="container">
 <span class="cat-badge">Video Generation</span>
