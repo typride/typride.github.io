@@ -83,6 +83,17 @@ p { font-size: 15px; color: #94a3b8; margin-bottom: 12px; }
 }
 </style>
 <script async src="https://tally.so/widgets/embed.js"></script>
+<script>
+(function(){
+  var p=new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){var v=p.get(k);if(v)sessionStorage.setItem(k,v)});
+  var s=sessionStorage.getItem('utm_source');
+  if(s){document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('form[action*="buttondown.com"]').forEach(function(f){
+      var inp=document.createElement('input');inp.type='hidden';inp.name='tag';
+      inp.value='from-'+s.toLowerCase().replace(/[^a-z0-9]/g,'-');f.appendChild(inp)})})};
+})();
+</script>
 </head>
 <body>
 <div class="topbar">
