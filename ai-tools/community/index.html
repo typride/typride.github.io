@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Community Feedback — Built With You | The Stack Map</title>
+<meta name="description" content="See what the community is saying about The Stack Map and how we&#x27;re using your feedback to make it better. Real quotes, real improvements, built in public.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Community Feedback — Built With You | The Stack Map">
+<meta property="og:description" content="See what the community is saying about The Stack Map and how we&#x27;re using your feedback to make it better. Real quotes, real improvements, built in public.">
+<meta property="og:url" content="https://thestackmap.com/community/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Community Feedback — Built With You | The Stack Map">
+<meta name="twitter:description" content="See what the community is saying about The Stack Map and how we&#x27;re using your feedback to make it better. Real quotes, real improvements, built in public.">
+<link rel="canonical" href="https://thestackmap.com/community/">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a; color: #e2e8f0; line-height: 1.7; padding: 0; min-height: 100vh; }
+a { color: #38bdf8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar { background: #1e293b; border-bottom: 1px solid #334155; padding: 8px 20px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+.topbar a.brand { color: #38bdf8; font-weight: 700; font-size: 16px; text-decoration: none; }
+.topbar a.brand:hover { text-decoration: none; opacity: 0.9; }
+.topbar .site-nav { display: flex; gap: 2px; margin-left: 8px; }
+.topbar .nav-tab { text-decoration: none; font-size: 12px; font-weight: 600; color: #94a3b8;
+  padding: 6px 12px; border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
+.topbar .nav-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
+.topbar .nav-tab.active { color: #38bdf8; background: rgba(56,189,248,0.08); }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 20px 60px; }
+h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+.subtitle { font-size: 16px; color: #94a3b8; margin-bottom: 32px; line-height: 1.6; }
+.fb-stats { display: flex; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
+.fb-stat { text-align: center; padding: 16px 20px; background: #1e293b; border: 1px solid #334155;
+  border-radius: 10px; min-width: 120px; flex: 1; }
+.fb-stat-num { font-size: 28px; font-weight: 800; color: #f1f5f9; display: block; }
+.fb-stat-label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;
+  font-weight: 600; }
+.fb-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px;
+  margin-bottom: 20px; transition: border-color 0.2s; }
+.fb-card:hover { border-color: #475569; }
+.fb-status-shipped { border-left: 3px solid #34d399; }
+.fb-status-in_progress { border-left: 3px solid #fbbf24; }
+.fb-status-received { border-left: 3px solid #64748b; }
+.fb-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.fb-card h3 { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+.fb-desc { font-size: 13px; color: #94a3b8; margin: 0; }
+.fb-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+  white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em; }
+.fb-received { background: rgba(100,116,139,0.2); color: #94a3b8; }
+.fb-progress { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.fb-shipped { background: rgba(52,211,153,0.15); color: #34d399; }
+.fb-shipped-note { font-size: 13px; color: #34d399; margin-top: 12px; padding: 10px 14px;
+  background: rgba(52,211,153,0.06); border-radius: 8px; }
+.fb-toggle { font-size: 12px; color: #64748b; background: none; border: none; cursor: pointer;
+  padding: 8px 0 0; font-weight: 600; transition: color 0.15s; }
+.fb-toggle:hover { color: #94a3b8; }
+.fb-items { display: none; margin-top: 16px; }
+.fb-card.open .fb-items { display: block; }
+.fb-item { padding: 14px 16px; background: #0f172a; border: 1px solid #1e293b; border-radius: 8px;
+  margin-bottom: 10px; }
+.fb-quote { font-size: 14px; color: #cbd5e1; line-height: 1.6; font-style: italic; margin-bottom: 8px; }
+.fb-attr { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 11px; color: #64748b; }
+.fb-icon { font-size: 14px; }
+.fb-author { font-weight: 600; color: #94a3b8; }
+.fb-source a { font-size: 11px; }
+.fb-cta { text-align: center; margin-top: 48px; padding: 32px; background: #1e293b;
+  border: 1px solid #334155; border-radius: 12px; }
+.fb-cta h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.fb-cta p { font-size: 14px; color: #94a3b8; margin-bottom: 20px; }
+.fb-cta-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.fb-cta-links a { display: inline-block; padding: 10px 20px; border-radius: 8px; font-size: 13px;
+  font-weight: 600; transition: all 0.15s; }
+.fb-cta-links a.primary { background: #38bdf8; color: #0f172a; }
+.fb-cta-links a.primary:hover { background: #7dd3fc; text-decoration: none; }
+.fb-cta-links a.secondary { background: rgba(255,255,255,0.05); color: #94a3b8;
+  border: 1px solid #334155; }
+.fb-cta-links a.secondary:hover { color: #e2e8f0; border-color: #475569; text-decoration: none; }
+.disclosure { text-align: center; font-size: 10px; color: #64748b; padding: 16px;
+  border-top: 1px solid #334155; margin-top: 40px; }
+.disclosure a { color: #38bdf8; }
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  .fb-stats { gap: 10px; }
+  .fb-stat { min-width: 90px; padding: 12px; }
+  .fb-stat-num { font-size: 22px; }
+  .fb-card-header { flex-direction: column; gap: 8px; }
+}
+</style>
+<script async src="https://tally.so/widgets/embed.js"></script>
+<script>
+(function(){
+  var p=new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){var v=p.get(k);if(v)sessionStorage.setItem(k,v)});
+  var s=sessionStorage.getItem('utm_source');
+  if(s){document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('form[action*="buttondown.com"]').forEach(function(f){
+      var inp=document.createElement('input');inp.type='hidden';inp.name='tag';
+      inp.value='from-'+s.toLowerCase().replace(/[^a-z0-9]/g,'-');f.appendChild(inp)})})};
+})();
+</script>
+</head>
+<body>
+<div class="topbar">
+  <a href="/" class="brand">The Stack Map</a>
+  <nav class="site-nav">
+    <a href="/" class="nav-tab">Workflows</a>
+    <a href="/explore/" class="nav-tab">Explore</a>
+    <a href="/compare/" class="nav-tab">Compare</a>
+    <a href="/quiz/" class="nav-tab nav-tab-accent">AI Stack Builder</a>
+    <a href="/community/" class="nav-tab active">Community</a>
+    <a href="#tally-open=81dvDP&tally-emoji-text=&#128075;&tally-emoji-animation=wave" class="nav-tab">Feedback</a>
+  </nav>
+</div>
+<div class="container">
+<h1>Built With Your Feedback</h1>
+<p class="subtitle">We read every comment, tweet, and message. Here's what you're telling us and what we're doing about it. Your feedback shapes this project.</p>
+
+<div class="fb-stats">
+  <div class="fb-stat">
+    <span class="fb-stat-num">16</span>
+    <span class="fb-stat-label">Quotes Collected</span>
+  </div>
+  <div class="fb-stat">
+    <span class="fb-stat-num">6</span>
+    <span class="fb-stat-label">Themes Identified</span>
+  </div>
+  <div class="fb-stat">
+    <span class="fb-stat-num">1</span>
+    <span class="fb-stat-label">In Progress</span>
+  </div>
+  <div class="fb-stat">
+    <span class="fb-stat-num">3</span>
+    <span class="fb-stat-label">Shipped</span>
+  </div>
+</div>
+
+<div class="fb-card fb-status-shipped">
+  <div class="fb-card-header">
+    <div>
+      <h3>Graph Readability</h3>
+      <p class="fb-desc">The interactive graph is visually impressive but hard to navigate on first visit — users get overwhelmed before finding the real value.</p>
+    </div>
+    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
+  </div>
+  <div class="fb-shipped-note">&#10003; Shipped 2026-02-24 — Graph moved to /explore/ — no longer the default landing. Workflows homepage is now the entry point.</div>
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 3 quotes':'Show 3 quotes'">Show 3 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;The graph is a total mess tbh. So confusing. I doubt people would stay for over 10 seconds on the website.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/webicco</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9e9rvk/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;I tried giving it a second chance now... but it&#x27;s so confusing I couldn&#x27;t navigate around it.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/webicco</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ebkfg/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;The graph is a shiny gimmick, but your SEO strategy proves that users want solutions, not a spiderweb of nodes.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/asbytheone</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ell4n/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-shipped">
+  <div class="fb-card-header">
+    <div>
+      <h3>Workflows Are The Core Value</h3>
+      <p class="fb-desc">Users consistently say the workflow angle — showing how tools chain together — is the real differentiator over other directories.</p>
+    </div>
+    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
+  </div>
+  <div class="fb-shipped-note">&#10003; Shipped 2026-02-24 — Workflows are now the homepage — cards by category with tool chips and step counts, linking to /explore/?workflow=slug.</div>
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 6 quotes':'Show 6 quotes'">Show 6 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;The workflow-first framing is the right lens. Most tool lists are just catalogs. Showing how Claude feeds into n8n which triggers a Braze send or a BigQuery write is where the actual value lives.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/andrewluxem</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9g58o1/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;A lot of people keep asking &#x27;what&#x27;s the best AI tool?&#x27; but the real answer is usually a stack of 3-5 tools working together. Mapping those connections visually is actually pretty useful.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/Simple3018</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9gasbf/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;Most AI tool lists are just directories, but mapping how tools connect in real workflows is way more useful. The 25 workflows part sounds especially practical.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/Usualguy01</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9ga1lf/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;The workflow mapping angle is genuinely useful — individual tool lists are everywhere but seeing how things actually chain together is harder to find.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/damn_brotha</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9hj0iv/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;The workflow mapping angle is smart, that&#x27;s what most directories miss.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/NeedleworkerSmart486</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ehbln/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;Most people struggle to figure out which tools actually fit together in a real process. A simple step by step example of a full workflow might help people understand the value faster.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/LegalWait6057</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9f602s/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-shipped">
+  <div class="fb-card-header">
+    <div>
+      <h3>Comparison Pages Are Solid</h3>
+      <p class="fb-desc">Even users who disliked the graph said the side-by-side comparison pages were genuinely useful.</p>
+    </div>
+    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
+  </div>
+  <div class="fb-shipped-note">&#10003; Shipped 2026-03-02 — 204 comparison pages live at launch, with 26 featuring rich editorial content.</div>
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 2 quotes':'Show 2 quotes'">Show 2 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Comparison seems quite good.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/webicco</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ecosq/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;The insight about comparison pages outperforming the visualization for SEO is a good reminder that the flashy feature gets people in the door but the boring content keeps Google happy. $10.46/year hosting cost is wild, well done.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/purplepetals18</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9eub60/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-received">
+  <div class="fb-card-header">
+    <div>
+      <h3>Build Your Stack Needs Better Onboarding</h3>
+      <p class="fb-desc">The AI Stack Builder feature isn&#x27;t self-explanatory — users need to see the value before investing time.</p>
+    </div>
+    <span class="fb-badge fb-received">Received</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 2 quotes':'Show 2 quotes'">Show 2 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Build your stack I don&#x27;t really understand it tbh.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/webicco</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ecosq/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;When the graph is fully working, will users be able to filter by workflow type (like coding, content, research)?&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/Simple3018</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9gavlr/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-received">
+  <div class="fb-card-header">
+    <div>
+      <h3>Show the Automation Glue</h3>
+      <p class="fb-desc">Users want to see how AI tools connect to business infrastructure — the orchestration layer (n8n, Make, Zapier) and agent tools.</p>
+    </div>
+    <span class="fb-badge fb-received">Received</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 2 quotes':'Show 2 quotes'">Show 2 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;One gap worth adding: the automation layer that connects AI tools to the business systems underneath. n8n, Make, Zapier — this is where a lot of the real value lives.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/damn_brotha</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9hj0iv/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;Would be cool to see autonomous agent tools in there too. I use ExoClaw for chaining together workflows that run on their own.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/NeedleworkerSmart486</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9ehbln/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-in_progress">
+  <div class="fb-card-header">
+    <div>
+      <h3>Keep Content Fresh</h3>
+      <p class="fb-desc">Users expect the directory to stay current as the AI landscape evolves rapidly.</p>
+    </div>
+    <span class="fb-badge fb-progress">In Progress</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 1 quote':'Show 1 quote'">Show 1 quote</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Jasper and Copy are still around? Jesus.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/gaudiocomplex</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/o9f4tbo/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="fb-cta">
+  <h3>Have feedback?</h3>
+  <p>We take every piece of feedback seriously. Share yours and it might show up here.</p>
+  <div class="fb-cta-links">
+    <a href="#tally-open=81dvDP&tally-emoji-text=&#128075;&tally-emoji-animation=wave" class="primary">Share Feedback</a>
+    <a href="https://www.reddit.com/r/artificial/comments/1roj7ux/" target="_blank" rel="noopener" class="secondary">Join the Discussion on Reddit</a>
+  </div>
+</div>
+
+<div class="disclosure">
+  <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a> &middot;
+  Some links may earn us a commission at no extra cost to you.
+</div>
+</div>
+</body>
+</html>
