@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Idea to Deployed App — AI Workflow | The Stack Map</title>
+<meta name="description" content="Idea to Deployed App: Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native ...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Idea to Deployed App — AI Workflow | The Stack Map">
+<meta property="og:description" content="Idea to Deployed App: Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native ...">
+<meta property="og:url" content="https://thestackmap.com/workflows/idea-to-deployed-app/">
+<link rel="canonical" href="https://thestackmap.com/workflows/idea-to-deployed-app/">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #e2e8f0;
+  --text-muted: #94a3b8; --accent: #38bdf8; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.topbar { display: flex; align-items: center; gap: 16px; padding: 10px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border); position: sticky;
+  top: 0; z-index: 100; flex-wrap: wrap; }
+.brand { font-weight: 700; font-size: 16px; color: var(--accent); text-decoration: none; }
+.site-nav { display: flex; gap: 4px; align-items: center; overflow-x: auto; }
+.nav-tab { padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;
+  color: var(--text-muted); text-decoration: none; white-space: nowrap; transition: all 0.15s; }
+.nav-tab:hover { background: rgba(255,255,255,0.05); color: var(--text); text-decoration: none; }
+.nav-tab.active { background: var(--accent); color: var(--bg); font-weight: 600; }
+.nav-tab-accent { color: var(--accent); }
+.nav-sep { width: 1px; height: 16px; background: var(--border); margin: 0 4px;
+  flex-shrink: 0; align-self: center; }
+.breadcrumb { font-size: 12px; color: var(--text-muted); margin-left: auto; }
+.breadcrumb a { color: var(--text-muted); }
+.breadcrumb a:hover { color: var(--accent); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+
+/* Hero */
+.wfp-hero { margin-bottom: 32px; }
+.wfp-hero h1 { font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
+.wfp-hero .wfp-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6;
+  margin-bottom: 16px; max-width: 700px; }
+.wfp-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.wfp-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px;
+  font-weight: 600; background: rgba(56,189,248,0.12); color: var(--accent); }
+.wfp-badge-cat { background: rgba(139,92,246,0.15); color: #a78bfa; }
+.wfp-audience { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.wfp-graph-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px;
+  border-radius: 8px; background: var(--surface); border: 1px solid var(--border);
+  color: var(--text); font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: all 0.15s; margin-top: 8px; }
+.wfp-graph-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* Flow visualization */
+.wfp-flow { display: flex; flex-direction: column; gap: 0; margin: 32px 0; }
+.wfp-step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; }
+.wfp-step-num { font-size: 11px; font-weight: 700; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.wfp-step-name { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.wfp-step-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+.wfp-step-tools { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.wfp-tool-chip { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px;
+  font-weight: 600; text-decoration: none; transition: all 0.15s; }
+.wfp-tool-chip:hover { text-decoration: none; }
+.wfp-primary { background: rgba(56,189,248,0.15); color: var(--accent); }
+.wfp-primary:hover { background: rgba(56,189,248,0.25); }
+.wfp-alt { background: rgba(148,163,184,0.1); color: var(--text-muted); font-weight: 500; }
+.wfp-alt:hover { background: rgba(148,163,184,0.2); color: var(--text); }
+.wfp-step-alts { font-size: 12px; color: var(--text-muted); margin-bottom: 6px;
+  display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.wfp-alt-label { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+.wfp-step-io { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+.wfp-io-label { font-weight: 600; color: var(--text); }
+
+/* Arrows between steps */
+.wfp-arrow { display: flex; flex-direction: column; align-items: center; padding: 4px 0; }
+.wfp-arrow-line { width: 2px; height: 24px; background: var(--border); }
+.wfp-arrow-label { font-size: 11px; color: var(--text-muted); text-align: center;
+  max-width: 300px; padding: 2px 0; }
+.wfp-arrow::after { content: ''; width: 0; height: 0; border-left: 6px solid transparent;
+  border-right: 6px solid transparent; border-top: 6px solid var(--border); }
+
+/* Step detail cards */
+.wfp-details { margin: 40px 0; }
+.wfp-detail-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.wfp-detail-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.wfp-detail-num { font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent);
+  padding: 2px 10px; border-radius: 12px; white-space: nowrap; }
+.wfp-detail-card h3 { font-size: 18px; font-weight: 700; }
+.wfp-detail-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.wfp-detail-label { font-size: 12px; font-weight: 600; color: var(--text-muted);
+  margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.wfp-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px; margin-bottom: 12px; }
+.wfp-detail-tool { display: block; padding: 10px 14px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 8px; text-decoration: none;
+  transition: all 0.15s; }
+.wfp-detail-tool:hover { border-color: var(--accent); text-decoration: none; }
+.wfp-detail-tool strong { display: block; font-size: 13px; color: var(--text); }
+.wfp-detail-tool span { font-size: 11px; color: var(--text-muted); }
+.wfp-detail-alt { border-style: dashed; }
+.wfp-detail-tools { margin-bottom: 8px; }
+
+/* Related workflows */
+.wfp-related { margin: 40px 0; }
+.wfp-related h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.wfp-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px; }
+.wfp-related-card { display: block; padding: 16px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; text-decoration: none;
+  transition: all 0.15s; }
+.wfp-related-card:hover { border-color: var(--accent); text-decoration: none; }
+.wfp-related-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.wfp-related-desc { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+.wfp-related-meta { font-size: 11px; color: var(--text-muted); }
+
+.disclosure { text-align: center; font-size: 10px; color: #64748b; padding: 16px;
+  border-top: 1px solid var(--border); margin-top: 40px; }
+.disclosure a { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .container { padding: 20px 14px; }
+  .wfp-hero h1 { font-size: 22px; }
+  .wfp-detail-grid { grid-template-columns: 1fr; }
+  .wfp-related-grid { grid-template-columns: 1fr; }
+}
+</style>
+<script async src="https://tally.so/widgets/embed.js"></script>
+<script>
+(function(){
+  var p=new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){var v=p.get(k);if(v)sessionStorage.setItem(k,v)});
+  var s=sessionStorage.getItem('utm_source');
+  if(s){document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('form[action*="buttondown.com"]').forEach(function(f){
+      var inp=document.createElement('input');inp.type='hidden';inp.name='tag';
+      inp.value='from-'+s.toLowerCase().replace(/[^a-z0-9]/g,'-');f.appendChild(inp)})})};
+})();
+</script>
+</head>
+<body>
+<div class="topbar">
+  <a href="/" class="brand">The Stack Map</a>
+  <nav class="site-nav">
+    <a href="/" class="nav-tab active">Workflows</a>
+    <a href="/explore/" class="nav-tab">Explore</a>
+    <a href="/compare/" class="nav-tab">Compare</a>
+    <a href="/quiz/" class="nav-tab nav-tab-accent">AI Stack Builder</a>
+    <span class="nav-sep"></span>
+    <a href="/community/" class="nav-tab">Community</a>
+    <a href="#tally-open=81dvDP&tally-emoji-text=&#128075;&tally-emoji-animation=wave" class="nav-tab">Feedback</a>
+  </nav>
+  <span class="breadcrumb"><a href="/#workflows">Workflows</a> &rsaquo; Idea to Deployed App</span>
+</div>
+<div class="container">
+
+<div class="wfp-hero">
+  <div class="wfp-meta">
+    <span class="wfp-badge wfp-badge-cat">Other</span>
+    <span class="wfp-badge">5 steps</span>
+    <span class="wfp-badge">7 tools</span>
+  </div>
+  <h1>Idea to Deployed App</h1>
+  <p class="wfp-desc">Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.</p>
+  <div class="wfp-audience"><span class="wfp-badge">developers</span></div>
+  <a href="/explore/?workflow=idea-to-deployed-app" class="wfp-graph-link">
+    &#127760; View in interactive graph &rarr;
+  </a>
+</div>
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:16px;">Workflow</h2>
+<div class="wfp-flow"><div class="wfp-step">
+  <div class="wfp-step-num">Step 1</div>
+  <div class="wfp-step-name">Spec out the idea</div>
+  <div class="wfp-step-desc">Describe the application to a chatbot and iterate on requirements, user stories, and technical architecture</div>
+  <div class="wfp-step-tools"><a href="/tools/claude/" class="wfp-tool-chip wfp-primary">Claude</a></div><div class="wfp-step-alts"><span class="wfp-alt-label">Alternatives:</span> <a href="/tools/chatgpt/" class="wfp-tool-chip wfp-alt">ChatGPT</a></div><div class="wfp-step-io"><span class="wfp-io-label">Input:</span> A product idea or problem statement</div><div class="wfp-step-io"><span class="wfp-io-label">Output:</span> Requirements doc, user stories, tech stack decision</div></div><div class="wfp-arrow"><span class="wfp-arrow-line"></span><span class="wfp-arrow-label">Requirements doc, user stories, tech stack decision</span></div><div class="wfp-step">
+  <div class="wfp-step-num">Step 2</div>
+  <div class="wfp-step-name">Generate UI prototype</div>
+  <div class="wfp-step-desc">Use an AI UI generator to quickly create the visual design and component structure</div>
+  <div class="wfp-step-tools"><a href="/tools/v0/" class="wfp-tool-chip wfp-primary">v0</a></div><div class="wfp-step-alts"><span class="wfp-alt-label">Alternatives:</span> <a href="/tools/bolt/" class="wfp-tool-chip wfp-alt">Bolt</a></div><div class="wfp-step-io"><span class="wfp-io-label">Input:</span> Requirements and UI descriptions</div><div class="wfp-step-io"><span class="wfp-io-label">Output:</span> React components, page layouts, design system</div></div><div class="wfp-arrow"><span class="wfp-arrow-line"></span><span class="wfp-arrow-label">React components, page layouts, design system</span></div><div class="wfp-step">
+  <div class="wfp-step-num">Step 3</div>
+  <div class="wfp-step-name">Scaffold the full stack</div>
+  <div class="wfp-step-desc">If the app needs a backend, use a full-stack generator to create API routes, database schema, and auth</div>
+  <div class="wfp-step-tools"><a href="/tools/bolt/" class="wfp-tool-chip wfp-primary">Bolt</a></div><div class="wfp-step-alts"><span class="wfp-alt-label">Alternatives:</span> <a href="/tools/v0/" class="wfp-tool-chip wfp-alt">v0</a></div><div class="wfp-step-io"><span class="wfp-io-label">Input:</span> UI prototype + backend requirements</div><div class="wfp-step-io"><span class="wfp-io-label">Output:</span> Full-stack application with frontend, API, and database</div></div><div class="wfp-arrow"><span class="wfp-arrow-line"></span><span class="wfp-arrow-label">Full-stack application with frontend, API, and database</span></div><div class="wfp-step">
+  <div class="wfp-step-num">Step 4</div>
+  <div class="wfp-step-name">Iterate and refine</div>
+  <div class="wfp-step-desc">Bring the generated code into an AI-native editor for real development -- refactoring, bug fixes, feature additions, tests</div>
+  <div class="wfp-step-tools"><a href="/tools/cursor/" class="wfp-tool-chip wfp-primary">Cursor</a></div><div class="wfp-step-alts"><span class="wfp-alt-label">Alternatives:</span> <a href="/tools/windsurf/" class="wfp-tool-chip wfp-alt">Windsurf</a><a href="/tools/github-copilot/" class="wfp-tool-chip wfp-alt">GitHub Copilot</a></div><div class="wfp-step-io"><span class="wfp-io-label">Input:</span> Generated application code</div><div class="wfp-step-io"><span class="wfp-io-label">Output:</span> Production-quality codebase with tests</div></div><div class="wfp-arrow"><span class="wfp-arrow-line"></span><span class="wfp-arrow-label">Production-quality codebase with tests</span></div><div class="wfp-step">
+  <div class="wfp-step-num">Step 5</div>
+  <div class="wfp-step-name">AI code review</div>
+  <div class="wfp-step-desc">Use AI to review the final code for bugs, security issues, and best practices before shipping</div>
+  <div class="wfp-step-tools"><a href="/tools/github-copilot/" class="wfp-tool-chip wfp-primary">GitHub Copilot</a></div><div class="wfp-step-alts"><span class="wfp-alt-label">Alternatives:</span> <a href="/tools/cursor/" class="wfp-tool-chip wfp-alt">Cursor</a></div><div class="wfp-step-io"><span class="wfp-io-label">Input:</span> Pull request with changes</div><div class="wfp-step-io"><span class="wfp-io-label">Output:</span> Reviewed, approved code</div></div></div>
+
+<h2 style="font-size:20px;font-weight:700;margin:40px 0 16px;">Step Details</h2>
+<div class="wfp-details"><div class="wfp-detail-card" id="step-1">
+  <div class="wfp-detail-header">
+    <span class="wfp-detail-num">Step 1</span>
+    <h3>Spec out the idea</h3>
+  </div>
+  <p>Describe the application to a chatbot and iterate on requirements, user stories, and technical architecture</p>
+  <div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Tools</div>
+    <div class="wfp-detail-grid"><a href="/tools/claude/" class="wfp-detail-tool"><strong>Claude</strong><span>Chatbots &amp; Conversational AI &middot; &#9733; 4.7</span></a></div>
+  </div><div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Alternatives</div>
+    <div class="wfp-detail-grid"><a href="/tools/chatgpt/" class="wfp-detail-tool wfp-detail-alt"><strong>ChatGPT</strong><span>Chatbots &amp; Conversational AI</span></a></div>
+  </div></div><div class="wfp-detail-card" id="step-2">
+  <div class="wfp-detail-header">
+    <span class="wfp-detail-num">Step 2</span>
+    <h3>Generate UI prototype</h3>
+  </div>
+  <p>Use an AI UI generator to quickly create the visual design and component structure</p>
+  <div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Tools</div>
+    <div class="wfp-detail-grid"><a href="/tools/v0/" class="wfp-detail-tool"><strong>v0</strong><span>Coding Assistants &middot; &#9733; 4.0</span></a></div>
+  </div><div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Alternatives</div>
+    <div class="wfp-detail-grid"><a href="/tools/bolt/" class="wfp-detail-tool wfp-detail-alt"><strong>Bolt</strong><span>Coding Assistants</span></a></div>
+  </div></div><div class="wfp-detail-card" id="step-3">
+  <div class="wfp-detail-header">
+    <span class="wfp-detail-num">Step 3</span>
+    <h3>Scaffold the full stack</h3>
+  </div>
+  <p>If the app needs a backend, use a full-stack generator to create API routes, database schema, and auth</p>
+  <div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Tools</div>
+    <div class="wfp-detail-grid"><a href="/tools/bolt/" class="wfp-detail-tool"><strong>Bolt</strong><span>Coding Assistants &middot; &#9733; 3.5</span></a></div>
+  </div><div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Alternatives</div>
+    <div class="wfp-detail-grid"><a href="/tools/v0/" class="wfp-detail-tool wfp-detail-alt"><strong>v0</strong><span>Coding Assistants</span></a></div>
+  </div></div><div class="wfp-detail-card" id="step-4">
+  <div class="wfp-detail-header">
+    <span class="wfp-detail-num">Step 4</span>
+    <h3>Iterate and refine</h3>
+  </div>
+  <p>Bring the generated code into an AI-native editor for real development -- refactoring, bug fixes, feature additions, tests</p>
+  <div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Tools</div>
+    <div class="wfp-detail-grid"><a href="/tools/cursor/" class="wfp-detail-tool"><strong>Cursor</strong><span>Coding Assistants &middot; &#9733; 4.9</span></a></div>
+  </div><div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Alternatives</div>
+    <div class="wfp-detail-grid"><a href="/tools/windsurf/" class="wfp-detail-tool wfp-detail-alt"><strong>Windsurf</strong><span>Coding Assistants</span></a><a href="/tools/github-copilot/" class="wfp-detail-tool wfp-detail-alt"><strong>GitHub Copilot</strong><span>Coding Assistants</span></a></div>
+  </div></div><div class="wfp-detail-card" id="step-5">
+  <div class="wfp-detail-header">
+    <span class="wfp-detail-num">Step 5</span>
+    <h3>AI code review</h3>
+  </div>
+  <p>Use AI to review the final code for bugs, security issues, and best practices before shipping</p>
+  <div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Tools</div>
+    <div class="wfp-detail-grid"><a href="/tools/github-copilot/" class="wfp-detail-tool"><strong>GitHub Copilot</strong><span>Coding Assistants &middot; &#9733; 4.7</span></a></div>
+  </div><div class="wfp-detail-tools">
+    <div class="wfp-detail-label">Alternatives</div>
+    <div class="wfp-detail-grid"><a href="/tools/cursor/" class="wfp-detail-tool wfp-detail-alt"><strong>Cursor</strong><span>Coding Assistants</span></a></div>
+  </div></div></div>
+
+<div class="wfp-related"><h2>Related Workflows</h2><div class="wfp-related-grid"><a href="/workflows/ai-code-review-documentation/" class="wfp-related-card"><div class="wfp-related-name">AI-Powered Code Review and Documentation</div><div class="wfp-related-desc">Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining co</div><div class="wfp-related-meta">3 steps</div></a><a href="/workflows/ai-assisted-code-review-pipeline/" class="wfp-related-card"><div class="wfp-related-name">AI-Assisted Code Review Pipeline</div><div class="wfp-related-desc">A workflow for using AI to assist with code reviews, improving code quality and developer productivity. It automates the</div><div class="wfp-related-meta">3 steps</div></a><a href="/workflows/ai-competitive-intelligence-workflow/" class="wfp-related-card"><div class="wfp-related-name">AI-Powered Competitive Intelligence Workflow</div><div class="wfp-related-desc">A systematic workflow for continuously monitoring and analyzing competitors using AI agents and data analysis tools. Thi</div><div class="wfp-related-meta">4 steps</div></a><a href="/workflows/ai-customer-feedback-analysis-pipeline/" class="wfp-related-card"><div class="wfp-related-name">AI-Powered Customer Feedback Analysis Pipeline</div><div class="wfp-related-desc">An automated pipeline that collects customer feedback from various sources, analyzes it for sentiment and key themes, an</div><div class="wfp-related-meta">4 steps</div></a><a href="/workflows/codebase-migration/" class="wfp-related-card"><div class="wfp-related-name">Codebase Migration</div><div class="wfp-related-desc">Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migrati</div><div class="wfp-related-meta">4 steps</div></a><a href="/workflows/content-creation-pipeline/" class="wfp-related-card"><div class="wfp-related-name">Content Creation Pipeline</div><div class="wfp-related-desc">Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and ite</div><div class="wfp-related-meta">4 steps</div></a></div></div>
+
+<div style="margin:32px 0;text-align:center">
+  <a href="/explore/?workflow=idea-to-deployed-app" class="wfp-graph-link">
+    &#127760; See this workflow on the interactive graph &rarr;
+  </a>
+</div>
+
+<div style="margin:24px 0;padding:18px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center">
+  <div style="font-size:15px;font-weight:600;margin-bottom:4px">Not sure which tools to use?</div>
+  <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px">Let our AI advisor build your perfect stack in 30 seconds.</div>
+  <a href="/quiz/" style="display:inline-block;padding:8px 20px;border-radius:8px;background:var(--accent);color:var(--bg);font-size:13px;font-weight:600;text-decoration:none">AI Stack Builder &rarr;</a>
+</div>
+
+<div style="text-align:center;padding:24px 20px 16px;border-top:1px solid var(--surface);margin-top:24px">
+  <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Stay in the loop &mdash; new tools, workflows, and features</div>
+  <form style="display:flex;gap:8px;justify-content:center;max-width:380px;margin:0 auto" action="https://buttondown.com/api/emails/embed-subscribe/thestackmap" method="post" target="_blank" onsubmit="this.nextElementSibling.style.display='block'">
+    <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;min-width:0">
+    <input type="hidden" name="tag" value="early-adopter">
+    <input type="hidden" name="tag" value="from-workflow">
+    <button type="submit" style="padding:8px 16px;border-radius:6px;border:none;background:var(--accent);color:var(--bg);font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap">Subscribe</button>
+  </form>
+  <div style="font-size:12px;color:#34d399;display:none;margin-top:6px">Thanks! Check your inbox to confirm.</div>
+</div>
+
+<div class="disclosure">
+  Some links on this site are affiliate links. We may earn a commission at no extra cost to you.
+  <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a>
+  <br>&copy; 2026 Typride. All rights reserved.
+</div>
+</div>
+<button data-tally-open="81dvDP" data-tally-emoji-text="&#128075;" data-tally-emoji-animation="wave" style="position:fixed;bottom:36px;right:20px;z-index:50;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3)"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</button>
+</body>
+</html>
