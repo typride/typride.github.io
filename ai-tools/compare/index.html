@@ -29,6 +29,7 @@ a:hover { text-decoration: underline; }
 .topbar .nav-tab.active { color: #38bdf8; background: rgba(56,189,248,0.08); }
 .topbar .nav-tab-accent { color: #38bdf8 !important; border: 1px solid rgba(56,189,248,0.25); }
 .topbar .nav-tab-accent:hover, .topbar .nav-tab-accent.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; }
+.topbar .nav-sep { width: 1px; height: 16px; background: #334155; margin: 0 4px; flex-shrink: 0; align-self: center; }
 .container { max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; }
 h1 { font-size: 32px; margin-bottom: 8px; }
 h2 { font-size: 20px; margin: 32px 0 12px; }
@@ -37,7 +38,7 @@ h2 { font-size: 20px; margin: 32px 0 12px; }
 .toc-link { display: inline-block; font-size: 12px; padding: 4px 12px; border-radius: 12px;
   background: #1e293b; border: 1px solid; color: #94a3b8; transition: all 0.15s; text-decoration: none; }
 .toc-link:hover { color: #e2e8f0; text-decoration: none; }
-.cat-section { margin-bottom: 24px; }
+.cat-section { margin-bottom: 24px; scroll-margin-top: 56px; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
 .cmp-card { display: block; padding: 12px 16px; background: #1e293b; border: 1px solid #334155;
   border-radius: 8px; font-size: 14px; transition: border-color 0.15s; text-decoration: none; }
@@ -83,6 +84,7 @@ h2 { font-size: 20px; margin: 32px 0 12px; }
     <a href="/explore/" class="nav-tab">Explore</a>
     <a href="/compare/" class="nav-tab active">Compare</a>
     <a href="/quiz/" class="nav-tab nav-tab-accent">AI Stack Builder</a>
+    <span class="nav-sep"></span>
     <a href="/community/" class="nav-tab">Community</a>
     <a href="#tally-open=81dvDP&tally-emoji-text=👋&tally-emoji-animation=wave" class="nav-tab">Feedback</a>
   </nav>

@@ -30,6 +30,9 @@ a:hover { text-decoration: underline; }
   padding: 6px 12px; border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
 .topbar .nav-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
 .topbar .nav-tab.active { color: #38bdf8; background: rgba(56,189,248,0.08); }
+.topbar .nav-tab-accent { color: #38bdf8 !important; border: 1px solid rgba(56,189,248,0.25); }
+.topbar .nav-tab-accent:hover, .topbar .nav-tab-accent.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; }
+.topbar .nav-sep { width: 1px; height: 16px; background: #334155; margin: 0 4px; flex-shrink: 0; align-self: center; }
 .container { max-width: 800px; margin: 0 auto; padding: 40px 20px 60px; }
 h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
 .subtitle { font-size: 16px; color: #94a3b8; margin-bottom: 32px; line-height: 1.6; }
@@ -111,6 +114,7 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
     <a href="/explore/" class="nav-tab">Explore</a>
     <a href="/compare/" class="nav-tab">Compare</a>
     <a href="/quiz/" class="nav-tab nav-tab-accent">AI Stack Builder</a>
+    <span class="nav-sep"></span>
     <a href="/community/" class="nav-tab active">Community</a>
     <a href="#tally-open=81dvDP&tally-emoji-text=&#128075;&tally-emoji-animation=wave" class="nav-tab">Feedback</a>
   </nav>
