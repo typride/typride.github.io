@@ -127,6 +127,7 @@
   <url><loc>https://thestackmap.com/tools/surfer-seo/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/tools/sweep/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/tools/synthesia/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thestackmap.com/tools/synthflow/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/tools/tabnine/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/tools/tana/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/tools/tavily/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -190,6 +191,7 @@
   <url><loc>https://thestackmap.com/workflows/seo-blog-factory/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/workflows/social-media-content-engine/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thestackmap.com/workflows/vibe-coding-full-stack/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thestackmap.com/compare/ada-cx-vs-tidio-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/adobe-firefly-vs-canva-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/adobe-firefly-vs-dalle-3/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/adobe-firefly-vs-midjourney/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -216,10 +218,13 @@
   <url><loc>https://thestackmap.com/compare/beautiful-ai-vs-gamma/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/bland-ai-vs-clay/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/bland-ai-vs-lavender-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/bland-ai-vs-synthflow/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/bland-ai-vs-vapi/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/bland-ai-vs-zendesk-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/blockade-labs-vs-dalle-3/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/blockade-labs-vs-midjourney/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/blockade-labs-vs-stable-diffusion/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/bolt-vs-lovable/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/bolt-vs-replit/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/bolt-vs-v0/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/canva-ai-vs-chatgpt/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -252,6 +257,7 @@
   <url><loc>https://thestackmap.com/compare/chroma-vs-pinecone/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/claude-vs-codeium/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/claude-vs-cohere/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/claude-vs-deepseek/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/claude-vs-fireworks-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/claude-vs-gemini/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/claude-vs-google-ai-studio/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -324,6 +330,7 @@
   <url><loc>https://thestackmap.com/compare/galileo-ai-vs-v0/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/gamma-vs-notion-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/gamma-vs-tome/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/gemini-vs-grok/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/gemini-vs-mistral-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/gemini-vs-openai-api/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/gemini-vs-tidio-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -344,6 +351,7 @@
   <url><loc>https://thestackmap.com/compare/grain-vs-read-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/grammarly-vs-jasper/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/grammarly-vs-lately-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/hex-vs-julius-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/hex-vs-notebooklm/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/hex-vs-pinecone/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/hex-vs-qdrant/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -368,6 +376,7 @@
   <url><loc>https://thestackmap.com/compare/luma-ai-vs-stable-diffusion/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/make-vs-n8n/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/make-vs-zapier/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/mem-vs-notion-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/mem-vs-reflect/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/midjourney-vs-stable-diffusion/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/mistral-ai-vs-openai-api/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -377,9 +386,11 @@
   <url><loc>https://thestackmap.com/compare/notebooklm-vs-read-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/notion-ai-vs-obsidian/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/notion-ai-vs-reflect/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/notion-ai-vs-tana/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/obsidian-vs-read-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/obsidian-vs-tana/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/otter-ai-vs-read-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/otter-ai-vs-wispr-flow/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/perplexity-vs-phind/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/perplexity-vs-tavily/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/phind-vs-tavily/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -394,4 +405,6 @@
   <url><loc>https://thestackmap.com/compare/shortwave-vs-superhuman-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/snyk-ai-vs-socket-dev/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thestackmap.com/compare/suno-vs-udio/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/synthflow-vs-vapi/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thestackmap.com/compare/tidio-ai-vs-zendesk-ai/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
