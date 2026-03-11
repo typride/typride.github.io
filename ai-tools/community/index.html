@@ -50,6 +50,8 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 .fb-status-received { border-left: 3px solid #64748b; }
 .fb-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 .fb-card h3 { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+.fb-permalink { color: #64748b; opacity: 0.5; margin-right: 6px; text-decoration: none; font-weight: 400; }
+.fb-permalink:hover { opacity: 1; color: #38bdf8; text-decoration: none; }
 .fb-desc { font-size: 13px; color: #94a3b8; margin: 0; }
 .fb-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
   white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em; }
@@ -115,6 +117,8 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
     <a href="/compare/" class="nav-tab">Compare</a>
     <a href="/quiz/" class="nav-tab nav-tab-accent">AI Stack Builder</a>
     <span class="nav-sep"></span>
+    <a href="/categories/" class="nav-tab">Categories</a>
+    <a href="/tools/" class="nav-tab">Tools</a>
     <a href="/community/" class="nav-tab active">Community</a>
     <a href="#tally-open=81dvDP&tally-emoji-text=&#128075;&tally-emoji-animation=wave" class="nav-tab">Feedback</a>
   </nav>
@@ -125,11 +129,11 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 
 <div class="fb-stats">
   <div class="fb-stat">
-    <span class="fb-stat-num">20</span>
+    <span class="fb-stat-num">23</span>
     <span class="fb-stat-label">Quotes Collected</span>
   </div>
   <div class="fb-stat">
-    <span class="fb-stat-num">10</span>
+    <span class="fb-stat-num">13</span>
     <span class="fb-stat-label">Themes Identified</span>
   </div>
   <div class="fb-stat">
@@ -137,15 +141,120 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
     <span class="fb-stat-label">In Progress</span>
   </div>
   <div class="fb-stat">
-    <span class="fb-stat-num">7</span>
+    <span class="fb-stat-num">8</span>
     <span class="fb-stat-label">Shipped</span>
   </div>
 </div>
 
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="load-failed-error">
   <div class="fb-card-header">
     <div>
-      <h3>Graph Readability</h3>
+      <h3 class="fb-title"><a href="#load-failed-error" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> AI Stack Builder &#x27;Load failed&#x27; Error</h3>
+      <p class="fb-desc">Users got &#x27;Error: Load failed&#x27; when using the free tier (e.g. Podcast Host pre-fill) — the worker API wasn&#x27;t reachable due to CORS or network issues.</p>
+    </div>
+    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
+  </div>
+  <div class="fb-shipped-note">&#10003; Shipped 2026-03-11 — Fixed CORS on the worker to allow thestackmap.com, www, and typride.github.io. Improved error message to suggest checking connection or adding an API key. Redeployed worker.</div>
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 1 quote':'Show 1 quote'">Show 1 quote</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Using the AI Stack Builder, getting Error: Load failed when I selected the Podcast Host pre-fill option&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9998;</span>
+    <span class="fb-author">anonymous</span>
+    <span class="fb-source">Feedback form</span>
+    <span class="fb-date">2026-03-11</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-received" id="categorize-by-problem">
+  <div class="fb-card-header">
+    <div>
+      <h3 class="fb-title"><a href="#categorize-by-problem" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Categorize by Problem, Not Features</h3>
+      <p class="fb-desc">Users want to find tools by the problem they solve (saves time, automates X) rather than by feature lists.</p>
+    </div>
+    <span class="fb-badge fb-received">Received</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 1 quote':'Show 1 quote'">Show 1 quote</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Damn that&#x27;s helpful, but things will move so quickly half those links will break in a few months. Try to categorize them by problem instead of features. Nobody cares about features, they wanna know how it saves them time.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/signalpath_mapper</span>
+    <span class="fb-source"><a href="https://reddit.com/r/SaaS/comments/1roj8ve/built_a_free_ai_tools_directory_with_workflow/o9v6pi8/" target="_blank" rel="noopener">r/SaaS</a></span>
+    <span class="fb-date">2026-03-11</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-received" id="linkedin-visibility">
+  <div class="fb-card-header">
+    <div>
+      <h3 class="fb-title"><a href="#linkedin-visibility" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Visualizing the AI Ecosystem</h3>
+      <p class="fb-desc">Positive feedback on the workflow-first approach and the vision for AI Stack Maps generated from real implementations.</p>
+    </div>
+    <span class="fb-badge fb-received">Received</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 1 quote':'Show 1 quote'">Show 1 quote</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;Really interesting tool. Visualizing the AI ecosystem like this is genuinely helpful. One of the biggest problems right now isn&#x27;t the lack of AI tools — it&#x27;s the lack of clarity around how they actually fit together into real stacks and workflows. Maps like this help people move from &#x27;tool discovery&#x27; to system thinking, which is where the real value starts. Resources like this can also play an important role in education, especially for founders and teams trying to understand how LLMs, agents, automation platforms, and data layers connect in practice. The direction I find most exciting is where this could go next: AI Stack Maps generated automatically. Imagine systems that can analyze real implementations across GitHub, APIs, and production environments to surface actual AI architectures companies are using, not just curated tool lists. That kind of visibility would accelerate learning across the entire ecosystem. Great work building something that helps make sense of the rapidly growing AI landscape.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#128100;</span>
+    <span class="fb-author">Shawn Pride</span>
+    <span class="fb-source">LinkedIn</span>
+    <span class="fb-date">2026-03-11</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-received" id="tool-handoffs">
+  <div class="fb-card-header">
+    <div>
+      <h3 class="fb-title"><a href="#tool-handoffs" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Map the Handoff Points Between Tools</h3>
+      <p class="fb-desc">The pain points in production are at the handoffs between tools — which connections are brittle, which lose context, and where schema mismatches cause silent failures.</p>
+    </div>
+    <span class="fb-badge fb-received">Received</span>
+  </div>
+  
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 2 quotes':'Show 2 quotes'">Show 2 quotes</button>
+  <div class="fb-items"><div class="fb-item">
+  <div class="fb-quote">&ldquo;The pain points in production are usually at the handoffs between tools, not within any single tool. Which connections are brittle? Which tool-to-tool jumps lose context silently? That&#x27;s the layer most maps skip.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/ultrathink-art</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-09</span>
+  </div>
+</div>
+<div class="fb-item">
+  <div class="fb-quote">&ldquo;The schema mismatches are brutal - tool A outputs structured data but tool B expects different field names, so you&#x27;re always writing transform layers. Also most APIs fail silently when they get malformed input, so you only find out when someone manually checks the pipeline weeks later.&rdquo;</div>
+  <div class="fb-attr">
+    <span class="fb-icon">&#9883;</span>
+    <span class="fb-author">u/papertrailml</span>
+    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/comment/o9it9h5/" target="_blank" rel="noopener">r/artificial</a></span>
+    <span class="fb-date">2026-03-10</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="fb-card fb-status-shipped" id="recent-updates">
+  <div class="fb-card-header">
+    <div>
+      <h3 class="fb-title"><a href="#recent-updates" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Recent Platform Updates</h3>
+      <p class="fb-desc">Features and improvements shipped that weren&#x27;t directly from community feedback.</p>
+    </div>
+    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
+  </div>
+  <div class="fb-shipped-note">&#10003; Shipped 2026-03-10 — Individual workflow pages, workflow table filters, SEO optimizations (pricing in meta descriptions, improved comparison titles), CHANGELOG, and updated documentation.</div>
+  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 0 quotes':'Show 0 quotes'">Show 0 quotes</button>
+  <div class="fb-items"></div>
+</div>
+<div class="fb-card fb-status-shipped" id="graph-ux">
+  <div class="fb-card-header">
+    <div>
+      <h3 class="fb-title"><a href="#graph-ux" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Graph Readability</h3>
       <p class="fb-desc">The interactive graph is visually impressive but hard to navigate on first visit — users get overwhelmed before finding the real value.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -181,10 +290,10 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="workflows-are-key">
   <div class="fb-card-header">
     <div>
-      <h3>Workflows Are The Core Value</h3>
+      <h3 class="fb-title"><a href="#workflows-are-key" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Workflows Are The Core Value</h3>
       <p class="fb-desc">Users consistently say the workflow angle — showing how tools chain together — is the real differentiator over other directories.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -247,10 +356,10 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="comparisons-strong">
   <div class="fb-card-header">
     <div>
-      <h3>Comparison Pages Are Solid</h3>
+      <h3 class="fb-title"><a href="#comparisons-strong" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Comparison Pages Are Solid</h3>
       <p class="fb-desc">Even users who disliked the graph said the side-by-side comparison pages were genuinely useful.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -277,10 +386,10 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="build-stack-unclear">
   <div class="fb-card-header">
     <div>
-      <h3>Build Your Stack Needs Better Onboarding</h3>
+      <h3 class="fb-title"><a href="#build-stack-unclear" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Build Your Stack Needs Better Onboarding</h3>
       <p class="fb-desc">The AI Stack Builder feature isn&#x27;t self-explanatory — users need to see the value before investing time.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -307,10 +416,10 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-received">
+<div class="fb-card fb-status-received" id="automation-layer">
   <div class="fb-card-header">
     <div>
-      <h3>Show the Automation Glue</h3>
+      <h3 class="fb-title"><a href="#automation-layer" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Show the Automation Glue</h3>
       <p class="fb-desc">Users want to see how AI tools connect to business infrastructure — the orchestration layer (n8n, Make, Zapier) and agent tools.</p>
     </div>
     <span class="fb-badge fb-received">Received</span>
@@ -337,10 +446,10 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="exclude-tools">
   <div class="fb-card-header">
     <div>
-      <h3>Exclude Tools From Your Stack</h3>
+      <h3 class="fb-title"><a href="#exclude-tools" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Exclude Tools From Your Stack</h3>
       <p class="fb-desc">Users want to remove tools they don&#x27;t use from workflows and recommendations.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -351,17 +460,17 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
   <div class="fb-quote">&ldquo;Could you make it possible to exclude a tool from the stack? For example, I don&#x27;t like working in Cursor, if I could just click on the node in the cloud to exclude it that would be handy.&rdquo;</div>
   <div class="fb-attr">
     <span class="fb-icon">&#9998;</span>
-    <span class="fb-author">u/anonymous</span>
-    <span class="fb-source"></span>
+    <span class="fb-author">anonymous</span>
+    <span class="fb-source">Feedback form</span>
     <span class="fb-date">2026-03-09</span>
   </div>
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
+<div class="fb-card fb-status-shipped" id="email-visibility">
   <div class="fb-card-header">
     <div>
-      <h3>Email Signup Visibility</h3>
+      <h3 class="fb-title"><a href="#email-visibility" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Email Signup Visibility</h3>
       <p class="fb-desc">The email capture section wasn&#x27;t visible without specific URL parameters.</p>
     </div>
     <span class="fb-badge fb-shipped">&#10003; Shipped</span>
@@ -372,47 +481,17 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
   <div class="fb-quote">&ldquo;The top part of the UI where you can leave your email is not visible if you open the homepage without the utm payload.&rdquo;</div>
   <div class="fb-attr">
     <span class="fb-icon">&#9998;</span>
-    <span class="fb-author">u/anonymous</span>
-    <span class="fb-source"></span>
+    <span class="fb-author">anonymous</span>
+    <span class="fb-source">Feedback form</span>
     <span class="fb-date">2026-03-09</span>
   </div>
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-received">
+<div class="fb-card fb-status-in_progress" id="keep-fresh">
   <div class="fb-card-header">
     <div>
-      <h3>Map the Handoff Points Between Tools</h3>
-      <p class="fb-desc">The pain points in production are at the handoffs between tools — which connections are brittle, which lose context, and where schema mismatches cause silent failures.</p>
-    </div>
-    <span class="fb-badge fb-received">Received</span>
-  </div>
-  
-  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 2 quotes':'Show 2 quotes'">Show 2 quotes</button>
-  <div class="fb-items"><div class="fb-item">
-  <div class="fb-quote">&ldquo;The pain points in production are usually at the handoffs between tools, not within any single tool. Which connections are brittle? Which tool-to-tool jumps lose context silently? That&#x27;s the layer most maps skip.&rdquo;</div>
-  <div class="fb-attr">
-    <span class="fb-icon">&#9883;</span>
-    <span class="fb-author">u/ultrathink-art</span>
-    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/i_mapped_137_ai_tools_and_how_they_actually/" target="_blank" rel="noopener">r/artificial</a></span>
-    <span class="fb-date">2026-03-09</span>
-  </div>
-</div>
-<div class="fb-item">
-  <div class="fb-quote">&ldquo;The schema mismatches are brutal - tool A outputs structured data but tool B expects different field names, so you&#x27;re always writing transform layers. Also most APIs fail silently when they get malformed input, so you only find out when someone manually checks the pipeline weeks later.&rdquo;</div>
-  <div class="fb-attr">
-    <span class="fb-icon">&#9883;</span>
-    <span class="fb-author">u/papertrailml</span>
-    <span class="fb-source"><a href="https://reddit.com/r/artificial/comments/1roj7ux/comment/o9it9h5/" target="_blank" rel="noopener">r/artificial</a></span>
-    <span class="fb-date">2026-03-10</span>
-  </div>
-</div>
-</div>
-</div>
-<div class="fb-card fb-status-in_progress">
-  <div class="fb-card-header">
-    <div>
-      <h3>Keep Content Fresh</h3>
+      <h3 class="fb-title"><a href="#keep-fresh" class="fb-permalink" aria-label="Link to this feedback">&#128279;</a> Keep Content Fresh</h3>
       <p class="fb-desc">Users expect the directory to stay current as the AI landscape evolves rapidly.</p>
     </div>
     <span class="fb-badge fb-progress">In Progress</span>
@@ -430,18 +509,6 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 </div>
 </div>
-<div class="fb-card fb-status-shipped">
-  <div class="fb-card-header">
-    <div>
-      <h3>Recent Platform Updates</h3>
-      <p class="fb-desc">Features and improvements shipped that weren&#x27;t directly from community feedback.</p>
-    </div>
-    <span class="fb-badge fb-shipped">&#10003; Shipped</span>
-  </div>
-  <div class="fb-shipped-note">&#10003; Shipped 2026-03-10 — Individual workflow pages, workflow table filters, SEO optimizations (pricing in meta descriptions, improved comparison titles), CHANGELOG, and updated documentation.</div>
-  <button class="fb-toggle" onclick="this.parentElement.classList.toggle('open');this.textContent=this.textContent.indexOf('Show')!==-1?'Hide 0 quotes':'Show 0 quotes'">Show 0 quotes</button>
-  <div class="fb-items"></div>
-</div>
 
 
 <div class="fb-cta">
@@ -454,6 +521,7 @@ h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.0
 </div>
 
 <div class="disclosure">
+  <a href="/tools/">Tools</a> &middot; <a href="/categories/">Categories</a> &middot; <a href="/compare/">Compare</a> &middot; <a href="/">Workflows</a> &middot; <a href="/community/">Community</a> &middot; 
   <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a> &middot;
   Some links may earn us a commission at no extra cost to you.
 </div>
