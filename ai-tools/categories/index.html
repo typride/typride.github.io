@@ -11,18 +11,22 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f172a; color: #e2e8f0; line-height: 1.7; }
+  background: #0f172a; color: #e2e8f0; line-height: 1.7; min-height: 100vh; }
 a { color: #38bdf8; text-decoration: none; }
 a:hover { text-decoration: underline; }
-.topbar { background: #1e293b; border-bottom: 1px solid #334155; padding: 8px 20px;
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+.topbar { background: #1e293b; border-bottom: 1px solid #334155; box-shadow: 0 1px 0 0 #334155;
+  padding: 8px 20px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100; }
 .topbar a.brand { color: #38bdf8; font-weight: 700; font-size: 16px; text-decoration: none; }
+.topbar a.brand:hover { text-decoration: none; opacity: 0.9; }
+.topbar .site-nav { display: flex; gap: 2px; margin-left: 8px; }
 .topbar .nav-tab { text-decoration: none; font-size: 12px; font-weight: 600; color: #94a3b8;
   padding: 6px 12px; border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
 .topbar .nav-tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
 .topbar .nav-tab.active { color: #38bdf8; background: rgba(56,189,248,0.08); }
 .topbar .nav-tab-accent { color: #38bdf8 !important; border: 1px solid rgba(56,189,248,0.25); }
-.topbar .nav-sep { width: 1px; height: 16px; background: #334155; margin: 0 4px; }
+.topbar .nav-tab-accent:hover, .topbar .nav-tab-accent.active { background: rgba(56,189,248,0.12); border-color: #38bdf8; }
+.topbar .nav-sep { width: 1px; height: 16px; background: #334155; margin: 0 4px; flex-shrink: 0; align-self: center; }
 .container { max-width: 900px; margin: 0 auto; padding: 32px 20px 60px; }
 h1 { font-size: 30px; margin-bottom: 8px; }
 .subtitle { font-size: 16px; color: #94a3b8; margin-bottom: 28px; }
@@ -69,14 +73,14 @@ h1 { font-size: 30px; margin-bottom: 8px; }
 <h1>Browse by Category</h1>
 <p class="subtitle">138+ AI tools across 21 categories. Click a category to see tools, ratings, and pricing.</p>
 <div class="cat-grid">
-<a href="/category/productivity/" class="cat-card">
-  <span class="cat-card-badge" style="background:#84cc1622;color:#84cc16;border-color:#84cc1644">Productivity &amp;amp; Knowledge Management</span>
-  <span class="cat-card-count">20 tools</span>
-  <span class="cat-card-desc">AI tools for notes, task management, and personal productivity</span>
-</a><a href="/category/coding-assistant/" class="cat-card">
+<a href="/category/coding-assistant/" class="cat-card">
   <span class="cat-card-badge" style="background:#10b98122;color:#10b981;border-color:#10b98144">Coding Assistants</span>
-  <span class="cat-card-count">16 tools</span>
+  <span class="cat-card-count">23 tools</span>
   <span class="cat-card-desc">Tools that help write, review, or refactor code</span>
+</a><a href="/category/productivity/" class="cat-card">
+  <span class="cat-card-badge" style="background:#84cc1622;color:#84cc16;border-color:#84cc1644">Productivity &amp;amp; Knowledge Management</span>
+  <span class="cat-card-count">21 tools</span>
+  <span class="cat-card-desc">AI tools for notes, task management, and personal productivity</span>
 </a><a href="/category/agent-framework/" class="cat-card">
   <span class="cat-card-badge" style="background:#a855f722;color:#a855f7;border-color:#a855f744">Agent Frameworks</span>
   <span class="cat-card-count">12 tools</span>
@@ -101,42 +105,50 @@ h1 { font-size: 30px; margin-bottom: 8px; }
   <span class="cat-card-badge" style="background:#f59e0b22;color:#f59e0b;border-color:#f59e0b44">Chatbots &amp;amp; Conversational AI</span>
   <span class="cat-card-count">7 tools</span>
   <span class="cat-card-desc">General-purpose conversational AI interfaces</span>
+</a><a href="/category/video-generation/" class="cat-card">
+  <span class="cat-card-badge" style="background:#f9731622;color:#f97316;border-color:#f9731644">Video Generation</span>
+  <span class="cat-card-count">7 tools</span>
+  <span class="cat-card-desc">Tools that generate or edit video content with AI</span>
 </a><a href="/category/audio-generation/" class="cat-card">
   <span class="cat-card-badge" style="background:#06b6d422;color:#06b6d4;border-color:#06b6d444">Audio &amp;amp; Music Generation</span>
   <span class="cat-card-count">6 tools</span>
   <span class="cat-card-desc">Tools for generating speech, music, or sound effects</span>
+</a><a href="/category/image-generation/" class="cat-card">
+  <span class="cat-card-badge" style="background:#ec489922;color:#ec4899;border-color:#ec489944">Image Generation</span>
+  <span class="cat-card-count">6 tools</span>
+  <span class="cat-card-desc">Tools that generate images from text or other inputs</span>
 </a><a href="/category/ml-ops/" class="cat-card">
   <span class="cat-card-badge" style="background:#c084fc22;color:#c084fc;border-color:#c084fc44">MLOps &amp;amp; Model Training</span>
   <span class="cat-card-count">6 tools</span>
   <span class="cat-card-desc">Tools for training, fine-tuning, deploying, and monitoring ML models</span>
+</a><a href="/category/sales/" class="cat-card">
+  <span class="cat-card-badge" style="background:#f43f5e22;color:#f43f5e;border-color:#f43f5e44">Sales &amp;amp; GTM</span>
+  <span class="cat-card-count">6 tools</span>
+  <span class="cat-card-desc">AI tools for lead generation, outreach, and go-to-market workflows</span>
 </a><a href="/category/writing-assistant/" class="cat-card">
   <span class="cat-card-badge" style="background:#8b5cf622;color:#8b5cf6;border-color:#8b5cf644">Writing Assistants</span>
   <span class="cat-card-count">6 tools</span>
   <span class="cat-card-desc">Tools focused on text composition, editing, and copywriting</span>
-</a><a href="/category/image-generation/" class="cat-card">
-  <span class="cat-card-badge" style="background:#ec489922;color:#ec4899;border-color:#ec489944">Image Generation</span>
-  <span class="cat-card-count">5 tools</span>
-  <span class="cat-card-desc">Tools that generate images from text or other inputs</span>
-</a><a href="/category/video-generation/" class="cat-card">
-  <span class="cat-card-badge" style="background:#f9731622;color:#f97316;border-color:#f9731644">Video Generation</span>
-  <span class="cat-card-count">5 tools</span>
-  <span class="cat-card-desc">Tools that generate or edit video content with AI</span>
 </a><a href="/category/search/" class="cat-card">
   <span class="cat-card-badge" style="background:#3b82f622;color:#3b82f6;border-color:#3b82f644">AI Search</span>
   <span class="cat-card-count">4 tools</span>
   <span class="cat-card-desc">AI-enhanced search engines and research tools</span>
+</a><a href="/category/marketing/" class="cat-card">
+  <span class="cat-card-badge" style="background:#94a3b822;color:#94a3b8;border-color:#94a3b844">Marketing &amp;amp; Growth</span>
+  <span class="cat-card-count">4 tools</span>
+  <span class="cat-card-desc">AI tools for advertising, social media management, email marketing, and audience growth</span>
 </a><a href="/category/research/" class="cat-card">
   <span class="cat-card-badge" style="background:#6366f122;color:#6366f1;border-color:#6366f144">Research &amp;amp; Academic</span>
   <span class="cat-card-count">4 tools</span>
   <span class="cat-card-desc">AI tools for academic research, literature review, and evidence synthesis</span>
-</a><a href="/category/sales/" class="cat-card">
-  <span class="cat-card-badge" style="background:#f43f5e22;color:#f43f5e;border-color:#f43f5e44">Sales &amp;amp; GTM</span>
-  <span class="cat-card-count">4 tools</span>
-  <span class="cat-card-desc">AI tools for lead generation, outreach, and go-to-market workflows</span>
 </a><a href="/category/security/" class="cat-card">
   <span class="cat-card-badge" style="background:#fbbf2422;color:#fbbf24;border-color:#fbbf2444">Security &amp;amp; Compliance</span>
   <span class="cat-card-count">3 tools</span>
   <span class="cat-card-desc">AI tools for security scanning, threat detection, and compliance</span>
+</a><a href="/category/video-editing/" class="cat-card">
+  <span class="cat-card-badge" style="background:#d946ef22;color:#d946ef;border-color:#d946ef44">Video &amp;amp; Podcast Editing</span>
+  <span class="cat-card-count">2 tools</span>
+  <span class="cat-card-desc">AI-powered tools for editing video, audio, and podcast content</span>
 </a><a href="/category/dev-tools/" class="cat-card">
   <span class="cat-card-badge" style="background:#4ade8022;color:#4ade80;border-color:#4ade8044">Developer Tools &amp;amp; Infrastructure</span>
   <span class="cat-card-count">1 tools</span>
@@ -149,10 +161,6 @@ h1 { font-size: 30px; margin-bottom: 8px; }
   <span class="cat-card-badge" style="background:#ef444422;color:#ef4444;border-color:#ef444444">SEO &amp;amp; Content Optimization</span>
   <span class="cat-card-count">1 tools</span>
   <span class="cat-card-desc">AI tools for search engine optimization and content performance</span>
-</a><a href="/category/video-editing/" class="cat-card">
-  <span class="cat-card-badge" style="background:#d946ef22;color:#d946ef;border-color:#d946ef44">Video &amp;amp; Podcast Editing</span>
-  <span class="cat-card-count">1 tools</span>
-  <span class="cat-card-desc">AI-powered tools for editing video, audio, and podcast content</span>
 </a>
 </div>
 <div class="disclosure">

@@ -39,9 +39,61 @@
         "automation",
         "enterprise"
       ],
+      "integrations": [
+        "salesforce",
+        "zendesk",
+        "shopify",
+        "intercom",
+        "freshdesk",
+        "slack",
+        "custom-apis",
+        "crm"
+      ],
       "connectionCount": 2,
       "jx": 0.2789,
       "jy": -0.95
+    },
+    {
+      "id": "adcreative-ai",
+      "label": "AdCreative.ai",
+      "category": "marketing",
+      "categoryName": "Marketing & Growth",
+      "color": "#6b7280",
+      "size": 6.0,
+      "url": "https://www.adcreative.ai/",
+      "description": "An AI-powered ad creative platform that generates hundreds of high-converting ad creatives in minutes. It helps marketing teams scale their advertising efforts by automating the creative production process.",
+      "status": "active",
+      "rating": 4.4,
+      "pricingModel": "subscription",
+      "startingPrice": "$29/month",
+      "freeTier": false,
+      "useCases": [
+        "Rapidly generating a large volume of ad creatives for A/B testing.",
+        "Scaling ad production for performance marketing campaigns across multiple channels.",
+        "Small businesses and startups that lack in-house design resources.",
+        "Agencies looking to streamline their creative workflow for clients."
+      ],
+      "pros": [
+        "Generates a massive number of ad variations very quickly.",
+        "AI-powered performance scoring helps predict which creatives will perform best.",
+        "Integrates with major ad platforms like Facebook, Google, and Instagram.",
+        "Easy to use, even for non-designers."
+      ],
+      "cons": [
+        "The quality of generated creatives can be inconsistent and may require manual touch-ups.",
+        "The AI can sometimes produce generic or repetitive designs.",
+        "Credit-based system can be restrictive and costly for high-volume users."
+      ],
+      "tags": [
+        "ad-creative",
+        "advertising",
+        "performance-marketing",
+        "automation"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": -0.4499,
+      "jy": -0.5536
     },
     {
       "id": "adobe-firefly",
@@ -82,9 +134,14 @@
         "video-editing",
         "adobe-ecosystem"
       ],
+      "integrations": [
+        "adobe-creative-cloud",
+        "photoshop",
+        "illustrator"
+      ],
       "connectionCount": 2,
-      "jx": -0.4499,
-      "jy": -0.5536
+      "jx": 0.4729,
+      "jy": 0.3534
     },
     {
       "id": "aider",
@@ -126,9 +183,12 @@
         "ai-pair-programmer",
         "code-editor"
       ],
+      "integrations": [
+        "github"
+      ],
       "connectionCount": 3,
-      "jx": 0.4729,
-      "jy": 0.3534
+      "jx": 0.7844,
+      "jy": -0.8261
     },
     {
       "id": "airtable-ai",
@@ -172,9 +232,15 @@
         "writing-assistant",
         "data-analysis"
       ],
+      "integrations": [
+        "slack",
+        "google-workspace",
+        "salesforce",
+        "microsoft-teams"
+      ],
       "connectionCount": 3,
-      "jx": 0.7844,
-      "jy": -0.8261
+      "jx": -0.1562,
+      "jy": -0.9404
     },
     {
       "id": "akkio",
@@ -219,9 +285,10 @@
         "machine-learning",
         "workflow-automation"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": -0.1562,
-      "jy": -0.9404
+      "jx": -0.5627,
+      "jy": 0.0107
     },
     {
       "id": "amazon-q-developer",
@@ -261,9 +328,56 @@
         "code-generation",
         "code-review"
       ],
+      "integrations": [
+        "aws-ide-toolkit",
+        "vs-code",
+        "jetbrains-ides",
+        "aws-cli"
+      ],
       "connectionCount": 2,
-      "jx": -0.5627,
-      "jy": 0.0107
+      "jx": -0.9469,
+      "jy": -0.6023
+    },
+    {
+      "id": "amp",
+      "label": "Amp",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://amp.dev/",
+      "description": "A model-agnostic AI coding agent that allows developers to bring their own models. It offers a unique ad-supported free tier, making powerful agentic coding accessible to everyone.",
+      "status": "active",
+      "rating": 4.3,
+      "pricingModel": "freemium",
+      "startingPrice": "$0",
+      "freeTier": true,
+      "useCases": [
+        "Developers looking for a powerful, free AI coding agent.",
+        "Testing different LLMs for coding tasks within a single, consistent interface.",
+        "Hobbyists and students who want access to premium agentic features without a subscription."
+      ],
+      "pros": [
+        "Unique ad-supported free tier makes it highly accessible.",
+        "Model-agnostic, allowing users to connect various LLMs.",
+        "Clean and intuitive interface for a command-line tool."
+      ],
+      "cons": [
+        "The presence of ads in the free tier may be distracting for some users.",
+        "Requires users to manage their own LLM API keys and costs.",
+        "Smaller community and fewer integrations compared to more established tools."
+      ],
+      "tags": [
+        "coding",
+        "agent",
+        "cli",
+        "model-agnostic",
+        "ad-supported"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.2998,
+      "jy": 0.0899
     },
     {
       "id": "anthropic-api",
@@ -303,9 +417,100 @@
         "anthropic",
         "generative-ai"
       ],
+      "integrations": [
+        "python-sdk",
+        "typescript-sdk",
+        "rest-api"
+      ],
       "connectionCount": 2,
-      "jx": -0.9469,
-      "jy": -0.6023
+      "jx": -0.5591,
+      "jy": 0.1785
+    },
+    {
+      "id": "apollo-io",
+      "label": "Apollo.io",
+      "category": "sales",
+      "categoryName": "Sales & GTM",
+      "color": "#f43f5e",
+      "size": 6.0,
+      "url": "https://www.apollo.io/",
+      "description": "A leading sales intelligence and engagement platform that provides access to a massive B2B database of contacts and companies, along with tools for outreach, analytics, and workflow automation. It helps sales teams find their ideal customers, contact them, and manage their pipeline.",
+      "status": "active",
+      "rating": 4.8,
+      "pricingModel": "freemium",
+      "startingPrice": "$49/month",
+      "freeTier": true,
+      "useCases": [
+        "Building targeted lead lists using advanced filtering on company and contact data.",
+        "Automating cold outreach sequences with personalized emails and follow-ups.",
+        "Enriching existing CRM data with accurate contact and company information.",
+        "Finding direct-dial phone numbers and verified email addresses for prospects."
+      ],
+      "pros": [
+        "Massive and accurate B2B database with extensive filtering options.",
+        "All-in-one platform for prospecting, engagement, and deal management.",
+        "Powerful sequencing and automation features.",
+        "Generous free tier for getting started."
+      ],
+      "cons": [
+        "The user interface can be complex and overwhelming for new users.",
+        "Credit system can be confusing and may require purchasing add-ons.",
+        "Data accuracy, while generally high, can vary for certain industries or regions."
+      ],
+      "tags": [
+        "sales",
+        "lead-generation",
+        "outreach",
+        "crm",
+        "database"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.6189,
+      "jy": -0.987
+    },
+    {
+      "id": "augment-code",
+      "label": "Augment Code",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://www.augmentcode.com/",
+      "description": "An enterprise-focused AI coding agent designed for teams that require high security, privacy, and on-premise deployment options. It provides powerful code generation and analysis while ensuring code never leaves the company's environment.",
+      "status": "active",
+      "rating": 4.4,
+      "pricingModel": "enterprise",
+      "startingPrice": "Custom",
+      "freeTier": false,
+      "useCases": [
+        "Secure code generation and analysis for large enterprises in regulated industries.",
+        "On-premise deployment for air-gapped or highly secure development environments.",
+        "Enforcing organization-specific coding standards and security policies via the AI agent.",
+        "Training the agent on internal codebases to provide highly relevant, context-aware suggestions."
+      ],
+      "pros": [
+        "Focus on enterprise-grade security and privacy, with on-premise options.",
+        "Ability to train on private codebases for tailored assistance.",
+        "Centralized policy management and administration.",
+        "Dedicated support for enterprise customers."
+      ],
+      "cons": [
+        "No free tier or individual developer plans available.",
+        "Pricing is not transparent and likely represents a significant investment.",
+        "Slower to adopt the latest open-source models compared to more agile tools."
+      ],
+      "tags": [
+        "coding",
+        "enterprise",
+        "security",
+        "agent",
+        "ide"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.6116,
+      "jy": 0.3963
     },
     {
       "id": "autogen",
@@ -346,9 +551,13 @@
         "open-source",
         "orchestration"
       ],
+      "integrations": [
+        "python",
+        "docker"
+      ],
       "connectionCount": 2,
-      "jx": 0.2998,
-      "jy": 0.0899
+      "jx": -0.3195,
+      "jy": -0.689
     },
     {
       "id": "autogpt",
@@ -389,9 +598,14 @@
         "task-automation",
         "development"
       ],
+      "integrations": [
+        "github",
+        "docker",
+        "openai-api"
+      ],
       "connectionCount": 3,
-      "jx": -0.5591,
-      "jy": 0.1785
+      "jx": 0.9144,
+      "jy": -0.3268
     },
     {
       "id": "beautiful-ai",
@@ -430,9 +644,53 @@
         "slides",
         "design"
       ],
+      "integrations": [],
       "connectionCount": 0,
-      "jx": 0.6189,
-      "jy": -0.987
+      "jx": -0.8145,
+      "jy": -0.8066
+    },
+    {
+      "id": "beehiiv",
+      "label": "Beehiiv",
+      "category": "marketing",
+      "categoryName": "Marketing & Growth",
+      "color": "#6b7280",
+      "size": 6.0,
+      "url": "https://www.beehiiv.com/",
+      "description": "A newsletter platform built for growth, offering a suite of tools for writing, publishing, analyzing, and monetizing email newsletters. It has gained significant traction for its generous free tier and powerful AI and integration capabilities.",
+      "status": "active",
+      "rating": 4.8,
+      "pricingModel": "freemium",
+      "startingPrice": "$49/month",
+      "freeTier": true,
+      "useCases": [
+        "Writers and creators starting and growing a newsletter.",
+        "Businesses using email marketing as a primary communication channel.",
+        "Integrating AI-powered writing and content generation directly into the newsletter workflow.",
+        "Monetizing a newsletter through paid subscriptions, ad networks, and boosts."
+      ],
+      "pros": [
+        "Extremely generous free tier for up to 2,500 subscribers.",
+        "Powerful built-in tools for growth, monetization, and analytics.",
+        "Clean, modern, and user-friendly editor.",
+        "Strong focus on creator success with features like the Ad Network and Boosts."
+      ],
+      "cons": [
+        "Advanced automation features are less robust than dedicated email marketing platforms like ActiveCampaign.",
+        "The jump from the free plan to the first paid plan is significant.",
+        "Primarily focused on newsletters, so it may not be the best fit for complex e-commerce email sequences."
+      ],
+      "tags": [
+        "email",
+        "newsletter",
+        "marketing",
+        "writing",
+        "monetization"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.695,
+      "jy": 0.2075
     },
     {
       "id": "bland-ai",
@@ -472,9 +730,14 @@
         "conversational AI",
         "voice AI"
       ],
+      "integrations": [
+        "API",
+        "CRM systems",
+        "helpdesk software"
+      ],
       "connectionCount": 3,
-      "jx": 0.6116,
-      "jy": 0.3963
+      "jx": 0.6143,
+      "jy": 0.4595
     },
     {
       "id": "blockade-labs",
@@ -515,9 +778,15 @@
         "VR",
         "creative-tools"
       ],
+      "integrations": [
+        "Unity",
+        "Unreal Engine",
+        "Blender",
+        "Igloo Vision"
+      ],
       "connectionCount": 0,
-      "jx": -0.3195,
-      "jy": -0.689
+      "jx": 0.0725,
+      "jy": 0.9462
     },
     {
       "id": "bolt",
@@ -557,9 +826,10 @@
         "saas",
         "agents"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.9144,
-      "jy": -0.3268
+      "jx": -0.2429,
+      "jy": 0.1041
     },
     {
       "id": "brandwatch",
@@ -600,9 +870,19 @@
         "market research",
         "AI"
       ],
+      "integrations": [
+        "HubSpot",
+        "Salesforce",
+        "Dropbox",
+        "Bitly",
+        "Shopify",
+        "ServiceNow",
+        "Box",
+        "OneDrive"
+      ],
       "connectionCount": 1,
-      "jx": -0.8145,
-      "jy": -0.8066
+      "jx": 0.6588,
+      "jy": 0.237
     },
     {
       "id": "browserbase",
@@ -643,9 +923,55 @@
         "puppeteer",
         "selenium"
       ],
+      "integrations": [
+        "github"
+      ],
       "connectionCount": 7,
-      "jx": 0.695,
-      "jy": 0.2075
+      "jx": 0.7234,
+      "jy": 0.1547
+    },
+    {
+      "id": "buffer",
+      "label": "Buffer",
+      "category": "marketing",
+      "categoryName": "Marketing & Growth",
+      "color": "#6b7280",
+      "size": 6.0,
+      "url": "https://buffer.com/",
+      "description": "A well-established social media management platform that helps users plan, schedule, and analyze their social media content. It has recently integrated AI features to assist with content creation, idea generation, and post optimization.",
+      "status": "active",
+      "rating": 4.5,
+      "pricingModel": "freemium",
+      "startingPrice": "$6/month/channel",
+      "freeTier": true,
+      "useCases": [
+        "Scheduling social media posts across multiple platforms in advance.",
+        "Using AI to generate content ideas and write posts.",
+        "Analyzing the performance of social media campaigns.",
+        "Collaborating with a team on social media content creation and approval."
+      ],
+      "pros": [
+        "Simple, clean, and user-friendly interface.",
+        "Affordable and transparent per-channel pricing model.",
+        "Reliable and has been a trusted tool in the industry for years.",
+        "AI features are well-integrated into the existing workflow."
+      ],
+      "cons": [
+        "Per-channel pricing can become expensive for agencies or businesses managing many profiles.",
+        "AI content generation is less advanced than dedicated writing tools.",
+        "Lacks some of the deep enterprise features of competitors like Sprout Social."
+      ],
+      "tags": [
+        "social-media",
+        "marketing",
+        "scheduling",
+        "analytics",
+        "ai"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.4091,
+      "jy": -0.9084
     },
     {
       "id": "canva-ai",
@@ -685,9 +1011,15 @@
         "magic-write",
         "content-creation"
       ],
+      "integrations": [
+        "google-drive",
+        "dropbox",
+        "instagram",
+        "facebook"
+      ],
       "connectionCount": 4,
-      "jx": 0.6143,
-      "jy": 0.4595
+      "jx": -0.5442,
+      "jy": -0.4212
     },
     {
       "id": "capacities",
@@ -722,9 +1054,15 @@
         "pkm",
         "zettelkasten"
       ],
+      "integrations": [
+        "whatsapp",
+        "telegram",
+        "twitter",
+        "raycast"
+      ],
       "connectionCount": 1,
-      "jx": 0.0725,
-      "jy": 0.9462
+      "jx": -0.8404,
+      "jy": -0.5344
     },
     {
       "id": "casetext-cocounsel",
@@ -761,9 +1099,10 @@
         "research",
         "law"
       ],
+      "integrations": [],
       "connectionCount": 1,
-      "jx": -0.2429,
-      "jy": 0.1041
+      "jx": -0.798,
+      "jy": -0.4441
     },
     {
       "id": "chatgpt",
@@ -806,9 +1145,10 @@
         "summarization",
         "research"
       ],
+      "integrations": [],
       "connectionCount": 60,
-      "jx": 0.6588,
-      "jy": 0.237
+      "jx": 0.2714,
+      "jy": -0.2703
     },
     {
       "id": "chroma",
@@ -847,9 +1187,13 @@
         "llm-applications",
         "open-source"
       ],
+      "integrations": [
+        "github",
+        "slack"
+      ],
       "connectionCount": 1,
-      "jx": 0.7234,
-      "jy": 0.1547
+      "jx": -0.2596,
+      "jy": -0.581
     },
     {
       "id": "claude",
@@ -891,9 +1235,53 @@
         "summarization",
         "research"
       ],
+      "integrations": [],
       "connectionCount": 16,
-      "jx": 0.4091,
-      "jy": -0.9084
+      "jx": -0.466,
+      "jy": 0.8733
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://www.anthropic.com/claude-code",
+      "description": "A terminal-first coding agent from Anthropic that has rapidly become one of the most-used AI coding tools by software engineers. It excels at complex, multi-file projects and agentic workflows directly in the command line.",
+      "status": "active",
+      "rating": 4.8,
+      "pricingModel": "freemium",
+      "startingPrice": "$20/month",
+      "freeTier": true,
+      "useCases": [
+        "Agentic, multi-file code generation and refactoring from the command line.",
+        "Generating unit tests and documentation for existing codebases.",
+        "Debugging complex issues by providing the agent with full file context.",
+        "Scaffolding new projects or features based on a high-level description."
+      ],
+      "pros": [
+        "Exceptional performance on complex, multi-file projects.",
+        "Terminal-first design integrates seamlessly into developer workflows.",
+        "Included with Claude Pro, offering high value for existing subscribers.",
+        "Strong adoption and positive sentiment within the engineering community."
+      ],
+      "cons": [
+        "Requires a Claude account and API key to use.",
+        "Can be resource-intensive for very large projects.",
+        "Steeper learning curve for developers not accustomed to CLI-based tools."
+      ],
+      "tags": [
+        "coding",
+        "terminal",
+        "agent",
+        "cli",
+        "anthropic"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.2961,
+      "jy": 0.2183
     },
     {
       "id": "clay",
@@ -935,9 +1323,10 @@
         "saas",
         "agents"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.5442,
-      "jy": -0.4212
+      "jx": -0.6577,
+      "jy": 0.4583
     },
     {
       "id": "codeium",
@@ -975,9 +1364,59 @@
         "ide-plugin",
         "developer-tool"
       ],
+      "integrations": [
+        "vscode",
+        "jetbrains-ides",
+        "neovim",
+        "jupyter",
+        "google-colab"
+      ],
       "connectionCount": 2,
-      "jx": -0.8404,
-      "jy": -0.5344
+      "jx": -0.6732,
+      "jy": -0.2411
+    },
+    {
+      "id": "codex-cli",
+      "label": "Codex CLI",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://openai.com/blog/openai-codex",
+      "description": "OpenAI's command-line agent for code generation and manipulation. It provides direct access to the powerful Codex models for developers who prefer working in a terminal environment.",
+      "status": "active",
+      "rating": 4.6,
+      "pricingModel": "paid",
+      "startingPrice": "Pay-as-you-go",
+      "freeTier": false,
+      "useCases": [
+        "Translating natural language comments into executable code.",
+        "Refactoring and optimizing existing code blocks from the command line.",
+        "Explaining complex code snippets in plain English.",
+        "Scripting and automating developer tasks using natural language prompts."
+      ],
+      "pros": [
+        "Direct access to OpenAI's powerful and fine-tuned Codex models.",
+        "Seamless integration for developers already using the OpenAI API.",
+        "Highly effective for a wide range of code generation and manipulation tasks.",
+        "Backed by OpenAI's extensive research and development."
+      ],
+      "cons": [
+        "No dedicated free tier; usage is billed via the OpenAI API.",
+        "Can be less intuitive for developers not deeply familiar with OpenAI's API structure.",
+        "Faces strong competition from newer, more agentic tools like Claude Code."
+      ],
+      "tags": [
+        "coding",
+        "terminal",
+        "agent",
+        "cli",
+        "openai"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.979,
+      "jy": 0.28
     },
     {
       "id": "cohere",
@@ -1017,9 +1456,17 @@
         "text-understanding",
         "enterprise-ai"
       ],
+      "integrations": [
+        "langchain",
+        "make",
+        "n8n",
+        "aws",
+        "azure",
+        "gcp"
+      ],
       "connectionCount": 3,
-      "jx": -0.798,
-      "jy": -0.4441
+      "jx": 0.1139,
+      "jy": 0.3692
     },
     {
       "id": "composio",
@@ -1056,9 +1503,13 @@
         "tools",
         "automation"
       ],
+      "integrations": [
+        "github",
+        "slack"
+      ],
       "connectionCount": 3,
-      "jx": 0.2714,
-      "jy": -0.2703
+      "jx": 0.6857,
+      "jy": 0.552
     },
     {
       "id": "consensus",
@@ -1101,9 +1552,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.2596,
-      "jy": -0.581
+      "jx": -0.5419,
+      "jy": -0.9358
     },
     {
       "id": "continue-dev",
@@ -1142,9 +1594,14 @@
         "open-source",
         "customizable LLM"
       ],
+      "integrations": [
+        "github",
+        "vscode",
+        "jetbrains"
+      ],
       "connectionCount": 2,
-      "jx": -0.466,
-      "jy": 0.8733
+      "jx": -0.3691,
+      "jy": -0.4645
     },
     {
       "id": "copy-ai",
@@ -1182,9 +1639,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.2961,
-      "jy": 0.2183
+      "jx": -0.578,
+      "jy": 0.8858
     },
     {
       "id": "crewai",
@@ -1227,9 +1685,10 @@
         "open-source",
         "team-collaboration"
       ],
+      "integrations": [],
       "connectionCount": 10,
-      "jx": -0.6577,
-      "jy": 0.4583
+      "jx": 0.7527,
+      "jy": -0.3706
     },
     {
       "id": "cursor",
@@ -1272,9 +1731,14 @@
         "code-review",
         "agents"
       ],
+      "integrations": [
+        "vscode",
+        "github",
+        "gitlab"
+      ],
       "connectionCount": 15,
-      "jx": -0.6732,
-      "jy": -0.2411
+      "jx": 0.3109,
+      "jy": -0.2087
     },
     {
       "id": "dalle-3",
@@ -1312,9 +1776,10 @@
         "free-tier",
         "api-available"
       ],
+      "integrations": [],
       "connectionCount": 7,
-      "jx": 0.979,
-      "jy": 0.28
+      "jx": 0.8291,
+      "jy": -0.0823
     },
     {
       "id": "databricks-ai",
@@ -1357,9 +1822,15 @@
         "lakehouse",
         "generative AI"
       ],
+      "integrations": [
+        "github",
+        "azure",
+        "aws",
+        "google cloud"
+      ],
       "connectionCount": 2,
-      "jx": 0.1139,
-      "jy": 0.3692
+      "jx": -0.4702,
+      "jy": -0.5067
     },
     {
       "id": "deepl",
@@ -1401,9 +1872,20 @@
         "multilingual",
         "productivity"
       ],
+      "integrations": [
+        "microsoft-365",
+        "google-workspace",
+        "zendesk",
+        "python",
+        "javascript",
+        "php",
+        ".net",
+        "java",
+        "ruby"
+      ],
       "connectionCount": 2,
-      "jx": 0.6857,
-      "jy": 0.552
+      "jx": 0.1227,
+      "jy": -0.4745
     },
     {
       "id": "deepseek",
@@ -1443,9 +1925,10 @@
         "api-available",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.5419,
-      "jy": -0.9358
+      "jx": 0.1692,
+      "jy": 0.7956
     },
     {
       "id": "descript",
@@ -1486,9 +1969,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 4,
-      "jx": -0.3691,
-      "jy": -0.4645
+      "jx": -0.2012,
+      "jy": -0.5614
     },
     {
       "id": "devin",
@@ -1529,9 +2013,16 @@
         "bug fixing",
         "autonomous agent"
       ],
+      "integrations": [
+        "github",
+        "git",
+        "jira",
+        "slack",
+        "vs-code"
+      ],
       "connectionCount": 2,
-      "jx": -0.578,
-      "jy": 0.8858
+      "jx": 0.9951,
+      "jy": 0.0191
     },
     {
       "id": "elevenlabs",
@@ -1572,9 +2063,10 @@
         "saas",
         "translation"
       ],
+      "integrations": [],
       "connectionCount": 7,
-      "jx": 0.7527,
-      "jy": -0.3706
+      "jx": -0.8182,
+      "jy": -0.9058
     },
     {
       "id": "elicit",
@@ -1617,9 +2109,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.3109,
-      "jy": -0.2087
+      "jx": -0.7807,
+      "jy": 0.2549
     },
     {
       "id": "evidently-ai",
@@ -1659,9 +2152,15 @@
         "open-source",
         "llm-observability"
       ],
+      "integrations": [
+        "python",
+        "jupyter-notebooks",
+        "airflow",
+        "kubernetes"
+      ],
       "connectionCount": 2,
-      "jx": 0.8291,
-      "jy": -0.0823
+      "jx": 0.5842,
+      "jy": -0.1557
     },
     {
       "id": "exa-ai",
@@ -1700,9 +2199,10 @@
         "llm-integration",
         "api"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": -0.4702,
-      "jy": -0.5067
+      "jx": -0.8729,
+      "jy": -0.2368
     },
     {
       "id": "fathom",
@@ -1741,9 +2241,19 @@
         "transcription",
         "summarization"
       ],
+      "integrations": [
+        "zoom",
+        "google-meet",
+        "microsoft-teams",
+        "zapier",
+        "salesforce",
+        "hubspot",
+        "notion",
+        "slack"
+      ],
       "connectionCount": 2,
-      "jx": 0.1227,
-      "jy": -0.4745
+      "jx": 0.9922,
+      "jy": 0.0582
     },
     {
       "id": "figma-ai",
@@ -1788,9 +2298,15 @@
         "collaboration",
         "automation"
       ],
+      "integrations": [
+        "github",
+        "slack",
+        "jira",
+        "confluence"
+      ],
       "connectionCount": 3,
-      "jx": 0.1692,
-      "jy": 0.7956
+      "jx": 0.9422,
+      "jy": 0.7216
     },
     {
       "id": "fireflies-ai",
@@ -1829,9 +2345,20 @@
         "CRM-sync",
         "AI-notetaker"
       ],
+      "integrations": [
+        "zoom",
+        "google-meet",
+        "microsoft-teams",
+        "salesforce",
+        "hubspot",
+        "slack",
+        "zapier",
+        "asana",
+        "trello"
+      ],
       "connectionCount": 1,
-      "jx": -0.2012,
-      "jy": -0.5614
+      "jx": -0.977,
+      "jy": 0.4414
     },
     {
       "id": "fireworks-ai",
@@ -1874,9 +2401,12 @@
         "cheap",
         "generative-ai"
       ],
+      "integrations": [
+        "api"
+      ],
       "connectionCount": 3,
-      "jx": 0.9951,
-      "jy": 0.0191
+      "jx": 0.3634,
+      "jy": 0.0739
     },
     {
       "id": "framer-ai",
@@ -1915,9 +2445,12 @@
         "low-code",
         "design-tool"
       ],
+      "integrations": [
+        "github"
+      ],
       "connectionCount": 3,
-      "jx": -0.8182,
-      "jy": -0.9058
+      "jx": -0.4663,
+      "jy": 0.2819
     },
     {
       "id": "galileo-ai",
@@ -1955,9 +2488,12 @@
         "text-to-ui",
         "figma-integration"
       ],
+      "integrations": [
+        "figma"
+      ],
       "connectionCount": 0,
-      "jx": -0.7807,
-      "jy": 0.2549
+      "jx": -0.7769,
+      "jy": -0.1305
     },
     {
       "id": "gamma",
@@ -1995,9 +2531,14 @@
         "design",
         "no-code"
       ],
+      "integrations": [
+        "google-suite",
+        "microsoft-office",
+        "airtable"
+      ],
       "connectionCount": 2,
-      "jx": 0.5842,
-      "jy": -0.1557
+      "jx": -0.0926,
+      "jy": 0.9076
     },
     {
       "id": "gemini",
@@ -2038,9 +2579,53 @@
         "real-time",
         "summarization"
       ],
+      "integrations": [],
       "connectionCount": 15,
-      "jx": -0.8729,
-      "jy": -0.2368
+      "jx": 0.7517,
+      "jy": -0.4732
+    },
+    {
+      "id": "gemini-cli",
+      "label": "Gemini CLI",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://cloud.google.com/vertex-ai/docs/generative-ai/gemini/gemini-cli",
+      "description": "Google's official command-line interface for interacting with the Gemini family of models. It allows developers to use Gemini for coding assistance, data analysis, and other tasks directly in the terminal.",
+      "status": "active",
+      "rating": 4.5,
+      "pricingModel": "freemium",
+      "startingPrice": "Pay-as-you-go",
+      "freeTier": true,
+      "useCases": [
+        "Quickly generating code snippets and shell commands in the terminal.",
+        "Summarizing long logs or command outputs.",
+        "Integrating Gemini into custom shell scripts and developer workflows.",
+        "Performing natural language queries on files and codebases directly from the CLI."
+      ],
+      "pros": [
+        "Deep integration with the Google Cloud ecosystem.",
+        "Direct access to powerful Gemini models from the command line.",
+        "No-cost entry with a generous free tier.",
+        "Highly scriptable and extensible for custom developer tooling."
+      ],
+      "cons": [
+        "Requires a Google Cloud account and project setup.",
+        "Less feature-rich for in-IDE agentic workflows compared to tools like Cursor or Claude Code.",
+        "Pricing can become complex for high-volume usage."
+      ],
+      "tags": [
+        "coding",
+        "terminal",
+        "agent",
+        "cli",
+        "google"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.0012,
+      "jy": -0.6427
     },
     {
       "id": "github-copilot",
@@ -2081,9 +2666,10 @@
         "ai-pair-programming",
         "code-review"
       ],
+      "integrations": [],
       "connectionCount": 19,
-      "jx": 0.9922,
-      "jy": 0.0582
+      "jx": 0.8253,
+      "jy": 0.741
     },
     {
       "id": "google-ai-studio",
@@ -2124,9 +2710,13 @@
         "google",
         "prompt-engineering"
       ],
+      "integrations": [
+        "google-cloud",
+        "github"
+      ],
       "connectionCount": 2,
-      "jx": 0.9422,
-      "jy": 0.7216
+      "jx": -0.4031,
+      "jy": 0.2779
     },
     {
       "id": "grain",
@@ -2167,9 +2757,16 @@
         "CRM-sync",
         "productivity"
       ],
+      "integrations": [
+        "Zoom",
+        "Google Meet",
+        "Microsoft Teams",
+        "Salesforce",
+        "HubSpot"
+      ],
       "connectionCount": 2,
-      "jx": -0.977,
-      "jy": 0.4414
+      "jx": 0.2179,
+      "jy": -0.6943
     },
     {
       "id": "grammarly",
@@ -2209,9 +2806,52 @@
         "saas",
         "team-collaboration"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.3634,
-      "jy": 0.0739
+      "jx": 0.525,
+      "jy": 0.0788
+    },
+    {
+      "id": "granola",
+      "label": "Granola",
+      "category": "productivity",
+      "categoryName": "Productivity & Knowledge Management",
+      "color": "#84cc16",
+      "size": 6.0,
+      "url": "https://www.granola.ai/",
+      "description": "A Mac-first AI meeting assistant that records and transcribes calls locally without a bot joining the meeting. It recently raised a $125M Series C and is known for its high-quality summaries and seamless user experience.",
+      "status": "active",
+      "rating": 4.9,
+      "pricingModel": "freemium",
+      "startingPrice": "$18/month",
+      "freeTier": true,
+      "useCases": [
+        "Automatically recording and transcribing sales calls, user interviews, and internal meetings.",
+        "Generating structured summaries and action items from long conversations.",
+        "Searching across a historical archive of all spoken conversations.",
+        "Improving meeting discipline and follow-up without manual note-taking."
+      ],
+      "pros": [
+        "No bot joins the call, providing a more natural meeting experience.",
+        "High-quality transcription and summarization.",
+        "Strong venture backing and rapid product development.",
+        "Generous free tier for evaluation."
+      ],
+      "cons": [
+        "Primarily focused on macOS, with limited support for other platforms.",
+        "Individual plan is more expensive than some competitors.",
+        "As a newer player, it has fewer integrations than established tools like Fireflies.ai."
+      ],
+      "tags": [
+        "meeting-intelligence",
+        "transcription",
+        "note-taking",
+        "macos"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.5573,
+      "jy": 0.0607
     },
     {
       "id": "grok",
@@ -2248,9 +2888,10 @@
         "text-to-image",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 1,
-      "jx": -0.4663,
-      "jy": 0.2819
+      "jx": -0.9989,
+      "jy": -0.3517
     },
     {
       "id": "groq",
@@ -2290,9 +2931,13 @@
         "fast inference",
         "low latency"
       ],
+      "integrations": [
+        "Zapier",
+        "LangChain"
+      ],
       "connectionCount": 3,
-      "jx": -0.7769,
-      "jy": -0.1305
+      "jx": -0.961,
+      "jy": 0.8582
     },
     {
       "id": "harvey-ai",
@@ -2332,9 +2977,13 @@
         "drafting",
         "contract review"
       ],
+      "integrations": [
+        "microsoft",
+        "azure"
+      ],
       "connectionCount": 2,
-      "jx": -0.0926,
-      "jy": 0.9076
+      "jx": 0.7574,
+      "jy": 0.6633
     },
     {
       "id": "hex",
@@ -2371,9 +3020,59 @@
         "collaboration",
         "ai"
       ],
+      "integrations": [
+        "github",
+        "slack",
+        "databricks",
+        "snowflake",
+        "bigquery"
+      ],
       "connectionCount": 3,
-      "jx": 0.7517,
-      "jy": -0.4732
+      "jx": -0.385,
+      "jy": -0.8841
+    },
+    {
+      "id": "heygen",
+      "label": "HeyGen",
+      "category": "video-generation",
+      "categoryName": "Video Generation",
+      "color": "#f97316",
+      "size": 6.0,
+      "url": "https://www.heygen.com/",
+      "description": "An AI video generation platform that specializes in creating realistic AI avatars and translating video content. It allows users to produce studio-quality videos with talking avatars from text, ideal for marketing, sales, and training content.",
+      "status": "active",
+      "rating": 4.6,
+      "pricingModel": "freemium",
+      "startingPrice": "$24/month",
+      "freeTier": true,
+      "useCases": [
+        "Creating training and onboarding videos without needing to film a person.",
+        "Producing marketing and sales videos with realistic AI presenters.",
+        "Translating existing videos into multiple languages while maintaining the original speaker's voice.",
+        "Quickly generating video content for social media and advertising."
+      ],
+      "pros": [
+        "High-quality, realistic AI avatars.",
+        "Impressive video translation and voice cloning capabilities.",
+        "User-friendly interface that doesn't require video editing experience.",
+        "Free tier is sufficient for testing the core functionality."
+      ],
+      "cons": [
+        "Credit-based system can be confusing and expensive for high-volume video production.",
+        "The best avatars and features are reserved for higher-priced plans.",
+        "Watermark on the free plan limits its professional use."
+      ],
+      "tags": [
+        "video",
+        "avatar",
+        "marketing",
+        "social-media",
+        "translation"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.756,
+      "jy": 0.8939
     },
     {
       "id": "hootsuite-ai",
@@ -2413,9 +3112,62 @@
         "team-collaboration",
         "scheduling"
       ],
+      "integrations": [
+        "facebook",
+        "instagram",
+        "twitter",
+        "linkedin",
+        "pinterest",
+        "youtube",
+        "tiktok",
+        "canva"
+      ],
       "connectionCount": 3,
-      "jx": 0.0012,
-      "jy": -0.6427
+      "jx": -0.8287,
+      "jy": -0.028
+    },
+    {
+      "id": "hubspot-ai",
+      "label": "HubSpot AI",
+      "category": "sales",
+      "categoryName": "Sales & GTM",
+      "color": "#f43f5e",
+      "size": 6.0,
+      "url": "https://www.hubspot.com/artificial-intelligence",
+      "description": "A suite of AI-powered tools built directly into the HubSpot CRM platform. It assists with content creation, lead scoring, sales forecasting, and data analysis to help marketing, sales, and service teams work more efficiently.",
+      "status": "active",
+      "rating": 4.4,
+      "pricingModel": "freemium",
+      "startingPrice": "$890/month",
+      "freeTier": true,
+      "useCases": [
+        "Automatically scoring and prioritizing leads based on their likelihood to close.",
+        "Generating marketing emails, blog posts, and social media copy.",
+        "Forecasting sales revenue and team performance.",
+        "Creating reports and dashboards that explain business trends in natural language."
+      ],
+      "pros": [
+        "Seamlessly integrated into the HubSpot platform, providing a unified workflow.",
+        "Leverages the vast amount of data within the CRM for highly contextual AI assistance.",
+        "Powerful tools for both sales and marketing teams.",
+        "The free CRM provides a solid entry point to the ecosystem."
+      ],
+      "cons": [
+        "The most powerful AI features are locked behind expensive Professional and Enterprise plans.",
+        "Vendor lock-in; the AI tools are not usable outside of the HubSpot ecosystem.",
+        "Can be overly complex for small businesses or individuals with simple needs."
+      ],
+      "tags": [
+        "crm",
+        "sales",
+        "marketing",
+        "automation",
+        "lead-scoring"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": -0.8616,
+      "jy": 0.5212
     },
     {
       "id": "hugging-face",
@@ -2460,9 +3212,17 @@
         "collaboration",
         "model-hosting"
       ],
+      "integrations": [
+        "github",
+        "python",
+        "tensorflow",
+        "pytorch",
+        "jax",
+        "docker"
+      ],
       "connectionCount": 4,
-      "jx": 0.8253,
-      "jy": 0.741
+      "jx": 0.5317,
+      "jy": -0.7432
     },
     {
       "id": "hume-ai",
@@ -2499,9 +3259,13 @@
         "speech-synthesis",
         "emotion-detection"
       ],
+      "integrations": [
+        "flowmattic",
+        "buildship"
+      ],
       "connectionCount": 3,
-      "jx": -0.4031,
-      "jy": 0.2779
+      "jx": -0.0494,
+      "jy": 0.0996
     },
     {
       "id": "intercom-fin",
@@ -2542,9 +3306,14 @@
         "automation",
         "chatbot"
       ],
+      "integrations": [
+        "intercom",
+        "slack",
+        "salesforce"
+      ],
       "connectionCount": 0,
-      "jx": 0.2179,
-      "jy": -0.6943
+      "jx": -0.4699,
+      "jy": 0.7449
     },
     {
       "id": "jasper",
@@ -2584,9 +3353,10 @@
         "enterprise",
         "seo"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.525,
-      "jy": 0.0788
+      "jx": -0.1537,
+      "jy": -0.5764
     },
     {
       "id": "jetbrains-ai",
@@ -2626,9 +3396,15 @@
         "refactoring",
         "debugging"
       ],
+      "integrations": [
+        "github",
+        "slack",
+        "claude",
+        "junie"
+      ],
       "connectionCount": 2,
-      "jx": 0.5573,
-      "jy": 0.0607
+      "jx": 0.0786,
+      "jy": 0.4599
     },
     {
       "id": "julius-ai",
@@ -2666,9 +3442,13 @@
         "AI assistant",
         "no-code"
       ],
+      "integrations": [
+        "google-drive",
+        "mysql"
+      ],
       "connectionCount": 3,
-      "jx": -0.9989,
-      "jy": -0.3517
+      "jx": -0.5977,
+      "jy": -0.3766
     },
     {
       "id": "kling-ai",
@@ -2705,9 +3485,10 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.961,
-      "jy": 0.8582
+      "jx": 0.9903,
+      "jy": 0.2998
     },
     {
       "id": "krisp-ai",
@@ -2743,9 +3524,12 @@
         "voice-ai",
         "productivity"
       ],
+      "integrations": [
+        "zapier"
+      ],
       "connectionCount": 1,
-      "jx": 0.7574,
-      "jy": 0.6633
+      "jx": -0.1238,
+      "jy": 0.0352
     },
     {
       "id": "langchain",
@@ -2789,9 +3573,10 @@
         "api-available",
         "rag"
       ],
+      "integrations": [],
       "connectionCount": 29,
-      "jx": -0.385,
-      "jy": -0.8841
+      "jx": -0.758,
+      "jy": -0.5506
     },
     {
       "id": "lately-ai",
@@ -2830,9 +3615,17 @@
         "AI writing",
         "marketing"
       ],
+      "integrations": [
+        "facebook",
+        "twitter",
+        "linkedin",
+        "instagram",
+        "hubspot",
+        "wordpress"
+      ],
       "connectionCount": 2,
-      "jx": 0.756,
-      "jy": 0.8939
+      "jx": -0.3238,
+      "jy": 0.1766
     },
     {
       "id": "lavender-ai",
@@ -2871,9 +3664,57 @@
         "personalization",
         "AI coach"
       ],
+      "integrations": [
+        "linkedin",
+        "podcasts",
+        "crm"
+      ],
       "connectionCount": 2,
-      "jx": -0.8287,
-      "jy": -0.028
+      "jx": -0.5398,
+      "jy": -0.5596
+    },
+    {
+      "id": "leonardo-ai",
+      "label": "Leonardo AI",
+      "category": "image-generation",
+      "categoryName": "Image Generation",
+      "color": "#ec4899",
+      "size": 6.0,
+      "url": "https://leonardo.ai/",
+      "description": "A full creative suite for image generation, featuring a wide range of fine-tuned models, an AI canvas for editing, and 3D texture generation. It is particularly popular for its generous free tier and strong community features.",
+      "status": "active",
+      "rating": 4.7,
+      "pricingModel": "freemium",
+      "startingPrice": "$12/month",
+      "freeTier": true,
+      "useCases": [
+        "Generating game assets like characters, environments, and items.",
+        "Creating concept art and illustrations with a variety of artistic styles.",
+        "Editing and extending images with the AI Canvas inpainting and outpainting tools.",
+        "Producing unique marketing and social media visuals."
+      ],
+      "pros": [
+        "Very generous free tier with daily token reset.",
+        "Access to a wide variety of fine-tuned community and platform models.",
+        "Full creative suite including image editing and 3D texturing.",
+        "Strong community platform for sharing and discovering prompts."
+      ],
+      "cons": [
+        "Token-based system can be complex to manage for new users.",
+        "The quality of community models can be inconsistent.",
+        "Advanced features can consume tokens quickly."
+      ],
+      "tags": [
+        "image",
+        "art",
+        "gamedev",
+        "design",
+        "multi-model"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": -0.858,
+      "jy": 0.2622
     },
     {
       "id": "limitless",
@@ -2912,9 +3753,13 @@
         "ai-agent",
         "free-tier"
       ],
+      "integrations": [
+        "openai-api",
+        "anthropic-api"
+      ],
       "connectionCount": 2,
-      "jx": -0.8616,
-      "jy": 0.5212
+      "jx": -0.5421,
+      "jy": 0.8108
     },
     {
       "id": "lindy-ai",
@@ -2950,9 +3795,16 @@
         "workflow-automation",
         "business-automation"
       ],
+      "integrations": [
+        "github",
+        "slack",
+        "zendesk",
+        "zoho-desk",
+        "liveagent"
+      ],
       "connectionCount": 2,
-      "jx": 0.5317,
-      "jy": -0.7432
+      "jx": 0.7193,
+      "jy": -0.8583
     },
     {
       "id": "logseq",
@@ -2991,9 +3843,10 @@
         "desktop-app",
         "mobile-app"
       ],
+      "integrations": [],
       "connectionCount": 1,
-      "jx": -0.0494,
-      "jy": 0.0996
+      "jx": -0.524,
+      "jy": 0.338
     },
     {
       "id": "lovable",
@@ -3031,9 +3884,10 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.4699,
-      "jy": 0.7449
+      "jx": -0.5715,
+      "jy": -0.7354
     },
     {
       "id": "luma-ai",
@@ -3074,9 +3928,14 @@
         "dream-machine",
         "photogrammetry"
       ],
+      "integrations": [
+        "api",
+        "unity",
+        "unreal-engine"
+      ],
       "connectionCount": 3,
-      "jx": -0.1537,
-      "jy": -0.5764
+      "jx": 0.871,
+      "jy": 0.1421
     },
     {
       "id": "make",
@@ -3118,9 +3977,10 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 18,
-      "jx": 0.0786,
-      "jy": 0.4599
+      "jx": -0.0547,
+      "jy": 0.5692
     },
     {
       "id": "mem",
@@ -3159,9 +4019,10 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 1,
-      "jx": -0.5977,
-      "jy": -0.3766
+      "jx": 0.615,
+      "jy": -0.6192
     },
     {
       "id": "meshy",
@@ -3198,9 +4059,12 @@
         "text-to-3d",
         "image-to-3d"
       ],
+      "integrations": [
+        "blender"
+      ],
       "connectionCount": 0,
-      "jx": 0.9903,
-      "jy": 0.2998
+      "jx": -0.8061,
+      "jy": -0.1379
     },
     {
       "id": "metagpt",
@@ -3239,9 +4103,13 @@
         "ai-agents",
         "llm-orchestration"
       ],
+      "integrations": [
+        "helicone",
+        "open-llm"
+      ],
       "connectionCount": 2,
-      "jx": -0.1238,
-      "jy": 0.0352
+      "jx": -0.1528,
+      "jy": -0.066
     },
     {
       "id": "midjourney",
@@ -3280,9 +4148,10 @@
         "image-generation",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 5,
-      "jx": -0.758,
-      "jy": -0.5506
+      "jx": 0.4582,
+      "jy": 0.3467
     },
     {
       "id": "mistral-ai",
@@ -3322,9 +4191,15 @@
         "european",
         "efficient"
       ],
+      "integrations": [
+        "python",
+        "javascript",
+        "rust",
+        "huggingface"
+      ],
       "connectionCount": 3,
-      "jx": -0.3238,
-      "jy": 0.1766
+      "jx": 0.9683,
+      "jy": -0.8032
     },
     {
       "id": "mlflow",
@@ -3365,9 +4240,20 @@
         "data science",
         "open-source"
       ],
+      "integrations": [
+        "docker",
+        "kubernetes",
+        "aws",
+        "azure",
+        "google-cloud",
+        "databricks",
+        "tensorflow",
+        "pytorch",
+        "scikit-learn"
+      ],
       "connectionCount": 3,
-      "jx": -0.5398,
-      "jy": -0.5596
+      "jx": -0.1948,
+      "jy": -0.3214
     },
     {
       "id": "modal",
@@ -3409,9 +4295,13 @@
         "GPU",
         "Python"
       ],
+      "integrations": [
+        "github",
+        "slack"
+      ],
       "connectionCount": 2,
-      "jx": -0.858,
-      "jy": 0.2622
+      "jx": 0.7233,
+      "jy": -0.5027
     },
     {
       "id": "multion",
@@ -3451,9 +4341,14 @@
         "productivity",
         "task-automation"
       ],
+      "integrations": [
+        "python",
+        "javascript",
+        "node.js"
+      ],
       "connectionCount": 4,
-      "jx": -0.5421,
-      "jy": 0.8108
+      "jx": -0.6196,
+      "jy": -0.1028
     },
     {
       "id": "n8n",
@@ -3498,9 +4393,10 @@
         "api-available",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 40,
-      "jx": 0.7193,
-      "jy": -0.8583
+      "jx": -0.1562,
+      "jy": -0.4429
     },
     {
       "id": "notebooklm",
@@ -3542,9 +4438,10 @@
         "rag",
         "education"
       ],
+      "integrations": [],
       "connectionCount": 4,
-      "jx": -0.524,
-      "jy": 0.338
+      "jx": -0.5004,
+      "jy": 0.8465
     },
     {
       "id": "notion-ai",
@@ -3582,9 +4479,10 @@
         "saas",
         "team-collaboration"
       ],
+      "integrations": [],
       "connectionCount": 6,
-      "jx": -0.5715,
-      "jy": -0.7354
+      "jx": -0.1137,
+      "jy": 0.7227
     },
     {
       "id": "obsidian",
@@ -3623,9 +4521,10 @@
         "mobile-app",
         "privacy-focused"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": 0.871,
-      "jy": 0.1421
+      "jx": 0.1007,
+      "jy": -0.8988
     },
     {
       "id": "obviously-ai",
@@ -3660,9 +4559,17 @@
         "machine-learning",
         "data-science"
       ],
+      "integrations": [
+        "google-drive",
+        "dropbox",
+        "hubspot",
+        "mysql",
+        "postgresql",
+        "airtable"
+      ],
       "connectionCount": 2,
-      "jx": -0.0547,
-      "jy": 0.5692
+      "jx": 0.9986,
+      "jy": 0.6721
     },
     {
       "id": "openai-api",
@@ -3705,9 +4612,60 @@
         "speech-to-text",
         "nlp"
       ],
+      "integrations": [
+        "python",
+        "javascript",
+        "rest-api",
+        "curl",
+        "postman"
+      ],
       "connectionCount": 7,
-      "jx": 0.615,
-      "jy": -0.6192
+      "jx": 0.938,
+      "jy": 0.8527
+    },
+    {
+      "id": "opencode",
+      "label": "OpenCode",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://github.com/opencode-ai/opencode",
+      "description": "The most popular open-source, model-agnostic AI coding agent. It allows developers to connect their preferred large language model for agentic coding workflows in the terminal, avoiding vendor lock-in.",
+      "status": "active",
+      "rating": 4.7,
+      "pricingModel": "open-source",
+      "startingPrice": "$0",
+      "freeTier": true,
+      "useCases": [
+        "Building custom, self-hosted AI coding assistants.",
+        "Using local or fine-tuned models for code generation in air-gapped environments.",
+        "Evaluating the performance of different LLMs on a consistent set of coding tasks.",
+        "Extending the agent with custom tools and commands."
+      ],
+      "pros": [
+        "Completely free and open-source.",
+        "Model-agnostic, providing maximum flexibility and avoiding vendor lock-in.",
+        "Highly extensible and customizable.",
+        "Strong community support and active development."
+      ],
+      "cons": [
+        "Requires technical expertise to set up and configure.",
+        "Users must provide their own API keys or models, which can incur costs.",
+        "Lacks the polished user experience of commercial alternatives."
+      ],
+      "tags": [
+        "coding",
+        "terminal",
+        "agent",
+        "cli",
+        "open-source",
+        "model-agnostic"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.6974,
+      "jy": -0.6674
     },
     {
       "id": "openrouter",
@@ -3747,9 +4705,56 @@
         "Model Routing",
         "Cost Optimization"
       ],
+      "integrations": [
+        "OpenAI API compatibility",
+        "Cloudflare AI Gateway"
+      ],
       "connectionCount": 5,
-      "jx": -0.8061,
-      "jy": -0.1379
+      "jx": -0.0287,
+      "jy": -0.5725
+    },
+    {
+      "id": "opus-clip",
+      "label": "Opus Clip",
+      "category": "video-editing",
+      "categoryName": "Video & Podcast Editing",
+      "color": "#d946ef",
+      "size": 6.0,
+      "url": "https://www.opus.pro/",
+      "description": "A leading AI-powered video repurposing platform that automatically turns long-form videos into short, viral-ready clips for social media. It uses AI to identify the most compelling hooks and moments in a video and reformats them for platforms like TikTok, Instagram Reels, and YouTube Shorts.",
+      "status": "active",
+      "rating": 4.8,
+      "pricingModel": "freemium",
+      "startingPrice": "$19/month",
+      "freeTier": true,
+      "useCases": [
+        "Content creators repurposing podcasts and YouTube videos into short clips.",
+        "Marketing teams creating a high volume of social media video content from webinars and interviews.",
+        "Agencies managing social media for multiple clients.",
+        "Businesses looking to increase their social media presence without creating net-new video content."
+      ],
+      "pros": [
+        "Saves significant time in the video editing and clipping process.",
+        "AI-powered virality score helps identify the most promising clips.",
+        "Automatically adds captions, reformats video, and adds brand overlays.",
+        "Supports multiple languages."
+      ],
+      "cons": [
+        "The AI's clip selection can sometimes be hit-or-miss, requiring manual review.",
+        "Free plan includes a watermark, which is not ideal for professional use.",
+        "Pricing is based on upload minutes, which can be costly for users with very long source videos."
+      ],
+      "tags": [
+        "video",
+        "repurposing",
+        "social-media",
+        "marketing",
+        "automation"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": -0.1979,
+      "jy": -0.8827
     },
     {
       "id": "otter-ai",
@@ -3790,9 +4795,16 @@
         "productivity",
         "collaboration"
       ],
+      "integrations": [
+        "zoom",
+        "google-meet",
+        "microsoft-teams",
+        "slack",
+        "salesforce"
+      ],
       "connectionCount": 1,
-      "jx": -0.1528,
-      "jy": -0.066
+      "jx": -0.2421,
+      "jy": 0.9706
     },
     {
       "id": "perplexity",
@@ -3833,9 +4845,10 @@
         "real-time",
         "rag"
       ],
+      "integrations": [],
       "connectionCount": 7,
-      "jx": 0.4582,
-      "jy": 0.3467
+      "jx": -0.4696,
+      "jy": 0.5681
     },
     {
       "id": "phind",
@@ -3875,9 +4888,10 @@
         "programming",
         "debugging"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": 0.9683,
-      "jy": -0.8032
+      "jx": -0.09,
+      "jy": -0.154
     },
     {
       "id": "pinecone",
@@ -3918,9 +4932,57 @@
         "embeddings",
         "search"
       ],
+      "integrations": [
+        "aws",
+        "pabbly-connect",
+        "celigo"
+      ],
       "connectionCount": 4,
-      "jx": -0.1948,
-      "jy": -0.3214
+      "jx": 0.9146,
+      "jy": 0.9908
+    },
+    {
+      "id": "pixverse",
+      "label": "PixVerse",
+      "category": "video-generation",
+      "categoryName": "Video Generation",
+      "color": "#f97316",
+      "size": 6.0,
+      "url": "https://pixverse.ai/",
+      "description": "An AI video generation model and platform that has gained popularity for its accessible and genuinely free tier. It allows users to create high-quality videos from text prompts or by animating existing images.",
+      "status": "active",
+      "rating": 4.5,
+      "pricingModel": "freemium",
+      "startingPrice": "$14/month",
+      "freeTier": true,
+      "useCases": [
+        "Creating short animated clips for social media content.",
+        "Visualizing concepts and storyboards with generative video.",
+        "Bringing still images to life with subtle motion.",
+        "Experimenting with AI video generation without a financial commitment."
+      ],
+      "pros": [
+        "One of the best free tiers available for AI video generation.",
+        "High-quality video output for a relatively new model.",
+        "Simple and intuitive user interface.",
+        "Active community on Discord for support and inspiration."
+      ],
+      "cons": [
+        "Video generation can be slow, especially on the free plan.",
+        "Lacks the advanced editing features of more mature platforms.",
+        "Watermark on the free plan.",
+        "As a newer tool, the model's consistency can vary."
+      ],
+      "tags": [
+        "video",
+        "generative-video",
+        "animation",
+        "free-tier"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.1115,
+      "jy": 0.4368
     },
     {
       "id": "play-ht",
@@ -3960,9 +5022,14 @@
         "audio",
         "speech-synthesis"
       ],
+      "integrations": [
+        "api",
+        "chatgpt",
+        "make.com"
+      ],
       "connectionCount": 2,
-      "jx": 0.7233,
-      "jy": -0.5027
+      "jx": -0.6904,
+      "jy": -0.4066
     },
     {
       "id": "qdrant",
@@ -4003,9 +5070,17 @@
         "AI",
         "machine-learning"
       ],
+      "integrations": [
+        "Python",
+        "Rust",
+        "Go",
+        "TypeScript",
+        "Docker",
+        "Kubernetes"
+      ],
       "connectionCount": 1,
-      "jx": -0.6196,
-      "jy": -0.1028
+      "jx": 0.9374,
+      "jy": 0.1584
     },
     {
       "id": "qodo",
@@ -4045,9 +5120,14 @@
         "IDE plugin",
         "agentic workflows"
       ],
+      "integrations": [
+        "github",
+        "vs-code",
+        "jetbrains-ides"
+      ],
       "connectionCount": 2,
-      "jx": -0.1562,
-      "jy": -0.4429
+      "jx": 0.0844,
+      "jy": 0.496
     },
     {
       "id": "read-ai",
@@ -4085,9 +5165,21 @@
         "ai-agent",
         "free-tier"
       ],
+      "integrations": [
+        "zoom",
+        "microsoft-teams",
+        "google-meet",
+        "slack",
+        "zapier",
+        "notion",
+        "salesforce",
+        "hubspot",
+        "jira",
+        "confluence"
+      ],
       "connectionCount": 1,
-      "jx": -0.5004,
-      "jy": 0.8465
+      "jx": -0.8857,
+      "jy": 0.1684
     },
     {
       "id": "reflect",
@@ -4123,9 +5215,14 @@
         "productivity",
         "writing"
       ],
+      "integrations": [
+        "Google Calendar",
+        "iCal",
+        "Office 365"
+      ],
       "connectionCount": 1,
-      "jx": -0.1137,
-      "jy": 0.7227
+      "jx": 0.0057,
+      "jy": 0.7054
     },
     {
       "id": "relevance-ai",
@@ -4164,9 +5261,17 @@
         "workflow-automation",
         "llm-orchestration"
       ],
+      "integrations": [
+        "openai",
+        "anthropic",
+        "google-gemini",
+        "github",
+        "slack",
+        "get-prospect"
+      ],
       "connectionCount": 5,
-      "jx": 0.1007,
-      "jy": -0.8988
+      "jx": -0.6851,
+      "jy": 0.9216
     },
     {
       "id": "relume",
@@ -4208,9 +5313,13 @@
         "figma",
         "webflow"
       ],
+      "integrations": [
+        "figma",
+        "webflow"
+      ],
       "connectionCount": 0,
-      "jx": 0.9986,
-      "jy": 0.6721
+      "jx": -0.8398,
+      "jy": -0.6284
     },
     {
       "id": "replicate",
@@ -4248,9 +5357,12 @@
         "image-generation",
         "video-generation"
       ],
+      "integrations": [
+        "github"
+      ],
       "connectionCount": 2,
-      "jx": 0.938,
-      "jy": 0.8527
+      "jx": 0.1901,
+      "jy": 0.3504
     },
     {
       "id": "replit",
@@ -4296,9 +5408,15 @@
         "nodejs",
         "repls"
       ],
+      "integrations": [
+        "github",
+        "git",
+        "npm",
+        "pip"
+      ],
       "connectionCount": 1,
-      "jx": 0.6974,
-      "jy": -0.6674
+      "jx": -0.5296,
+      "jy": -0.7602
     },
     {
       "id": "resemble-ai",
@@ -4342,9 +5460,17 @@
         "audio enhancement",
         "speaker verification"
       ],
+      "integrations": [
+        "GitHub",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Docker",
+        "Kubernetes"
+      ],
       "connectionCount": 2,
-      "jx": -0.0287,
-      "jy": -0.5725
+      "jx": 0.7806,
+      "jy": -0.5076
     },
     {
       "id": "rows-ai",
@@ -4385,9 +5511,15 @@
         "AI",
         "no-code"
       ],
+      "integrations": [
+        "api",
+        "web-scraping",
+        "databases",
+        "analytics-tools"
+      ],
       "connectionCount": 2,
-      "jx": -0.1979,
-      "jy": -0.8827
+      "jx": 0.189,
+      "jy": 0.2388
     },
     {
       "id": "runway",
@@ -4425,9 +5557,10 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": -0.2421,
-      "jy": 0.9706
+      "jx": -0.1616,
+      "jy": 0.1673
     },
     {
       "id": "semgrep",
@@ -4463,9 +5596,16 @@
         "static-analysis",
         "code-security"
       ],
+      "integrations": [
+        "github",
+        "gitlab",
+        "jenkins",
+        "circleci",
+        "slack"
+      ],
       "connectionCount": 1,
-      "jx": -0.4696,
-      "jy": 0.5681
+      "jx": 0.0456,
+      "jy": 0.8694
     },
     {
       "id": "shortwave",
@@ -4507,9 +5647,16 @@
         "scheduling",
         "inbox-management"
       ],
+      "integrations": [
+        "tasklet",
+        "slack",
+        "notion",
+        "asana",
+        "hubspot"
+      ],
       "connectionCount": 2,
-      "jx": -0.09,
-      "jy": -0.154
+      "jx": -0.5915,
+      "jy": 0.4324
     },
     {
       "id": "slidesai",
@@ -4547,9 +5694,12 @@
         "ai-generator",
         "text-to-slides"
       ],
+      "integrations": [
+        "google-workspace"
+      ],
       "connectionCount": 1,
-      "jx": 0.9146,
-      "jy": 0.9908
+      "jx": -0.5226,
+      "jy": -0.2084
     },
     {
       "id": "smartling",
@@ -4590,9 +5740,10 @@
         "enterprise",
         "workflow-management"
       ],
+      "integrations": [],
       "connectionCount": 0,
-      "jx": 0.1115,
-      "jy": 0.4368
+      "jx": 0.3434,
+      "jy": -0.4
     },
     {
       "id": "snyk-ai",
@@ -4631,9 +5782,13 @@
         "IaC security",
         "AI security"
       ],
+      "integrations": [
+        "github",
+        "vs-code"
+      ],
       "connectionCount": 1,
-      "jx": -0.6904,
-      "jy": -0.4066
+      "jx": -0.3676,
+      "jy": 0.5037
     },
     {
       "id": "socket-dev",
@@ -4675,9 +5830,13 @@
         "ai",
         "developer-tools"
       ],
+      "integrations": [
+        "github",
+        "github-actions"
+      ],
       "connectionCount": 2,
-      "jx": 0.9374,
-      "jy": 0.1584
+      "jx": -0.8549,
+      "jy": -0.0834
     },
     {
       "id": "sora",
@@ -4712,9 +5871,10 @@
         "text-to-video",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": 0.0844,
-      "jy": 0.496
+      "jx": 0.9969,
+      "jy": 0.9922
     },
     {
       "id": "sourcegraph-cody",
@@ -4754,9 +5914,56 @@
         "search",
         "ide-integration"
       ],
+      "integrations": [
+        "github",
+        "visual-studio-code",
+        "jetbrains-ides"
+      ],
       "connectionCount": 2,
-      "jx": -0.8857,
-      "jy": 0.1684
+      "jx": -0.8535,
+      "jy": -0.5737
+    },
+    {
+      "id": "sparktoro",
+      "label": "SparkToro",
+      "category": "marketing",
+      "categoryName": "Marketing & Growth",
+      "color": "#6b7280",
+      "size": 6.0,
+      "url": "https://sparktoro.com/",
+      "description": "An audience research tool that helps marketers, entrepreneurs, and researchers quickly discover what their target audience reads, watches, listens to, and follows. It provides insights into audience demographics, online behavior, and sources of influence.",
+      "status": "active",
+      "rating": 4.6,
+      "pricingModel": "freemium",
+      "startingPrice": "$38/month",
+      "freeTier": true,
+      "useCases": [
+        "Identifying the podcasts, YouTube channels, and publications an audience pays attention to for content and PR pitching.",
+        "Discovering the social accounts, websites, and hashtags that have the most influence over a specific target market.",
+        "Uncovering demographic and psychographic insights about a customer segment.",
+        "Finding partnership and advertising opportunities by seeing where your audience spends their time."
+      ],
+      "pros": [
+        "Incredibly fast and easy way to get deep audience insights.",
+        "Data is aggregated from numerous sources, providing a comprehensive view.",
+        "Intuitive interface that presents complex data in an easy-to-understand format.",
+        "The free plan is useful for initial exploration and validating the tool's value."
+      ],
+      "cons": [
+        "The lowest paid plan can be pricey for freelancers or very small businesses.",
+        "Data is based on public profiles and online behavior, so it may not capture the full picture of an audience.",
+        "Some niche audiences may have limited data available."
+      ],
+      "tags": [
+        "audience-research",
+        "market-research",
+        "seo",
+        "content-marketing"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": -0.4696,
+      "jy": 0.8665
     },
     {
       "id": "spellbook",
@@ -4796,9 +6003,12 @@
         "legal tech",
         "AI assistant"
       ],
+      "integrations": [
+        "Microsoft Word"
+      ],
       "connectionCount": 0,
-      "jx": 0.0057,
-      "jy": 0.7054
+      "jx": 0.7617,
+      "jy": 0.7585
     },
     {
       "id": "stable-diffusion",
@@ -4837,9 +6047,10 @@
         "fine-tuning",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.6851,
-      "jy": 0.9216
+      "jx": -0.2609,
+      "jy": -0.6845
     },
     {
       "id": "suno",
@@ -4876,9 +6087,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": -0.8398,
-      "jy": -0.6284
+      "jx": 0.6675,
+      "jy": 0.4071
     },
     {
       "id": "superhuman-ai",
@@ -4915,9 +6127,14 @@
         "productivity",
         "ux"
       ],
+      "integrations": [
+        "google-workspace",
+        "microsoft-365",
+        "slack"
+      ],
       "connectionCount": 3,
-      "jx": 0.1901,
-      "jy": 0.3504
+      "jx": 0.2234,
+      "jy": 0.9745
     },
     {
       "id": "surfer-seo",
@@ -4954,9 +6171,10 @@
         "content-optimization",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.5296,
-      "jy": -0.7602
+      "jx": 0.308,
+      "jy": -0.9844
     },
     {
       "id": "sweep",
@@ -4999,9 +6217,13 @@
         "pull requests",
         "JetBrains IDEs"
       ],
+      "integrations": [
+        "github",
+        "jetbrains"
+      ],
       "connectionCount": 0,
-      "jx": 0.7806,
-      "jy": -0.5076
+      "jx": 0.6342,
+      "jy": -0.4012
     },
     {
       "id": "synthesia",
@@ -5042,9 +6264,15 @@
         "training",
         "corporate-communication"
       ],
+      "integrations": [
+        "lms",
+        "crm",
+        "marketing-automation",
+        "social-media"
+      ],
       "connectionCount": 5,
-      "jx": 0.189,
-      "jy": 0.2388
+      "jx": 0.3268,
+      "jy": 0.8779
     },
     {
       "id": "synthflow",
@@ -5090,9 +6318,16 @@
         "automation",
         "telephony"
       ],
+      "integrations": [
+        "zapier",
+        "make",
+        "hubspot",
+        "google-calendar",
+        "twilio"
+      ],
       "connectionCount": 3,
-      "jx": -0.1616,
-      "jy": 0.1673
+      "jx": -0.7314,
+      "jy": -0.7691
     },
     {
       "id": "tabnine",
@@ -5129,9 +6364,19 @@
         "enterprise",
         "self-hostable"
       ],
+      "integrations": [
+        "VS Code",
+        "IntelliJ IDEA",
+        "PyCharm",
+        "WebStorm",
+        "Sublime Text",
+        "Vim",
+        "Neovim",
+        "JupyterLab"
+      ],
       "connectionCount": 2,
-      "jx": 0.0456,
-      "jy": 0.8694
+      "jx": -0.7859,
+      "jy": 0.1064
     },
     {
       "id": "tana",
@@ -5171,9 +6416,14 @@
         "AI",
         "note-taking"
       ],
+      "integrations": [
+        "google_calendar",
+        "slack",
+        "zoom"
+      ],
       "connectionCount": 3,
-      "jx": -0.5915,
-      "jy": 0.4324
+      "jx": -0.4553,
+      "jy": 0.2097
     },
     {
       "id": "tavily",
@@ -5213,9 +6463,14 @@
         "RAG",
         "API"
       ],
+      "integrations": [
+        "LangChain",
+        "Zapier",
+        "n8n"
+      ],
       "connectionCount": 4,
-      "jx": -0.5226,
-      "jy": -0.2084
+      "jx": 0.4352,
+      "jy": -0.5928
     },
     {
       "id": "tidio-ai",
@@ -5256,9 +6511,17 @@
         "live chat",
         "AI agent"
       ],
+      "integrations": [
+        "shopify",
+        "zendesk",
+        "salesforce",
+        "messenger",
+        "instagram",
+        "whatsapp"
+      ],
       "connectionCount": 2,
-      "jx": 0.3434,
-      "jy": -0.4
+      "jx": 0.2685,
+      "jy": -0.472
     },
     {
       "id": "tldv",
@@ -5298,9 +6561,17 @@
         "crm-integration",
         "sales-enablement"
       ],
+      "integrations": [
+        "hubspot",
+        "zoho",
+        "google-meet",
+        "zoom",
+        "microsoft-teams",
+        "slack"
+      ],
       "connectionCount": 3,
-      "jx": -0.3676,
-      "jy": 0.5037
+      "jx": -0.0229,
+      "jy": 0.8107
     },
     {
       "id": "together-ai",
@@ -5339,9 +6610,13 @@
         "open-source",
         "cloud"
       ],
+      "integrations": [
+        "python-sdk",
+        "rest-api"
+      ],
       "connectionCount": 2,
-      "jx": -0.8549,
-      "jy": -0.0834
+      "jx": 0.6922,
+      "jy": -0.8154
     },
     {
       "id": "tome",
@@ -5378,9 +6653,12 @@
         "AI",
         "design"
       ],
+      "integrations": [
+        "spline"
+      ],
       "connectionCount": 2,
-      "jx": 0.9969,
-      "jy": 0.9922
+      "jx": -0.1528,
+      "jy": -0.4466
     },
     {
       "id": "udio",
@@ -5416,9 +6694,10 @@
         "free-tier",
         "saas"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": -0.8535,
-      "jy": -0.5737
+      "jx": -0.9929,
+      "jy": 0.5422
     },
     {
       "id": "uizard",
@@ -5458,9 +6737,14 @@
         "wireframing",
         "mockup"
       ],
+      "integrations": [
+        "figma",
+        "sketch",
+        "adobe-xd"
+      ],
       "connectionCount": 3,
-      "jx": -0.4696,
-      "jy": 0.8665
+      "jx": 0.2742,
+      "jy": -0.4761
     },
     {
       "id": "v0",
@@ -5499,9 +6783,10 @@
         "saas",
         "agents"
       ],
+      "integrations": [],
       "connectionCount": 3,
-      "jx": 0.7617,
-      "jy": 0.7585
+      "jx": 0.4825,
+      "jy": 0.1034
     },
     {
       "id": "vapi",
@@ -5541,9 +6826,13 @@
         "real-time",
         "conversational-ai"
       ],
+      "integrations": [
+        "github",
+        "make"
+      ],
       "connectionCount": 3,
-      "jx": -0.2609,
-      "jy": -0.6845
+      "jx": -0.1446,
+      "jy": -0.9807
     },
     {
       "id": "weaviate",
@@ -5585,9 +6874,15 @@
         "open-source",
         "embeddings"
       ],
+      "integrations": [
+        "Kubernetes",
+        "Docker",
+        "GraphQL",
+        "REST API"
+      ],
       "connectionCount": 4,
-      "jx": 0.6675,
-      "jy": 0.4071
+      "jx": -0.8495,
+      "jy": 0.7662
     },
     {
       "id": "weights-and-biases",
@@ -5626,9 +6921,15 @@
         "model-monitoring",
         "machine-learning"
       ],
+      "integrations": [
+        "github",
+        "aws",
+        "google-cloud",
+        "azure"
+      ],
       "connectionCount": 1,
-      "jx": 0.2234,
-      "jy": 0.9745
+      "jx": 0.8079,
+      "jy": 0.0912
     },
     {
       "id": "windsurf",
@@ -5668,9 +6969,10 @@
         "ai-pair-programming",
         "agents"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": 0.308,
-      "jy": -0.9844
+      "jx": 0.6692,
+      "jy": 0.165
     },
     {
       "id": "wispr-flow",
@@ -5709,9 +7011,10 @@
         "mobile-app",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 2,
-      "jx": 0.6342,
-      "jy": -0.4012
+      "jx": -0.7038,
+      "jy": -0.7451
     },
     {
       "id": "zapier",
@@ -5753,9 +7056,54 @@
         "saas",
         "free-tier"
       ],
+      "integrations": [],
       "connectionCount": 36,
-      "jx": 0.3268,
-      "jy": 0.8779
+      "jx": -0.3835,
+      "jy": 0.798
+    },
+    {
+      "id": "zed",
+      "label": "Zed",
+      "category": "coding-assistant",
+      "categoryName": "Coding Assistants",
+      "color": "#10b981",
+      "size": 6.0,
+      "url": "https://zed.dev/",
+      "description": "A high-performance, multiplayer code editor written in Rust, with a strong focus on speed and responsiveness. It features deeply integrated AI capabilities, including agentic workflows, for a seamless coding experience.",
+      "status": "active",
+      "rating": 4.8,
+      "pricingModel": "open-source",
+      "startingPrice": "$0",
+      "freeTier": true,
+      "useCases": [
+        "Real-time, collaborative coding sessions with multiple developers.",
+        "Performance-critical development where editor latency is a key concern.",
+        "Building AI-native applications with a tightly integrated editor and agent.",
+        "Contributing to an open-source, community-driven code editor project."
+      ],
+      "pros": [
+        "Extremely fast and responsive, built in Rust.",
+        "Seamless real-time collaboration features are built-in.",
+        "Open-source with a rapidly growing and active community.",
+        "Deeply integrated AI and agentic workflows."
+      ],
+      "cons": [
+        "As a newer editor, it has a smaller plugin ecosystem compared to VS Code.",
+        "AI features may require bringing your own API keys.",
+        "Some advanced features are still under development."
+      ],
+      "tags": [
+        "coding",
+        "editor",
+        "ide",
+        "rust",
+        "open-source",
+        "agent"
+      ],
+      "integrations": [],
+      "connectionCount": 0,
+      "jx": 0.5922,
+      "jy": 0.7214
     },
     {
       "id": "zendesk-ai",
@@ -5794,9 +7142,14 @@
         "automation",
         "CRM"
       ],
+      "integrations": [
+        "CRM",
+        "Jira",
+        "Slack"
+      ],
       "connectionCount": 2,
-      "jx": -0.7314,
-      "jy": -0.7691
+      "jx": 0.7978,
+      "jy": -0.5798
     }
   ],
   "edges": [
@@ -7228,13 +8581,13 @@
       "description": "Accelerate academic writing while maintaining rigor and originality. Uses AI to assist with literature review, evidence synthesis, outlining, and drafting, while keeping the human researcher in control of intellectual content. Can reduce literature review time by 50% and overall writing time by 30-40 hours per paper.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "chatgpt",
-        "perplexity",
-        "claude",
-        "notebooklm",
         "elicit",
         "consensus",
-        "grammarly"
+        "grammarly",
+        "notebooklm",
+        "perplexity",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7314,6 +8667,94 @@
       ]
     },
     {
+      "slug": "ai-ad-creative-pipeline",
+      "name": "AI-Powered Ad Creative Pipeline",
+      "description": "An automated workflow to rapidly generate, test, and scale high-performing ad creatives for performance marketing campaigns. Combines audience research, AI copywriting, bulk creative generation, and performance monitoring to dramatically reduce time-to-launch and improve ROAS.",
+      "wfCategory": "Content & Media",
+      "toolIds": [
+        "sparktoro",
+        "hubspot-ai",
+        "adcreative-ai",
+        "perplexity",
+        "claude",
+        "chatgpt"
+      ],
+      "stepEdges": [
+        {
+          "from": "sparktoro",
+          "to": "claude"
+        },
+        {
+          "from": "claude",
+          "to": "adcreative-ai"
+        },
+        {
+          "from": "adcreative-ai",
+          "to": "hubspot-ai"
+        },
+        {
+          "from": "hubspot-ai",
+          "to": "adcreative-ai"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Audience & competitor research",
+          "tools": [
+            "sparktoro"
+          ],
+          "alternatives": [
+            "perplexity"
+          ],
+          "description": "Analyze the target audience's sources of influence, demographics, and online behavior. Research competitor ad strategies and messaging to inform creative direction.",
+          "input": "Campaign brief with target audience and product details",
+          "output": "Audience insights report and competitor ad analysis"
+        },
+        {
+          "name": "Angle & copy generation",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Feed audience research and competitor analysis into an LLM to generate 5-10 unique marketing angles with corresponding ad copy (headlines, body text, CTAs).",
+          "input": "Audience insights and competitor analysis",
+          "output": "5-10 ad copy variations with different angles"
+        },
+        {
+          "name": "Bulk creative generation",
+          "tools": [
+            "adcreative-ai"
+          ],
+          "alternatives": [],
+          "description": "Input the best copy variations into AdCreative.ai with brand assets (logo, colors) to generate 100+ ad creative variations in minutes.",
+          "input": "Ad copy variations and brand assets",
+          "output": "100+ ad creative variations (images and video)"
+        },
+        {
+          "name": "Campaign launch & monitoring",
+          "tools": [
+            "hubspot-ai"
+          ],
+          "alternatives": [],
+          "description": "Launch the campaign across relevant ad platforms (Meta, Google). Monitor performance metrics (CTR, CPA, ROAS) in a centralized dashboard.",
+          "input": "Ad creatives and campaign targeting parameters",
+          "output": "Live campaign with real-time performance data"
+        },
+        {
+          "name": "Iterate & scale winners",
+          "tools": [
+            "adcreative-ai"
+          ],
+          "alternatives": [],
+          "description": "After 3-5 days, identify the top-performing 10% of creatives. Pause underperformers, reallocate budget to winners, and use them as seeds for the next generation cycle.",
+          "input": "Performance data from initial campaign run",
+          "output": "Optimized campaign with scaled winning creatives"
+        }
+      ]
+    },
+    {
       "slug": "ai-assisted-code-review-pipeline",
       "name": "AI-Assisted Code Review Pipeline",
       "description": "A workflow for using AI to assist with code reviews, improving code quality and developer productivity. It automates the process of finding bugs, suggesting improvements, and ensuring that code adheres to best practices.",
@@ -7389,12 +8830,12 @@
       "description": "Automate the collection, analysis, and reporting of business data. Connects data sources to AI tools to generate automated weekly and monthly reports, reducing the time analysts spend on routine reporting from 4 hours to 30 minutes per week. Faster identification of business issues and opportunities.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "chatgpt",
         "zapier",
-        "gemini",
-        "claude",
         "n8n",
-        "make"
+        "gemini",
+        "make",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7469,11 +8910,11 @@
       "description": "Automate code review, documentation generation, and test writing with AI. Particularly valuable for teams maintaining code quality at scale without the overhead of fully manual review. Teams report 60% faster reviews and near-100% documentation coverage.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
-        "chatgpt",
-        "cursor",
         "windsurf",
+        "cursor",
+        "github-copilot",
         "claude",
-        "github-copilot"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -7531,17 +8972,17 @@
       "description": "A systematic workflow for continuously monitoring and analyzing competitors using AI agents and data analysis tools. This process automates the collection of competitor activities and provides strategic insights to inform business decisions.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "databricks-ai",
-        "chatgpt",
-        "brandwatch",
         "autogen",
+        "databricks-ai",
         "gemini",
-        "claude",
+        "brandwatch",
+        "hex",
         "tavily",
-        "julius-ai",
-        "crewai",
+        "claude",
         "metagpt",
-        "hex"
+        "chatgpt",
+        "crewai",
+        "julius-ai"
       ],
       "stepEdges": [
         {
@@ -7749,16 +9190,108 @@
       ]
     },
     {
+      "slug": "ai-course-creation-pipeline",
+      "name": "AI-Powered Course Creation Pipeline",
+      "description": "A streamlined workflow for researching, outlining, creating, and packaging an online course using AI tools to accelerate content production. Reduces course creation time from months to weeks by automating research, scripting, slide design, and video production.",
+      "wfCategory": "Other",
+      "toolIds": [
+        "synthesia",
+        "claude",
+        "perplexity",
+        "gamma",
+        "chatgpt",
+        "heygen"
+      ],
+      "stepEdges": [
+        {
+          "from": "perplexity",
+          "to": "claude"
+        },
+        {
+          "from": "claude",
+          "to": "gamma"
+        },
+        {
+          "from": "gamma",
+          "to": "heygen"
+        },
+        {
+          "from": "heygen",
+          "to": "claude"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Market & content research",
+          "tools": [
+            "perplexity"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Research the target audience, identify competing courses, and gather foundational knowledge and sources for the course content. Understand common beginner challenges and key sub-topics.",
+          "input": "Course topic and target audience description",
+          "output": "Research report with audience pain points, competitor landscape, and source material"
+        },
+        {
+          "name": "Course outline & scripting",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Generate a detailed course outline including modules, lessons, and key learning objectives. Draft the script for each video lesson based on the research.",
+          "input": "Research report from step 1",
+          "output": "Detailed course outline and lesson scripts"
+        },
+        {
+          "name": "Slide deck & visuals creation",
+          "tools": [
+            "gamma"
+          ],
+          "alternatives": [],
+          "description": "Paste each lesson script into Gamma to automatically generate polished slide decks with appropriate layouts, icons, and images. Refine design for visual consistency.",
+          "input": "Lesson scripts",
+          "output": "Polished slide decks for each lesson"
+        },
+        {
+          "name": "Video lesson production",
+          "tools": [
+            "heygen"
+          ],
+          "alternatives": [
+            "synthesia"
+          ],
+          "description": "Use the slide decks as visual aids and generate video lessons with a talking-head AI avatar or combine screen recordings with AI-generated voiceovers.",
+          "input": "Slide decks and lesson scripts",
+          "output": "Completed video lessons"
+        },
+        {
+          "name": "Quiz & assessment generation",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Generate multiple-choice questions, short answer prompts, and a final project description to assess student learning for each module.",
+          "input": "Module content and learning objectives",
+          "output": "Quizzes, assessments, and final project brief"
+        }
+      ]
+    },
+    {
       "slug": "ai-creative-design-pipeline",
       "name": "AI-Powered Creative Design Pipeline",
       "description": "Generate high-quality visual assets for marketing, branding, and creative projects using AI image generation tools. Combines multiple generators for different strengths -- Midjourney for art, DALL-E for precision, Stable Diffusion for customization. Reduces visual asset creation time by 80% and design costs by 60-90%.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "chatgpt",
         "dalle-3",
+        "stable-diffusion",
         "claude",
-        "midjourney",
-        "stable-diffusion"
+        "chatgpt",
+        "midjourney"
       ],
       "stepEdges": [
         {
@@ -7827,15 +9360,15 @@
       "description": "An automated pipeline that collects customer feedback from various sources, analyzes it for sentiment and key themes, and routes insights to the appropriate teams. This workflow helps product and support teams stay on top of customer needs and prioritize improvements.",
       "wfCategory": "Sales & Marketing",
       "toolIds": [
-        "databricks-ai",
-        "chatgpt",
-        "zapier",
         "cohere",
-        "claude",
-        "julius-ai",
-        "hex",
+        "zapier",
+        "databricks-ai",
         "n8n",
-        "make"
+        "make",
+        "hex",
+        "claude",
+        "chatgpt",
+        "julius-ai"
       ],
       "stepEdges": [
         {
@@ -7943,16 +9476,89 @@
       ]
     },
     {
+      "slug": "ai-email-nurture-sequence-builder",
+      "name": "AI Email Nurture Sequence Builder",
+      "description": "A workflow to create personalized, multi-step email nurture sequences for different customer segments. Uses AI to write copy and manage sequence logic, increasing lead conversion rates by delivering relevant content at the right time while saving hours of copywriting and setup.",
+      "wfCategory": "Other",
+      "toolIds": [
+        "apollo-io",
+        "beehiiv",
+        "claude",
+        "hubspot-ai",
+        "chatgpt"
+      ],
+      "stepEdges": [
+        {
+          "from": "hubspot-ai",
+          "to": "claude"
+        },
+        {
+          "from": "claude",
+          "to": "beehiiv"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Audience segmentation",
+          "tools": [
+            "hubspot-ai"
+          ],
+          "alternatives": [
+            "apollo-io"
+          ],
+          "description": "Define a specific audience segment for the nurture sequence in the CRM (e.g., users who downloaded the ebook but did not sign up for a trial).",
+          "input": "CRM data and segment criteria",
+          "output": "Defined audience segment with contact list"
+        },
+        {
+          "name": "Sequence logic & copywriting",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Describe the segment and goal to an LLM. Have it outline a 5-step email sequence including the goal of each email and delays between them, then write the full copy for each email.",
+          "input": "Segment definition and campaign goal",
+          "output": "5-email sequence plan with full copy for each email"
+        },
+        {
+          "name": "Build & activate sequence",
+          "tools": [
+            "beehiiv"
+          ],
+          "alternatives": [
+            "hubspot-ai"
+          ],
+          "description": "Build the automated sequence in the email platform. Add AI-generated copy, set triggers and delays, and activate.",
+          "input": "Email copy and sequence logic",
+          "output": "Live automated email sequence"
+        },
+        {
+          "name": "Analysis & optimization",
+          "tools": [
+            "beehiiv"
+          ],
+          "alternatives": [
+            "hubspot-ai"
+          ],
+          "description": "Review open rates, click-through rates, and conversion rates for each email. Identify weak points and generate alternative subject lines or body copy for A/B testing.",
+          "input": "Sequence performance data",
+          "output": "Optimized email variants for A/B testing"
+        }
+      ]
+    },
+    {
       "slug": "ai-first-customer-support",
       "name": "AI-First Customer Support",
       "description": "A tiered customer support workflow where an AI agent handles the majority of routine inquiries autonomously, escalating only complex or sensitive issues to human agents. This approach can resolve 60-80% of support tickets without human intervention while maintaining or improving customer satisfaction.",
       "wfCategory": "Operations & Support",
       "toolIds": [
-        "chatgpt",
         "zapier",
-        "claude",
         "n8n",
-        "make"
+        "make",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8006,18 +9612,97 @@
       ]
     },
     {
+      "slug": "ai-hiring-pipeline",
+      "name": "AI-Powered Hiring Pipeline",
+      "description": "An automated workflow for sourcing, screening, and interviewing candidates using AI tools. Reduces time-to-hire by over 50% by automating candidate sourcing, initial screening, asynchronous video interviews, and response analysis -- letting recruiters focus on high-value interactions with top candidates.",
+      "wfCategory": "Other",
+      "toolIds": [
+        "intercom-fin",
+        "apollo-io",
+        "heygen",
+        "claude",
+        "chatgpt"
+      ],
+      "stepEdges": [
+        {
+          "from": "apollo-io",
+          "to": "intercom-fin"
+        },
+        {
+          "from": "intercom-fin",
+          "to": "heygen"
+        },
+        {
+          "from": "heygen",
+          "to": "claude"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Candidate sourcing & enrichment",
+          "tools": [
+            "apollo-io"
+          ],
+          "alternatives": [],
+          "description": "Build a list of potential candidates based on job criteria (skills, experience, location). Enrich the list with contact information and professional background data.",
+          "input": "Job requisition with required skills, experience, and location",
+          "output": "Enriched candidate list with contact details and background"
+        },
+        {
+          "name": "Initial screening & outreach",
+          "tools": [
+            "intercom-fin"
+          ],
+          "alternatives": [],
+          "description": "Deploy an AI chatbot on the careers page to answer candidate questions and perform initial screening. Send automated outreach emails to sourced candidates.",
+          "input": "Candidate list and screening criteria",
+          "output": "Qualified candidate shortlist from chatbot and outreach responses"
+        },
+        {
+          "name": "Asynchronous video interviews",
+          "tools": [
+            "heygen"
+          ],
+          "alternatives": [],
+          "description": "Invite qualified candidates to a one-way video interview with a pre-recorded AI avatar asking a standard set of screening questions.",
+          "input": "Shortlisted candidates and interview question set",
+          "output": "Recorded video interview responses"
+        },
+        {
+          "name": "Interview analysis & scoring",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Transcribe video interview responses. Analyze transcripts against a predefined rubric, score answers, and summarize candidate strengths and weaknesses.",
+          "input": "Video interview transcripts and scoring rubric",
+          "output": "Scored candidate summaries with strengths/weaknesses"
+        },
+        {
+          "name": "Shortlist & human review",
+          "tools": [],
+          "alternatives": [],
+          "description": "The hiring manager reviews AI-generated shortlist, scores, and summaries to select final candidates for live interviews.",
+          "input": "AI-scored candidate summaries",
+          "output": "Final candidate shortlist for live interviews"
+        }
+      ]
+    },
+    {
       "slug": "ai-lead-research-enrichment",
       "name": "AI Agent for Lead Research and Enrichment",
       "description": "An autonomous AI agent workflow that continuously researches and enriches a pipeline of leads, providing sales teams with up-to-date, actionable intelligence on each prospect before outreach. Sales reps arrive at calls 3x better prepared, with shorter sales cycles from better-targeted conversations.",
       "wfCategory": "Sales & Marketing",
       "toolIds": [
-        "chatgpt",
         "zapier",
+        "n8n",
+        "clay",
+        "make",
         "perplexity",
         "claude",
-        "clay",
-        "n8n",
-        "make"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8089,13 +9774,13 @@
       "description": "Automatically research, curate, and draft a weekly newsletter. An automation workflow monitors RSS feeds, Reddit, and news sources for relevant content, then uses an LLM to summarize and assemble the newsletter draft for human review before sending. Reduces production time from 4 hours to 30 minutes.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "chatgpt",
         "zapier",
+        "n8n",
+        "grammarly",
+        "make",
         "perplexity",
         "claude",
-        "n8n",
-        "make",
-        "grammarly"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8167,18 +9852,18 @@
       "description": "A complete, automated workflow for preparing, running, and following up on meetings using AI. This process automates transcription, summarization, and action item tracking, saving significant time and ensuring that key decisions and tasks are never missed.",
       "wfCategory": "Operations & Support",
       "toolIds": [
-        "tldv",
-        "chatgpt",
         "zapier",
-        "fathom",
-        "grain",
-        "perplexity",
-        "gemini",
-        "claude",
         "n8n",
+        "grain",
+        "tldv",
+        "gemini",
+        "otter-ai",
         "fireflies-ai",
         "make",
-        "otter-ai"
+        "perplexity",
+        "claude",
+        "chatgpt",
+        "fathom"
       ],
       "stepEdges": [
         {
@@ -8286,18 +9971,18 @@
       "description": "A fully-automated pipeline for creating short-form videos, from script to final edit. This workflow is ideal for producing content for platforms like TikTok, YouTube Shorts, and Instagram Reels, leveraging AI for every step of the creative process.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "jasper",
-        "chatgpt",
-        "descript",
+        "kling-ai",
         "play-ht",
-        "runway",
+        "elevenlabs",
         "luma-ai",
+        "descript",
+        "jasper",
+        "copy-ai",
+        "runway",
         "sora",
         "claude",
         "resemble-ai",
-        "elevenlabs",
-        "copy-ai",
-        "kling-ai"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8410,11 +10095,11 @@
       "description": "Migrate or refactor a large codebase -- framework upgrades, language migrations, API changes. Use AI to plan the migration, execute bulk changes, and verify correctness.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
-        "chatgpt",
-        "cursor",
         "windsurf",
+        "github-copilot",
+        "cursor",
         "perplexity",
-        "github-copilot"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8486,11 +10171,11 @@
       "description": "Create polished content (blog posts, marketing pages, social media) with AI handling research, writing, imagery, and iteration.",
       "wfCategory": "Content & Media",
       "toolIds": [
+        "bolt",
         "v0",
-        "chatgpt",
         "perplexity",
         "claude",
-        "bolt",
+        "chatgpt",
         "midjourney"
       ],
       "stepEdges": [
@@ -8562,13 +10247,13 @@
       "description": "Conduct comprehensive research on any topic by combining AI search, academic databases, document analysis, and report generation. Used by analysts, researchers, and consultants to compress days of research into hours while producing better-cited, more thorough reports.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "chatgpt",
-        "perplexity",
-        "gemini",
-        "claude",
-        "notebooklm",
         "elicit",
-        "consensus"
+        "consensus",
+        "gemini",
+        "notebooklm",
+        "perplexity",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8643,16 +10328,16 @@
       "description": "Create and publish faceless YouTube videos at scale without appearing on camera or recording a voiceover. Uses AI for scripting, voice generation, visual content creation, and automated publishing. Channels using this workflow report producing full videos in 2-3 hours instead of 2-3 days, with some generating $5,000-$50,000/month in ad revenue.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "chatgpt",
-        "descript",
+        "kling-ai",
         "zapier",
-        "runway",
-        "perplexity",
-        "sora",
-        "claude",
         "n8n",
         "elevenlabs",
-        "kling-ai"
+        "descript",
+        "sora",
+        "runway",
+        "perplexity",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8739,12 +10424,12 @@
       "description": "A modern outbound sales workflow that uses AI to research prospects, enrich lead data, and generate hyper-personalized outreach messages at scale. This approach, pioneered by GTM teams using Clay, achieves 15-25% reply rates compared to 1-3% for generic campaigns. Pipeline generation increases by 35%.",
       "wfCategory": "Sales & Marketing",
       "toolIds": [
-        "chatgpt",
         "zapier",
-        "claude",
-        "clay",
         "n8n",
-        "make"
+        "clay",
+        "make",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8812,13 +10497,13 @@
       "description": "Go from a product idea to a deployed web application. Use AI tools at each stage: design the UI, generate the code, iterate in an AI-native editor, and ship.",
       "wfCategory": "Other",
       "toolIds": [
-        "v0",
-        "chatgpt",
-        "cursor",
-        "windsurf",
-        "claude",
         "bolt",
-        "github-copilot"
+        "v0",
+        "windsurf",
+        "cursor",
+        "github-copilot",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8903,17 +10588,107 @@
       ]
     },
     {
+      "slug": "linkedin-thought-leadership-pipeline",
+      "name": "LinkedIn Thought Leadership Pipeline",
+      "description": "An automated system for consistently creating and publishing high-quality thought leadership content on LinkedIn. Builds personal and company brand authority by combining trend monitoring, AI-assisted drafting, scheduled publishing, and strategic engagement -- all in a few hours per week.",
+      "wfCategory": "Sales & Marketing",
+      "toolIds": [
+        "sparktoro",
+        "apollo-io",
+        "buffer",
+        "perplexity",
+        "claude",
+        "chatgpt"
+      ],
+      "stepEdges": [
+        {
+          "from": "sparktoro",
+          "to": "claude"
+        },
+        {
+          "from": "claude",
+          "to": "buffer"
+        },
+        {
+          "from": "buffer",
+          "to": "apollo-io"
+        },
+        {
+          "from": "apollo-io",
+          "to": "buffer"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Monitor trends & topics",
+          "tools": [
+            "sparktoro"
+          ],
+          "alternatives": [
+            "perplexity"
+          ],
+          "description": "Analyze trending topics, pain points, and discussions in the target niche using audience intelligence tools and industry newsletters.",
+          "input": "Target niche and industry keywords",
+          "output": "List of trending topics and audience pain points"
+        },
+        {
+          "name": "Draft thought leadership posts",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Feed trending topics with personal anecdotes or unique perspectives into an LLM. Generate 3-5 LinkedIn posts for the week, optimized for engagement.",
+          "input": "Trending topics and personal perspective/anecdotes",
+          "output": "3-5 drafted LinkedIn posts"
+        },
+        {
+          "name": "Schedule & publish",
+          "tools": [
+            "buffer"
+          ],
+          "alternatives": [],
+          "description": "Load drafted posts into the social media scheduler, refine them, and schedule publication at optimal times throughout the week.",
+          "input": "Drafted LinkedIn posts",
+          "output": "Scheduled posts ready for automated publishing"
+        },
+        {
+          "name": "Identify engagement targets",
+          "tools": [
+            "apollo-io"
+          ],
+          "alternatives": [
+            "sparktoro"
+          ],
+          "description": "Find key people (prospects, influencers, potential partners) who are active in the target industry on LinkedIn.",
+          "input": "Target industry and ideal customer profile",
+          "output": "List of high-value LinkedIn profiles to engage with"
+        },
+        {
+          "name": "Engage & analyze performance",
+          "tools": [
+            "buffer"
+          ],
+          "alternatives": [],
+          "description": "Proactively comment on engagement targets' posts to build relationships. At week's end, review post performance analytics to inform next week's content strategy.",
+          "input": "Published posts and engagement target list",
+          "output": "Performance report and content insights for next week"
+        }
+      ]
+    },
+    {
       "slug": "podcast-production-repurposing",
       "name": "Podcast Production and Content Repurposing",
       "description": "Produce a podcast and repurpose each episode into a full suite of content assets -- blog posts, social media clips, newsletters, and audiograms. Maximizes the ROI of each recording session by turning 1 hour of audio into 15+ pieces of content. Post-production time drops from 6 hours to 1 hour.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "descript",
-        "chatgpt",
         "zapier",
-        "claude",
         "n8n",
-        "make"
+        "descript",
+        "make",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -8983,17 +10758,18 @@
       "description": "An end-to-end workflow for planning and executing a product launch campaign using AI. It covers everything from market research and content creation to social media promotion and performance tracking.",
       "wfCategory": "Other",
       "toolIds": [
-        "jasper",
-        "chatgpt",
         "synthesia",
+        "gemini",
+        "brandwatch",
+        "buffer",
+        "stable-diffusion",
+        "jasper",
+        "copy-ai",
         "runway",
         "perplexity",
-        "gemini",
         "claude",
-        "brandwatch",
-        "midjourney",
-        "stable-diffusion",
-        "copy-ai"
+        "chatgpt",
+        "midjourney"
       ],
       "stepEdges": [
         {
@@ -9030,10 +10806,14 @@
         },
         {
           "from": "midjourney",
-          "to": "brandwatch"
+          "to": "buffer"
         },
         {
           "from": "runway",
+          "to": "buffer"
+        },
+        {
+          "from": "buffer",
           "to": "brandwatch"
         }
       ],
@@ -9115,10 +10895,10 @@
       "description": "Turn a vague question into a well-sourced, polished report. Start with AI search to gather sources, use a chatbot to synthesize and analyze, then use a writing assistant or chatbot to produce the final document.",
       "wfCategory": "Research & Analysis",
       "toolIds": [
-        "chatgpt",
-        "notebooklm",
         "perplexity",
-        "claude"
+        "claude",
+        "chatgpt",
+        "notebooklm"
       ],
       "stepEdges": [
         {
@@ -9192,12 +10972,12 @@
       "description": "A fully automated pipeline for producing SEO-optimized blog posts at scale. Begins with keyword research and SERP analysis, proceeds through AI-assisted drafting and optimization, and ends with polished, publish-ready content. Practitioners report cutting content production time by 70% while maintaining or improving organic rankings.",
       "wfCategory": "Content & Media",
       "toolIds": [
+        "grammarly",
         "jasper",
-        "chatgpt",
         "perplexity",
         "claude",
         "surfer-seo",
-        "grammarly"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -9264,19 +11044,93 @@
       ]
     },
     {
+      "slug": "short-form-video-content-factory",
+      "name": "Short-Form Video Content Factory",
+      "description": "A high-efficiency workflow for producing a large volume of short-form video content for TikTok, Reels, and YouTube Shorts. Turns a single piece of long-form content into a full week of short-form videos by combining AI clipping, net-new avatar generation, and scheduled distribution.",
+      "wfCategory": "Content & Media",
+      "toolIds": [
+        "synthesia",
+        "opus-clip",
+        "buffer",
+        "heygen",
+        "claude",
+        "chatgpt"
+      ],
+      "stepEdges": [
+        {
+          "from": "opus-clip",
+          "to": "claude"
+        },
+        {
+          "from": "claude",
+          "to": "heygen"
+        },
+        {
+          "from": "heygen",
+          "to": "buffer"
+        }
+      ],
+      "steps": [
+        {
+          "name": "AI clip sourcing & repurposing",
+          "tools": [
+            "opus-clip"
+          ],
+          "alternatives": [],
+          "description": "Upload the long-form video and let AI automatically identify and extract 10-20 potentially viral short clips, complete with captions and reframing for vertical formats.",
+          "input": "Long-form video (podcast, webinar, interview)",
+          "output": "10-20 captioned short clips with virality scores"
+        },
+        {
+          "name": "Net-new content ideation",
+          "tools": [
+            "claude"
+          ],
+          "alternatives": [
+            "chatgpt"
+          ],
+          "description": "Generate 10 new short-form video ideas and scripts based on the same topic, tailored for short-form format (e.g., '3 mistakes people make when...', 'The",
+          "input": "Long-form video topic and key takeaways",
+          "output": "10 short-form video scripts"
+        },
+        {
+          "name": "New video production with AI avatars",
+          "tools": [
+            "heygen"
+          ],
+          "alternatives": [
+            "synthesia"
+          ],
+          "description": "Feed the new scripts into an AI avatar tool to generate video clips with a realistic presenter, eliminating the need for new filming.",
+          "input": "Short-form video scripts",
+          "output": "AI-generated video clips with avatar presenter"
+        },
+        {
+          "name": "Review & schedule distribution",
+          "tools": [
+            "buffer"
+          ],
+          "alternatives": [],
+          "description": "Review all generated clips (repurposed and net-new). Schedule the best ones for publication across all relevant social media channels.",
+          "input": "All generated video clips",
+          "output": "Scheduled video content calendar across platforms"
+        }
+      ]
+    },
+    {
       "slug": "social-media-content-engine",
       "name": "Social Media Content Engine",
       "description": "Repurpose a single piece of long-form content (blog post, podcast episode, or video) into a full week of social media content across multiple platforms. This approach -- popularized by creators like Gary Vaynerchuk -- is now fully automatable with AI tools, generating 40+ pieces of content from one recording.",
       "wfCategory": "Content & Media",
       "toolIds": [
-        "descript",
-        "chatgpt",
         "zapier",
+        "n8n",
+        "descript",
+        "make",
+        "copy-ai",
         "runway",
         "claude",
-        "n8n",
-        "make",
-        "copy-ai"
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -9349,15 +11203,15 @@
       "description": "Rapidly build full-stack web applications by describing requirements in natural language and iterating with AI. This \"vibe coding\" approach lets developers and non-developers alike ship production-ready apps 3-5x faster than traditional development.",
       "wfCategory": "Engineering & Dev",
       "toolIds": [
-        "v0",
-        "chatgpt",
-        "lovable",
-        "cursor",
-        "windsurf",
         "gemini",
-        "claude",
         "bolt",
-        "github-copilot"
+        "v0",
+        "lovable",
+        "windsurf",
+        "cursor",
+        "github-copilot",
+        "claude",
+        "chatgpt"
       ],
       "stepEdges": [
         {
@@ -9431,16 +11285,16 @@
   ],
   "categories": [
     {
-      "slug": "productivity",
-      "name": "Productivity & Knowledge Management",
-      "color": "#84cc16",
-      "count": 20
-    },
-    {
       "slug": "coding-assistant",
       "name": "Coding Assistants",
       "color": "#10b981",
-      "count": 16
+      "count": 23
+    },
+    {
+      "slug": "productivity",
+      "name": "Productivity & Knowledge Management",
+      "color": "#84cc16",
+      "count": 21
     },
     {
       "slug": "agent-framework",
@@ -9473,10 +11327,22 @@
       "count": 7
     },
     {
+      "slug": "video-generation",
+      "name": "Video Generation",
+      "color": "#f97316",
+      "count": 7
+    },
+    {
       "slug": "automation",
       "name": "Automation & Agents",
       "color": "#14b8a6",
       "count": 7
+    },
+    {
+      "slug": "image-generation",
+      "name": "Image Generation",
+      "color": "#ec4899",
+      "count": 6
     },
     {
       "slug": "audio-generation",
@@ -9497,27 +11363,15 @@
       "count": 6
     },
     {
-      "slug": "image-generation",
-      "name": "Image Generation",
-      "color": "#ec4899",
-      "count": 5
-    },
-    {
-      "slug": "video-generation",
-      "name": "Video Generation",
-      "color": "#f97316",
-      "count": 5
+      "slug": "sales",
+      "name": "Sales & GTM",
+      "color": "#f43f5e",
+      "count": 6
     },
     {
       "slug": "search",
       "name": "AI Search",
       "color": "#3b82f6",
-      "count": 4
-    },
-    {
-      "slug": "sales",
-      "name": "Sales & GTM",
-      "color": "#f43f5e",
       "count": 4
     },
     {
@@ -9527,10 +11381,22 @@
       "count": 4
     },
     {
+      "slug": "marketing",
+      "name": "Marketing & Growth",
+      "color": "#6b7280",
+      "count": 4
+    },
+    {
       "slug": "security",
       "name": "Security & Compliance",
       "color": "#fbbf24",
       "count": 3
+    },
+    {
+      "slug": "video-editing",
+      "name": "Video & Podcast Editing",
+      "color": "#d946ef",
+      "count": 2
     },
     {
       "slug": "dev-tools",
@@ -9545,12 +11411,6 @@
       "count": 1
     },
     {
-      "slug": "video-editing",
-      "name": "Video & Podcast Editing",
-      "color": "#d946ef",
-      "count": 1
-    },
-    {
       "slug": "other",
       "name": "Other",
       "color": "#94a3b8",
@@ -9558,94 +11418,98 @@
     }
   ],
   "catCenters": {
-    "productivity": {
-      "angle": -1.5708,
-      "count": 20
-    },
     "coding-assistant": {
-      "angle": -1.2716,
-      "count": 16
+      "angle": -1.5708,
+      "count": 23
+    },
+    "productivity": {
+      "angle": -1.2852,
+      "count": 21
     },
     "agent-framework": {
-      "angle": -0.9724,
+      "angle": -0.9996,
       "count": 12
     },
     "llm-platform": {
-      "angle": -0.6732,
+      "angle": -0.714,
       "count": 11
     },
     "design": {
-      "angle": -0.374,
+      "angle": -0.4284,
       "count": 10
     },
     "data-analysis": {
-      "angle": -0.0748,
+      "angle": -0.1428,
       "count": 8
     },
     "chatbot": {
-      "angle": 0.2244,
+      "angle": 0.1428,
+      "count": 7
+    },
+    "video-generation": {
+      "angle": 0.4284,
       "count": 7
     },
     "automation": {
-      "angle": 0.5236,
+      "angle": 0.714,
       "count": 7
     },
+    "image-generation": {
+      "angle": 0.9996,
+      "count": 6
+    },
     "audio-generation": {
-      "angle": 0.8228,
+      "angle": 1.2852,
       "count": 6
     },
     "writing-assistant": {
-      "angle": 1.122,
+      "angle": 1.5708,
       "count": 6
     },
     "ml-ops": {
-      "angle": 1.4212,
+      "angle": 1.8564,
       "count": 6
     },
-    "image-generation": {
-      "angle": 1.7204,
-      "count": 5
-    },
-    "video-generation": {
-      "angle": 2.0196,
-      "count": 5
+    "sales": {
+      "angle": 2.142,
+      "count": 6
     },
     "search": {
-      "angle": 2.3188,
-      "count": 4
-    },
-    "sales": {
-      "angle": 2.618,
+      "angle": 2.4276,
       "count": 4
     },
     "research": {
-      "angle": 2.9172,
+      "angle": 2.7132,
+      "count": 4
+    },
+    "marketing": {
+      "angle": 2.9988,
       "count": 4
     },
     "security": {
-      "angle": 3.2164,
+      "angle": 3.2844,
       "count": 3
     },
+    "video-editing": {
+      "angle": 3.57,
+      "count": 2
+    },
     "dev-tools": {
-      "angle": 3.5156,
+      "angle": 3.8556,
       "count": 1
     },
     "seo": {
-      "angle": 3.8148,
-      "count": 1
-    },
-    "video-editing": {
-      "angle": 4.114,
+      "angle": 4.1412,
       "count": 1
     },
     "other": {
-      "angle": 4.4132,
+      "angle": 4.4268,
       "count": 1
     }
   },
   "stats": {
-    "toolCount": 138,
-    "workflowCount": 25,
+    "toolCount": 156,
+    "workflowCount": 31,
     "connectionCount": 284
   }
 }
