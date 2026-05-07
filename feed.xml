@@ -6,8 +6,18 @@
   <link>https://typride.github.io</link>
   <atom:link href="https://typride.github.io/feed.xml" rel="self" type="application/rss+xml" />
   <pubDate>Sat, 01 Jun 2024 12:00:00 GMT</pubDate>
-  <lastBuildDate>Sat, 01 Jun 2024 12:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 07 May 2026 12:00:00 GMT</lastBuildDate>
   <language>en-us</language>
+  
+  <item>
+    <title>The Operating System Around AI Coding: 16 Months of Cursor Workflow Patterns That Actually Stuck</title>
+    <description>Workflow patterns from 16 months of AI-assisted SaaS work: agent chains, glob-scoped rules, capture-to-issue triage, CI as ops plane, layered security, automated PR review, and docs the model actually reads.</description>
+    <pubDate>Thu, 07 May 2026 12:00:00 GMT</pubDate>
+    <link>https://typride.github.io/blogs/a-year-of-cursor.html</link>
+    <guid>https://typride.github.io/blogs/a-year-of-cursor.html</guid>
+    <category>Technology</category>
+    <category>Writing</category>
+  </item>
   
   <item>
     <title>Digital Literacy in the Modern Age</title>
