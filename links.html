@@ -81,10 +81,16 @@
 
         * {
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html, body {
             min-height: 100%;
+        }
+
+        html {
+            /* Match body background so iOS overscroll bounce blends in */
+            background: var(--bg-base-end);
         }
 
         body {
@@ -95,16 +101,26 @@
                 radial-gradient(circle at 20% 0%, var(--bg-grad-1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 100%, var(--bg-grad-2) 0%, transparent 50%),
                 linear-gradient(180deg, var(--bg-base-start) 0%, var(--bg-base-end) 100%);
-            background-attachment: fixed;
             color: var(--link-text);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            /* dvh better tracks the iOS dynamic address bar */
+            min-height: 100dvh;
+        }
+
+        /* Lock background scroll while the share modal is open (mobile fix). */
+        body.modal-open {
+            overflow: hidden;
+            touch-action: none;
         }
 
         .links-wrapper {
             max-width: 560px;
             margin: 0 auto;
-            padding: 48px 20px 32px;
+            padding:
+                calc(48px + env(safe-area-inset-top)) 20px
+                calc(32px + env(safe-area-inset-bottom));
             text-align: center;
             position: relative;
         }
@@ -112,10 +128,10 @@
         /* Share button (top-right of the page card) */
         .share-button {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
+            top: calc(20px + env(safe-area-inset-top));
+            right: calc(20px + env(safe-area-inset-right));
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             border: 1px solid var(--link-border);
             background-color: var(--surface);
@@ -129,15 +145,20 @@
             transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
-        .share-button:hover,
-        .share-button:focus-visible {
-            transform: translateY(-2px);
-            box-shadow: var(--link-shadow-hover);
-            outline: none;
+        @media (hover: hover) {
+            .share-button:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--link-shadow-hover);
+            }
         }
 
         .share-button:focus-visible {
+            outline: none;
             box-shadow: var(--link-shadow-hover), 0 0 0 3px rgba(57, 73, 171, 0.35);
+        }
+
+        .share-button:active {
+            transform: scale(0.96);
         }
 
         .profile-img {
@@ -265,15 +286,21 @@
             position: relative;
         }
 
-        .link-item a:hover,
-        .link-item a:focus-visible {
-            transform: translateY(-2px);
-            box-shadow: var(--link-shadow-hover);
-            outline: none;
+        @media (hover: hover) {
+            .link-item a:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--link-shadow-hover);
+            }
         }
 
         .link-item a:focus-visible {
+            outline: none;
             box-shadow: var(--link-shadow-hover), 0 0 0 3px rgba(57, 73, 171, 0.35);
+        }
+
+        .link-item a:active {
+            transform: scale(0.985);
+            box-shadow: var(--link-shadow);
         }
 
         .link-item a i {
@@ -329,7 +356,7 @@
         .social-row {
             display: flex;
             justify-content: center;
-            gap: 22px;
+            gap: 8px;
             margin: 28px 0 12px;
         }
 
@@ -337,13 +364,30 @@
             color: var(--muted-text);
             font-size: 1.4rem;
             transition: color 0.15s ease, transform 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
         }
 
-        .social-row a:hover,
+        @media (hover: hover) {
+            .social-row a:hover {
+                color: var(--accent);
+                transform: translateY(-2px);
+            }
+        }
+
         .social-row a:focus-visible {
-            color: var(--accent);
-            transform: translateY(-2px);
             outline: none;
+            color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(57, 73, 171, 0.25);
+        }
+
+        .social-row a:active {
+            transform: scale(0.92);
         }
 
         .footer-note {
@@ -369,10 +413,14 @@
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding:
+                calc(16px + env(safe-area-inset-top)) 16px
+                calc(16px + env(safe-area-inset-bottom));
             z-index: 1000;
             opacity: 0;
             transition: opacity 0.18s ease;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
         }
 
         .share-overlay.open {
@@ -412,22 +460,34 @@
 
         .share-modal .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 32px;
-            height: 32px;
+            top: 6px;
+            right: 6px;
+            width: 44px;
+            height: 44px;
             border: none;
             background: transparent;
             color: var(--muted-text);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             cursor: pointer;
             border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .share-modal .close-btn:hover,
+        @media (hover: hover) {
+            .share-modal .close-btn:hover {
+                background-color: rgba(0, 0, 0, 0.06);
+            }
+        }
+
         .share-modal .close-btn:focus-visible {
-            background-color: rgba(0, 0, 0, 0.06);
             outline: none;
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .share-modal .close-btn:active {
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .qr-container {
@@ -482,6 +542,7 @@
         }
 
         .share-actions button {
+            min-height: 44px;
             padding: 12px 14px;
             border-radius: 10px;
             font-size: 0.92rem;
@@ -497,11 +558,20 @@
             transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
         }
 
-        .share-actions button:hover,
+        @media (hover: hover) {
+            .share-actions button:hover {
+                transform: translateY(-1px);
+                box-shadow: var(--link-shadow-hover);
+            }
+        }
+
         .share-actions button:focus-visible {
-            transform: translateY(-1px);
-            box-shadow: var(--link-shadow-hover);
             outline: none;
+            box-shadow: var(--link-shadow-hover), 0 0 0 3px rgba(57, 73, 171, 0.25);
+        }
+
+        .share-actions button:active {
+            transform: scale(0.98);
         }
 
         .share-actions .primary {
@@ -510,9 +580,10 @@
             border-color: transparent;
         }
 
-        .share-actions .primary:hover,
-        .share-actions .primary:focus-visible {
-            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+        @media (hover: hover) {
+            .share-actions .primary:hover {
+                background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+            }
         }
 
         /* Single-column actions if native share unavailable */
@@ -521,7 +592,7 @@
         /* Toast */
         .toast {
             position: fixed;
-            bottom: 24px;
+            bottom: calc(24px + env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%) translateY(20px);
             background-color: #1a1d24;
@@ -542,10 +613,17 @@
         }
 
         @media (max-width: 480px) {
-            .links-wrapper { padding: 32px 16px 24px; }
-            .profile-img   { width: 100px; height: 100px; }
-            .profile-name  { font-size: 1.3rem; }
-            .share-button  { top: 14px; right: 14px; }
+            .links-wrapper {
+                padding:
+                    calc(32px + env(safe-area-inset-top)) 16px
+                    calc(24px + env(safe-area-inset-bottom));
+            }
+            .profile-img  { width: 100px; height: 100px; }
+            .profile-name { font-size: 1.3rem; }
+            .share-button {
+                top: calc(14px + env(safe-area-inset-top));
+                right: calc(14px + env(safe-area-inset-right));
+            }
         }
     </style>
 </head>
@@ -556,7 +634,7 @@
             <i class="fas fa-share-nodes" aria-hidden="true"></i>
         </button>
 
-        <img src="images/Tyler-profile.jpg" alt="Tyler Milligan" class="profile-img">
+        <img src="images/Tyler-profile.jpg" alt="Tyler Milligan" class="profile-img" width="120" height="120" decoding="async">
         <h1 class="profile-name">Tyler Milligan</h1>
         <p class="profile-handle">@typride</p>
         <p class="profile-bio">Science, engineering, entrepreneurship, and writing at the intersection of energy and data.</p>
@@ -738,7 +816,7 @@
 
         function openShareModal() {
             overlay.hidden = false;
-            // Force reflow so the CSS transition takes effect on the next frame.
+            document.body.classList.add('modal-open');
             requestAnimationFrame(() => overlay.classList.add('open'));
             ensureQrRendered();
             closeBtn.focus();
@@ -747,6 +825,7 @@
 
         function closeShareModal() {
             overlay.classList.remove('open');
+            document.body.classList.remove('modal-open');
             setTimeout(() => { overlay.hidden = true; }, 180);
             document.removeEventListener('keydown', onKeyDown);
             openBtn.focus();
