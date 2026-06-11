@@ -929,7 +929,7 @@ em { font-style: italic; }
   .nav-toggle { display: block; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2.8rem; }
-  .about-photo-wrap { justify-self: start; max-width: 330px; }
+  .about-photo-wrap { justify-self: start; max-width: 240px; }
   .photo-caption { text-align: left; }
 
   .hero { min-height: 0; padding: 135px 0 70px; }
