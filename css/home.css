@@ -848,6 +848,90 @@ em { font-style: italic; }
   padding-left: 0.2rem;
 }
 
+/* ---------- listening (Spotify) ---------- */
+
+.listening {
+  margin-top: 2.4rem;
+  padding: 1.7rem 1.8rem;
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+}
+
+.listening-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.listening-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.listening-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.listening-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.7rem;
+}
+
+.listening-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.listening-track img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid var(--hairline);
+}
+
+.listening-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.listening-meta strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.listening-track:hover .listening-meta strong { color: var(--rust); }
+
+.listening-meta em {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.listening-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+@media (max-width: 720px) {
+  .listening-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+
 /* ---------- contact ---------- */
 
 .contact {

@@ -80,4 +80,56 @@
       el.querySelectorAll("[data-count]").forEach(animateCount);
     });
   }
+  // ---------- Spotify "On rotation" card ----------
+  // Populated by the typride-spotify Cloudflare Worker. Leave the endpoint
+  // empty to keep the card hidden (e.g., before the Worker is deployed).
+  var SPOTIFY_ENDPOINT = "";
+  if (SPOTIFY_ENDPOINT) {
+    fetch(SPOTIFY_ENDPOINT)
+      .then(function (res) {
+        if (!res.ok) throw new Error("spotify endpoint " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var current = data.nowPlaying || data.lastPlayed;
+        if (!current && (!data.topArtists || !data.topArtists.length)) return;
+
+        if (current) {
+          document.getElementById("listening-now-label").textContent =
+            data.nowPlaying ? "Now playing" : "Last played";
+          document.getElementById("listening-live").hidden = !data.nowPlaying;
+          document.getElementById("listening-name").textContent = current.track;
+          document.getElementById("listening-artist").textContent = current.artist;
+          var link = document.getElementById("listening-track");
+          if (current.url) link.href = current.url;
+          var art = document.getElementById("listening-art");
+          if (current.image) {
+            art.src = current.image;
+            art.alt = current.track + " album art";
+            art.hidden = false;
+          }
+        }
+
+        var chips = document.getElementById("listening-artists");
+        (data.topArtists || []).forEach(function (artist) {
+          var el;
+          if (artist.url) {
+            el = document.createElement("a");
+            el.href = artist.url;
+            el.target = "_blank";
+            el.rel = "noopener";
+          } else {
+            el = document.createElement("span");
+          }
+          el.className = "chip";
+          el.textContent = artist.name;
+          chips.appendChild(el);
+        });
+
+        document.getElementById("listening").hidden = false;
+      })
+      .catch(function () {
+        /* leave the card hidden if the endpoint is unreachable */
+      });
+  }
 })();

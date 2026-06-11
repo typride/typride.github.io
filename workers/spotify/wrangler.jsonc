@@ -1,0 +1,20 @@
+{
+  "name": "typride-spotify",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-11",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Client ID is public by design; the secret and refresh token are set via:
+  //   wrangler secret put SPOTIFY_CLIENT_SECRET
+  //   wrangler secret put SPOTIFY_REFRESH_TOKEN
+  "vars": {
+    "SPOTIFY_CLIENT_ID": "5da85544ad264eecb279f546e9c0bd00"
+  },
+
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "head_sampling_rate": 1
+    }
+  }
+}
