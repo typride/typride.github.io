@@ -1,304 +1,443 @@
-  /* Keyframe for fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* ============================================================
+   Blog skin — "paper & ink"
+   Loaded by blog.html and blogs/*.html, which keep their
+   Bootstrap 5 markup; this sheet re-skins it to match the
+   homepage design system (css/home.css). Bootstrap loads
+   AFTER this file on those pages, hence the !important usage.
+   index.html does not use this file.
+   ============================================================ */
 
-  /* Initial hidden state for elements */
-  .hidden {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-/* Fade-in effect */
-.fade-in {
-    animation: fadeIn 1.5s ease forwards;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
-  /* Grid layout for experience section */
-  .experience-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Five equal-width columns */
-    gap: 1px;
-  }
-  
-  .company, .role, .date {
-    padding: 0.5px;
-    text-align: left;
-  }
-  
-  /* Rounded corners for images */
-  .rounded {
-    border-radius: 8px; /* Adjust as needed for softer or sharper corners */
-  }
-  
-  /* Project card styling */
-  .project-card {
-    border: none;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .project-image {
-    min-width: 150px;
-    width: 150px;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 15px;
-  }
-  
-  /* Contact card hover effect */
-  .contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Icon styling */
-  .icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-  }
-
-  /* Styling for wide image at the top of the card */
-.project-image-wide {
-    width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    object-fit: cover; /* Ensures the image covers the width without stretching */
+:root {
+  --paper: #f7f3ec;
+  --paper-2: #fffdf8;
+  --paper-3: #f0e9dc;
+  --ink: #211d18;
+  --ink-soft: #2e2a23;
+  --muted: #6c655a;
+  --faint: #99917f;
+  --rust: #b4490f;
+  --rust-deep: #8f3a0c;
+  --hairline: rgba(33, 29, 24, 0.16);
+  --hairline-soft: rgba(33, 29, 24, 0.09);
+  --shadow-soft: 0 10px 30px rgba(33, 29, 24, 0.09);
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Optional: Styling adjustments for the project card */
-.project-card {
-    border: none;
-    border-radius: 8px;
-    overflow: hidden; /* Ensures image edges stay rounded */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
+html { color-scheme: light; }
 
 body {
-    padding-top: 100px; /* Fixed: Changed 100x to 100px */
+  background: var(--paper) !important;
+  color: var(--ink-soft) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.7;
+  padding-top: 88px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Project card styling */
-.project-card {
-    border: none;
-    overflow: hidden;
-    flex-direction: row; /* Ensure row layout */
+::selection { background: var(--rust); color: var(--paper-2); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
+h1 { margin-bottom: 1.6rem; }
 
-/* Standard project image for other projects */
-.project-image {
-    width: 150px; /* Fixed width for regular images */
-    min-width: 200px;
-    aspect-ratio: 4 / 3; /* Set a 4:3 aspect ratio for consistency */
-    object-fit: cover; /* Crop to fill the container */
-    border-radius: 0px;
-    height: auto; /* Maintain the aspect ratio based on width */
+a { color: var(--rust); }
+a:hover { color: var(--rust-deep); }
+
+/* ---------- notice bar (retired) ---------- */
+
+.notice-bar { display: none !important; }
+
+/* ---------- navbar ---------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(247, 243, 236, 0.85) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--hairline-soft);
 }
 
-/* Default styles for larger screens */
-.project-image {
-    width: 150px;
-    height: auto;
-    object-fit: cover;
+.navbar-brand {
+  font-size: 0 !important;
+  display: inline-flex;
+  align-items: baseline;
 }
 
-.blog-post-image {
-    max-width: 100%; /* Limits width to the container */
-    max-height: 500px; /* Sets a max height; adjust as needed */
-    width: auto; /* Ensures the aspect ratio is preserved */
-    display: block;
-    margin: 0 auto;
-    object-fit: contain; /* Ensures the whole image fits within the set dimensions */
+.navbar-brand img,
+.navbar-logo { display: none !important; }
+
+.navbar-brand::before {
+  content: "Tyler Milligan";
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
-/* Set fixed dimensions for blog post and project cards */
+.navbar-brand::after {
+  content: ".";
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--rust);
+}
+
+.nav-link {
+  color: var(--muted) !important;
+  font-size: 0.92rem;
+}
+
+.nav-link:hover,
+.nav-link.active { color: var(--ink) !important; }
+
+.navbar-toggler { border-color: var(--hairline) !important; }
+.navbar-toggler:focus { box-shadow: none !important; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  border-radius: 9px !important;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+  color: var(--paper-2) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--rust-deep) !important;
+  border-color: var(--rust-deep) !important;
+}
+
+.btn-outline-secondary {
+  color: var(--ink) !important;
+  border-color: var(--hairline) !important;
+  background: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--paper-3) !important;
+  color: var(--ink) !important;
+  border-color: var(--hairline) !important;
+}
+
+.category-filter.active {
+  background: var(--ink) !important;
+  color: var(--paper-2) !important;
+  border-color: var(--ink) !important;
+  box-shadow: none !important;
+}
+
+/* ---------- cards (blog index) ---------- */
+
 .card {
-    height: 100%; /* Ensures card fills the container height */
-    display: flex;
-    flex-direction: column;
-    min-height: 400px; /* Set a minimum height for cards */
+  background: var(--paper-2) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-item .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
 }
 
 .card-img-top {
-    height: 200px; /* Set a fixed height for images; adjust as needed */
-    object-fit: cover; /* Ensures the image fills the area without distortion */
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
-
-/* Spacing and formatting for converted Markdown content */
-
-/* Space after main blog title */
-h1 {
-    margin-bottom: 2rem;
+.card-title {
+  font-family: var(--font-display) !important;
+  font-size: 1.28rem;
+  line-height: 1.35;
 }
 
-/* Styling headers within the Markdown content */
-#blog-post-content h1 {
-    margin-bottom: 1.5rem;
+.card-text {
+  color: var(--muted) !important;
+  font-size: 0.95rem;
 }
 
-#blog-post-content h2 {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+.post-date,
+.project-date {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--faint);
+  margin-bottom: 0.5rem;
 }
 
-#blog-post-content h3,
-#blog-post-content h4,
-#blog-post-content h5,
-#blog-post-content h6 {
-    margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
+.category-badge {
+  background: var(--paper-3) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--hairline-soft);
+  border-radius: 999px !important;
+  font-weight: 500;
 }
 
-/* Paragraph spacing */
-#blog-post-content p {
-    margin-bottom: 1rem;
+/* ---------- blog index extras ---------- */
+
+.social-banner { border-bottom: 1px solid var(--hairline-soft) !important; }
+
+.share-btn { background: var(--ink) !important; }
+.share-btn:hover { background: var(--rust-deep) !important; }
+
+.subscribe-card {
+  background: var(--paper-3) !important;
+  border: 1px solid var(--hairline-soft);
+  border-radius: 16px !important;
+  box-shadow: none !important;
 }
 
-
-
-/* List styling */
-#blog-post-content ul,
-#blog-post-content ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-}
-/* Modern table styling */
-#blog-post-content table {
-    width: 100%;
-    border-collapse: separate; /* Keeps borders between cells */
-    border-spacing: 0; /* Removes space between cells */
-    margin: 1.5rem 0;
-    background-color: #ffffff; /* White background for the table */
-    border-radius: 3px; /* Rounded corners for a modern feel */
-    overflow: hidden; /* Prevents overflow on rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+.follow-option,
+.rss-option,
+.feedly-option {
+  background: var(--ink) !important;
+  border-radius: 9px;
 }
 
-/* Header styling */
-#blog-post-content th {
-    background-color: #f3f4f6; /* Light gray header background */
-    color: #333; /* Darker text for contrast */
-    font-weight: 600;
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 2px solid #e0e0e0; /* Subtle bottom border for header */
+.follow-option:hover { background: var(--rust-deep) !important; }
+
+.alert-info {
+  background: var(--paper-3) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: 12px !important;
 }
 
-/* Cell styling */
-#blog-post-content td {
-    padding: 1rem;
-    color: #555; /* Slightly muted text color */
-    border-bottom: 1px solid #e0e0e0; /* Light bottom border for separation */
+/* ---------- forms ---------- */
+
+.form-control {
+  background: var(--paper-2) !important;
+  border: 1px solid var(--hairline) !important;
+  color: var(--ink) !important;
+  border-radius: 9px !important;
 }
 
-/* Alternating row colors for better readability */
-#blog-post-content tr:nth-child(odd) td {
-    background-color: #fafafa;
+.form-control:focus {
+  border-color: var(--rust) !important;
+  box-shadow: 0 0 0 3px rgba(180, 73, 15, 0.12) !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #blog-post-content table {
-        display: block;
-        overflow-x: auto; /* Horizontal scroll on small screens */
-        white-space: nowrap;
-    }
-    
-    #blog-post-content th, #blog-post-content td {
-        padding: 0.75rem; /* Adjust padding for smaller screens */
-    }
-}
+.form-text { color: var(--faint) !important; }
 
-
-.project-date,
-.post-date {
-    font-size: 0.85rem; /* Slightly smaller text size */
-    color: #777; /* Muted color for a subtle look */
-    margin-bottom: 0.5rem; /* Space below the date */
-}
-
-
-
-/* Subtle image plate effect for images */
-.image-plate {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08), /* Soft shadow for depth */
-                0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtle layering */
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Optional: light border for definition */
-    border-radius: 8px; /* Smooth rounded corners */
-    transition: transform 0.2s ease; /* Smooth hover animation */
-    overflow: hidden; /* Ensures rounded corners */
-}
-
-/* Slightly lift effect on hover for interactivity */
-.image-plate:hover {
-    transform: translateY(-3px); /* Minor lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
-}
-
-/* Ensure our custom width overrides Bootstrap's default width for form-control */
 .d-flex .search-bar.form-control {
-    width: 120px !important; /* Small initial width */
-    max-width: 250px; /* Prevents expanding beyond this on larger screens */
-    transition: width 0.3s ease; /* Smooth expansion */
-    border: 1px solid #ccc;
-    margin-left: auto; /* Aligns the search bar to the right */
+  width: 120px !important;
+  max-width: 250px;
+  transition: width 0.3s ease;
+  margin-left: auto;
 }
 
-/* Expand to a moderate width on focus */
 .d-flex .search-bar.form-control:focus {
-    width: 250px !important; /* Expands only to this width on focus */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for focus */
-    outline: none; /* Remove default outline */
+  width: 250px !important;
 }
 
-/* Notice Bar */
-.notice-bar {
-    background-color: #ffeb3b; /* Subtle muted yellow */
-    color: #333; /* Dark text for readability */
-    text-align: center;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* ---------- article / markdown content ---------- */
+
+.markdown-content,
+#blog-post-content {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.04rem;
+  color: var(--ink-soft);
 }
 
-/* Navbar Styling */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.markdown-content h1, #blog-post-content h1 { margin: 0 0 1.5rem; }
+.markdown-content h2, #blog-post-content h2 { margin: 2.2rem 0 0.9rem; }
+.markdown-content h3, #blog-post-content h3,
+.markdown-content h4, #blog-post-content h4,
+.markdown-content h5, #blog-post-content h5,
+.markdown-content h6, #blog-post-content h6 { margin: 1.6rem 0 0.7rem; }
+
+.markdown-content p, #blog-post-content p { margin-bottom: 1.15rem; }
+
+.markdown-content ul, #blog-post-content ul,
+.markdown-content ol, #blog-post-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
 }
 
-/* Offset body content to account for the fixed notice bar and navbar */
-body {
-    padding-top: 40px; /* Adjust based on the combined height of the notice bar and navbar */
+.markdown-content li, #blog-post-content li { margin-bottom: 0.4rem; }
+
+.markdown-content img,
+#blog-post-content img,
+.blog-post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--hairline);
+  display: block;
+  margin: 1.5rem auto;
+}
+
+blockquote {
+  margin: 1.6rem 0;
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  border-left: 3px solid var(--rust);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--paper-3);
+  color: var(--ink);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+}
+
+pre {
+  background: var(--ink) !important;
+  color: var(--paper-3) !important;
+  padding: 1.1rem 1.3rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 0.88rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  opacity: 1;
+  margin: 2.5rem 0;
+}
+
+/* tables in articles */
+
+.markdown-content table,
+#blog-post-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  background: var(--paper-2) !important;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.markdown-content th, #blog-post-content th {
+  background: var(--paper-3) !important;
+  color: var(--ink) !important;
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--hairline) !important;
+}
+
+.markdown-content td, #blog-post-content td {
+  padding: 0.9rem 1rem;
+  color: var(--ink-soft) !important;
+  border-bottom: 1px solid var(--hairline-soft) !important;
+  background: transparent !important;
+}
+
+.markdown-content tr:last-child td,
+#blog-post-content tr:last-child td { border-bottom: none !important; }
+
+@media (max-width: 768px) {
+  .markdown-content table,
+  #blog-post-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  body { padding-top: 80px; }
+}
+
+/* ---------- images ---------- */
+
+.image-plate {
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(33, 29, 24, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-plate:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.rounded { border-radius: 12px; }
+
+/* ---------- share sections on posts ---------- */
+
+.share-section {
+  border-top: 1px solid var(--hairline-soft);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.share-button,
+.twitter-share,
+.linkedin-share {
+  background: var(--ink) !important;
+  color: var(--paper-2) !important;
+  border: none !important;
+  border-radius: 9px !important;
+}
+
+.share-button:hover,
+.twitter-share:hover,
+.linkedin-share:hover { background: var(--rust-deep) !important; }
+
+/* ---------- fade-in (used by scripts.js) ---------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in { animation: fadeIn 1.5s ease forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hidden { opacity: 1; transform: none; }
+  .fade-in { animation: none; }
 }

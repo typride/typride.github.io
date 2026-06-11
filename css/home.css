@@ -831,6 +831,12 @@ em { font-style: italic; }
   height: auto;
   border-radius: 14px;
   border: 1px solid var(--hairline);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.collage figure:hover img {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
 }
 
 .collage figcaption {
