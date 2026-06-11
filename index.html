@@ -1,171 +1,492 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Link to custom CSS file -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Bootstrap CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Showdown.js for Markdown conversion -->
-    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-    <!-- Bootstrap JavaScript (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript file -->
-    <script src="scripts/scripts.js"></script>
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>My Portfolio</title>
-  </head>
-  
-  <body>
-    
-    <div class="header-container">
-        <!-- Notice Bar -->
-        <div class="notice-bar">
-            ⚠️ This website is a work in progress. Some features may not be fully implemented.
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07080d">
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/Logo.png" class="w-5" alt="My Portfolio Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+  <!-- SEO -->
+  <title>Tyler Milligan — Founder · Engineer · Writer</title>
+  <meta name="description" content="Tyler Milligan is the founder of QuarterSection and a full-stack builder of data platforms, AI tools, and modern software for real businesses. Formerly Microsoft and Google.">
+  <meta name="author" content="Tyler Milligan">
+  <link rel="canonical" href="https://typride.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://typride.github.io/">
+  <meta property="og:title" content="Tyler Milligan — Founder · Engineer · Writer">
+  <meta property="og:description" content="Founder of QuarterSection. Builder of data platforms, AI tools, and modern software for real businesses. Formerly Microsoft and Google.">
+  <meta property="og:image" content="https://typride.github.io/images/Tyler-profile.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Tyler Milligan — Founder · Engineer · Writer">
+  <meta property="twitter:description" content="Founder of QuarterSection. Builder of data platforms, AI tools, and modern software for real businesses.">
+  <meta property="twitter:image" content="https://typride.github.io/images/Tyler-profile.jpg">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Tyler Milligan's Blog" href="https://typride.github.io/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles + scripts -->
+  <link rel="stylesheet" href="css/home.css">
+  <script src="scripts/home.js" defer></script>
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tyler Milligan",
+    "url": "https://typride.github.io/",
+    "image": "https://typride.github.io/images/Tyler-profile.jpg",
+    "jobTitle": "Founder",
+    "worksFor": { "@type": "Organization", "name": "QuarterSection", "url": "https://www.quartersection.com/" },
+    "alumniOf": [
+      { "@type": "Organization", "name": "Microsoft" },
+      { "@type": "Organization", "name": "Google" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/typridem/",
+      "https://github.com/typride"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Tyler Milligan<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#flagship">Flagship</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="links.html">Links</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#flagship">Flagship</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#writing">Writing</a>
+    <a href="blog.html">Blog</a>
+    <a href="links.html">Links</a>
+    <a href="#contact">Get in touch</a>
+  </div>
 
-    <!-- About Section -->
-    <section id="about" class="container my-5 pt-5 hidden">
-      <div class="row align-items-center">
-        <div class="col-md-4 fade-in">
-          <img src="images/Tyler-profile.jpg" class="img-fluid rounded mb-3 w-75" alt="Tyler Milligan">
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-status reveal">
+        <span class="pulse" aria-hidden="true"></span>
+        Now building — QuarterSection · Oklahoma mineral rights intelligence
+      </div>
+
+      <h1 class="hero-title reveal" data-delay="1">
+        I turn messy domains into <span class="grad-text">working systems</span>.
+      </h1>
+
+      <p class="hero-sub reveal" data-delay="2">
+        I'm Tyler Milligan — founder, engineer, and writer. I spent years at
+        <strong>Microsoft</strong> and <strong>Google</strong> explaining complex systems.
+        Now I build them: a statewide data platform, AI-era products, and modern
+        software for real businesses — <strong>every layer, end to end</strong>.
+      </p>
+
+      <div class="hero-ctas reveal" data-delay="3">
+        <a class="btn btn-primary" href="#flagship">See the work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <div class="hero-stats reveal" data-delay="4">
+        <div class="stat">
+          <div class="stat-num"><span data-count="79">0</span>M+</div>
+          <div class="stat-label">production records under management</div>
         </div>
-        <div class="col-md-8 fade-in">
-          <h2>About Me</h2>
-          <p>Science, engineering, entrepreneurship, writing, and building at the intersection of energy and data.</p>
-          <p>Currently, I'm a cofounder and CTO at a stealth startup, architecting scalable web applications with modern technology stacks. Our work leverages data visualization, API integrations, and robust frontend frameworks to deliver insights at the nexus of energy infrastructure and data analytics.</p>
-          <p>Previously, while working as a research assistant in a Neuroscience addiction lab and for the Institute for Arctic and Alpine Research (where I went to the Arctic Circle!), I helped build a Futurism startup aimed at educating people about emerging trends. From that foray into science and trend analysis at a startup, I entered the tech industry, working as a Technical Writer at Google, a Digital Product Manager at Privacy Co., and a Technical Writer at Microsoft focusing on immersive technologies like HoloLens, Microsoft Mixed Reality, and Microsoft Mesh.</p>
+        <div class="stat">
+          <div class="stat-num"><span data-count="635">0</span>K</div>
+          <div class="stat-label">oil &amp; gas wells mapped</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="120">0</span>×</div>
+          <div class="stat-label">search speedup engineered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><span data-count="400">0</span>K+</div>
+          <div class="stat-label">records ingested nightly, zero hands</div>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Experience Section -->
-    <section id="experience" class="container-fluid my-5">
-      <h2 class="container mb-5">Experience</h2>
+  <main>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
       <div class="container">
-        <div class="experience-grid">
-          <!-- Company Row -->
-          <div class="company experience-item hidden">Stealth Startup</div>
-          <div class="company experience-item hidden">FutureScope</div>
-          <div class="company experience-item hidden">Google</div>
-          <div class="company experience-item hidden">Publist</div>
-          <div class="company experience-item hidden">Privacy Co.</div>
-          <div class="company experience-item hidden">Microsoft</div>
-          
-          <!-- Role Row -->
-          <div class="role experience-item hidden">Product & Operations</div>
-          <div class="role experience-item hidden">Head Writer</div>
-          <div class="role experience-item hidden">Technical Writer Intern</div>
-          <div class="role experience-item hidden">Content Manager</div>
-          <div class="role experience-item hidden">Digital Product Manager</div>
-          <div class="role experience-item hidden">Technical Writer I & II</div>
-          
-          <!-- Date Row -->
-          <div class="date experience-item hidden">Oct 2024 — Present</div>
-          <div class="date experience-item hidden">Oct 2016 — May 2019</div>
-          <div class="date experience-item hidden">May 2019 — Aug 2019</div>
-          <div class="date experience-item hidden">Aug 2019 — Dec 2019</div>
-          <div class="date experience-item hidden">Sep 2020 — Feb 2022</div>
-          <div class="date experience-item hidden">Feb 2022 — Oct 2024</div>
+        <div class="section-head reveal">
+          <span class="sec-num">01</span>
+          <h2>Who I am</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="pull-line">A builder with a writer's mind.</p>
+            <p>
+              I started in science — a neuroscience lab, then Arctic atmospheric
+              research with a co-authored paper in <em>Biogeosciences</em>. From there
+              I spent years as the person who makes complex systems make sense:
+              technical writer at <strong>Google</strong>, digital product manager,
+              then technical writer at <strong>Microsoft</strong> on HoloLens, Mixed
+              Reality, and Mesh.
+            </p>
+            <p>
+              In late 2024 I stopped documenting other people's systems and started
+              building my own. Since then I've shipped a production-grade data
+              platform <strong>solo</strong> — nightly ETL pipelines, the SQL estate,
+              the APIs, the React frontend, the cloud infrastructure, the docs — plus
+              a portfolio of products and client work.
+            </p>
+            <p>
+              I think in systems, I document like it's a love language, and I'd
+              rather build the thing than buy it.
+            </p>
+            <div class="about-facts">
+              <span class="chip">Ex-Microsoft · HoloLens &amp; Mesh</span>
+              <span class="chip">Ex-Google</span>
+              <span class="chip">Published Arctic researcher</span>
+              <span class="chip">Solo founder</span>
+              <span class="chip">2,000+ hours shipped</span>
+            </div>
+          </div>
+
+          <div class="about-photo-wrap reveal" data-delay="1">
+            <img class="about-photo" src="images/Tyler-profile.jpg" alt="Tyler Milligan" width="400" height="510">
+            <p class="photo-caption">// tyler.milligan — founder mode</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5 hidden">
-      <h2 class="mb-4">Projects</h2>
-      <div class="row">
-        <!-- Project 1 -->
-        <div class="col-12 mb-4 project-item">
-          <div class="card project-card">
-            <img src="images/Microsoft-header-image.png" class="project-image-wide" alt="Microsoft Learn docs">
-            <div class="card-body">
-              <h5 class="card-title">Microsoft Mesh + HoloLens</h5>
-              <p class="project-date"> Feb 2022-Oct 2024</p>
-              <p class="card-text">At Microsoft I worked on Mixed Reality, HoloLens and MRTK (Mixed Reality Toolkit) then Microsoft Mesh where I brought my augmented reality experience to corporate, developer, and end-user audiences. During my tenure, I led the architecting, creation, and maintenance of content docsets for User, IT Admin, and Business Decision Maker peronas across platforms like Microsoft Learn (10k visitors/month), Microsoft Support (140k page views/month), and Microsoft Adoption. To grow adoption of immersive experiences and technologies, I worked cross-functionally (UI/Design, Engineering, PM, UX Research) to implement process and create tools (Power Platform, Azure DevOps, One Customer Voice) that enhanced productivity, organizational visibility, and stakeholder feedback.</p>
-              <a href="https://learn.microsoft.com/en-us/mesh/" class="btn btn-primary">View Project</a>
+    <!-- ============ FLAGSHIP ============ -->
+    <section class="section" id="flagship">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">02</span>
+          <h2>Flagship build</h2>
+        </div>
+
+        <div class="flagship reveal">
+          <div class="flag-top">
+            <div>
+              <span class="kicker">quartersection.com</span>
+              <h3 class="flag-name">QuarterSection</h3>
+              <p class="flag-tag">Oklahoma mineral rights intelligence — deep data, made human.</p>
             </div>
+            <a class="flag-link" href="https://www.quartersection.com/" target="_blank" rel="noopener">
+              Visit site <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="flag-body">
+            <div>
+              <p>
+                Hundreds of thousands of people own the oil and gas underneath
+                Oklahoma — and most of them can't see what's happening down there.
+                The data exists, but it's scattered across slow government databases
+                and written in century-old legal jargon.
+              </p>
+              <p>
+                QuarterSection pulls it into one place: <strong>your wells on a map,
+                your production history, your paperwork</strong> — clean, fast, and
+                priced for a person instead of a corporation. It competes on depth
+                with platforms built by entire engineering departments, at a fraction
+                of their price.
+              </p>
+              <p>
+                <strong>Built and operated by one person.</strong> Every role — data
+                engineering, backend, frontend, DevOps, security, product, design,
+                go-to-market — is mine.
+              </p>
+            </div>
+            <ul class="flag-list">
+              <li>A fleet of <strong>nightly scrapers and ETL pipelines</strong> that crawl state and county records with zero human in the loop</li>
+              <li><strong>Entity resolution</strong> reconnecting financial records to physical wells the government never gave a shared ID</li>
+              <li>An <strong>AI document pipeline</strong> that reads scanned legal PDFs and extracts the facts</li>
+              <li>A <strong>~100-table Azure SQL estate</strong> that rebuilds itself nightly with zero downtime</li>
+              <li><strong>Data-quality systems</strong> that auto-flag impossible values before users ever see them</li>
+            </ul>
+          </div>
+
+          <div class="flag-grid">
+            <div class="flag-stat"><div class="n">79M+</div><div class="l">production records, 1990 → today</div></div>
+            <div class="flag-stat"><div class="n">635K</div><div class="l">wells tracked by location</div></div>
+            <div class="flag-stat"><div class="n">77/77</div><div class="l">counties — full statewide coverage</div></div>
+            <div class="flag-stat"><div class="n">400K+</div><div class="l">records ingested per day, automated</div></div>
+            <div class="flag-stat"><div class="n">120×</div><div class="l">search speedup — 30s+ → 253ms</div></div>
+            <div class="flag-stat"><div class="n">98.6%</div><div class="l">automation cost savings vs. alternatives</div></div>
+          </div>
+
+          <div class="flag-foot">
+            <span class="chip">React</span>
+            <span class="chip">Node + Express</span>
+            <span class="chip">Azure SQL</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">Auth0</span>
+            <span class="chip">Playwright</span>
+            <span class="chip">Power BI</span>
+            <p class="flag-foot-note">// one founder, every layer — competing with billion-dollar incumbents on data depth, and beating them on clarity and price</p>
           </div>
         </div>
-        <!-- Project 2 -->
-        <div class="col-12 mb-4 project-item">
-            <div class="card d-flex flex-row align-items-stretch project-card">
-              <img src="images/blogs-projects/gigsecure-small.png" class="project-image" alt="Project 2">
-              <div class="card-body">
-                <h5 class="card-title">GigSecure: Smart Contracts for Freelancers and Clients</h5>
-                <p class="card-text">This project is a decentralized freelance contract platform that enables clients to create, deploy, and manage custom contracts on the Ethereum blockchain with full transparency. Using a factory contract, clients can initiate smart contracts with freelancers, secure funds in escrow, and handle milestones and payment releases automatically. The React frontend integrates seamlessly with MetaMask, allowing users to connect wallets, initiate and track contracts, and ensure payment flows securely and transparently. Designed for efficient collaboration, the DApp demonstrates expertise in Solidity, Ethereum, and decentralized finance solutions.</p>
-                <a href="blogs/smart-contracts-for-gig-economy.html" class="btn btn-primary">View Written Article</a>
-              </div>
-            </div>
-          </div>
-        <!-- Project 3 -->
-        <div class="col-12 mb-4 project-item">
-          <div class="card d-flex flex-row align-items-stretch project-card">
-            <img src="images/blogs-projects/data-writing.png" class="project-image" alt="Project 2">
-            <div class="card-body">
-              <h5 class="card-title">Data Analysis & Writing</h5>
-              <p class="card-text">As a challenge, I was tasked with creating a written piece to go along with the data analysis that you can see above. The challenge was to interpret the data and write an article in a style that matched other articles from "company x" that would be useful, unique, and insightful for their readership. The article ends at about 600 words, which was the cap for the challenge, so I end the article prematurely. Due to the repetitive nature of listing off and formatting data, the article was left unfinished with the assumption that readers could envision what other data could be included and what it would look like.</p>
-              <a href="blogs/data-analysis.html" class="btn btn-primary">View Written Article</a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="col-12 mb-4 project-item">
-            <div class="card d-flex flex-row align-items-stretch project-card">
-              <img src="images/blogs-projects/alaska-tundra-tyler.png" class="project-image" alt="Project 3">
-              <div class="card-body">
-                <h5 class="card-title">Research</h5>
-                <p class="card-text">Biogenic volatile organic compound ambient mixing ratios and emission rates in the Alaskan Arctic tundra. Abstract: Rapid Arctic warming, a lengthening growing season, and increasing abundance of biogenic volatile organic compounds (BVOC)-emitting shrubs are all anticipated to increase atmospheric BVOCs in the Arctic atmosphere, with implications for atmospheric oxidation processes and climate feedbacks. Quantifying these changes requires an accurate understanding of the underlying processes driving BVOC emissions in the Arctic. https://bg.copernicus.org/articles/17/6219/2020/</p>
-                <a href="https://bg.copernicus.org/articles/17/6219/2020/" class="btn btn-primary">View Research Publication</a>
-              </div>
-            </div>
-          </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container-fluid my-5 text-center">
-      <h2 class="text-center mb-4">Connect with Me</h2>
-      <div class="d-flex justify-content-center gap-4 mt-3"> 
-        <a href="https://www.linkedin.com/in/typridem/" target="_blank" class="text-dark"><i class="fab fa-linkedin fa-2x"></i></a>
-        <a href="https://github.com/typride" target="_blank" class="text-dark"><i class="fab fa-github fa-2x"></i></a>
-        <a href="feed.xml" target="_blank" class="text-dark" title="Subscribe via RSS"><i class="fas fa-rss fa-2x"></i></a>
-      </div>
-      <div class="mt-3">
-        <a href="feed.xml" class="btn btn-sm btn-outline-secondary" target="_blank">
-          <i class="fas fa-rss"></i> Subscribe to Blog Updates
-        </a>
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">03</span>
+          <h2>More builds</h2>
+        </div>
+        <p class="section-lede reveal">
+          Products and client work shipped alongside the flagship — same playbook,
+          different domains.
+        </p>
+
+        <div class="project-grid">
+          <a class="card reveal" href="https://www.thestackmap.com/" target="_blank" rel="noopener">
+            <div class="card-kicker">Product · thestackmap.com</div>
+            <h3>The Stack Map</h3>
+            <p>
+              The AI tools landscape, mapped. An interactive library of
+              <strong>156+ tools</strong> and <strong>31 real workflows</strong> —
+              not just what each tool does, but how they connect in practice.
+              Includes a stack-builder quiz that recommends tools for how you
+              actually work.
+            </p>
+            <div class="card-meta">
+              <span class="chip">AI tools directory</span>
+              <span class="chip">Workflow library</span>
+            </div>
+            <span class="card-link">Explore the map <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="card reveal" data-delay="1" href="https://outdoor-hub.pages.dev/" target="_blank" rel="noopener">
+            <div class="card-kicker">Product · outdoor hub</div>
+            <h3>Outdoor Hub</h3>
+            <p>
+              Every condition, one dashboard. Real-time weather, snow, trail, water,
+              and road data unified from <strong>NOAA, USGS, state DOTs, and avalanche
+              centers</strong> — 11+ activity dashboards across the American West, so
+              you check one site instead of six agencies.
+            </p>
+            <div class="card-meta">
+              <span class="chip">Real-time data</span>
+              <span class="chip">Multi-source APIs</span>
+            </div>
+            <span class="card-link">Check conditions <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="card reveal" data-delay="2" href="https://www.dugood.co/" target="_blank" rel="noopener">
+            <div class="card-kicker">Client work · dugood.co</div>
+            <h3>dügood</h3>
+            <p>
+              Main-street AI modernization. Ongoing consulting for a Seattle junk
+              removal &amp; donation pickup company — including a
+              <strong>real-time Google Reviews engine</strong> I built for their
+              Squarespace site, streaming a live <strong>5.0★ rating across 150+
+              reviews</strong> straight onto the page.
+            </p>
+            <div class="card-meta">
+              <span class="chip">AI modernization</span>
+              <span class="chip">Google Business API</span>
+            </div>
+            <span class="card-link">See it live <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
       </div>
     </section>
 
+    <!-- ============ CONSULTING ============ -->
+    <section class="section" id="consulting">
+      <div class="container">
+        <div class="consult reveal">
+          <span class="kicker">04 — Work with me</span>
+          <h2>I do this for other businesses too.</h2>
+          <p>
+            QuarterSection taught me how to run an entire software company alone.
+            <strong>dügood</strong> proved the same playbook works for main-street
+            businesses: a modern web presence, automated workflows, and AI where it
+            actually earns its keep. If your business runs on software from 2012,
+            I can fix that.
+          </p>
+          <div class="consult-chips">
+            <span class="chip">Web modernization</span>
+            <span class="chip">Review &amp; reputation engines</span>
+            <span class="chip">Data pipelines</span>
+            <span class="chip">AI workflow design</span>
+            <span class="chip">Internal tools</span>
+          </div>
+          <a class="btn btn-primary" href="mailto:tylerpridemilligan@gmail.com?subject=AI%20modernization%20consulting">Start a conversation</a>
+        </div>
+      </div>
+    </section>
 
-  </body>
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">05</span>
+          <h2>The path here</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="t-row">
+            <div class="t-when">2024 — now</div>
+            <div>
+              <h3 class="t-role">Founder &amp; solo builder · <span class="t-org">QuarterSection</span></h3>
+              <p class="t-note">Conceived, funded (~$200K raised), and built a statewide oil &amp; gas data platform end to end — data engineering through go-to-market.</p>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-when">2022 — 2024</div>
+            <div>
+              <h3 class="t-role">Technical Writer I &amp; II · <span class="t-org">Microsoft</span></h3>
+              <p class="t-note">HoloLens, Mixed Reality, and Mesh. Architected docsets across Microsoft Learn and Support properties serving 140K+ page views a month; built internal tooling on Power Platform and Azure DevOps.</p>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-when">2020 — 2022</div>
+            <div>
+              <h3 class="t-role">Digital Product Manager · <span class="t-org">Privacy Co.</span></h3>
+              <p class="t-note">Owned digital product experience and delivery for a privacy-focused company.</p>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-when">2019</div>
+            <div>
+              <h3 class="t-role">Technical Writer · <span class="t-org">Google</span> &nbsp;/&nbsp; Content Manager · <span class="t-org">Publist</span></h3>
+              <p class="t-note">Developer-facing documentation at Google; content systems at a startup.</p>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-when">2016 — 2019</div>
+            <div>
+              <h3 class="t-role">Head Writer · <span class="t-org">FutureScope</span></h3>
+              <p class="t-note">Led writing for a futurism startup translating emerging-tech trends for a general audience.</p>
+            </div>
+          </div>
+          <div class="t-row">
+            <div class="t-when">Before tech</div>
+            <div>
+              <h3 class="t-role">Research · <span class="t-org">Neuroscience &amp; the Arctic</span></h3>
+              <p class="t-note">Neuroscience addiction lab; atmospheric field research above the Arctic Circle with the Institute of Arctic and Alpine Research — co-author in <em>Biogeosciences</em> (2020).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WRITING ============ -->
+    <section class="section" id="writing">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">06</span>
+          <h2>Writing</h2>
+        </div>
+        <p class="section-lede reveal">
+          Writing is how I think. Long-form pieces on AI-assisted engineering,
+          agents, and what building alone actually teaches you.
+        </p>
+
+        <div class="post-list reveal">
+          <a class="post-row" href="blogs/a-year-of-cursor.html">
+            <div>
+              <h3 class="post-title">The Operating System Around AI Coding</h3>
+              <p class="post-sub">16 months of Cursor workflow patterns that actually stuck.</p>
+            </div>
+            <span class="post-tag">May 2026 <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a class="post-row" href="blogs/agentic-observability.html">
+            <div>
+              <h3 class="post-title">Agentic Observability: The Answer</h3>
+              <p class="post-sub">What it takes to actually see what your AI agents are doing.</p>
+            </div>
+            <span class="post-tag">2025 <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+          <a class="post-row" href="blogs/vibe-coding-lessons.html">
+            <div>
+              <h3 class="post-title">Vibe Coding Lessons with Cursor</h3>
+              <p class="post-sub">Lessons from vibe coding at scale with a burgeoning codebase.</p>
+            </div>
+            <span class="post-tag">May 2025 <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+
+        <div class="writing-foot reveal">
+          <a href="blog.html">All posts <span aria-hidden="true">→</span></a>
+          <a href="feed.xml">RSS feed <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <span class="kicker reveal">07 — Contact</span>
+        <h2 class="reveal" data-delay="1">Let's build something<span class="grad-text">.</span></h2>
+        <p class="reveal" data-delay="2">
+          Founders, operators, and small businesses — if you have a messy domain
+          that needs to become a working system, I'd like to hear about it.
+        </p>
+        <a class="btn btn-primary reveal" data-delay="3" href="mailto:tylerpridemilligan@gmail.com">tylerpridemilligan@gmail.com</a>
+
+        <div class="contact-icons reveal" data-delay="4">
+          <a class="icon-link" href="https://www.linkedin.com/in/typridem/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a class="icon-link" href="https://github.com/typride" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3z"/></svg>
+          </a>
+          <a class="icon-link" href="links.html" aria-label="All links">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 0-10z"/></svg>
+          </a>
+          <a class="icon-link" href="feed.xml" aria-label="RSS feed">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0zM1.82 8.73v3.27a10.18 10.18 0 0 1 10.18 10.18h3.27c0-7.43-6.02-13.45-13.45-13.45zM1.82 2.18v3.27c8.04 0 14.55 6.51 14.55 14.55h3.27c0-9.84-7.98-17.82-17.82-17.82z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Tyler Milligan · Built by hand — HTML, CSS, vanilla JS. No template.</p>
+      <div class="footer-links">
+        <a href="blog.html">Blog</a>
+        <a href="links.html">Links</a>
+        <a href="feed.xml">RSS</a>
+        <a href="#top">Top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
