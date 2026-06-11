@@ -813,6 +813,35 @@ em { font-style: italic; }
 
 .writing-foot a:hover { color: var(--rust); border-color: var(--rust); }
 
+/* ---------- off the clock collage ---------- */
+
+.collage {
+  columns: 3 240px;
+  column-gap: 1.2rem;
+}
+
+.collage figure {
+  break-inside: avoid;
+  margin: 0 0 1.2rem;
+}
+
+.collage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--hairline);
+}
+
+.collage figcaption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--faint);
+  margin-top: 0.45rem;
+  padding-left: 0.2rem;
+}
+
 /* ---------- contact ---------- */
 
 .contact {
