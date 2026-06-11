@@ -80,14 +80,4 @@
       el.querySelectorAll("[data-count]").forEach(animateCount);
     });
   }
-
-  // ---------- hero pointer glow ----------
-  var hero = document.querySelector(".hero");
-  if (hero && !reducedMotion && window.matchMedia("(pointer: fine)").matches) {
-    hero.addEventListener("mousemove", function (e) {
-      var rect = hero.getBoundingClientRect();
-      hero.style.setProperty("--mx", e.clientX - rect.left + "px");
-      hero.style.setProperty("--my", e.clientY - rect.top + "px");
-    });
-  }
 })();
