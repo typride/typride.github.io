@@ -83,7 +83,7 @@
   // ---------- Spotify "On rotation" card ----------
   // Populated by the typride-spotify Cloudflare Worker. Leave the endpoint
   // empty to keep the card hidden (e.g., before the Worker is deployed).
-  var SPOTIFY_ENDPOINT = "";
+  var SPOTIFY_ENDPOINT = "https://typride-spotify.tylerpridemilligan.workers.dev";
   if (SPOTIFY_ENDPOINT) {
     fetch(SPOTIFY_ENDPOINT)
       .then(function (res) {

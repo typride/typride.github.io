@@ -1,5 +1,6 @@
 {
   "name": "typride-spotify",
+  "account_id": "c98d231652c1af6ff916b5cd81915179",
   "main": "src/index.js",
   "compatibility_date": "2026-06-11",
   "compatibility_flags": ["nodejs_compat"],
