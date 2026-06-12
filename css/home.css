@@ -848,88 +848,274 @@ em { font-style: italic; }
   padding-left: 0.2rem;
 }
 
-/* ---------- listening (Spotify) ---------- */
+/* ---------- on rotation (hero music bar) ---------- */
 
-.listening {
-  margin-top: 2.4rem;
-  padding: 1.7rem 1.8rem;
+.rotation-bar {
+  margin-top: 1.1rem;
   background: var(--paper-2);
   border: 1px solid var(--hairline);
-  border-radius: 16px;
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
 }
 
-.listening-head {
+.rotation-main {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+#rotation-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
+  flex-shrink: 0;
+}
+
+.rotation-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.rotation-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+}
+
+.rotation-track {
+  font-size: 0.98rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rotation-track strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.rotation-track em { color: var(--muted); }
+
+.rotation-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.rotation-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--ink);
+  color: var(--paper-2);
+  border: none;
+  border-radius: 999px;
+  padding: 0.52rem 1.15rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.rotation-play:hover {
+  background: var(--rust-deep);
+  transform: translateY(-1px);
+}
+
+.rotation-play svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.rotation-artists {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.rotation-artists .rotation-label { margin-right: 0.35rem; }
+
+.rotation-embed { margin-top: 0.85rem; }
+
+.rotation-embed iframe {
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ---------- what's on the menu ---------- */
+
+.menu-block, .map-block { margin-top: 3rem; }
+
+.menu-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.3rem;
 }
 
-.listening-live {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
+.menu-arrows { display: flex; gap: 0.5rem; }
+
+.menu-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: var(--paper-2);
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.menu-arrow:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  transform: translateY(-1px);
+}
+
+.menu-lede {
   color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.3rem 0 1.2rem;
 }
 
-.listening-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
+.menu-track {
+  display: flex;
+  gap: 1.1rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.6rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
-.listening-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--faint);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin: 0 0 0.7rem;
+.menu-card {
+  flex: 0 0 235px;
+  scroll-snap-align: start;
+  margin: 0;
 }
 
-.listening-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.listening-track img {
-  width: 64px;
-  height: 64px;
-  border-radius: 10px;
+.menu-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
   border: 1px solid var(--hairline);
 }
 
-.listening-meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.listening-meta strong {
+.menu-card figcaption {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  color: var(--ink);
-}
-
-.listening-track:hover .listening-meta strong { color: var(--rust); }
-
-.listening-meta em {
+  font-style: italic;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--faint);
+  margin-top: 0.45rem;
 }
 
-.listening-chips {
+/* ---------- where I've been (map) ---------- */
+
+.world-map {
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fdfcf7;
+}
+
+.world-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: sepia(0.22) saturate(0.6) contrast(0.97) opacity(0.92);
+}
+
+.map-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  background: var(--rust);
+  border: 1.5px solid var(--paper-2);
+  border-radius: 50%;
+  cursor: default;
+}
+
+.map-dot::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(180, 73, 15, 0.18);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.map-dot::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--ink);
+  color: var(--paper-2);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 2;
+}
+
+.map-dot:hover::before,
+.map-dot:focus::before,
+.map-dot:hover::after,
+.map-dot:focus::after { opacity: 1; }
+
+.map-credit {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--faint);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+/* ---------- contact actions ---------- */
+
+.contact-actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
   flex-wrap: wrap;
-  gap: 0.45rem;
 }
 
-@media (max-width: 720px) {
-  .listening-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+.copy-email.copied {
+  border-color: var(--olive);
+  color: var(--olive);
 }
 
 /* ---------- contact ---------- */

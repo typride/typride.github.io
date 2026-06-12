@@ -137,6 +137,24 @@
           <div class="stat-label">records ingested nightly, zero hands</div>
         </div>
       </div>
+
+      <div class="rotation-bar reveal" data-delay="5" id="rotation" hidden>
+        <div class="rotation-main">
+          <img id="rotation-art" alt="" width="44" height="44" hidden>
+          <div class="rotation-meta">
+            <span class="rotation-label" id="rotation-label">Last played</span>
+            <span class="rotation-track"><strong id="rotation-name"></strong> <em id="rotation-artist"></em></span>
+          </div>
+          <span class="rotation-live" id="rotation-live" hidden><span class="pulse" aria-hidden="true"></span> Live</span>
+          <button class="rotation-play" id="rotation-play" type="button" aria-expanded="false" aria-controls="rotation-embed">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Play
+          </button>
+        </div>
+        <div class="rotation-artists" id="rotation-artists" hidden>
+          <span class="rotation-label">Top this month</span>
+        </div>
+        <div class="rotation-embed" id="rotation-embed" hidden></div>
+      </div>
     </div>
   </header>
 
@@ -517,29 +535,48 @@
           </figure>
         </div>
 
-        <div class="listening" id="listening" hidden>
-          <div class="listening-head">
-            <span class="kicker">On rotation</span>
-            <span class="listening-live" id="listening-live" hidden>
-              <span class="pulse" aria-hidden="true"></span> Listening now
-            </span>
-          </div>
-          <div class="listening-grid">
-            <div>
-              <p class="listening-label" id="listening-now-label">Last played</p>
-              <a class="listening-track" id="listening-track" href="#" target="_blank" rel="noopener">
-                <img id="listening-art" alt="" width="64" height="64" hidden>
-                <span class="listening-meta">
-                  <strong id="listening-name"></strong>
-                  <em id="listening-artist"></em>
-                </span>
-              </a>
-            </div>
-            <div>
-              <p class="listening-label">Top artists this month</p>
-              <div class="listening-chips" id="listening-artists"></div>
+        <div class="menu-block" id="menu" hidden>
+          <div class="menu-head">
+            <span class="kicker">What's on the menu</span>
+            <div class="menu-arrows">
+              <button class="menu-arrow" id="menu-prev" type="button" aria-label="Previous dishes">←</button>
+              <button class="menu-arrow" id="menu-next" type="button" aria-label="More dishes">→</button>
             </div>
           </div>
+          <p class="menu-lede">Recently out of my kitchen.</p>
+          <div class="menu-track" id="menu-track">
+            <figure class="menu-card">
+              <img src="images/menu/doner.jpg" alt="Homemade chicken döner spread with tzatziki, salad, roasted tomatoes, and naan" loading="lazy">
+              <figcaption>Homemade döner, the full spread</figcaption>
+            </figure>
+            <figure class="menu-card">
+              <img src="images/menu/bolognese.jpg" alt="Spaghetti with tiny meatballs, shaved parmesan, and basil" loading="lazy">
+              <figcaption>Tiny-meatball bolognese</figcaption>
+            </figure>
+            <figure class="menu-card">
+              <img src="images/menu/street-corn.jpg" alt="Mexican street corn salad topped with avocado and chili powder" loading="lazy">
+              <figcaption>Mexican street corn</figcaption>
+            </figure>
+            <figure class="menu-card">
+              <img src="images/menu/ramen.jpg" alt="Chicken ramen bowl with jammy egg, broccolini, and carrots" loading="lazy">
+              <figcaption>Chicken ramen, jammy egg mandatory</figcaption>
+            </figure>
+            <figure class="menu-card">
+              <img src="images/menu/wedding-soup.jpg" alt="Bowl of Italian wedding soup with sausage meatballs and greens" loading="lazy">
+              <figcaption>Italian wedding soup, from scratch</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="map-block">
+          <div class="menu-head">
+            <span class="kicker">Where I've been</span>
+          </div>
+          <p class="menu-lede">A few dots from the road so far — more pins to come.</p>
+          <div class="world-map" id="world-map">
+            <img src="images/world-map.png" alt="World map showing places Tyler has visited" width="1280" height="640" loading="lazy">
+          </div>
+          <p class="map-credit">Base map: Tentotwo · CC BY-SA 3.0</p>
         </div>
       </div>
     </section>
@@ -553,7 +590,10 @@
           Founders, operators, and small businesses — if you have a messy domain
           that needs to become a working system, I'd like to hear about it.
         </p>
-        <a class="btn btn-primary reveal" data-delay="3" href="mailto:tylerpridemilligan@gmail.com">tylerpridemilligan@gmail.com</a>
+        <div class="contact-actions reveal" data-delay="3">
+          <a class="btn btn-primary" href="mailto:tylerpridemilligan@gmail.com">tylerpridemilligan@gmail.com</a>
+          <button class="btn btn-ghost copy-email" id="copy-email" type="button" data-email="tylerpridemilligan@gmail.com">Copy email</button>
+        </div>
 
         <div class="contact-icons reveal" data-delay="4">
           <a class="icon-link" href="https://www.linkedin.com/in/typridem/" target="_blank" rel="noopener" aria-label="LinkedIn">

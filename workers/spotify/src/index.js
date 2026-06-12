@@ -72,6 +72,7 @@ async function getAccessToken(env) {
 function slimTrack(item) {
   if (!item || item.type === "episode") return null;
   return {
+    id: item.id || null,
     track: item.name,
     artist: (item.artists || []).map((a) => a.name).join(", "),
     url: item.external_urls?.spotify || null,
