@@ -174,18 +174,61 @@
 
   // ---------- where I've been (map dots) ----------
   var PLACES = [
+    // North America
     { name: "Seattle, WA", lat: 47.61, lon: -122.33 },
+    { name: "Portland, OR", lat: 45.52, lon: -122.68 },
+    { name: "Los Angeles, CA", lat: 34.05, lon: -118.24 },
     { name: "Boulder, CO", lat: 40.01, lon: -105.27 },
+    { name: "Oklahoma City, OK", lat: 35.47, lon: -97.52 },
+    { name: "Nashville, TN", lat: 36.16, lon: -86.78 },
+    { name: "Tampa, FL", lat: 27.95, lon: -82.46 },
+    { name: "Virginia Beach, VA", lat: 36.85, lon: -75.98 },
+    { name: "New York, NY", lat: 40.71, lon: -74.01 },
+    // Alaska
+    { name: "Juneau, Alaska", lat: 58.30, lon: -134.42 },
+    { name: "Valdez, Alaska", lat: 61.13, lon: -146.35 },
+    { name: "Naknek, Alaska", lat: 58.73, lon: -157.02 },
     { name: "Toolik Field Station, Alaska", lat: 68.63, lon: -149.6 },
-    { name: "Oklahoma", lat: 35.47, lon: -97.52 },
+    // Mexico
     { name: "Mexico City", lat: 19.43, lon: -99.13 },
+    { name: "Puerto Escondido, Mexico", lat: 15.87, lon: -97.08 },
+    { name: "Sayulita, Mexico", lat: 20.87, lon: -105.44 },
+    // Iberia
+    { name: "Porto, Portugal", lat: 41.15, lon: -8.61 },
+    { name: "Lisbon, Portugal", lat: 38.72, lon: -9.14 },
+    { name: "The Algarve, Portugal", lat: 37.02, lon: -7.93 },
+    { name: "Barcelona, Spain", lat: 41.39, lon: 2.17 },
+    { name: "Valencia, Spain", lat: 39.47, lon: -0.38 },
+    // France & Monaco
+    { name: "Paris, France", lat: 48.86, lon: 2.35 },
+    { name: "Marseille, France", lat: 43.30, lon: 5.37 },
+    { name: "Monte Carlo, Monaco", lat: 43.74, lon: 7.42 },
+    // Italy
+    { name: "Rome, Italy", lat: 41.90, lon: 12.50 },
+    { name: "Pisa, Italy", lat: 43.72, lon: 10.4 },
+    { name: "Siena, Italy", lat: 43.32, lon: 11.33 },
+    { name: "Tuscany, Italy", lat: 43.77, lon: 11.26 },
+    // Central Europe & the Alps
+    { name: "Swiss Alps", lat: 46.02, lon: 7.75 },
+    { name: "Salzburg, Austria", lat: 47.81, lon: 13.05 },
+    { name: "Vienna, Austria", lat: 48.21, lon: 16.37 },
+    { name: "Munich, Germany", lat: 48.14, lon: 11.58 },
+    { name: "Nuremberg, Germany", lat: 49.45, lon: 11.08 },
+    { name: "Prague, Czechia", lat: 50.09, lon: 14.42 },
+    { name: "Krakow, Poland", lat: 50.06, lon: 19.95 },
+    { name: "Budapest, Hungary", lat: 47.50, lon: 19.04 },
+    // UK & Greece
+    { name: "London, UK", lat: 51.51, lon: -0.13 },
+    { name: "Athens, Greece", lat: 37.98, lon: 23.73 },
+    { name: "Milos, Greece", lat: 36.74, lon: 24.42 },
+    // Japan
     { name: "Tokyo, Japan", lat: 35.68, lon: 139.69 },
     { name: "Nagano, Japan", lat: 36.65, lon: 138.18 },
-    { name: "Prague, Czechia", lat: 50.09, lon: 14.42 },
-    { name: "Swiss Alps", lat: 46.02, lon: 7.75 },
-    { name: "Athens, Greece", lat: 37.98, lon: 23.73 },
-    { name: "Pisa, Italy", lat: 43.72, lon: 10.4 },
-    { name: "Barcelona, Spain", lat: 41.39, lon: 2.17 },
+    { name: "Kyoto, Japan", lat: 35.01, lon: 135.77 },
+    { name: "Nasu, Japan", lat: 36.97, lon: 140.12 },
+    // India
+    { name: "Hampi, India", lat: 15.34, lon: 76.46 },
+    { name: "Bangalore, India", lat: 12.97, lon: 77.59 },
   ];
   var worldMap = document.getElementById("world-map");
   if (worldMap) {
