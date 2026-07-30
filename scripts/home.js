@@ -230,9 +230,15 @@
     { name: "Hampi, India", lat: 15.34, lon: 76.46 },
     { name: "Bangalore, India", lat: 12.97, lon: 77.59 },
   ];
+  function slugify(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
   var worldMap = document.getElementById("world-map");
   if (worldMap) {
+    var dotBySlug = {};
     PLACES.forEach(function (place) {
+      var slug = slugify(place.name);
       var dot = document.createElement("button");
       dot.type = "button";
       dot.className = "map-dot";
@@ -241,7 +247,82 @@
       dot.style.left = ((place.lon + 180) / 360) * 100 + "%";
       dot.style.top = ((90 - place.lat) / 180) * 100 + "%";
       worldMap.appendChild(dot);
+      dotBySlug[slug] = { dot: dot, place: place };
     });
+
+    // Photos live in images/trips/<slug>/ and are listed in manifest.json
+    // (regenerate it with `node scripts/build-trips.js`). Pins with photos
+    // start pulsing and open a lightbox on click.
+    fetch("images/trips/manifest.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (manifest) {
+        Object.keys(manifest || {}).forEach(function (slug) {
+          var entry = manifest[slug];
+          var photos = Array.isArray(entry) ? entry : (entry && entry.photos) || [];
+          var ref = dotBySlug[slug];
+          if (!ref || !photos.length) return;
+          ref.dot.classList.add("has-photos");
+          ref.dot.setAttribute("data-name", ref.place.name + " · " + photos.length + " 📷");
+          ref.dot.addEventListener("click", function () {
+            openLightbox(ref.place.name, slug, photos);
+          });
+        });
+      })
+      .catch(function () { /* no manifest yet — pins still work as dots */ });
+  }
+
+  // ---------- trip photo lightbox ----------
+  var lb = null, lbImgs = [], lbIdx = 0, lbTitle = "";
+  function buildLightbox() {
+    lb = document.createElement("div");
+    lb.className = "trip-lightbox";
+    lb.setAttribute("aria-hidden", "true");
+    lb.innerHTML =
+      '<div class="tl-backdrop"></div>' +
+      '<div class="tl-stage" role="dialog" aria-modal="true" aria-label="Trip photos">' +
+        '<button class="tl-close" type="button" aria-label="Close">×</button>' +
+        '<button class="tl-nav tl-prev" type="button" aria-label="Previous photo">‹</button>' +
+        '<figure class="tl-figure"><img class="tl-img" alt=""><figcaption class="tl-cap"></figcaption></figure>' +
+        '<button class="tl-nav tl-next" type="button" aria-label="Next photo">›</button>' +
+        '<div class="tl-count"></div>' +
+      '</div>';
+    document.body.appendChild(lb);
+    lb.querySelector(".tl-backdrop").addEventListener("click", closeLightbox);
+    lb.querySelector(".tl-close").addEventListener("click", closeLightbox);
+    lb.querySelector(".tl-prev").addEventListener("click", function () { showPhoto(lbIdx - 1); });
+    lb.querySelector(".tl-next").addEventListener("click", function () { showPhoto(lbIdx + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (!lb || !lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showPhoto(lbIdx - 1);
+      else if (e.key === "ArrowRight") showPhoto(lbIdx + 1);
+    });
+  }
+  function openLightbox(title, slug, photos) {
+    if (!lb) buildLightbox();
+    lbTitle = title;
+    lbImgs = photos.map(function (p) { return "images/trips/" + slug + "/" + p; });
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    showPhoto(0);
+  }
+  function showPhoto(i) {
+    if (!lb || !lbImgs.length) return;
+    lbIdx = (i + lbImgs.length) % lbImgs.length;
+    lb.querySelector(".tl-img").src = lbImgs[lbIdx];
+    lb.querySelector(".tl-img").alt = lbTitle + " — photo " + (lbIdx + 1);
+    lb.querySelector(".tl-cap").textContent = lbTitle;
+    lb.querySelector(".tl-count").textContent = (lbIdx + 1) + " / " + lbImgs.length;
+    var multi = lbImgs.length > 1;
+    lb.querySelector(".tl-prev").style.display = multi ? "" : "none";
+    lb.querySelector(".tl-next").style.display = multi ? "" : "none";
+  }
+  function closeLightbox() {
+    if (!lb) return;
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
   }
 
   // ---------- copy email ----------
