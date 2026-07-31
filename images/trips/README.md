@@ -31,6 +31,7 @@ nashville-tn                   Nashville, TN
 tampa-fl                       Tampa, FL
 virginia-beach-va              Virginia Beach, VA
 new-york-ny                    New York, NY
+oahu-hawaii                    Oahu, Hawaii
 juneau-alaska                  Juneau, Alaska
 valdez-alaska                  Valdez, Alaska
 naknek-alaska                  Naknek, Alaska

@@ -184,6 +184,7 @@
     { name: "Tampa, FL", lat: 27.95, lon: -82.46 },
     { name: "Virginia Beach, VA", lat: 36.85, lon: -75.98 },
     { name: "New York, NY", lat: 40.71, lon: -74.01 },
+    { name: "Oahu, Hawaii", lat: 21.48, lon: -158.00 },
     // Alaska
     { name: "Juneau, Alaska", lat: 58.30, lon: -134.42 },
     { name: "Valdez, Alaska", lat: 61.13, lon: -146.35 },
