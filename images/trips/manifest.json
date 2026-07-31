@@ -1,1 +1,46 @@
-{}
+{
+  "bangalore-india": [
+    "IMG_2434.JPG",
+    "IMG_2776.JPG",
+    "IMG_3286.JPG"
+  ],
+  "hampi-india": [
+    "IMG_3038.JPG"
+  ],
+  "mexico-city": [
+    "IMG_1716.jpeg",
+    "IMG_2078.JPG",
+    "IMG_3313.jpeg"
+  ],
+  "nasu-japan": [
+    "IMG_6898.jpeg"
+  ],
+  "oahu-hawaii": [
+    "IMG_2909.JPG",
+    "IMG_3019.JPG",
+    "IMG_3063.JPG"
+  ],
+  "puerto-escondido-mexico": [
+    "IMG_1256.jpeg",
+    "IMG_7347.jpeg"
+  ],
+  "sayulita-mexico": [
+    "17148931-F14A-4587-BA63-B2BF7D4018FB_4_5005_c.jpeg",
+    "1A046492-1926-43A0-9691-F376FE48423B_1_105_c.jpeg"
+  ],
+  "tokyo-japan": [
+    "IMG_6766.jpeg",
+    "IMG_6800.jpeg"
+  ],
+  "toolik-field-station-alaska": [
+    "IMG_2118.JPG"
+  ],
+  "valdez-alaska": [
+    "IMG_1414.JPG",
+    "IMG_1673.JPG",
+    "IMG_1955.JPG",
+    "IMG_7863.jpeg",
+    "IMG_7944.jpeg",
+    "IMG_7949.jpeg"
+  ]
+}
