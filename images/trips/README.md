@@ -53,6 +53,7 @@ siena-italy                    Siena, Italy
 tuscany-italy                  Tuscany, Italy
 swiss-alps                     Swiss Alps
 salzburg-austria               Salzburg, Austria
+innsbruck-austria              Innsbruck, Austria
 vienna-austria                 Vienna, Austria
 munich-germany                 Munich, Germany
 nuremberg-germany              Nuremberg, Germany

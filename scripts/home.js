@@ -212,6 +212,7 @@
     // Central Europe & the Alps
     { name: "Swiss Alps", lat: 46.02, lon: 7.75 },
     { name: "Salzburg, Austria", lat: 47.81, lon: 13.05 },
+    { name: "Innsbruck, Austria", lat: 47.27, lon: 11.40 },
     { name: "Vienna, Austria", lat: 48.21, lon: 16.37 },
     { name: "Munich, Germany", lat: 48.14, lon: 11.58 },
     { name: "Nuremberg, Germany", lat: 49.45, lon: 11.08 },

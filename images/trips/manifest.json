@@ -1,4 +1,13 @@
 {
+  "athens-greece": [
+    "IMG_1060.JPG",
+    "IMG_1087.JPG",
+    "IMG_1378.JPG",
+    "IMG_1381.JPG",
+    "IMG_3798.jpeg",
+    "IMG_3808.jpeg",
+    "IMG_3820.jpeg"
+  ],
   "bangalore-india": [
     "IMG_2434.JPG",
     "IMG_2776.JPG",
@@ -7,6 +16,10 @@
   "hampi-india": [
     "IMG_3038.JPG"
   ],
+  "innsbruck-austria": [
+    "IMG_4091.jpeg",
+    "IMG_4176.jpeg"
+  ],
   "mexico-city": [
     "IMG_1716.jpeg",
     "IMG_2078.JPG",
@@ -14,6 +27,10 @@
   ],
   "nasu-japan": [
     "IMG_6898.jpeg"
+  ],
+  "nuremberg-germany": [
+    "IMG_4191.jpeg",
+    "IMG_4234.jpeg"
   ],
   "oahu-hawaii": [
     "IMG_2909.JPG",
@@ -42,5 +59,9 @@
     "IMG_7863.jpeg",
     "IMG_7944.jpeg",
     "IMG_7949.jpeg"
+  ],
+  "vienna-austria": [
+    "0CEE0E6C-AE04-4EE7-95B0-DEB56FD2679E.jpg",
+    "IMG_3715.jpeg"
   ]
 }
