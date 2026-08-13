@@ -1,0 +1,452 @@
+/* ===========================================================================
+   music.css — genre dashboard. Layered on top of home.css; inherits every
+   token from its :root. Nothing here redefines a base component, it only adds
+   the chart surfaces.
+
+   Chart colours are NOT hand-picked. They were validated with the palette
+   checker (OKLCH lightness band, chroma floor, protan/deutan separation,
+   normal-vision floor, contrast vs the paper surface) and all six checks pass
+   on both --paper and --paper-2. Re-run the validator before changing any of
+   them:
+     node scripts/validate_palette.js "<hex,...>" --mode light --surface "#f7f3ec"
+   =========================================================================== */
+
+:root {
+  /* Categorical — fixed order, assigned in sequence, never cycled.
+     Worst adjacent CVD ΔE 14.8, normal-vision 21.1, all >= 3:1 contrast. */
+  --cat-1: #b4490f; /* rust — the site accent, so charts feel native */
+  --cat-2: #3f4f8f; /* indigo */
+  --cat-3: #6b8f21; /* olive-green */
+  --cat-4: #a02d5e; /* plum */
+  --cat-5: #a97400; /* ochre */
+  --cat-6: #0b7d9e; /* teal-blue */
+
+  /* Sequential rust ramp — monotone lightness, light end clears 2:1 on paper. */
+  --seq-1: #d69f79;
+  --seq-2: #c58353;
+  --seq-3: #b3652c;
+  --seq-4: #a14c11;
+  --seq-5: #88370b;
+
+  /* Everything past the token ceiling folds in here. Never a generated hue. */
+  --cat-other: #99917f;
+  --deemph: #cfc7b6;
+}
+
+/* ---------- page header ---------- */
+
+/* This page has no .hero, so it supplies its own clearance for the fixed nav. */
+.music-hero {
+  padding: 150px 0 40px;
+}
+
+.music-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  margin: 0.7rem 0 0;
+  max-width: 16ch;
+}
+
+.music-lede {
+  color: var(--muted);
+  max-width: 640px;
+  margin: 1.3rem 0 0;
+  font-size: 1.05rem;
+}
+
+.music-lede a {
+  color: var(--rust);
+  border-bottom: 1px solid rgba(180, 73, 15, 0.3);
+}
+
+.music-lede a:hover { border-bottom-color: var(--rust); }
+
+.music-hero .rotation-bar { max-width: 640px; }
+
+.music-empty {
+  margin-top: 2rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px dashed var(--hairline);
+  border-radius: 14px;
+  background: var(--paper-2);
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.music-empty p { margin: 0; font-size: 0.94rem; }
+
+.music-empty code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: var(--paper-3);
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
+}
+
+/* ---------- hero figure ---------- */
+
+.hero-figure {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin: 2.6rem 0 1.6rem;
+  flex-wrap: wrap;
+}
+
+.hero-figure-num {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 9vw, 5.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--rust);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-figure-gloss {
+  color: var(--muted);
+  max-width: 460px;
+  margin: 0;
+  font-size: 0.98rem;
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-figure-gloss strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.music-body .hero-stats { margin-top: 1.4rem; }
+
+/* ---------- chart surfaces ---------- */
+
+.section:first-of-type { padding-top: 3.5rem; }
+
+.viz-card {
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--paper-2);
+  padding: 1.4rem 1.5rem 1.2rem;
+}
+
+.viz-figure { margin: 0; }
+
+.viz-holder {
+  position: relative;
+  width: 100%;
+  height: 560px;
+}
+
+/* Charts whose height is computed from row count rather than fixed. */
+.viz-holder--auto { height: auto; }
+
+.viz-holder svg { display: block; width: 100%; overflow: visible; }
+
+.viz-caption {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--hairline-soft);
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+/* ---------- legends + toolbar ---------- */
+
+.viz-toolbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.viz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.viz-legend--static .legend-item { cursor: default; }
+
+.legend-item:hover,
+.legend-item[aria-pressed="true"] {
+  border-color: var(--hairline);
+  color: var(--ink);
+  background: var(--paper-3);
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  background: var(--deemph);
+}
+
+.viz-reset {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--rust);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.28rem 0;
+}
+
+.viz-reset:hover { color: var(--rust-deep); }
+
+/* ---------- axes + marks ---------- */
+
+.axis-label,
+.tick-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  fill: var(--muted);
+}
+
+.tick-label--strong { fill: var(--ink); font-weight: 500; }
+
+.value-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.grid-line { stroke: var(--hairline-soft); stroke-width: 1; }
+.axis-line { stroke: var(--hairline); stroke-width: 1; }
+
+/* 2px surface gap between adjacent fills, per the mark spec. */
+.bar { stroke: var(--paper-2); stroke-width: 2; }
+
+.node-circle { stroke: var(--paper-2); stroke-width: 1.5; }
+.link-line { stroke: var(--hairline); fill: none; }
+
+.treemap-cell rect { stroke: var(--paper-2); stroke-width: 2; }
+.treemap-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.slope-line { fill: none; stroke-width: 2; }
+.slope-dot { stroke: var(--paper-2); stroke-width: 2; }
+
+/* Soft backing for each family cluster. Kept very light — overlapping hulls
+   at higher opacity turn the whole graph into grey mush. */
+.hull { opacity: 0.055; stroke-width: 16px; stroke-linejoin: round; }
+
+.cluster-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--ink);
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* ---------- tooltip ---------- */
+
+.viz-tooltip {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  background: var(--ink);
+  color: var(--paper-2);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  max-width: 260px;
+  box-shadow: 0 8px 24px rgba(33, 29, 24, 0.22);
+}
+
+.viz-tooltip strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  display: block;
+}
+
+.viz-tooltip .tt-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  opacity: 0.78;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+/* ---------- table ---------- */
+
+.table-wrap { max-height: 520px; overflow: auto; border-radius: 10px; }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.data-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--paper-2);
+  text-align: left;
+  border-bottom: 1px solid var(--hairline);
+  padding: 0;
+  z-index: 1;
+}
+
+.data-table thead th button {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: inherit;
+}
+
+.data-table thead th button:hover { color: var(--rust); }
+.data-table thead th[aria-sort] button { color: var(--ink); }
+
+.data-table thead th[aria-sort="ascending"] button::after { content: " ↑"; }
+.data-table thead th[aria-sort="descending"] button::after { content: " ↓"; }
+
+.data-table td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--hairline-soft);
+  color: var(--muted);
+}
+
+.data-table td:first-child { color: var(--ink); }
+.data-table .num { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.data-table tbody tr:hover td { background: var(--paper); }
+
+.family-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 0.45rem;
+  vertical-align: baseline;
+  background: var(--deemph);
+}
+
+.table-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  color: var(--faint);
+}
+
+/* ---------- method ---------- */
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.method-stats {
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 1.3rem;
+}
+
+.method-stats .stat { padding: 1rem 1.1rem; }
+.method-stats .stat-num { font-size: 1.5rem; color: var(--rust); }
+.method-stats .stat-label { font-size: 0.76rem; line-height: 1.4; }
+
+.provenance-line {
+  font-size: 0.84rem;
+  color: var(--faint);
+  border-top: 1px solid var(--hairline-soft);
+  padding-top: 0.9rem;
+  margin: 0 0 1.1rem;
+}
+
+.method-foot {
+  margin-top: 2.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--hairline-soft);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.method-foot code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+.method-foot a { color: var(--rust); font-weight: 500; }
+.method-foot a:hover { color: var(--rust-deep); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- responsive — match home.css breakpoints exactly ---------- */
+
+/* NB: these must exclude --auto. A bare `.viz-holder { height: … }` inside a
+   media query has the same specificity as `.viz-holder--auto` but comes later
+   in the file, so it wins — which clamps the auto-height charts and makes their
+   SVGs overflow on top of the caption. */
+
+@media (max-width: 1024px) {
+  .method-grid { grid-template-columns: repeat(2, 1fr); }
+  .viz-holder:not(.viz-holder--auto) { height: 480px; }
+}
+
+/* 880px is the nav switchover in home.css — do not diverge from it. */
+@media (max-width: 880px) {
+  .music-hero { padding: 135px 0 32px; }
+  .viz-holder:not(.viz-holder--auto) { height: 460px; }
+  .viz-card { padding: 1.1rem 1.1rem 1rem; }
+  .hero-figure { gap: 1.1rem; margin: 2rem 0 1.2rem; }
+}
+
+@media (max-width: 640px) {
+  .method-grid { grid-template-columns: 1fr; }
+  .method-stats { grid-template-columns: 1fr; }
+  /* The constellation needs MORE room on a narrow screen, not less — 16
+     clusters in 390px is already tight. */
+  .viz-holder:not(.viz-holder--auto) { height: 540px; }
+  .hero-figure-gloss { min-width: 0; }
+  .table-wrap { max-height: 420px; }
+  .viz-card { padding: 0.9rem 0.8rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legend-item { transition: none; }
+}

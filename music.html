@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ec">
+
+  <!-- SEO -->
+  <title>How diverse is my music taste? — Tyler Milligan</title>
+  <meta name="description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity. Built with the Spotify Web API and D3.">
+  <meta name="author" content="Tyler Milligan">
+  <link rel="canonical" href="https://typride.github.io/music.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://typride.github.io/music.html">
+  <meta property="og:title" content="How diverse is my music taste?">
+  <meta property="og:description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity.">
+  <meta property="og:image" content="https://typride.github.io/images/Tyler-profile.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="How diverse is my music taste?">
+  <meta property="twitter:description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity.">
+  <meta property="twitter:image" content="https://typride.github.io/images/Tyler-profile.jpg">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Tyler Milligan's Blog" href="https://typride.github.io/feed.xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles + scripts -->
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/music.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"
+          integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
+          crossorigin="anonymous" defer></script>
+  <script src="scripts/home.js" defer></script>
+  <script src="scripts/music.js" defer></script>
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Tyler Milligan<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#flagship">Flagship</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="index.html#offclock">Life</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="music.html" aria-current="page">Music</a></li>
+        <li><a href="links.html">Links</a></li>
+      </ul>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#flagship">Flagship</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#writing">Writing</a>
+    <a href="index.html#offclock">Life</a>
+    <a href="blog.html">Blog</a>
+    <a href="music.html">Music</a>
+    <a href="links.html">Links</a>
+    <a href="index.html#contact">Get in touch</a>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="music-hero" id="top">
+    <div class="container">
+      <span class="kicker reveal">A weekend build</span>
+      <h1 class="reveal" data-delay="1">How diverse is my <span class="accent">music taste</span>, really?</h1>
+      <p class="music-lede reveal" data-delay="2">
+        Everyone thinks their taste is eclectic. I pulled every genre out of my Spotify
+        library, my playlists, and what I actually play — then measured it instead of
+        guessing. Spotify supplies what I listen to; the genres come from Last.fm and
+        MusicBrainz, because Spotify quietly stopped publishing them. The maths is
+        <a href="#method">shown at the bottom</a>, including what it gets wrong.
+      </p>
+
+      <!-- live now-playing strip, reusing the existing Worker -->
+      <div class="rotation-bar reveal" data-delay="3" id="rotation" hidden>
+        <div class="rotation-main">
+          <img id="rotation-art" alt="" width="44" height="44" hidden>
+          <div class="rotation-meta">
+            <span class="rotation-label" id="rotation-label">Last played</span>
+            <span class="rotation-track"><strong id="rotation-name"></strong> <em id="rotation-artist"></em></span>
+          </div>
+          <span class="rotation-live" id="rotation-live" hidden><span class="pulse" aria-hidden="true"></span> Live</span>
+        </div>
+      </div>
+
+      <div class="music-empty" id="music-empty">
+        <p><strong>No data yet.</strong> Run <code>node scripts/build-spotify-genres.js</code>
+        to generate <code>data/spotify-genres.json</code>, then reload.</p>
+      </div>
+
+      <div class="music-body" id="music-body" hidden>
+        <div class="hero-figure reveal" data-delay="4">
+          <div class="hero-figure-num" id="fig-effective">—</div>
+          <p class="hero-figure-gloss">
+            <strong>effective genres.</strong> My listening is as varied as someone who
+            played <span id="fig-effective-inline">—</span> genres in perfectly equal
+            rotation — out of <span id="fig-total">—</span> distinct genres that actually
+            appear. The gap between those two numbers is the whole story.
+          </p>
+        </div>
+
+        <div class="hero-stats reveal" data-delay="5" id="kpi-row">
+          <div class="stat">
+            <div class="stat-num" id="kpi-genres">—</div>
+            <div class="stat-label">distinct genres</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="kpi-families">—</div>
+            <div class="stat-label">macro families</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="kpi-artists">—</div>
+            <div class="stat-label">artists</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="kpi-top3">—</div>
+            <div class="stat-label">is just the top 3 genres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="music-main" hidden id="music-main">
+
+    <!-- ============ 01 CONSTELLATION ============ -->
+    <section class="section" id="constellation">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">01</span>
+          <h2>The constellation</h2>
+        </div>
+        <p class="section-lede reveal">
+          Every genre in my library. Two genres are linked when some artist is tagged
+          with both — so the threads running <em>between</em> clusters are the real
+          find: they're where one family of music actually touches another in what I
+          listen to. Bigger, darker dot means more listening. Clusters are grouped by
+          family so the thing is readable; the links inside them are earned.
+        </p>
+
+        <div class="viz-card reveal">
+          <div class="viz-toolbar">
+            <div class="viz-legend" id="constellation-legend" role="group" aria-label="Highlight a family"></div>
+            <button class="viz-reset" id="constellation-reset" type="button" hidden>Clear highlight</button>
+          </div>
+          <figure class="viz-figure">
+            <div class="viz-holder" id="constellation-holder">
+              <svg id="constellation-svg" role="img" aria-labelledby="constellation-desc"></svg>
+              <p class="visually-hidden" id="constellation-desc">Force-directed graph of music genres, sized by how much I listen and linked where genres share an artist.</p>
+            </div>
+            <figcaption class="viz-caption" id="constellation-caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 FAMILIES ============ -->
+    <section class="section" id="families">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">02</span>
+          <h2>What it rolls up to</h2>
+        </div>
+        <p class="section-lede reveal">
+          Crowd-tagged genres are gloriously over-specific — "stomp and holler,"
+          "dungeon synth," "crank wave," "deconstructed club." Collapsed into 15
+          families, the shape of the thing gets legible.
+        </p>
+        <div class="viz-card reveal">
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="families-holder">
+              <svg id="families-svg" role="img" aria-labelledby="families-desc"></svg>
+              <p class="visually-hidden" id="families-desc">Horizontal bar chart of listening share by macro genre family.</p>
+            </div>
+            <figcaption class="viz-caption">Share of total listening mass. Bars include every genre that rolls up to the family.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 SOURCE COMPARISON ============ -->
+    <section class="section" id="sources">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">03</span>
+          <h2>Saved vs. played</h2>
+        </div>
+        <p class="section-lede reveal">
+          The interesting question isn't what I own — it's whether what I save matches
+          what I actually put on. Three different populations, same 15 families.
+        </p>
+        <div class="viz-card reveal">
+          <div class="viz-legend viz-legend--static" id="sources-legend"></div>
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="sources-holder">
+              <svg id="sources-svg" role="img" aria-labelledby="sources-desc"></svg>
+              <p class="visually-hidden" id="sources-desc">Grouped bar chart comparing genre family share across saved library, playlists, and recent plays.</p>
+            </div>
+            <figcaption class="viz-caption" id="sources-caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 TREEMAP ============ -->
+    <section class="section" id="treemap">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">04</span>
+          <h2>Every genre, to scale</h2>
+        </div>
+        <p class="section-lede reveal">
+          The same data with nothing collapsed — each rectangle is one genre, grouped by
+          family and sized by listening. This is where the long tail becomes visible.
+        </p>
+        <div class="viz-card reveal">
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="treemap-holder">
+              <svg id="treemap-svg" role="img" aria-labelledby="treemap-desc"></svg>
+              <p class="visually-hidden" id="treemap-desc">Treemap of individual genres grouped by family, sized by listening share.</p>
+            </div>
+            <figcaption class="viz-caption" id="treemap-caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 PLAYLISTS ============ -->
+    <section class="section" id="playlists">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">05</span>
+          <h2>Playlist fingerprints</h2>
+        </div>
+        <p class="section-lede reveal">
+          Each playlist scored by its own internal variety — the same effective-genre
+          measure, applied one playlist at a time. Some are a single mood on repeat;
+          some are a whole record collection. Names are deliberately left off: this
+          repo is public.
+        </p>
+        <div class="viz-card reveal">
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="playlists-holder">
+              <svg id="playlists-svg" role="img" aria-labelledby="playlists-desc"></svg>
+              <p class="visually-hidden" id="playlists-desc">Bar chart of playlists ranked by effective genre count.</p>
+            </div>
+            <figcaption class="viz-caption" id="playlists-caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 DRIFT ============ -->
+    <section class="section" id="drift">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">06</span>
+          <h2>Drift</h2>
+        </div>
+        <p class="section-lede reveal">
+          Spotify will tell you your top artists over three windows — roughly the last
+          month, the last six months, and the last several years. Reading them left to
+          right is the closest thing to a picture of taste actually moving.
+        </p>
+        <div class="viz-card reveal">
+          <div class="viz-legend viz-legend--static" id="drift-legend"></div>
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="drift-holder">
+              <svg id="drift-svg" role="img" aria-labelledby="drift-desc"></svg>
+              <p class="visually-hidden" id="drift-desc">Slope chart showing how each genre family's share changes across three listening time windows.</p>
+            </div>
+            <figcaption class="viz-caption">Three API snapshots, not continuous history — the gaps between them aren't to scale.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 TABLE ============ -->
+    <section class="section" id="table">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">07</span>
+          <h2>The whole list</h2>
+        </div>
+        <p class="section-lede reveal">
+          Every chart above, as numbers. Click a column to sort.
+        </p>
+        <div class="viz-card reveal">
+          <div class="table-wrap">
+            <table class="data-table" id="genre-table">
+              <caption class="visually-hidden">Every genre with its family, listening share, and track count</caption>
+              <thead>
+                <tr>
+                  <th scope="col" data-sort="name" aria-sort="ascending"><button type="button">Genre</button></th>
+                  <th scope="col" data-sort="family"><button type="button">Family</button></th>
+                  <th scope="col" data-sort="share" class="num"><button type="button">Share</button></th>
+                  <th scope="col" data-sort="tracks" class="num"><button type="button">Tracks</button></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="table-note" id="table-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 METHOD ============ -->
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">08</span>
+          <h2>What this gets wrong</h2>
+        </div>
+        <p class="section-lede reveal">
+          Any chart like this quietly throws data away. Here's exactly what mine throws
+          away, and how much.
+        </p>
+
+        <div class="method-grid">
+          <div class="card reveal">
+            <div class="card-kicker">Coverage</div>
+            <h3>Two different kinds of missing</h3>
+            <div class="hero-stats method-stats">
+              <div class="stat">
+                <div class="stat-num" id="cov-unclassified">—</div>
+                <div class="stat-label">Spotify has no genre for the artist</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" id="cov-unmatched">—</div>
+                <div class="stat-label">a real genre my rules don't cover</div>
+              </div>
+            </div>
+            <p>
+              These are not the same failure and I don't merge them. The first is a hole
+              in Spotify's data; the second is a hole in my taxonomy — and only the
+              second is my fault. Genres in that second bucket still count toward every
+              diversity number; they just don't get a family.
+            </p>
+            <p class="provenance-line" id="provenance-line"></p>
+            <div class="card-meta" id="unmatched-chips"></div>
+          </div>
+
+          <div class="card reveal" data-delay="1">
+            <div class="card-kicker">Method</div>
+            <h3>How the numbers are built</h3>
+            <p>
+              Genres live on the <strong>artist</strong>, not the track — so a track by an
+              artist tagged <em>indie rock</em> and <em>chamber pop</em> counts half to
+              each. Every track contributes exactly 1.0 total, which stops artists with
+              eight tags from drowning out artists with one. Without that, the chart would
+              be measuring how verbosely an artist got tagged rather than what I listen to.
+            </p>
+            <p>
+              Genres are matched to artists <strong>by name</strong>, which is this page's
+              real accuracy limit: two different bands sharing a name will be merged, and
+              an artist Last.fm and MusicBrainz have never heard of gets nothing.
+            </p>
+            <p>
+              <strong>Effective genres</strong> is <code>e^H</code>, the exponential of
+              Shannon entropy. If I split my listening perfectly evenly across N genres,
+              it returns exactly N. Concentration pulls it down. It's a more honest answer
+              to "how varied?" than counting distinct genres, which rewards having heard
+              one song once.
+            </p>
+            <div class="card-meta">
+              <span class="chip" id="method-gini">Gini —</span>
+              <span class="chip" id="method-evenness">Evenness —</span>
+              <span class="chip" id="method-simpson">Top 10 —</span>
+            </div>
+          </div>
+
+          <div class="card reveal" data-delay="2">
+            <div class="card-kicker">Limits</div>
+            <h3>What isn't here</h3>
+            <p>
+              "Listening history" is thinner than it sounds. Spotify's API returns your
+              last <strong>50 plays</strong> and three ranked snapshots — there's no
+              endpoint for years of history. The drift chart is three photographs, not a
+              film.
+            </p>
+            <p>
+              Spotify itself no longer answers the question this page asks. It
+              <strong>deprecated audio-features</strong> in November 2024, removed artist
+              popularity in February 2026, and quietly stopped returning artist
+              <strong>genres</strong> altogether — its own docs still list the field, but
+              the API doesn't send it. Every genre here is sourced elsewhere.
+            </p>
+            <div class="card-meta">
+              <span class="chip">Spotify Web API</span>
+              <span class="chip">Last.fm</span>
+              <span class="chip">MusicBrainz</span>
+              <span class="chip">D3</span>
+              <span class="chip">No build step</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="method-foot reveal">
+          Generated by <code>scripts/build-spotify-genres.js</code> — a zero-dependency
+          Node script that pages Spotify, resolves genres against Last.fm and
+          MusicBrainz, and writes one sorted
+          JSON file. Data as of <span id="method-asof">—</span>.
+          <a href="https://github.com/typride/typride.github.io" target="_blank" rel="noopener">Source on GitHub <span class="arrow">→</span></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="viz-tooltip" id="viz-tooltip" role="status" aria-live="polite" hidden></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Tyler Milligan · Built by hand — HTML, CSS, vanilla JS. No template.</p>
+      <div class="footer-links">
+        <a href="blog.html">Blog</a>
+        <a href="music.html">Music</a>
+        <a href="links.html">Links</a>
+        <a href="feed.xml">RSS</a>
+        <a href="#top">Top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

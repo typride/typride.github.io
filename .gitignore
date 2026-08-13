@@ -1,2 +1,13 @@
 Git-recovery-codes/
 .DS_Store
+
+# Secrets — this repo is PUBLIC. Never commit credentials.
+.env
+.env.*
+!.env.example
+*.local
+
+# Generated / local-only build artifacts
+.cache/
+node_modules/
+data/spotify-genres.full.json
