@@ -6,22 +6,22 @@
   <meta name="theme-color" content="#f7f3ec">
 
   <!-- SEO -->
-  <title>How diverse is my music taste? — Tyler Milligan</title>
-  <meta name="description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity. Built with the Spotify Web API and D3.">
+  <title>What I listen to — Tyler Milligan</title>
+  <meta name="description" content="A look at what is actually in my music library — which genres, in what proportion, and whether what I save is what I play. Built from the Spotify Web API, Last.fm and MusicBrainz.">
   <meta name="author" content="Tyler Milligan">
   <link rel="canonical" href="https://typride.github.io/music.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://typride.github.io/music.html">
-  <meta property="og:title" content="How diverse is my music taste?">
-  <meta property="og:description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity.">
+  <meta property="og:title" content="What I listen to">
+  <meta property="og:description" content="Which genres are in my library, in what proportion, and whether what I save is what I actually play.">
   <meta property="og:image" content="https://typride.github.io/images/Tyler-profile.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="How diverse is my music taste?">
-  <meta property="twitter:description" content="Every genre in my Spotify library, playlists, and listening history — measured, mapped, and scored for diversity.">
+  <meta property="twitter:title" content="What I listen to">
+  <meta property="twitter:description" content="Which genres are in my library, in what proportion, and whether what I save is what I actually play.">
   <meta property="twitter:image" content="https://typride.github.io/images/Tyler-profile.jpg">
 
   <!-- RSS -->
@@ -84,14 +84,14 @@
   <!-- ============ HEADER ============ -->
   <header class="music-hero" id="top">
     <div class="container">
-      <span class="kicker reveal">A weekend build</span>
-      <h1 class="reveal" data-delay="1">How diverse is my <span class="accent">music taste</span>, really?</h1>
+      <span class="kicker reveal">Listening notes</span>
+      <h1 class="reveal" data-delay="1">What I <span class="accent">listen to</span></h1>
       <p class="music-lede reveal" data-delay="2">
-        Everyone thinks their taste is eclectic. I pulled every genre out of my Spotify
-        library, my playlists, and what I actually play — then measured it instead of
-        guessing. Spotify supplies what I listen to; the genres come from Last.fm and
-        MusicBrainz, because Spotify quietly stopped publishing them. The maths is
-        <a href="#method">shown at the bottom</a>, including what it gets wrong.
+        A look at what's actually in my music library — which genres, in what
+        proportion, how they connect, and whether the things I save are the things I
+        end up playing. Spotify supplies the listening; the genres come from Last.fm
+        and MusicBrainz, since Spotify stopped publishing them. How it's put together
+        is <a href="#method">at the bottom</a>, including what it gets wrong.
       </p>
 
       <!-- live now-playing strip, reusing the existing Worker -->
@@ -115,10 +115,11 @@
         <div class="hero-figure reveal" data-delay="4">
           <div class="hero-figure-num" id="fig-effective">—</div>
           <p class="hero-figure-gloss">
-            <strong>effective genres.</strong> My listening is as varied as someone who
-            played <span id="fig-effective-inline">—</span> genres in perfectly equal
-            rotation — out of <span id="fig-total">—</span> distinct genres that actually
-            appear. The gap between those two numbers is the whole story.
+            <strong>effective genres.</strong> <span id="fig-total">—</span> distinct
+            genres turn up across the library, but the listening isn't spread evenly
+            across them. Weighted by how much each actually gets played, it concentrates
+            into roughly <span id="fig-effective-inline">—</span>. The distance between
+            those two numbers is where the habits show up.
           </p>
         </div>
 
@@ -129,7 +130,7 @@
           </div>
           <div class="stat">
             <div class="stat-num" id="kpi-families">—</div>
-            <div class="stat-label">macro families</div>
+            <div class="stat-label">genre families</div>
           </div>
           <div class="stat">
             <div class="stat-num" id="kpi-artists">—</div>
@@ -137,7 +138,7 @@
           </div>
           <div class="stat">
             <div class="stat-num" id="kpi-top3">—</div>
-            <div class="stat-label">is just the top 3 genres</div>
+            <div class="stat-label">of listening is the top 3 genres</div>
           </div>
         </div>
       </div>
@@ -154,11 +155,11 @@
           <h2>The constellation</h2>
         </div>
         <p class="section-lede reveal">
-          Every genre in my library. Two genres are linked when some artist is tagged
-          with both — so the threads running <em>between</em> clusters are the real
-          find: they're where one family of music actually touches another in what I
-          listen to. Bigger, darker dot means more listening. Clusters are grouped by
-          family so the thing is readable; the links inside them are earned.
+          Every genre in the library. Two genres are linked when some artist is
+          tagged with both, so the threads running <em>between</em> clusters mark where
+          one kind of music touches another in what I play — usually through a single
+          artist sitting in both. Bigger, darker dot means more listening. Clusters are
+          grouped by family for readability; the links inside them are earned.
         </p>
 
         <div class="viz-card reveal">
@@ -381,10 +382,10 @@
             </p>
             <p>
               <strong>Effective genres</strong> is <code>e^H</code>, the exponential of
-              Shannon entropy. If I split my listening perfectly evenly across N genres,
-              it returns exactly N. Concentration pulls it down. It's a more honest answer
-              to "how varied?" than counting distinct genres, which rewards having heard
-              one song once.
+              Shannon entropy. If listening were spread perfectly evenly across N
+              genres it returns exactly N; concentration pulls it down. It's a more
+              useful summary than a count of distinct genres, which treats something
+              heard once the same as something played every week.
             </p>
             <div class="card-meta">
               <span class="chip" id="method-gini">Gini —</span>
