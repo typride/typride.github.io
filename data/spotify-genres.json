@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "rulesVersion": 1,
-  "asOf": "2026-08-13T03:29:05.538Z",
+  "asOf": "2026-08-13T04:34:46.985Z",
   "generatedBy": "scripts/build-spotify-genres.js",
   "provenance": {
     "listening": "Spotify Web API (saved tracks, playlists, top artists/tracks, recent plays)",
     "genres": "Last.fm artist.getTopTags, falling back to MusicBrainz",
+    "suggestions": "Last.fm artist.getSimilar seeded from the most-played artists, plus tag.getTopArtists per genre. Anything already in the library is filtered out.",
     "genresNote": "Spotify removed the artist `genres` field; its docs still list it but the live API no longer returns it. Genre sources are matched on artist NAME, so same-named artists can collide.",
     "resolved": {
       "lastfm": 3735,
@@ -20245,6 +20246,1532 @@
       "African Drums",
       "Beats Antique",
       "Buena Vista Social Club"
+    ]
+  },
+  "discovery": {
+    "artists": [
+      {
+        "name": "Max Richter",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Dustin O'Halloran",
+          "Ólafur Arnalds"
+        ],
+        "score": 8.05
+      },
+      {
+        "name": "Sorry",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Fontaines D.C.",
+          "left alone...",
+          "Lime Garden"
+        ],
+        "score": 6.812
+      },
+      {
+        "name": "Wednesday",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Geese",
+          "Water From Your Eyes",
+          "Way Dynamic"
+        ],
+        "score": 5.844
+      },
+      {
+        "name": "John Lennon",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "George Harrison"
+        ],
+        "score": 5.532
+      },
+      {
+        "name": "Black Country, New Road",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Geese",
+          "Way Dynamic",
+          "Lime Garden"
+        ],
+        "score": 5.431
+      },
+      {
+        "name": "Ziggy Marley",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Matisyahu",
+          "SOJA"
+        ],
+        "score": 5.411
+      },
+      {
+        "name": "Damien Rice",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Villager",
+          "Rufus Wainwright",
+          "James Vincent McMorrow"
+        ],
+        "score": 4.551
+      },
+      {
+        "name": "kmoe",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Jane Remover"
+        ],
+        "score": 4.42
+      },
+      {
+        "name": "William Fitzsimmons",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Villager",
+          "James Vincent McMorrow"
+        ],
+        "score": 4.034
+      },
+      {
+        "name": "Paul McCartney",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "George Harrison"
+        ],
+        "score": 3.899
+      },
+      {
+        "name": "The Psychedelic Furs",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "The Church"
+        ],
+        "score": 3.894
+      },
+      {
+        "name": "Camel",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "King Crimson"
+        ],
+        "score": 3.864
+      },
+      {
+        "name": "Gentle Giant",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "King Crimson"
+        ],
+        "score": 3.691
+      },
+      {
+        "name": "Viagra Boys",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Fontaines D.C.",
+          "Geese",
+          "life"
+        ],
+        "score": 3.667
+      },
+      {
+        "name": "underscores",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Jane Remover"
+        ],
+        "score": 3.638
+      },
+      {
+        "name": "Yes",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "King Crimson"
+        ],
+        "score": 3.563
+      },
+      {
+        "name": "Emerson, Lake & Palmer",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "King Crimson"
+        ],
+        "score": 3.412
+      },
+      {
+        "name": "Sega Bodega",
+        "engines": [
+          "deezer",
+          "lastfm",
+          "listenbrainz"
+        ],
+        "agreement": 3,
+        "via": [
+          "Shygirl",
+          "Loukeman"
+        ],
+        "score": 3.362
+      }
+    ],
+    "soloByEngine": {
+      "lastfm": [
+        {
+          "name": "coffret de bijoux",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "Sadness",
+            "Trhä"
+          ],
+          "score": 5.694
+        },
+        {
+          "name": "Patricia Wolf",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "Celia Hollander",
+            "Photay",
+            "Green-House"
+          ],
+          "score": 5.164
+        },
+        {
+          "name": "home is in your arms",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "Sadness",
+            "life"
+          ],
+          "score": 5.089
+        },
+        {
+          "name": "Whatever The Weather",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "Celia Hollander",
+            "Photay"
+          ],
+          "score": 4.893
+        },
+        {
+          "name": "Along Memories",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "ser",
+            "Born an Abomination",
+            "East Avenue"
+          ],
+          "score": 4.846
+        },
+        {
+          "name": "John Grant",
+          "engines": [
+            "lastfm"
+          ],
+          "agreement": 1,
+          "via": [
+            "Villager",
+            "Rufus Wainwright"
+          ],
+          "score": 4.683
+        }
+      ],
+      "deezer": [
+        {
+          "name": "Abyssal",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "Trhä"
+          ],
+          "score": 2.227
+        },
+        {
+          "name": "Smerz",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "Loukeman",
+            "Quadeca"
+          ],
+          "score": 1.688
+        },
+        {
+          "name": "Thee Oh Sees",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "life"
+          ],
+          "score": 1.619
+        },
+        {
+          "name": "Brooke Candy",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "Shygirl"
+          ],
+          "score": 1.485
+        },
+        {
+          "name": "Mora Prokaza",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "Trhä"
+          ],
+          "score": 1.485
+        },
+        {
+          "name": "Ssaliva",
+          "engines": [
+            "deezer"
+          ],
+          "agreement": 1,
+          "via": [
+            "Celia Hollander"
+          ],
+          "score": 1.417
+        }
+      ],
+      "listenbrainz": [
+        {
+          "name": "deadmau5",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "life"
+          ],
+          "score": 1.619
+        },
+        {
+          "name": "LEISURE",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "Jadu Heart"
+          ],
+          "score": 1.32
+        },
+        {
+          "name": "Lesiëm",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "Cardinals"
+          ],
+          "score": 1.32
+        },
+        {
+          "name": "Steve Stoll",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "Exos"
+          ],
+          "score": 1.32
+        },
+        {
+          "name": "R.E.M.",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "The Church",
+            "Matisyahu",
+            "King Crimson"
+          ],
+          "score": 1.302
+        },
+        {
+          "name": "Belief",
+          "engines": [
+            "listenbrainz"
+          ],
+          "agreement": 1,
+          "via": [
+            "Villager"
+          ],
+          "score": 1.15
+        }
+      ]
+    },
+    "engines": {
+      "lastfm": {
+        "suggested": 936,
+        "uniqueToIt": 699
+      },
+      "deezer": {
+        "suggested": 511,
+        "uniqueToIt": 333
+      },
+      "listenbrainz": {
+        "suggested": 363,
+        "uniqueToIt": 223
+      }
+    },
+    "overlap": [
+      {
+        "a": "lastfm",
+        "b": "deezer",
+        "shared": 158,
+        "jaccard": 0.1226
+      },
+      {
+        "a": "lastfm",
+        "b": "listenbrainz",
+        "shared": 120,
+        "jaccard": 0.1018
+      },
+      {
+        "a": "deezer",
+        "b": "listenbrainz",
+        "shared": 61,
+        "jaccard": 0.075
+      }
+    ],
+    "seeds": 60,
+    "totalCandidates": 1512,
+    "allThree": 41,
+    "note": "Three independent recommenders, seeded from the most-played artists. Anything already in the library is filtered out. Last.fm and ListenBrainz are collaborative filtering over listening logs (commercial scrobbles and open listen data); Deezer is its own streaming-behaviour model."
+  },
+  "genreSuggestions": {
+    "afrobeat": [
+      "Kokoroko",
+      "Ikebe Shakedown",
+      "The Lijadu Sisters",
+      "Davido",
+      "Lafayette Afro Rock Band",
+      "Rob"
+    ],
+    "alt-country": [
+      "Pinegrove",
+      "MJ Lenderman",
+      "The Handsome Family",
+      "Palace",
+      "Silver Jews",
+      "Jason Isbell and the 400 Unit"
+    ],
+    "alternative": [
+      "Panic! at the Disco",
+      "My Chemical Romance",
+      "sombr",
+      "bôa",
+      "Linkin Park",
+      "Julia Wolf"
+    ],
+    "alternative rnb": [
+      "Rochelle Jordan",
+      "Malcolm Todd",
+      "Ecco2K",
+      "JMSN",
+      "Ravyn Lenae",
+      "Abra"
+    ],
+    "alternative rock": [
+      "Three Days Grace",
+      "Foo Fighters",
+      "bôa",
+      "Goo Goo Dolls",
+      "Linkin Park",
+      "Chevelle"
+    ],
+    "ambient": [
+      "C418",
+      "Øneheart",
+      "Adore",
+      "my head is empty",
+      "Brian Eno",
+      "Sabi"
+    ],
+    "americana": [
+      "Zach Bryan",
+      "Colter Wall",
+      "Jason Isbell and the 400 Unit",
+      "The Handsome Family",
+      "Goodnight, Texas",
+      "The Band of Heathens"
+    ],
+    "art pop": [
+      "Oklou",
+      "Ecco2K",
+      "SMERZ",
+      "Kelsey Lu",
+      "SPELLLING",
+      "Let's Eat Grandma"
+    ],
+    "art punk": [
+      "The Garden",
+      "Horsey",
+      "Ugly (UK)",
+      "English Teacher",
+      "Squid",
+      "Tropical Fuck Storm"
+    ],
+    "art rock": [
+      "betcover!!",
+      "Candelabro",
+      "My New Band Believe",
+      "Hesse Kassel",
+      "After...",
+      "Gentle Giant"
+    ],
+    "atmospheric black metal": [
+      "Summoning",
+      "Këkht Aräkh",
+      "Grima",
+      "Myrkur",
+      "Drudkh",
+      "Germ"
+    ],
+    "avant-garde": [
+      "Dean Blunt",
+      "Arthur Russell",
+      "Mr. Bungle",
+      "Captain Beefheart & His Magic Band",
+      "Yoko Ono",
+      "Moondog"
+    ],
+    "beats": [
+      "The Deli",
+      "mujo",
+      "90sFlav",
+      "nohidea",
+      "Flamingosis",
+      "Sweatson Klank"
+    ],
+    "bebop": [
+      "Charles Mingus",
+      "Art Blakey & The Jazz Messengers",
+      "Dexter Gordon",
+      "Bud Powell",
+      "Kenny Dorham",
+      "Lester Young"
+    ],
+    "bedroom pop": [
+      "beabadoobee",
+      "Chezile",
+      "Strawberry Guy",
+      "girl in red",
+      "Gigi Perez",
+      "Cavetown"
+    ],
+    "black metal": [
+      "NAV",
+      "Tulus",
+      "Mayhem",
+      "Darkthrone",
+      "Burzum",
+      "Bathory"
+    ],
+    "blackgaze": [
+      "Asunojokei",
+      "MØL",
+      "Strawberry Hospital",
+      "sonhos tomam conta",
+      "coffret de bijoux",
+      "Agrikulture"
+    ],
+    "blues": [
+      "Etta James",
+      "Eric Clapton",
+      "Tom Waits",
+      "Stevie Ray Vaughan",
+      "The Seatbelts",
+      "Dire Straits"
+    ],
+    "blues rock": [
+      "Derek and the Dominos",
+      "ZZ Top",
+      "Kaleo",
+      "Greta Van Fleet",
+      "Ten Years After",
+      "The Allman Brothers Band"
+    ],
+    "bossa nova": [
+      "Gal Costa",
+      "Toquinho",
+      "Lamp",
+      "Chico Buarque",
+      "Elis Regina",
+      "Caetano Veloso"
+    ],
+    "breakbeat": [
+      "Jamie Paige",
+      "Roa",
+      "Hyper",
+      "Bomfunk MC's",
+      "Evil Nine",
+      "Adam Freeland"
+    ],
+    "breaks": [
+      "main phase",
+      "Colombo",
+      "DJ これからの緊急災害",
+      "Costa",
+      "Pablo",
+      "Sherelle"
+    ],
+    "chillwave": [
+      "George Clanton",
+      "ESPRIT 空想",
+      "Bedroom",
+      "yeule",
+      "DyE",
+      "A.L.I.S.O.N"
+    ],
+    "classic rock": [
+      "Eagles",
+      "Dire Straits",
+      "Electric Light Orchestra",
+      "Journey",
+      "John Lennon",
+      "The Beach Boys"
+    ],
+    "classical": [
+      "Hector Berlioz",
+      "Antonio Vivaldi",
+      "Dmitri Shostakovich",
+      "Maurice Ravel",
+      "Antonín Dvořák",
+      "Sergei Prokofiev"
+    ],
+    "cloud rap": [
+      "Bladee",
+      "Lil Peep",
+      "EsDeeKid",
+      "2hollis",
+      "nettspend",
+      "Yung Lean"
+    ],
+    "coldwave": [
+      "Lebanon Hanover",
+      "Mareux",
+      "French Police",
+      "Nürnberg",
+      "Decade",
+      "Martin Dupont"
+    ],
+    "contemporary classical": [
+      "Max Richter",
+      "Mili",
+      "Fabrizio Paterlini",
+      "Abel Korzeniowski",
+      "Arvo Pärt",
+      "Bryce Dessner"
+    ],
+    "country": [
+      "Jon Pardi",
+      "Luke Combs",
+      "Kacey Musgraves",
+      "Luke Bryan",
+      "Zach Bryan",
+      "Toby Keith"
+    ],
+    "crank wave": [
+      "Viagra Boys",
+      "Black Country, New Road",
+      "Squid",
+      "Protomartyr",
+      "Deadletter",
+      "Opus Kink"
+    ],
+    "dance": [
+      "Madonna",
+      "Ke$ha",
+      "Lucky Twice",
+      "femtanyl",
+      "Cascada",
+      "Kylie Minogue"
+    ],
+    "deep house": [
+      "nbsplv",
+      "Lost Frequencies",
+      "Kerri Chandler",
+      "Midland",
+      "Ben Böhmer",
+      "Youandewan"
+    ],
+    "depressive black metal": [
+      "Lifelover",
+      "Psychonaut 4",
+      "DECALIUS",
+      "Blade and Bath",
+      "Fail",
+      "My Useless Life"
+    ],
+    "dirty south": [
+      "Gucci Mane",
+      "Lil' O",
+      "Waka Flocka Flame",
+      "Young Jeezy",
+      "Three 6 Mafia",
+      "T.I."
+    ],
+    "disco": [
+      "Gloria Gaynor",
+      "Donna Summer",
+      "Village People",
+      "KC and The Sunshine Band",
+      "Modern Talking",
+      "Chic"
+    ],
+    "downtempo": [
+      "Esthero",
+      "Skinshape",
+      "Thievery Corporation",
+      "Guts",
+      "Instupendo",
+      "The Cinematic Orchestra"
+    ],
+    "dream pop": [
+      "Cigarettes After Sex",
+      "Slowdive",
+      "The Sundays",
+      "Strawberry Guy",
+      "girl in red",
+      "Night Tapes"
+    ],
+    "drone": [
+      "Grouper",
+      "Boris",
+      "Have a Nice Life",
+      "Ascend",
+      "Oneohtrix Point Never",
+      "Marble Sky"
+    ],
+    "drum and bass": [
+      "Jade",
+      "Pendulum",
+      "Sub Focus",
+      "Rockwell",
+      "Notion",
+      "DJ Fresh"
+    ],
+    "dub": [
+      "Baiana System",
+      "Dean Blunt",
+      "Sideshow",
+      "King Tubby",
+      "Augustus Pablo",
+      "Dubioza Kolektiv"
+    ],
+    "dub techno": [
+      "Andy Stott",
+      "Basic Channel",
+      "DeepChord",
+      "Barker",
+      "Quantec",
+      "Shinichi Atobe"
+    ],
+    "dubstep": [
+      "Wonder",
+      "Excision",
+      "Twisted",
+      "Subtronics",
+      "Dabin",
+      "Gemini"
+    ],
+    "edm": [
+      "Alan Walker",
+      "Alok",
+      "6arelyhuman",
+      "Axwell /\\ Ingrosso",
+      "DJ Thiago Martins",
+      "Childsplay"
+    ],
+    "electro": [
+      "SICKBOYRARI",
+      "Zedd",
+      "Gesaffelstein",
+      "Digitalism",
+      "Boys Noize",
+      "Vitalic"
+    ],
+    "electro house": [
+      "Zedd",
+      "The Chainsmokers",
+      "No Mana",
+      "Tokyo Machine",
+      "Eddie",
+      "Bad Computer"
+    ],
+    "electronic": [
+      "The Chainsmokers",
+      "The Living Tombstone"
+    ],
+    "electronica": [
+      "Broken Toy Airplanes",
+      "Owl City",
+      "Up Dharma Down",
+      "Lemâitre",
+      "Basement Jaxx",
+      "Frou Frou"
+    ],
+    "electropop": [
+      "Snow Strippers",
+      "Magdalena Bay",
+      "Sky Ferreira",
+      "Slayyyter",
+      "Ke$ha",
+      "Ashnikko"
+    ],
+    "experimental": [
+      "Dean Blunt",
+      "Ween",
+      "Adventure Time",
+      "Dance Gavin Dance",
+      "Pierce the Veil",
+      "Cuco"
+    ],
+    "experimental hip hop": [
+      "JPEGMAFIA",
+      "Injury Reserve",
+      "KIDS SEE GHOSTS",
+      "Marjorie -W.C. Sinclair",
+      "Ghais Guevara",
+      "Billy Woods"
+    ],
+    "folk": [
+      "Peter, Paul & Mary",
+      "Vance Joy",
+      "She & Him",
+      "Simon & Garfunkel",
+      "Jim Croce",
+      "Novo Amor"
+    ],
+    "folk rock": [
+      "The Waterboys",
+      "Buffalo Springfield",
+      "Crosby, Stills & Nash",
+      "The Stills-Young Band",
+      "Neil Young",
+      "Fairport Convention"
+    ],
+    "folktronica": [
+      "Big Red Machine",
+      "Go_A",
+      "Shye",
+      "Cate Le Bon",
+      "Tunng",
+      "Mark Kozelek & Jimmy Lavalle"
+    ],
+    "free jazz": [
+      "offonoff",
+      "John Coltrane Quartet",
+      "Alice Coltrane",
+      "Ornette Coleman",
+      "The Thing",
+      "Edward Vesala"
+    ],
+    "funk": [
+      "Prince",
+      "Jamiroquai",
+      "Marvin Gaye",
+      "Kool & the Gang",
+      "Rick James",
+      "MC Livinho"
+    ],
+    "fusion": [
+      "Casiopea",
+      "Dimension",
+      "Chick Corea",
+      "Pat Metheny Group",
+      "Weather Report",
+      "Jean-Luc Ponty"
+    ],
+    "future bass": [
+      "Snail's house",
+      "Crankdat",
+      "Cosmo's Midnight",
+      "WRLD",
+      "Pusher",
+      "PSYQUI"
+    ],
+    "future garage": [
+      "Djrum",
+      "CloudNone",
+      "Sorrow",
+      "Jacques Greene",
+      "Dauwd",
+      "Sibewest"
+    ],
+    "gangsta rap": [
+      "N.W.A",
+      "Benny the Butcher",
+      "Geto Boys",
+      "Mobb Deep",
+      "DMX",
+      "Westside Connection"
+    ],
+    "garage": [
+      "Shannon and the Clams",
+      "Sweet Female Attitude",
+      "The Daughters of Eve",
+      "Thee Oh Sees",
+      "The Limiñanas",
+      "Oxide & Neutrino"
+    ],
+    "garage rock": [
+      "Destroy Boys",
+      "Mike Krol",
+      "The Hives",
+      "Sex Bob-Omb",
+      "Mannequin Pussy",
+      "The Stooges"
+    ],
+    "glitch": [
+      "kiyo",
+      "Seekae",
+      "Masakatsu Takagi",
+      "Alva Noto",
+      "Nero's Day at Disneyland",
+      "Lauren Bousfield"
+    ],
+    "glitch-hop": [
+      "OPIUO",
+      "Thriftworks",
+      "Freddy Todd",
+      "Insightful",
+      "Kraddy",
+      "Boreta"
+    ],
+    "glo-fi": [
+      "Gardens & Villa",
+      "Mareux",
+      "Computer Magic",
+      "18 Carat Affair",
+      "Palmbomen",
+      "Capo Blanco"
+    ],
+    "grime": [
+      "Skepta",
+      "Trim",
+      "JME",
+      "Dave",
+      "Wonder",
+      "J Hus"
+    ],
+    "hardcore": [
+      "Niki",
+      "Knocked Loose",
+      "Basement",
+      "Hatebreed",
+      "Void",
+      "Raimundos"
+    ],
+    "hip hop": [
+      "21 Savage",
+      "Doechii",
+      "Key Glock",
+      "Kevin Abstract",
+      "Dreamville",
+      "Pi’erre Bourne"
+    ],
+    "hip-hop": [
+      "Travi$ Scott",
+      "Black Eyed Peas",
+      "Baby Keem",
+      "Tory Lanez",
+      "Lil Uzi Vert"
+    ],
+    "house": [
+      "Bob Sinclar",
+      "Edward Maya",
+      "Alan Walker",
+      "Stardust",
+      "Zedd",
+      "Sonny Fodera"
+    ],
+    "idm": [
+      "Wisp",
+      "memo boy",
+      "Sabi",
+      "Sweet Trip",
+      "Autechre",
+      "Squarepusher"
+    ],
+    "indie": [
+      "sombr",
+      "Florence + the Machine",
+      "Foster the People",
+      "Current Joys",
+      "Melanie Martinez"
+    ],
+    "indie folk": [
+      "Adrianne Lenker",
+      "boygenius",
+      "Searows",
+      "Cameron Winter",
+      "The Crane Wives",
+      "Haley Heynderickx"
+    ],
+    "indie pop": [
+      "beabadoobee",
+      "Gracie Abrams",
+      "Conan Gray",
+      "Troye Sivan",
+      "girl in red",
+      "Cults"
+    ],
+    "indie rock": [
+      "beabadoobee",
+      "Panchiko",
+      "Sam Fender",
+      "Wolf Alice",
+      "Franz Ferdinand",
+      "Pinegrove"
+    ],
+    "indietronica": [
+      "underscores",
+      "Girls Rituals",
+      "Lucy Bedroque",
+      "quannnic",
+      "acloudyskye",
+      "tsubi club"
+    ],
+    "instrumental hip-hop": [
+      "Clams Casino",
+      "LJONES",
+      "Vanilla",
+      "Dirty Art Club",
+      "Marcus D",
+      "Friendzone"
+    ],
+    "jazz": [
+      "Frank Sinatra",
+      "Sade",
+      "Leon Thomas",
+      "Michael Bublé",
+      "Ella Fitzgerald",
+      "Justin Hurwitz"
+    ],
+    "jazz hop": [
+      "Nujabes",
+      "Digable Planets",
+      "Dred Scott",
+      "Guru",
+      "Jazz Liberatorz",
+      "Soulchef"
+    ],
+    "latin": [
+      "Shakira",
+      "Romeo Santos",
+      "Don Omar",
+      "Rauw Alejandro",
+      "Enrique Iglesias",
+      "KAROL G"
+    ],
+    "lo-fi": [
+      "Salvia Palth",
+      "Dean Blunt",
+      "Cults",
+      "keshi",
+      "Yot Club",
+      "Part Time"
+    ],
+    "lounge": [
+      "Piero Piccioni",
+      "Alberto Baldan Bembo",
+      "Living Room",
+      "Piero Umiliani",
+      "Richard Cheese",
+      "Pink Martini"
+    ],
+    "math rock": [
+      "American Football",
+      "Girlfriends",
+      "Angine de Poitrine",
+      "tricot",
+      "Delta Sleep",
+      "Slint"
+    ],
+    "metal": [
+      "Slipknot",
+      "Disturbed",
+      "Rammstein",
+      "Rob Zombie",
+      "Avenged Sevenfold",
+      "Bullet for My Valentine"
+    ],
+    "minimal": [
+      "Anna",
+      "Paul Kalkbrenner",
+      "Guti",
+      "Klangkarussell",
+      "Lawrence",
+      "Argy"
+    ],
+    "minimal techno": [
+      "Anna",
+      "Max Cooper",
+      "Christian Löffler",
+      "Matt Lange",
+      "Rodriguez Jr.",
+      "The Field"
+    ],
+    "neo-soul": [
+      "Ravyn Lenae",
+      "D'Angelo",
+      "Jill Scott",
+      "Res",
+      "Maxwell",
+      "Summer Walker"
+    ],
+    "new age": [
+      "Enigma",
+      "Vangelis",
+      "Mike Oldfield",
+      "Era",
+      "Karl Jenkins",
+      "Rasa"
+    ],
+    "new rave": [
+      "The Hellp",
+      "The Black Ghosts",
+      "Hadouken!",
+      "Does It Offend You, Yeah?",
+      "New Young Pony Club",
+      "Goose"
+    ],
+    "new wave": [
+      "Tears for Fears",
+      "The Cars",
+      "a-ha",
+      "Oingo Boingo",
+      "A Flock of Seagulls",
+      "The Stranglers"
+    ],
+    "noise": [
+      "Astro",
+      "Lupe de Lupe",
+      "Prurient",
+      "Cults",
+      "Wilt",
+      "Merzbow"
+    ],
+    "noise rock": [
+      "Show Me the Body",
+      "Mannequin Pussy",
+      "Unwound",
+      "Chat Pile",
+      "Big Black",
+      "The Jesus Lizard"
+    ],
+    "outsider house": [
+      "Cult Member",
+      "AL-90",
+      "DJ Sabrina The Teenage DJ",
+      "Delroy Edwards",
+      "Naked Flames",
+      "SOFT BLADE"
+    ],
+    "piano": [
+      "Soap&Skin",
+      "Giovanni Marradi",
+      "Fabrizio Paterlini",
+      "Vanessa Carlton",
+      "Regina Spektor",
+      "Hania Rani"
+    ],
+    "pop": [
+      "Sabrina Carpenter",
+      "Olivia Rodrigo",
+      "Bruno Mars",
+      "Madonna",
+      "Addison Rae",
+      "KATSEYE"
+    ],
+    "post-black metal": [
+      "Germ",
+      "Harakiri for the Sky",
+      "MØL",
+      "White Ward",
+      "Anomalie",
+      "Agrikulture"
+    ],
+    "post-punk": [
+      "She Wants Revenge",
+      "Siouxsie and the Banshees",
+      "Black Country, New Road",
+      "Nick Cave & the Bad Seeds",
+      "Bauhaus",
+      "Viagra Boys"
+    ],
+    "post-rock": [
+      "Voilà!",
+      "Black Country, New Road",
+      "Jakob",
+      "Have a Nice Life",
+      "Mogwai",
+      "Slint"
+    ],
+    "progressive house": [
+      "deadmau5",
+      "Tinlicker",
+      "Massane",
+      "kx5",
+      "Vicetone",
+      "REID"
+    ],
+    "progressive rock": [
+      "Yes",
+      "Electric Light Orchestra",
+      "Tool",
+      "Rush",
+      "Genesis",
+      "After..."
+    ],
+    "psychedelic": [
+      "Eyedress",
+      "Secos & Molhados",
+      "LSD and the Search for God",
+      "Spectrum",
+      "Pond",
+      "Melody's Echo Chamber"
+    ],
+    "psychedelic pop": [
+      "Vanishing Twin",
+      "LOVING",
+      "Mr Twin Sister",
+      "Strawberry Milk Cult",
+      "The Lemon Twigs",
+      "Mystic Braves"
+    ],
+    "psychedelic rock": [
+      "Ghost",
+      "Grateful Dead",
+      "Jefferson Airplane",
+      "Psychedelic Porn Crumpets",
+      "The Deep",
+      "Love"
+    ],
+    "punk": [
+      "The Clash",
+      "The Offspring",
+      "Misfits",
+      "Fugazi",
+      "Joyce Manor",
+      "Iggy Pop"
+    ],
+    "rap": [
+      "Megan Thee Stallion",
+      "Baby Keem",
+      "Lil Tecca",
+      "Doechii",
+      "XXXTENTACION"
+    ],
+    "reggae": [
+      "Sean Paul",
+      "Natiruts",
+      "Big Mountain",
+      "Damian Marley",
+      "UB40",
+      "YT"
+    ],
+    "reggaeton": [
+      "Don Omar",
+      "Ozuna",
+      "Wisin & Yandel",
+      "Rauw Alejandro",
+      "Nicky Jam",
+      "KAROL G"
+    ],
+    "rhythm and blues": [
+      "Marvin Gaye",
+      "Sam Cooke",
+      "Otis Redding",
+      "Sam & Dave",
+      "The Flamingos",
+      "The Five Stairsteps"
+    ],
+    "rnb": [
+      "Brent Faiyaz",
+      "Bruno Mars",
+      "Tory Lanez",
+      "Usher",
+      "Kehlani",
+      "Ravyn Lenae"
+    ],
+    "rock": [
+      "Linkin Park",
+      "My Chemical Romance",
+      "Panic! at the Disco",
+      "Oasis",
+      "Foo Fighters",
+      "Evanescence"
+    ],
+    "romantic": [
+      "Hector Berlioz",
+      "Antonín Dvořák",
+      "Gustav Mahler",
+      "Sir Edward Elgar",
+      "Richard Strauss",
+      "Jean Sibelius"
+    ],
+    "shoegaze": [
+      "Slowdive",
+      "Cigarettes After Sex",
+      "Panchiko",
+      "my bloody valentine",
+      "Whirr",
+      "LSD and the Search for God"
+    ],
+    "singer-songwriter": [
+      "Jeff Buckley",
+      "Adrianne Lenker",
+      "Kate Bush",
+      "Cameron Winter",
+      "Neil Young",
+      "Zach Bryan"
+    ],
+    "soft rock": [
+      "Player",
+      "Hall & Oates",
+      "Christopher Cross",
+      "Bread",
+      "Rupert Holmes",
+      "Ambrosia"
+    ],
+    "soul": [
+      "Sade",
+      "Marvin Gaye",
+      "Olivia Dean",
+      "Thee Sacred Souls",
+      "Brent Faiyaz",
+      "The Jackson 5"
+    ],
+    "soundtrack": [
+      "Toby Fox",
+      "Hans Zimmer",
+      "Ludwig Göransson",
+      "Meryl Streep",
+      "Kensuke Ushio",
+      "SEGA Sound Team"
+    ],
+    "southern rock": [
+      "Lynyrd Skynyrd",
+      "Whiskey Myers",
+      "The Allman Brothers Band",
+      "Charlie Daniels Band",
+      "Little Feat",
+      "Atlanta Rhythm Section"
+    ],
+    "surf": [
+      "The Beach Boys",
+      "La Luz",
+      "Dick Dale",
+      "The Ventures",
+      "Santo & Johnny",
+      "Jan & Dean"
+    ],
+    "swing": [
+      "Frank Sinatra",
+      "Paul Anka",
+      "Michael Bublé",
+      "Bobby Darin",
+      "Scott Bradlee's Postmodern Jukebox",
+      "The Ink Spots"
+    ],
+    "synthpop": [
+      "Magdalena Bay",
+      "PASTEL GHOST",
+      "And One",
+      "Mareux",
+      "Alphaville",
+      "Allie X"
+    ],
+    "tech house": [
+      "Adriatique",
+      "Alan Fitzpatrick",
+      "Gesaffelstein",
+      "Laszlo",
+      "Midland",
+      "Monkey Safari"
+    ],
+    "techno": [
+      "Gesaffelstein",
+      "Alan Fitzpatrick",
+      "The Prodigy",
+      "Niki",
+      "Brutalismus 3000",
+      "U96"
+    ],
+    "trance": [
+      "Armin van Buuren",
+      "Niki",
+      "Alice Deejay",
+      "ATB",
+      "Robert Miles",
+      "Vernon"
+    ],
+    "trap": [
+      "Travi$ Scott",
+      "Lil Uzi Vert",
+      "Yeat",
+      "21 Savage",
+      "Ken Carson",
+      "Offset"
+    ],
+    "trip-hop": [
+      "FKA twigs",
+      "DJ Shadow",
+      "Sneaker Pimps",
+      "Everything But the Girl",
+      "I Monster",
+      "Morcheeba"
+    ],
+    "uk garage": [
+      "Sweet Female Attitude",
+      "MJ Cole",
+      "DJ Luck & MC Neat",
+      "Skepta",
+      "The Artful Dodger",
+      "Sunship"
+    ],
+    "underground hip-hop": [
+      "Madvillain",
+      "King Geedorah",
+      "Buckshot",
+      "Slum Village",
+      "DANGERDOOM",
+      "Viktor Vaughn"
+    ],
+    "witch house": [
+      "Snow Strippers",
+      "Sidewalks and Skeletons",
+      "Buckshot",
+      "Salem",
+      "Sematary",
+      "Crim3s"
+    ],
+    "wonky": [
+      "What So Not",
+      "Iglooghost",
+      "heRobust",
+      "Puzzle",
+      "Tally Hall",
+      "Sleepnet"
     ]
   },
   "taxonomy": {

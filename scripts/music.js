@@ -178,6 +178,26 @@
       list.appendChild(none);
     }
 
+    // Per-genre suggestions: Last.fm's top artists for the tag, minus everything
+    // already in the library.
+    var sugWrap = document.getElementById("gp-suggest");
+    var sugList = clear("gp-suggest-list");
+    var sugs = (panelData.genreSuggestions || {})[name] || [];
+    if (sugs.length && sugList) {
+      sugs.forEach(function (n) {
+        var a = document.createElement("a");
+        a.className = "chip";
+        a.href = "https://open.spotify.com/search/" + encodeURIComponent(n);
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = n;
+        sugList.appendChild(a);
+      });
+      sugWrap.hidden = false;
+    } else if (sugWrap) {
+      sugWrap.hidden = true;
+    }
+
     // Neighbouring genres are clickable, so the panel doubles as a way to walk
     // the graph without hunting for the dot.
     var nbrWrap = document.getElementById("gp-neighbours");
@@ -1106,6 +1126,234 @@
     }
   }
 
+  // ---------- 8. discovery: three engines compared ----------
+
+  var ENGINE_META = [
+    { key: "lastfm", label: "Last.fm", blurb: "scrobble collaborative filtering" },
+    { key: "deezer", label: "Deezer", blurb: "streaming-behaviour model" },
+    { key: "listenbrainz", label: "ListenBrainz", blurb: "open listen data" },
+  ];
+
+  function renderDiscovery(data) {
+    var d = data.discovery;
+    if (!d || !d.artists || !d.artists.length) return;
+
+    var el = document.getElementById("disc-total");
+    if (el) countUp(el, d.totalCandidates || d.artists.length, 0);
+    var a3 = document.getElementById("disc-all3");
+    if (a3) countUp(a3, d.allThree || 0, 0);
+    var sd = document.getElementById("disc-seeds");
+    if (sd) countUp(sd, d.seeds || 0, 0);
+
+    var best = (d.overlap || []).slice().sort(function (x, y) {
+      return (y.jaccard || 0) - (x.jaccard || 0);
+    })[0];
+    var ag = document.getElementById("disc-agree");
+    if (ag && best) ag.textContent = pct(best.jaccard, 0);
+
+    // --- engine comparison: shared vs unique, exactly 3 series
+    var width = widthOf("disc-holder");
+    if (width) {
+      var rows = ENGINE_META.map(function (m, i) {
+        var e = (d.engines || {})[m.key] || { suggested: 0, uniqueToIt: 0 };
+        return {
+          key: m.key, label: m.label, color: CAT[i],
+          total: e.suggested, unique: e.uniqueToIt,
+          shared: Math.max(0, e.suggested - e.uniqueToIt),
+        };
+      });
+
+      var rowH = 46;
+      var margin = { top: 8, right: 128, bottom: 26, left: 116 };
+      var innerW = Math.max(120, width - margin.left - margin.right);
+      var height = rows.length * rowH + margin.top + margin.bottom;
+
+      var svg = d3.select("#disc-svg")
+        .attr("viewBox", "0 0 " + width + " " + height)
+        .attr("width", width).attr("height", height);
+      svg.selectAll("*").remove();
+      var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var x = d3.scaleLinear()
+        .domain([0, d3.max(rows, function (r0) { return r0.total; })]).nice().range([0, innerW]);
+      var y = d3.scaleBand().domain(rows.map(function (r0) { return r0.key; }))
+        .range([0, rows.length * rowH]).padding(0.42);
+
+      g.selectAll("line.grid-line").data(x.ticks(5)).join("line")
+        .attr("class", "grid-line")
+        .attr("x1", function (t) { return x(t); }).attr("x2", function (t) { return x(t); })
+        .attr("y1", 0).attr("y2", rows.length * rowH);
+
+      // Shared portion in the engine's hue, unique portion in the same hue at
+      // lower opacity — one hue per engine, so identity stays with the entity.
+      var grp = g.selectAll("g.erow").data(rows).join("g")
+        .attr("class", "erow")
+        .attr("transform", function (r0) { return "translate(0," + y(r0.key) + ")"; });
+
+      grp.append("rect")
+        .attr("class", "bar")
+        .attr("x", 0).attr("height", y.bandwidth()).attr("rx", 4)
+        .attr("fill", function (r0) { return r0.color; })
+        .attr("width", function (r0) { return Math.max(2, x(r0.shared)); });
+
+      grp.append("rect")
+        .attr("class", "bar")
+        .attr("x", function (r0) { return x(r0.shared); })
+        .attr("height", y.bandwidth()).attr("rx", 4)
+        .attr("fill", function (r0) { return r0.color; })
+        .attr("opacity", 0.34)
+        .attr("width", function (r0) { return Math.max(2, x(r0.unique)); });
+
+      bindTip(grp, function (r0) {
+        return "<strong>" + r0.label + "</strong><span class='tt-meta'>" +
+          r0.total + " suggested · " + r0.shared + " also named by another engine · " +
+          r0.unique + " unique to it</span>";
+      });
+
+      grp.append("text")
+        .attr("class", "tick-label tick-label--strong")
+        .attr("x", -10).attr("y", y.bandwidth() / 2).attr("dy", "0.35em")
+        .attr("text-anchor", "end")
+        .text(function (r0) { return r0.label; });
+
+      grp.append("text")
+        .attr("class", "value-label")
+        .attr("x", function (r0) { return x(r0.total) + 8; })
+        .attr("y", y.bandwidth() / 2).attr("dy", "0.35em")
+        .text(function (r0) { return r0.total + " (" + r0.unique + " only here)"; });
+
+      g.append("line").attr("class", "axis-line")
+        .attr("x1", 0).attr("x2", innerW)
+        .attr("y1", rows.length * rowH).attr("y2", rows.length * rowH);
+
+      g.selectAll("text.xtick").data(x.ticks(5)).join("text")
+        .attr("class", "tick-label xtick")
+        .attr("x", function (t) { return x(t); })
+        .attr("y", rows.length * rowH + 16)
+        .attr("text-anchor", "middle")
+        .text(function (t) { return t; });
+    }
+
+    var legend = clear("disc-legend");
+    if (legend) {
+      ENGINE_META.forEach(function (m, i) {
+        var item = document.createElement("span");
+        item.className = "legend-item";
+        var sw = document.createElement("span");
+        sw.className = "legend-swatch";
+        sw.style.background = CAT[i];
+        var t = document.createElement("span");
+        t.textContent = m.label + " — " + m.blurb;
+        item.appendChild(sw); item.appendChild(t);
+        legend.appendChild(item);
+      });
+    }
+
+    var cap = document.getElementById("disc-caption");
+    if (cap && d.overlap) {
+      cap.textContent =
+        "Solid is artists another engine also named; faded is unique to that engine. " +
+        d.overlap.map(function (o) {
+          return labelFor(o.a) + "/" + labelFor(o.b) + " " + pct(o.jaccard, 0);
+        }).join(" · ") +
+        " overlap (Jaccard). Low numbers are the point — these engines are " +
+        "looking at genuinely different data.";
+    }
+
+    // --- the suggestions themselves
+    var list = clear("disc-list");
+    if (!list) return;
+    d.artists.forEach(function (a) {
+      var item = document.createElement("a");
+      item.className = "disc-item" + (a.agreement === 3 ? " disc-item--consensus" : "");
+      item.href = "https://open.spotify.com/search/" + encodeURIComponent(a.name);
+      item.target = "_blank";
+      item.rel = "noopener";
+
+      var nm = document.createElement("div");
+      nm.className = "disc-item-name";
+      nm.appendChild(document.createTextNode(a.name));
+      var ar = document.createElement("span");
+      ar.className = "arrow";
+      ar.textContent = "→";
+      nm.appendChild(ar);
+      item.appendChild(nm);
+
+      if (a.via && a.via.length) {
+        var via = document.createElement("div");
+        via.className = "disc-item-via";
+        via.textContent = "because I play " + a.via.join(", ");
+        item.appendChild(via);
+      }
+
+      var dots = document.createElement("div");
+      dots.className = "disc-engines";
+      ENGINE_META.forEach(function (m) {
+        if (a.engines.indexOf(m.key) === -1) return;
+        var dot = document.createElement("span");
+        dot.className = "disc-dot disc-dot--" + m.key;
+        dot.title = m.label;
+        dots.appendChild(dot);
+      });
+      var count = document.createElement("span");
+      count.className = "disc-item-via";
+      count.style.margin = "0 0 0 0.3rem";
+      count.textContent = a.agreement === 3 ? "all three agree"
+        : a.agreement === 2 ? "two agree" : "one engine only";
+      dots.appendChild(count);
+      item.appendChild(dots);
+
+      list.appendChild(item);
+    });
+    // --- where only one engine spoke up
+    var solo = clear("disc-solo");
+    if (solo && d.soloByEngine) {
+      ENGINE_META.forEach(function (m, i) {
+        var picks = d.soloByEngine[m.key] || [];
+        if (!picks.length) return;
+        var col = document.createElement("div");
+        col.className = "disc-solo-col";
+
+        var h = document.createElement("h4");
+        var sw = document.createElement("span");
+        sw.className = "legend-swatch";
+        sw.style.background = CAT[i];
+        h.appendChild(sw);
+        h.appendChild(document.createTextNode("Only " + m.label));
+        col.appendChild(h);
+
+        var bl = document.createElement("p");
+        bl.className = "blurb";
+        bl.textContent = m.blurb;
+        col.appendChild(bl);
+
+        var ol = document.createElement("ol");
+        picks.forEach(function (a) {
+          var li = document.createElement("li");
+          var link = document.createElement("a");
+          link.href = "https://open.spotify.com/search/" + encodeURIComponent(a.name);
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = a.name;
+          li.appendChild(link);
+          if (a.via && a.via.length) {
+            var v = document.createElement("span");
+            v.textContent = "via " + a.via[0];
+            li.appendChild(v);
+          }
+          ol.appendChild(li);
+        });
+        col.appendChild(ol);
+        solo.appendChild(col);
+      });
+    }
+  }
+
+  function labelFor(key) {
+    var m = ENGINE_META.filter(function (x) { return x.key === key; })[0];
+    return m ? m.label : key;
+  }
+
   // ---------- 8. method ----------
 
   function renderMethod(data) {
@@ -1169,6 +1417,7 @@
     renderPlaylists(data);
     renderDrift(data);
     renderTable(data);
+    renderDiscovery(data);
     renderMethod(data);
   }
 
@@ -1179,6 +1428,7 @@
     renderTreemap(data);
     renderPlaylists(data);
     renderDrift(data);
+    renderDiscovery(data);
   }
 
   // Local preview can point at a sample file: music.html?data=…

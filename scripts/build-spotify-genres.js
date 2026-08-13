@@ -26,6 +26,7 @@
  *   --out <path>        override the output path
  *   --playlist-names <omit|full>   default omit; this repo is public
  *   --no-musicbrainz    skip the slow fallback; faster, thinner genre coverage
+ *   --no-discovery      skip the Last.fm suggestion lookups
  *
  * Data sources: Spotify supplies WHAT you listened to. Genres come from Last.fm
  * (falling back to MusicBrainz) because Spotify removed the artist `genres`
@@ -49,6 +50,7 @@ const ROOT = path.join(__dirname, "..");
 const DEFAULT_OUT = path.join(ROOT, "data", "spotify-genres.json");
 const CACHE_DIR = path.join(ROOT, ".cache", "spotify");
 const ARTIST_CACHE = path.join(CACHE_DIR, "artist-genres.json");
+const SUGGEST_CACHE = path.join(CACHE_DIR, "suggestions.json");
 
 const MIN_INTERVAL_MS = 120; // self-pacing gap between serial requests
 const REQ_TIMEOUT_MS = 20000;
@@ -62,6 +64,10 @@ const TOP_GENRES_PER_BLOCK = 150;
 const TOP_ARTISTS_EMITTED = 120;
 const MAX_UNMATCHED_LISTED = 200;
 const EXAMPLES_PER_GENRE = 8;
+const DISCOVERY_SEEDS = 60;        // most-played artists used as similarity seeds
+const CONSENSUS_MAX = 18;   // named by all three
+const SOLO_PER_ENGINE = 6;  // named by exactly one
+const SUGGESTIONS_PER_GENRE = 6;
 
 const MIN_GENRE_ARTISTS = 3;
 const MIN_EDGE_ARTISTS = 3;
@@ -118,6 +124,8 @@ const stats = {
   lastfmRateLimited: 0,
   lastfmResolved: 0,
   mbRequests: 0,
+  deezerRequests: 0,
+  lbRequests: 0,
   mbResolved: 0,
   unresolved: 0,
   warnings: [],
@@ -148,6 +156,7 @@ function parseArgs(argv) {
     else if (a === "--out") opts.out = path.resolve(argv[++i]);
     else if (a === "--playlist-names") opts.playlistNames = argv[++i];
     else if (a === "--no-musicbrainz") opts.noMusicbrainz = true; // read via MB_FALLBACK
+    else if (a === "--no-discovery") opts.noDiscovery = true;
     else if (a === "--help" || a === "-h") opts.help = true;
     else throw new Error(`unknown flag: ${a}`);
   }
@@ -728,12 +737,17 @@ function cleanTags(tags) {
   return out.sort();
 }
 
-let lastExternalAt = 0;
-async function paced(ms, fn) {
-  const gap = Date.now() - lastExternalAt;
+// One gate per host — MusicBrainz's 1 req/sec must not throttle Last.fm or Deezer.
+const paceGates = {};
+async function pacedBy(host, ms, fn) {
+  const last = paceGates[host] || 0;
+  const gap = Date.now() - last;
   if (gap < ms) await sleep(ms - gap);
-  lastExternalAt = Date.now();
+  paceGates[host] = Date.now();
   return fn();
+}
+async function paced(ms, fn) {
+  return pacedBy(ms >= 1000 ? "musicbrainz" : "lastfm", ms, fn);
 }
 
 async function lastfmTags(env, name) {
@@ -756,6 +770,278 @@ async function lastfmTags(env, name) {
   return cleanTags(
     list.filter((t) => Number(t && t.count) >= LASTFM_MIN_TAG_COUNT).map((t) => t && t.name)
   );
+}
+
+// ---------- discovery ----------------------------------------------------
+//
+// Spotify's /recommendations and /related-artists are both dead, so suggestions
+// come from Last.fm: similar-artist lookups seeded from what's actually played,
+// plus per-genre top artists. Everything already in the library is filtered out
+// by normalised name — the whole point is what ISN'T there.
+
+function normName(n) {
+  return String(n || "").toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+async function lastfmSimilar(env, name) {
+  const url =
+    "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&autocorrect=1&limit=25" +
+    `&artist=${encodeURIComponent(name)}&api_key=${env.lastfmKey}&format=json`;
+  const res = await paced(210, () => fetch(url, { signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.lastfmRequests++;
+  if (!res.ok) return [];
+  const data = await res.json();
+  const raw = (data && data.similarartists && data.similarartists.artist) || [];
+  const list = Array.isArray(raw) ? raw : [raw];
+  return list
+    .filter((a) => a && a.name)
+    .map((a) => ({ name: a.name, match: Number(a.match) || 0 }));
+}
+
+async function lastfmTagTopArtists(env, tag) {
+  const url =
+    "https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&limit=25" +
+    `&tag=${encodeURIComponent(tag)}&api_key=${env.lastfmKey}&format=json`;
+  const res = await paced(210, () => fetch(url, { signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.lastfmRequests++;
+  if (!res.ok) return [];
+  const data = await res.json();
+  const raw = (data && data.topartists && data.topartists.artist) || [];
+  const list = Array.isArray(raw) ? raw : [raw];
+  return list.filter((a) => a && a.name).map((a) => a.name);
+}
+
+// Deezer: public, no key, its own collaborative filtering over streaming
+// behaviour. Two calls per artist (search for the id, then related).
+async function deezerRelated(name) {
+  const sUrl = "https://api.deezer.com/search/artist?limit=1&q=" + encodeURIComponent(name);
+  const sRes = await pacedBy("deezer", 260, () => fetch(sUrl, { signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.deezerRequests++;
+  if (!sRes.ok) return [];
+  const sJson = await sRes.json();
+  const hit = sJson && sJson.data && sJson.data[0];
+  // Guard against fuzzy search drift — only trust a real name match.
+  if (!hit || !hit.id || normName(hit.name) !== normName(name)) return [];
+  const rRes = await pacedBy("deezer", 260, () =>
+    fetch(`https://api.deezer.com/artist/${hit.id}/related?limit=25`, { signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.deezerRequests++;
+  if (!rRes.ok) return [];
+  const rJson = await rRes.json();
+  return ((rJson && rJson.data) || []).filter((a) => a && a.name).map((a) => a.name);
+}
+
+// ListenBrainz: open listen data from MetaBrainz, keyed by MusicBrainz id — so
+// it needs an MBID lookup first, which is the slow part (1 req/sec).
+const LB_ALGORITHM =
+  "session_based_days_7500_session_300_contribution_5_threshold_10_limit_100_filter_True_skip_30";
+
+async function musicbrainzMbid(name) {
+  const url = "https://musicbrainz.org/ws/2/artist?fmt=json&limit=1&query=" +
+    encodeURIComponent(`artist:"${name}"`);
+  const res = await pacedBy("musicbrainz", 1100, () =>
+    fetch(url, { headers: { "User-Agent": MB_USER_AGENT, Accept: "application/json" },
+                 signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.mbRequests++;
+  if (!res.ok) return null;
+  const j = await res.json();
+  const hit = j && j.artists && j.artists[0];
+  return hit && Number(hit.score) >= 90 ? hit.id : null;
+}
+
+async function listenbrainzSimilar(mbid) {
+  const url = `https://labs.api.listenbrainz.org/similar-artists/json?artist_mbids=${mbid}` +
+    `&algorithm=${LB_ALGORITHM}`;
+  const res = await pacedBy("listenbrainz", 260, () =>
+    fetch(url, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(REQ_TIMEOUT_MS) }));
+  stats.lbRequests++;
+  if (!res.ok) return [];
+  const j = await res.json();
+  return (Array.isArray(j) ? j : []).filter((a) => a && a.name).slice(0, 25).map((a) => a.name);
+}
+
+function loadSuggestCache() {
+  try {
+    return JSON.parse(fs.readFileSync(SUGGEST_CACHE, "utf8"));
+  } catch (e) {
+    return { similar: {}, tags: {}, deezer: {}, lb: {}, mbid: {} };
+  }
+}
+
+function saveSuggestCache(c) {
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  const out = { similar: {}, tags: {}, deezer: {}, lb: {}, mbid: {} };
+  ["similar", "tags", "deezer", "lb", "mbid"].forEach((sec) => {
+    Object.keys(c[sec] || {}).sort().forEach((k) => (out[sec][k] = c[sec][k]));
+  });
+  fs.writeFileSync(SUGGEST_CACHE, JSON.stringify(out, null, 2) + "\n");
+}
+
+async function buildDiscovery(env, artistIndex, artistMass, genres) {
+  const empty = { discovery: [], genreSuggestions: {}, engines: {}, overlap: [], seeded: 0 };
+  if (!env.lastfmKey) return empty;
+
+  const known = new Set();
+  artistIndex.forEach((a) => { if (a.name) known.add(normName(a.name)); });
+
+  const cache = loadSuggestCache();
+  const massById = new Map(artistMass);
+  const seeds = [...massById.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, DISCOVERY_SEEDS)
+    .map(([id, mass]) => ({ artist: artistIndex.get(id), mass }))
+    .filter((x) => x.artist && x.artist.name);
+
+  console.log(
+    `  discovery: 3 engines over ${seeds.length} seed artist(s) + ${genres.length} genre(s)`
+  );
+
+  // engine key -> Map<normName, {name, score, via:[]}>
+  const ENGINES = ["lastfm", "deezer", "listenbrainz"];
+  const found = {};
+  ENGINES.forEach((e) => (found[e] = new Map()));
+
+  function record(engine, seedName, seedMass, name, weight) {
+    const nk = normName(name);
+    // The whole point is what ISN'T already in the library.
+    if (!nk || known.has(nk)) return;
+    const m = found[engine];
+    const e = m.get(nk) || { name: name, score: 0, via: [] };
+    e.score += weight * Math.log1p(seedMass);
+    if (e.via.length < 3 && e.via.indexOf(seedName) === -1) e.via.push(seedName);
+    m.set(nk, e);
+  }
+
+  for (let i = 0; i < seeds.length; i++) {
+    const { artist: seed, mass } = seeds[i];
+    const key = normName(seed.name);
+
+    // --- Last.fm: collaborative filtering over scrobbles
+    let sims = cache.similar[key];
+    if (!sims) {
+      try { sims = await lastfmSimilar(env, seed.name); } catch (e) { sims = []; }
+      cache.similar[key] = sims;
+    }
+    sims.forEach((sm) => record("lastfm", seed.name, mass, sm.name, sm.match || 0.1));
+
+    // --- Deezer: its own CF over streaming behaviour
+    let dz = cache.deezer[key];
+    if (!dz) {
+      try { dz = await deezerRelated(seed.name); } catch (e) { dz = []; }
+      cache.deezer[key] = dz;
+    }
+    // Deezer returns a ranked list with no score; decay by position.
+    dz.forEach((n, idx) => record("deezer", seed.name, mass, n, 1 / (idx + 2)));
+
+    // --- ListenBrainz: open listen data, needs an MBID first
+    if (!(key in cache.mbid)) {
+      try { cache.mbid[key] = await musicbrainzMbid(seed.name); } catch (e) { cache.mbid[key] = null; }
+    }
+    const mbid = cache.mbid[key];
+    if (mbid) {
+      let lb = cache.lb[key];
+      if (!lb) {
+        try { lb = await listenbrainzSimilar(mbid); } catch (e) { lb = []; }
+        cache.lb[key] = lb;
+      }
+      lb.forEach((n, idx) => record("listenbrainz", seed.name, mass, n, 1 / (idx + 2)));
+    }
+
+    if (i % 5 === 0) {
+      process.stdout.write(
+        `\r  discovery… seed ${i + 1}/${seeds.length}  ` +
+          ENGINES.map((e) => `${e} ${found[e].size}`).join(" · ") + "     "
+      );
+      if (i % 20 === 0) saveSuggestCache(cache);
+    }
+  }
+  process.stdout.write("\r" + " ".repeat(90) + "\r");
+
+  // --- union across engines: who named whom
+  const union = new Map();
+  ENGINES.forEach((eng) => {
+    found[eng].forEach((v, nk) => {
+      const u = union.get(nk) || { name: v.name, engines: [], score: 0, via: [] };
+      u.engines.push(eng);
+      u.score += v.score;
+      v.via.forEach((n) => { if (u.via.length < 3 && u.via.indexOf(n) === -1) u.via.push(n); });
+      union.set(nk, u);
+    });
+  });
+
+  const shape = (u) => ({
+    name: u.name,
+    engines: u.engines.slice().sort(),
+    agreement: u.engines.length,
+    via: u.via,
+    score: r(u.score, 3),
+  });
+  const byScore = (a, b) => b.score - a.score || a.name.localeCompare(b.name);
+
+  // Consensus picks: every engine independently named these.
+  const consensus = [...union.values()]
+    .filter((u) => u.engines.length === 3)
+    .map(shape).sort(byScore).slice(0, CONSENSUS_MAX);
+
+  // And the opposite — each engine's strongest pick that NO other engine made.
+  // A list of only-consensus results would hide exactly what this section is
+  // about, so both halves get shown.
+  const soloByEngine = {};
+  ENGINES.forEach((eng) => {
+    soloByEngine[eng] = [...union.values()]
+      .filter((u) => u.engines.length === 1 && u.engines[0] === eng)
+      .map(shape).sort(byScore).slice(0, SOLO_PER_ENGINE);
+  });
+
+  const discovery = consensus;
+
+  // --- how the engines compare
+  const sets = {};
+  ENGINES.forEach((e) => (sets[e] = new Set(found[e].keys())));
+  const engines = {};
+  ENGINES.forEach((e) => {
+    const others = ENGINES.filter((o) => o !== e);
+    let uniq = 0;
+    sets[e].forEach((k) => { if (!others.some((o) => sets[o].has(k))) uniq++; });
+    engines[e] = { suggested: sets[e].size, uniqueToIt: uniq };
+  });
+
+  const overlap = [];
+  for (let i = 0; i < ENGINES.length; i++) {
+    for (let j = i + 1; j < ENGINES.length; j++) {
+      const a = sets[ENGINES[i]], b = sets[ENGINES[j]];
+      let inter = 0;
+      a.forEach((k) => { if (b.has(k)) inter++; });
+      const unionSize = a.size + b.size - inter;
+      overlap.push({
+        a: ENGINES[i], b: ENGINES[j], shared: inter,
+        jaccard: unionSize > 0 ? r(inter / unionSize, 4) : null,
+      });
+    }
+  }
+  let allThree = 0;
+  union.forEach((u) => { if (u.engines.length === 3) allThree++; });
+
+  // --- per-genre suggestions for the detail panel (popularity, not personalised)
+  const genreSuggestions = {};
+  for (let i = 0; i < genres.length; i++) {
+    const g = genres[i];
+    let top = cache.tags[g];
+    if (!top) {
+      try { top = await lastfmTagTopArtists(env, g); } catch (e) { top = []; }
+      cache.tags[g] = top;
+    }
+    const fresh = top.filter((n) => !known.has(normName(n))).slice(0, SUGGESTIONS_PER_GENRE);
+    if (fresh.length) genreSuggestions[g] = fresh;
+    if (i % 25 === 0) process.stdout.write(`\r  discovery… genre ${i + 1}/${genres.length}     `);
+  }
+  process.stdout.write("\r" + " ".repeat(60) + "\r");
+
+  saveSuggestCache(cache);
+  return {
+    discovery, soloByEngine, genreSuggestions, engines, overlap,
+    totalCandidates: union.size, allThree, seeded: seeds.length,
+  };
 }
 
 async function musicbrainzTags(name) {
@@ -1911,6 +2197,12 @@ async function main() {
     if (list.length) genreExamples[g] = list;
   });
 
+  // ---- discovery: what ISN'T in the library, from Last.fm
+  const discoveryGenres = [...wanted].filter((g) => combinedTopGenres.has(g)).sort().slice(0, 200);
+  const disc = opts.noDiscovery
+    ? { discovery: [], genreSuggestions: {}, seeded: 0 }
+    : await buildDiscovery(env, artistIndex, artistMass, discoveryGenres);
+
   // ---- top artists list
   const topArtistList = [...artistMass.entries()]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
@@ -1936,6 +2228,9 @@ async function main() {
     provenance: {
       listening: "Spotify Web API (saved tracks, playlists, top artists/tracks, recent plays)",
       genres: "Last.fm artist.getTopTags, falling back to MusicBrainz",
+      suggestions:
+        "Last.fm artist.getSimilar seeded from the most-played artists, plus " +
+        "tag.getTopArtists per genre. Anything already in the library is filtered out.",
       genresNote:
         "Spotify removed the artist `genres` field; its docs still list it but the live " +
         "API no longer returns it. Genre sources are matched on artist NAME, so " +
@@ -1978,6 +2273,21 @@ async function main() {
     playlists: playlistBlocks,
     graph,
     genreExamples,
+    discovery: {
+      artists: disc.discovery,
+      soloByEngine: disc.soloByEngine || {},
+      engines: disc.engines,
+      overlap: disc.overlap,
+      seeds: disc.seeded,
+      totalCandidates: disc.totalCandidates,
+      allThree: disc.allThree,
+      note:
+        "Three independent recommenders, seeded from the most-played artists. " +
+        "Anything already in the library is filtered out. Last.fm and ListenBrainz " +
+        "are collaborative filtering over listening logs (commercial scrobbles and " +
+        "open listen data); Deezer is its own streaming-behaviour model.",
+    },
+    genreSuggestions: disc.genreSuggestions,
     taxonomy: buildTaxonomyReport(combined),
     artists: topArtistList,
     warnings: [...new Set(stats.warnings)].sort(),
@@ -2045,6 +2355,18 @@ async function main() {
     console.log(
       `  playlists skipped: ${stats.playlistsForbidden} Spotify-owned (403), ` +
         `${stats.playlistsMissing} unavailable (404), ${stats.playlistsOversize} oversize`
+    );
+  }
+  if (disc.seeded) {
+    console.log(
+      `  discovery: ${disc.totalCandidates} candidate(s) from ${disc.seeded} seed(s); ` +
+        `${disc.allThree} named by all three engines`
+    );
+    Object.entries(disc.engines).forEach(([e, v]) =>
+      console.log(`    ${e.padEnd(14)} ${String(v.suggested).padStart(4)} suggested, ${v.uniqueToIt} unique to it`)
+    );
+    disc.overlap.forEach((o) =>
+      console.log(`    ${(o.a + " ∩ " + o.b).padEnd(28)} ${String(o.shared).padStart(4)} shared  (Jaccard ${o.jaccard})`)
     );
   }
   console.log(

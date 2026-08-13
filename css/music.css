@@ -553,3 +553,105 @@
 @media (prefers-reduced-motion: reduce) {
   .legend-item { transition: none; }
 }
+
+/* ---------- discovery ---------- */
+
+.disc-list-head { margin-bottom: 1.1rem; }
+
+.disc-list-head h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.disc-list-head p { margin: 0; font-size: 0.86rem; color: var(--muted); }
+
+.disc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hairline-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.disc-item {
+  background: var(--paper-2);
+  padding: 0.85rem 1rem;
+  display: block;
+  transition: background 0.16s ease;
+}
+
+.disc-item:hover { background: var(--paper); }
+
+.disc-item-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.disc-item-name .arrow { color: var(--rust); font-size: 0.8rem; }
+
+.disc-item-via {
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  line-height: 1.45;
+}
+
+/* Engine badges — the three validated categorical slots, one per engine. */
+.disc-engines { display: flex; gap: 0.28rem; margin-top: 0.45rem; }
+
+.disc-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--deemph);
+}
+
+.disc-dot--lastfm { background: var(--cat-1); }
+.disc-dot--deezer { background: var(--cat-2); }
+.disc-dot--listenbrainz { background: var(--cat-3); }
+
+.disc-item--consensus { background: var(--paper-3); }
+
+@media (max-width: 880px) { .disc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .disc-grid { grid-template-columns: 1fr; } }
+
+.disc-solo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+
+.disc-solo-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin: 0 0 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: var(--ink);
+}
+
+.disc-solo-col .blurb {
+  font-size: 0.76rem;
+  color: var(--faint);
+  margin: 0 0 0.75rem;
+}
+
+.disc-solo-col ol { list-style: none; margin: 0; padding: 0; }
+
+.disc-solo-col li {
+  border-top: 1px solid var(--hairline-soft);
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.disc-solo-col li a { color: var(--ink); font-weight: 500; }
+.disc-solo-col li a:hover { color: var(--rust); }
+.disc-solo-col li span { display: block; font-size: 0.74rem; color: var(--muted); }
+
+@media (max-width: 880px) { .disc-solo { grid-template-columns: 1fr; gap: 1.6rem; } }

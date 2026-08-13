@@ -331,11 +331,78 @@
       </div>
     </section>
 
-    <!-- ============ 08 METHOD ============ -->
-    <section class="section" id="method">
+    <!-- ============ 08 DISCOVERY ============ -->
+    <section class="section" id="discovery">
       <div class="container">
         <div class="section-head reveal">
           <span class="sec-num">08</span>
+          <h2>Three recommenders, compared</h2>
+        </div>
+        <p class="section-lede reveal">
+          Spotify's recommendation endpoints were switched off in 2024, so this asks
+          three others instead — <strong>Last.fm</strong> and <strong>ListenBrainz</strong>,
+          both collaborative filtering over listening logs, and <strong>Deezer</strong>,
+          its own model of streaming behaviour. Each was seeded with the artists I play
+          most, and anything already in the library was thrown out. What's left is a
+          decent look at how much these engines actually agree.
+        </p>
+
+        <div class="hero-stats reveal" id="disc-stats">
+          <div class="stat">
+            <div class="stat-num" id="disc-total">—</div>
+            <div class="stat-label">artists suggested in total</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="disc-all3">—</div>
+            <div class="stat-label">named by all three</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="disc-seeds">—</div>
+            <div class="stat-label">seed artists</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="disc-agree">—</div>
+            <div class="stat-label">strongest pairwise agreement</div>
+          </div>
+        </div>
+
+        <div class="viz-card reveal" style="margin-top:1.4rem">
+          <div class="viz-legend viz-legend--static" id="disc-legend"></div>
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="disc-holder">
+              <svg id="disc-svg" role="img" aria-labelledby="disc-desc"></svg>
+              <p class="visually-hidden" id="disc-desc">Bar chart comparing how many artists each recommendation engine suggested, and how many were unique to it.</p>
+            </div>
+            <figcaption class="viz-caption" id="disc-caption"></figcaption>
+          </figure>
+        </div>
+
+        <div class="viz-card reveal" style="margin-top:1.4rem">
+          <div class="disc-list-head">
+            <h3>Where all three agreed</h3>
+            <p>Every engine named these independently. Click an artist to search it on Spotify.</p>
+          </div>
+          <div class="disc-grid" id="disc-list"></div>
+        </div>
+
+        <div class="viz-card reveal" style="margin-top:1.4rem">
+          <div class="disc-list-head">
+            <h3>Where only one did</h3>
+            <p>
+              Each engine's strongest pick that neither of the others made. This is
+              where their different source data shows most plainly.
+            </p>
+          </div>
+          <div class="disc-solo" id="disc-solo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 09 METHOD ============ -->
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">09</span>
           <h2>What this gets wrong</h2>
         </div>
         <p class="section-lede reveal">
@@ -447,6 +514,10 @@
     </div>
     <div class="genre-panel-label">Artists tagged with this</div>
     <div class="genre-panel-chips" id="gp-artists-list"></div>
+    <div id="gp-suggest" hidden>
+      <div class="genre-panel-label">Not in your library</div>
+      <div class="genre-panel-chips" id="gp-suggest-list"></div>
+    </div>
     <div id="gp-neighbours" hidden>
       <div class="genre-panel-label">Shares artists with</div>
       <div class="genre-panel-chips" id="gp-neighbour-list"></div>
