@@ -130,6 +130,99 @@
     }).length;
   }
 
+  // ---------- genre detail panel ----------
+  //
+  // One panel, opened from the constellation, the treemap or the table. Fixed
+  // position so it doesn't matter where on the page the click came from.
+
+  var genreLookup = {};   // genre -> row from combined.genres
+  var neighbourLookup = {}; // genre -> [{id, weight}] from the co-occurrence graph
+  var panelData = null;
+
+  function buildGenreLookups(data) {
+    (data.combined.genres || []).forEach(function (g) { genreLookup[g.name] = g; });
+    (data.graph.links || []).forEach(function (l) {
+      (neighbourLookup[l.source] = neighbourLookup[l.source] || []).push({ id: l.target, weight: l.weight });
+      (neighbourLookup[l.target] = neighbourLookup[l.target] || []).push({ id: l.source, weight: l.weight });
+    });
+    Object.keys(neighbourLookup).forEach(function (k) {
+      neighbourLookup[k].sort(function (a, b) { return b.weight - a.weight; });
+    });
+    panelData = data;
+  }
+
+  function openGenre(name) {
+    var panel = document.getElementById("genre-panel");
+    if (!panel || !panelData) return;
+    var row = genreLookup[name];
+    var examples = (panelData.genreExamples || {})[name] || [];
+
+    document.getElementById("gp-name").textContent = name;
+    document.getElementById("gp-family").textContent =
+      (row && row.family) || (panelData.graph.nodes.filter(function (n) { return n.id === name; })[0] || {}).family || "—";
+    document.getElementById("gp-share").textContent = row ? pct(row.share, 2) : "—";
+    document.getElementById("gp-tracks").textContent = row ? String(row.tracks) : "—";
+
+    var list = clear("gp-artists-list");
+    if (examples.length) {
+      examples.forEach(function (n) {
+        var c = document.createElement("span");
+        c.className = "chip";
+        c.textContent = n;
+        list.appendChild(c);
+      });
+    } else {
+      var none = document.createElement("span");
+      none.className = "chip";
+      none.textContent = "no examples recorded";
+      list.appendChild(none);
+    }
+
+    // Neighbouring genres are clickable, so the panel doubles as a way to walk
+    // the graph without hunting for the dot.
+    var nbrWrap = document.getElementById("gp-neighbours");
+    var nbrList = clear("gp-neighbour-list");
+    var nbrs = (neighbourLookup[name] || []).slice(0, 6);
+    if (nbrs.length && nbrList) {
+      nbrs.forEach(function (n) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        b.textContent = n.id;
+        b.addEventListener("click", function () { openGenre(n.id); });
+        nbrList.appendChild(b);
+      });
+      nbrWrap.hidden = false;
+    } else if (nbrWrap) {
+      nbrWrap.hidden = true;
+    }
+
+    panel.hidden = false;
+    highlightTableRow(name);
+  }
+
+  function closeGenre() {
+    var panel = document.getElementById("genre-panel");
+    if (panel) panel.hidden = true;
+    highlightTableRow(null);
+  }
+
+  function highlightTableRow(name) {
+    var table = document.getElementById("genre-table");
+    if (!table) return;
+    table.querySelectorAll("tbody tr").forEach(function (tr) {
+      tr.classList.toggle("is-selected", !!name && tr.getAttribute("data-genre") === name);
+    });
+  }
+
+  (function wirePanelChrome() {
+    var close = document.getElementById("gp-close");
+    if (close) close.addEventListener("click", closeGenre);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeGenre();
+    });
+  })();
+
   // ---------- 1. constellation ----------
 
   var constellationState = { selected: null, data: null };
@@ -208,11 +301,13 @@
       .attr("fill", function (d) { return seqScale(d.weight); })
       .style("cursor", "pointer");
 
+    node.on("click", function (evt, d) { openGenre(d.id); });
+
     bindTip(node, function (d) {
       return "<strong>" + d.id + "</strong>" +
         "<span class='tt-meta'>" + d.family + " · " + d.artists + " artist" +
         (d.artists === 1 ? "" : "s") + " · " + d.degree + " link" +
-        (d.degree === 1 ? "" : "s") + "</span>";
+        (d.degree === 1 ? "" : "s") + "<br>click to see the artists</span>";
     });
 
     // The family anchor has to outweigh the link force, or cross-family links
@@ -577,10 +672,16 @@
     if (cap) {
       var sv = data.sources.saved.metrics.genre.effectiveGenres;
       var rc = data.sources.recent.metrics.genre.effectiveGenres;
+      var sx = data.sources.saved.extra || {};
+      // A --limit build must not present its own cap as the size of the library.
+      var samplingNote = sx.sampled && sx.libraryTotal
+        ? " The saved library here is a " + data.sources.saved.items + "-track sample of " +
+          sx.libraryTotal + ", so read that column as indicative."
+        : "";
       cap.textContent =
         "Effective genres: " + num(sv) + " across the saved library versus " + num(rc) +
         " across recent plays. Recent plays are the last 50 tracks only, so that " +
-        "number is naturally the twitchiest of the three.";
+        "number is naturally the twitchiest of the three." + samplingNote;
     }
   }
 
@@ -632,6 +733,8 @@
       .attr("height", function (d) { return Math.max(0, d.y1 - d.y0); })
       .attr("rx", 2)
       .attr("fill", function (d) { return seq(d.value); });
+
+    cell.on("click", function (evt, d) { openGenre(d.data.name); });
 
     bindTip(cell, function (d) {
       return "<strong>" + d.data.name + "</strong><span class='tt-meta'>" +
@@ -959,6 +1062,8 @@
       var frag = document.createDocumentFragment();
       rows.forEach(function (r) {
         var tr = document.createElement("tr");
+        tr.setAttribute("data-genre", r.name);
+        tr.addEventListener("click", function () { openGenre(r.name); });
         var td1 = document.createElement("td");
         td1.textContent = r.name;
         var td2 = document.createElement("td");
@@ -1055,6 +1160,7 @@
   // ---------- boot ----------
 
   function renderAll(data) {
+    buildGenreLookups(data);
     renderHeadline(data);
     renderConstellation(data);
     renderFamilies(data);

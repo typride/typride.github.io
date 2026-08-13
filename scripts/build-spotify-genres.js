@@ -61,6 +61,7 @@ const SKIP_PLAYLIST_OVER = 2500; // skip monster followed playlists entirely
 const TOP_GENRES_PER_BLOCK = 150;
 const TOP_ARTISTS_EMITTED = 120;
 const MAX_UNMATCHED_LISTED = 200;
+const EXAMPLES_PER_GENRE = 8;
 
 const MIN_GENRE_ARTISTS = 3;
 const MIN_EDGE_ARTISTS = 3;
@@ -72,6 +73,9 @@ const MB_FALLBACK = !process.argv.includes("--no-musicbrainz");
 
 // Spotify id -> artist name, harvested from track objects as they stream past.
 const artistNames = new Map();
+
+// Filled from the API's own `total` on /me/tracks.
+const savedTotals = { total: null };
 
 const UNCLASSIFIED = "__unclassified__";
 const FAMILY_UNCLASSIFIED = "Unclassified";
@@ -436,6 +440,11 @@ async function getPaged(env, firstUrl, opts = {}) {
   while (url && out.length < max) {
     const page = await spotifyFetch(env, url, opts);
     if (!page) break;
+    // Record what the API says exists, so a --limit build can report that it
+    // sampled rather than presenting the cap as the real size of the library.
+    if (opts.totals && page.total != null && opts.totals.total == null) {
+      opts.totals.total = page.total;
+    }
     const items = page.items || [];
     out.push(...items);
     if (opts.onPage) opts.onPage(out.length);
@@ -511,6 +520,7 @@ async function fetchMe(env, opts) {
 async function fetchSavedTracks(env, opts) {
   const items = await getPaged(env, `${API}/me/tracks?limit=50`, {
     ...opts,
+    totals: savedTotals,
     max: opts.limit,
     onPage: (n) => process.stdout.write(`\r  saved tracks… ${n}`),
   });
@@ -1840,6 +1850,14 @@ async function main() {
 
   const combined = mergeBags("mixed", COMBINE_SOURCES.map((k) => bags[k]));
   assertMass(combined, "combined");
+  // The genres that will actually appear in the emitted table/treemap.
+  const combinedTopGenres = new Set(
+    [...combined.w.entries()]
+      .filter(([g]) => g !== UNCLASSIFIED)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, TOP_GENRES_PER_BLOCK)
+      .map(([g]) => g)
+  );
 
   // ---- per-window detail for the taste-drift panel
   const windowsDetail = {};
@@ -1867,6 +1885,31 @@ async function main() {
   countArtists(recent);
 
   const graph = buildGraph(artistIndex, artistMass);
+
+  // ---- example artists per genre, so a genre can be clicked to see who's in it
+  const genreArtistPool = new Map();
+  artistIndex.forEach((a, id) => {
+    if (!a.name) return;
+    const mass = artistMass.get(id) || 0;
+    artistGenres(a).forEach((g) => {
+      const arr = genreArtistPool.get(g) || [];
+      arr.push({ name: a.name, mass });
+      genreArtistPool.set(g, arr);
+    });
+  });
+  // Only emit for genres the page can surface (table/treemap rows + graph nodes),
+  // so this stays a few tens of KB rather than covering all 1,100.
+  const wanted = new Set(graph.nodes.map((n) => n.id));
+  const genreExamples = {};
+  [...genreArtistPool.keys()].sort().forEach((g) => {
+    if (!wanted.has(g) && !combinedTopGenres.has(g)) return;
+    const list = genreArtistPool
+      .get(g)
+      .sort((x, y) => y.mass - x.mass || x.name.localeCompare(y.name))
+      .slice(0, EXAMPLES_PER_GENRE)
+      .map((x) => x.name);
+    if (list.length) genreExamples[g] = list;
+  });
 
   // ---- top artists list
   const topArtistList = [...artistMass.entries()]
@@ -1921,7 +1964,10 @@ async function main() {
     profile: { displayName: me.displayName, country: me.country },
     families: FAMILIES.slice().sort(),
     sources: {
-      saved: buildSourceBlock(bagSaved),
+      saved: buildSourceBlock(bagSaved, {
+        libraryTotal: savedTotals.total,
+        sampled: savedTotals.total != null && bagSaved.items < savedTotals.total,
+      }),
       playlistsOwned: buildSourceBlock(bagOwned),
       playlistsFollowed: buildSourceBlock(bagFollowed),
       topArtists: buildSourceBlock(bagTopArtists, { windows: windowsDetail }),
@@ -1931,6 +1977,7 @@ async function main() {
     combined: { ...buildSourceBlock(combined), includes: COMBINE_SOURCES.slice() },
     playlists: playlistBlocks,
     graph,
+    genreExamples,
     taxonomy: buildTaxonomyReport(combined),
     artists: topArtistList,
     warnings: [...new Set(stats.warnings)].sort(),

@@ -160,6 +160,7 @@
           one kind of music touches another in what I play — usually through a single
           artist sitting in both. Bigger, darker dot means more listening. Clusters are
           grouped by family for readability; the links inside them are earned.
+          <strong>Click any dot</strong> to see which artists are in that genre.
         </p>
 
         <div class="viz-card reveal">
@@ -307,7 +308,8 @@
           <h2>The whole list</h2>
         </div>
         <p class="section-lede reveal">
-          Every chart above, as numbers. Click a column to sort.
+          Every chart above, as numbers. Click a column to sort, or a row to see
+          the artists in that genre.
         </p>
         <div class="viz-card reveal">
           <div class="table-wrap">
@@ -432,6 +434,24 @@
   </main>
 
   <div class="viz-tooltip" id="viz-tooltip" role="status" aria-live="polite" hidden></div>
+
+  <!-- Genre detail — opened by clicking any genre in the constellation, the
+       treemap or the table. Fixed, so it works wherever you are on the page. -->
+  <aside class="genre-panel" id="genre-panel" hidden aria-labelledby="gp-name">
+    <button class="genre-panel-close" id="gp-close" type="button" aria-label="Close genre detail">×</button>
+    <div class="genre-panel-kicker" id="gp-family">—</div>
+    <h3 class="genre-panel-name" id="gp-name">—</h3>
+    <div class="genre-panel-stats">
+      <span><strong id="gp-share">—</strong> of listening</span>
+      <span><strong id="gp-tracks">—</strong> tracks</span>
+    </div>
+    <div class="genre-panel-label">Artists tagged with this</div>
+    <div class="genre-panel-chips" id="gp-artists-list"></div>
+    <div id="gp-neighbours" hidden>
+      <div class="genre-panel-label">Shares artists with</div>
+      <div class="genre-panel-chips" id="gp-neighbour-list"></div>
+    </div>
+  </aside>
 
   <footer class="site-footer">
     <div class="container footer-inner">

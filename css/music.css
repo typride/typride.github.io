@@ -298,6 +298,109 @@
   margin-top: 0.15rem;
 }
 
+/* ---------- genre detail panel ---------- */
+
+.genre-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+  width: 320px;
+  max-height: 68vh;
+  overflow-y: auto;
+  background: var(--paper-2);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(33, 29, 24, 0.18);
+  padding: 1.2rem 1.3rem 1.3rem;
+}
+
+.genre-panel-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--faint);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+}
+
+.genre-panel-close:hover { color: var(--ink); background: var(--paper-3); }
+
+.genre-panel-kicker {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.4rem;
+}
+
+.genre-panel-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.7rem;
+  padding-right: 1.2rem;
+  line-height: 1.2;
+}
+
+.genre-panel-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+
+.genre-panel-stats strong {
+  font-family: var(--font-mono);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.genre-panel-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0.95rem 0 0.55rem;
+}
+
+.genre-panel-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.genre-panel-chips .chip { font-size: 0.76rem; padding: 0.26rem 0.66rem; }
+
+/* Neighbouring genres are clickable — they re-open the panel on that genre. */
+.genre-panel-chips button.chip {
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--muted);
+}
+
+.genre-panel-chips button.chip:hover { color: var(--rust); border-color: var(--rust); }
+
+.node-circle, .treemap-cell { cursor: pointer; }
+.data-table tbody tr { cursor: pointer; }
+.data-table tbody tr.is-selected td { background: var(--paper-3); }
+
+@media (max-width: 640px) {
+  .genre-panel {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    width: auto;
+    max-height: 56vh;
+  }
+}
+
 /* ---------- table ---------- */
 
 .table-wrap { max-height: 520px; overflow: auto; border-radius: 10px; }
