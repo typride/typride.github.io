@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-09-16T11:03:31.036Z",
+  "asOf": "2026-09-16T12:57:54.636Z",
   "generatedBy": "scripts/build-listening-history.js",
   "provenance": {
     "listening": "Spotify account-data export (StreamingHistory_music_*.json): every play in the last ~12 months, with duration",
-    "genres": null,
+    "genres": "Same providers and rule table as the genre page, matched on artist name",
     "timezone": "America/Los_Angeles"
   },
   "notes": {
@@ -12,7 +12,7 @@
     "hourOfDay": "Each play is attributed to the local hour it started, not the hour it ended.",
     "newArtists": "An artist is new in the month it first appears in this window. The first month is null by construction.",
     "partialMonths": "Months with fewer than 7 days of listening are flagged partial; they sit in the totals but should not be drawn.",
-    "genres": null
+    "genres": "Genres are looked up by artist name (the export has no ids), most-played artists first, until 90% of play time was covered or the source ran dry. Artists with no genre anywhere are left out of the family mix and counted in the coverage figure."
   },
   "span": {
     "from": "2025-09-02",
@@ -565,7 +565,374 @@
       "hours": 0.52
     }
   ],
-  "genreCoverage": null,
-  "familiesYear": null,
-  "familiesByMonth": null
+  "genreCoverage": {
+    "timeShare": 0.6694,
+    "artistsResolved": 1071,
+    "artistsTotal": 2987,
+    "askedShare": 0.9,
+    "sources": {
+      "site": 479,
+      "musicbrainz": 592
+    }
+  },
+  "familiesYear": [
+    {
+      "family": "Electronic",
+      "hours": 126.86,
+      "share": 0.383
+    },
+    {
+      "family": "Rock",
+      "hours": 65.64,
+      "share": 0.1982
+    },
+    {
+      "family": "R&B / Soul",
+      "hours": 22.94,
+      "share": 0.0693
+    },
+    {
+      "family": "Hip Hop",
+      "hours": 21.43,
+      "share": 0.0647
+    },
+    {
+      "family": "Pop",
+      "hours": 16.24,
+      "share": 0.049
+    },
+    {
+      "family": "Ambient / Experimental",
+      "hours": 15.78,
+      "share": 0.0476
+    },
+    {
+      "family": "Folk / Country",
+      "hours": 15.15,
+      "share": 0.0458
+    },
+    {
+      "family": "Other",
+      "hours": 9.42,
+      "share": 0.0284
+    },
+    {
+      "family": "Jazz",
+      "hours": 8.76,
+      "share": 0.0265
+    },
+    {
+      "family": "Punk",
+      "hours": 8.73,
+      "share": 0.0264
+    },
+    {
+      "family": "Metal",
+      "hours": 4.86,
+      "share": 0.0147
+    },
+    {
+      "family": "Classical",
+      "hours": 4.75,
+      "share": 0.0143
+    },
+    {
+      "family": "Latin",
+      "hours": 4.11,
+      "share": 0.0124
+    },
+    {
+      "family": "Reggae / Caribbean",
+      "hours": 2.42,
+      "share": 0.0073
+    },
+    {
+      "family": "Global",
+      "hours": 2.24,
+      "share": 0.0067
+    },
+    {
+      "family": "Blues",
+      "hours": 1.9,
+      "share": 0.0057
+    }
+  ],
+  "familiesByMonth": [
+    {
+      "month": "2025-09",
+      "coveredShare": 0.6194,
+      "families": {
+        "Ambient / Experimental": 0.0174,
+        "Blues": 0.0008,
+        "Classical": 0.0052,
+        "Electronic": 0.4625,
+        "Folk / Country": 0.0632,
+        "Global": 0.0064,
+        "Hip Hop": 0.0391,
+        "Jazz": 0.0212,
+        "Latin": 0.0053,
+        "Metal": 0.0051,
+        "Other": 0.0349,
+        "Pop": 0.0465,
+        "Punk": 0.0251,
+        "R&B / Soul": 0.044,
+        "Reggae / Caribbean": 0,
+        "Rock": 0.2233
+      }
+    },
+    {
+      "month": "2025-10",
+      "coveredShare": 0.6661,
+      "families": {
+        "Ambient / Experimental": 0.0327,
+        "Blues": 0.0137,
+        "Classical": 0.0019,
+        "Electronic": 0.3023,
+        "Folk / Country": 0.045,
+        "Global": 0.0071,
+        "Hip Hop": 0.1285,
+        "Jazz": 0.0176,
+        "Latin": 0.0013,
+        "Metal": 0.0125,
+        "Other": 0.0197,
+        "Pop": 0.0432,
+        "Punk": 0.02,
+        "R&B / Soul": 0.0586,
+        "Reggae / Caribbean": 0.0189,
+        "Rock": 0.2768
+      }
+    },
+    {
+      "month": "2025-11",
+      "coveredShare": 0.6834,
+      "families": {
+        "Ambient / Experimental": 0.0371,
+        "Classical": 0.011,
+        "Electronic": 0.3568,
+        "Folk / Country": 0.0298,
+        "Global": 0.0009,
+        "Hip Hop": 0.0657,
+        "Jazz": 0.0464,
+        "Latin": 0.0371,
+        "Metal": 0.0035,
+        "Other": 0.0241,
+        "Pop": 0.1466,
+        "Punk": 0.0136,
+        "R&B / Soul": 0.0534,
+        "Reggae / Caribbean": 0.0194,
+        "Rock": 0.1546
+      }
+    },
+    {
+      "month": "2025-12",
+      "coveredShare": 0.6189,
+      "families": {
+        "Ambient / Experimental": 0.0342,
+        "Blues": 0.0007,
+        "Classical": 0.0014,
+        "Electronic": 0.4513,
+        "Folk / Country": 0.0376,
+        "Global": 0.0009,
+        "Hip Hop": 0.0888,
+        "Jazz": 0.0182,
+        "Latin": 0.0032,
+        "Metal": 0.0188,
+        "Other": 0.0318,
+        "Pop": 0.0447,
+        "Punk": 0.0448,
+        "R&B / Soul": 0.0291,
+        "Reggae / Caribbean": 0.0018,
+        "Rock": 0.1926
+      }
+    },
+    {
+      "month": "2026-01",
+      "coveredShare": 0.6951,
+      "families": {
+        "Ambient / Experimental": 0.0664,
+        "Blues": 0.0052,
+        "Classical": 0.0726,
+        "Electronic": 0.3246,
+        "Folk / Country": 0.0695,
+        "Global": 0.0032,
+        "Hip Hop": 0.0476,
+        "Jazz": 0.0126,
+        "Latin": 0.0463,
+        "Metal": 0.0261,
+        "Other": 0.0263,
+        "Pop": 0.0379,
+        "Punk": 0.0207,
+        "R&B / Soul": 0.0336,
+        "Reggae / Caribbean": 0.0013,
+        "Rock": 0.2061
+      }
+    },
+    {
+      "month": "2026-02",
+      "coveredShare": 0.6652,
+      "families": {
+        "Ambient / Experimental": 0.0753,
+        "Blues": 0.0024,
+        "Classical": 0.0072,
+        "Electronic": 0.4374,
+        "Folk / Country": 0.0221,
+        "Global": 0.0015,
+        "Hip Hop": 0.0413,
+        "Jazz": 0.0405,
+        "Latin": 0.008,
+        "Metal": 0.0015,
+        "Other": 0.0187,
+        "Pop": 0.0104,
+        "Punk": 0.0302,
+        "R&B / Soul": 0.1274,
+        "Reggae / Caribbean": 0.005,
+        "Rock": 0.1712
+      }
+    },
+    {
+      "month": "2026-03",
+      "coveredShare": 0.6617,
+      "families": {
+        "Ambient / Experimental": 0.0433,
+        "Blues": 0.0025,
+        "Classical": 0.0118,
+        "Electronic": 0.2799,
+        "Folk / Country": 0.0475,
+        "Global": 0.0013,
+        "Hip Hop": 0.0325,
+        "Jazz": 0.0756,
+        "Latin": 0.0027,
+        "Metal": 0.0345,
+        "Other": 0.0238,
+        "Pop": 0.0833,
+        "Punk": 0.0299,
+        "R&B / Soul": 0.1211,
+        "Reggae / Caribbean": 0.0031,
+        "Rock": 0.2071
+      }
+    },
+    {
+      "month": "2026-04",
+      "coveredShare": 0.7584,
+      "families": {
+        "Ambient / Experimental": 0.0463,
+        "Blues": 0,
+        "Classical": 0.0035,
+        "Electronic": 0.4817,
+        "Folk / Country": 0.09,
+        "Global": 0,
+        "Hip Hop": 0.0315,
+        "Jazz": 0.0228,
+        "Latin": 0.0054,
+        "Metal": 0.0251,
+        "Other": 0.0314,
+        "Pop": 0.0363,
+        "Punk": 0.0262,
+        "R&B / Soul": 0.0609,
+        "Reggae / Caribbean": 0.0151,
+        "Rock": 0.1238
+      }
+    },
+    {
+      "month": "2026-05",
+      "coveredShare": 0.705,
+      "families": {
+        "Ambient / Experimental": 0.109,
+        "Blues": 0.0041,
+        "Classical": 0.0021,
+        "Electronic": 0.3179,
+        "Folk / Country": 0.0361,
+        "Global": 0.0061,
+        "Hip Hop": 0.0386,
+        "Jazz": 0.016,
+        "Latin": 0.0077,
+        "Other": 0.0285,
+        "Pop": 0.0213,
+        "Punk": 0.0318,
+        "R&B / Soul": 0.0913,
+        "Reggae / Caribbean": 0.0025,
+        "Rock": 0.2868
+      }
+    },
+    {
+      "month": "2026-06",
+      "coveredShare": 0.6512,
+      "families": {
+        "Ambient / Experimental": 0.0459,
+        "Blues": 0.0029,
+        "Classical": 0.0052,
+        "Electronic": 0.4686,
+        "Folk / Country": 0.0525,
+        "Global": 0.0382,
+        "Hip Hop": 0.0828,
+        "Jazz": 0.0161,
+        "Latin": 0.0034,
+        "Other": 0.0441,
+        "Pop": 0.0184,
+        "Punk": 0.0114,
+        "R&B / Soul": 0.0501,
+        "Reggae / Caribbean": 0.0021,
+        "Rock": 0.1582
+      }
+    },
+    {
+      "month": "2026-07",
+      "coveredShare": 0.6441,
+      "families": {
+        "Ambient / Experimental": 0.0321,
+        "Blues": 0.0082,
+        "Classical": 0.0042,
+        "Electronic": 0.4301,
+        "Folk / Country": 0.0244,
+        "Global": 0.0112,
+        "Hip Hop": 0.0555,
+        "Jazz": 0.0226,
+        "Latin": 0.006,
+        "Metal": 0.0269,
+        "Other": 0.0338,
+        "Pop": 0.0311,
+        "Punk": 0.0287,
+        "R&B / Soul": 0.0631,
+        "Reggae / Caribbean": 0.0201,
+        "Rock": 0.202
+      }
+    },
+    {
+      "month": "2026-08",
+      "coveredShare": 0.7083,
+      "families": {
+        "Ambient / Experimental": 0.0385,
+        "Blues": 0.0289,
+        "Classical": 0.0158,
+        "Electronic": 0.4056,
+        "Folk / Country": 0.0492,
+        "Global": 0.0269,
+        "Hip Hop": 0.0814,
+        "Jazz": 0.0079,
+        "Latin": 0,
+        "Metal": 0.0036,
+        "Other": 0.0425,
+        "Pop": 0.0409,
+        "Punk": 0.0251,
+        "R&B / Soul": 0.0621,
+        "Reggae / Caribbean": 0.0006,
+        "Rock": 0.171
+      }
+    },
+    {
+      "month": "2026-09",
+      "coveredShare": 0.7832,
+      "families": {
+        "Ambient / Experimental": 0.0065,
+        "Classical": 0.0029,
+        "Electronic": 0.0893,
+        "Hip Hop": 0.0347,
+        "Metal": 0.0968,
+        "Other": 0.0102,
+        "Punk": 0.0033,
+        "R&B / Soul": 0.7462,
+        "Rock": 0.0101
+      }
+    }
+  ]
 }
