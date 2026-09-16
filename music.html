@@ -7,7 +7,7 @@
 
   <!-- SEO -->
   <title>What I listen to — Tyler Milligan</title>
-  <meta name="description" content="A look at what is actually in my music library — which genres, in what proportion, and whether what I save is what I play. Built from the Spotify Web API, Last.fm and MusicBrainz.">
+  <meta name="description" content="A look at what is actually in my music library — which genres, in what proportion, whether what I save is what I play, and a year of plays hour by hour. Built from the Spotify Web API, its data export, Last.fm and MusicBrainz.">
   <meta name="author" content="Tyler Milligan">
   <link rel="canonical" href="https://typride.github.io/music.html">
 
@@ -89,10 +89,11 @@
       <h1 class="reveal" data-delay="1">What I <span class="accent">listen to</span></h1>
       <p class="music-lede reveal" data-delay="2">
         A look at what's actually in my music library — which genres, in what
-        proportion, how they connect, and whether the things I save are the things I
-        end up playing. Spotify supplies the listening; the genres come from Last.fm
-        and MusicBrainz, since Spotify stopped publishing them. How it's put together
-        is <a href="#method">at the bottom</a>, including what it gets wrong.
+        proportion, how they connect, whether the things I save are the things I
+        end up playing, and <a href="#plays">a year of plays</a> hour by hour. Spotify
+        supplies the listening; the genres come from Last.fm and MusicBrainz, since
+        Spotify stopped publishing them. How it's put together is
+        <a href="#method">at the bottom</a>, including what it gets wrong.
       </p>
 
       <!-- live now-playing strip, reusing the existing Worker -->
@@ -286,7 +287,8 @@
         <p class="section-lede reveal">
           Spotify will tell you your top artists over three windows — roughly the last
           month, the last six months, and the last several years. Reading them left to
-          right is the closest thing to a picture of taste actually moving.
+          right is the API's closest thing to a picture of taste moving. The
+          <a href="#plays">next section</a> has the real thing, month by month.
         </p>
         <div class="viz-card reveal">
           <div class="viz-legend viz-legend--static" id="drift-legend"></div>
@@ -301,11 +303,88 @@
       </div>
     </section>
 
-    <!-- ============ 07 TABLE ============ -->
-    <section class="section" id="table">
+    <!-- ============ 07 A YEAR OF PLAYS ============ -->
+    <section class="section" id="plays" hidden>
       <div class="container">
         <div class="section-head reveal">
           <span class="sec-num">07</span>
+          <h2>A year of plays</h2>
+        </div>
+        <p class="section-lede reveal">
+          The API remembers fifty plays. Spotify's data export remembers a year — every
+          play, how long it ran, and when it started. Everything above is a photograph of
+          the library; this is the film of it being used.
+        </p>
+
+        <div class="hero-stats reveal" id="year-kpis">
+          <div class="stat">
+            <div class="stat-num" id="year-hours">—</div>
+            <div class="stat-label">hours of music, <span id="year-span">—</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="year-plays">—</div>
+            <div class="stat-label">plays over 30 seconds</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="year-artists">—</div>
+            <div class="stat-label">distinct artists heard</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="year-skips">—</div>
+            <div class="stat-label">of plays skipped inside 30 seconds</div>
+          </div>
+        </div>
+
+        <div class="viz-card reveal">
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="year-months-holder">
+              <svg id="year-months-svg" role="img" aria-labelledby="year-months-desc"></svg>
+              <p class="visually-hidden" id="year-months-desc">Two bar charts by month: hours of music listened, and artists heard for the first time in the year.</p>
+            </div>
+            <figcaption class="viz-caption" id="year-months-caption"></figcaption>
+          </figure>
+        </div>
+
+        <div class="year-grid">
+          <div class="viz-card reveal">
+            <figure class="viz-figure">
+              <div class="viz-holder viz-holder--auto" id="year-week-holder">
+                <svg id="year-week-svg" role="img" aria-labelledby="year-week-desc"></svg>
+                <p class="visually-hidden" id="year-week-desc">Heatmap of hours listened by day of the week and hour of the day.</p>
+              </div>
+              <figcaption class="viz-caption" id="year-week-caption"></figcaption>
+            </figure>
+          </div>
+
+          <div class="viz-card reveal" data-delay="1">
+            <figure class="viz-figure">
+              <div class="viz-holder viz-holder--auto" id="year-artists-holder">
+                <svg id="year-artists-svg" role="img" aria-labelledby="year-artists-desc"></svg>
+                <p class="visually-hidden" id="year-artists-desc">Bar chart of the most-played artists by hours over the year.</p>
+              </div>
+              <figcaption class="viz-caption" id="year-artists-caption"></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="viz-card reveal" id="year-fam-card" hidden>
+          <div class="viz-legend viz-legend--static" id="year-fam-legend"></div>
+          <figure class="viz-figure">
+            <div class="viz-holder viz-holder--auto" id="year-fam-holder">
+              <svg id="year-fam-svg" role="img" aria-labelledby="year-fam-desc"></svg>
+              <p class="visually-hidden" id="year-fam-desc">Stacked bar chart of genre family share by month, weighted by time listened.</p>
+            </div>
+            <figcaption class="viz-caption" id="year-fam-caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 TABLE ============ -->
+    <section class="section" id="table">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="sec-num">08</span>
           <h2>The whole list</h2>
         </div>
         <p class="section-lede reveal">
@@ -332,11 +411,11 @@
       </div>
     </section>
 
-    <!-- ============ 08 DISCOVERY ============ -->
+    <!-- ============ 09 DISCOVERY ============ -->
     <section class="section" id="discovery">
       <div class="container">
         <div class="section-head reveal">
-          <span class="sec-num">08</span>
+          <span class="sec-num">09</span>
           <h2>Three recommenders, compared</h2>
         </div>
         <p class="section-lede reveal">
@@ -399,11 +478,11 @@
       </div>
     </section>
 
-    <!-- ============ 09 METHOD ============ -->
+    <!-- ============ 10 METHOD ============ -->
     <section class="section" id="method">
       <div class="container">
         <div class="section-head reveal">
-          <span class="sec-num">09</span>
+          <span class="sec-num">10</span>
           <h2>What this gets wrong</h2>
         </div>
         <p class="section-lede reveal">
@@ -471,7 +550,9 @@
               "Listening history" is thinner than it sounds. Spotify's API returns your
               last <strong>50 plays</strong> and three ranked snapshots — there's no
               endpoint for years of history. The drift chart is three photographs, not a
-              film.
+              film. The film comes from Spotify's <strong>account-data export</strong>,
+              which you request by hand and wait days for; it covers roughly one year
+              and names artists without ids, so its genres are matched by name too.
             </p>
             <p>
               Spotify itself no longer answers the question this page asks. It
@@ -493,8 +574,10 @@
         <p class="method-foot reveal">
           Generated by <code>scripts/build-spotify-genres.js</code> — a zero-dependency
           Node script that pages Spotify, resolves genres against Last.fm and
-          MusicBrainz, and writes one sorted
-          JSON file. Data as of <span id="method-asof">—</span>.
+          MusicBrainz, and writes one sorted JSON file — and by
+          <code>scripts/build-listening-history.js</code>, which reads the export and
+          shares the same rule table. Library data as of <span id="method-asof">—</span>;
+          plays through <span id="method-history-to">—</span>.
           <a href="https://github.com/typride/typride.github.io" target="_blank" rel="noopener">Source on GitHub <span class="arrow">→</span></a>
         </p>
       </div>

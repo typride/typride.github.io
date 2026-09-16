@@ -11,3 +11,8 @@ Git-recovery-codes/
 .cache/
 node_modules/
 data/spotify-genres.full.json
+
+# Spotify account-data export — holds email, birthdate and search history.
+# Build from it with scripts/build-listening-history.js --from <zip>; never add it.
+my_spotify_data*.zip
+Spotify Account Data/

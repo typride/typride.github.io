@@ -2377,11 +2377,29 @@ async function main() {
   return 0;
 }
 
-main()
-  .then((code) => {
-    process.exitCode = code || 0;
-  })
-  .catch((err) => {
-    console.error(`\n${err.message}`);
-    process.exitCode = 1;
-  });
+// The taxonomy and the genre providers are shared with
+// scripts/build-listening-history.js, so one rule table serves both pages.
+module.exports = {
+  classifyGenre,
+  cleanTags,
+  normalizeGenre,
+  artistGenres,
+  lastfmTags,
+  musicbrainzTags,
+  loadArtistCache,
+  FAMILIES,
+  FAMILY_OTHER,
+  FAMILY_UNCLASSIFIED,
+  runSelftest,
+};
+
+if (require.main === module) {
+  main()
+    .then((code) => {
+      process.exitCode = code || 0;
+    })
+    .catch((err) => {
+      console.error(`\n${err.message}`);
+      process.exitCode = 1;
+    });
+}

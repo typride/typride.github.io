@@ -71,3 +71,39 @@ than three minutes in.
 - **Read the coverage summary.** It prints what share of your listening had no
   genre at all (Spotify's gap) versus what hit no rule (this repo's gap), plus
   the top unmatched genres. That list is the to-do for the taxonomy table.
+
+## `listening-history.json`
+
+Powers the "A year of plays" section of `music.html`. It comes from Spotify's
+**account-data export**, not the API — the API stops at the last 50 plays, the
+export carries roughly a year of them with durations.
+
+1. Request it at <https://www.spotify.com/account/privacy/> → "Account data"
+   (the plain one, not "Extended streaming history"). It arrives by email as
+   `my_spotify_data.zip` within a few days.
+2. Build straight from the zip — never unpack it into the repo, it holds your
+   email, birthdate and every search you've typed:
+
+```sh
+node scripts/build-listening-history.js --from ~/Downloads/my_spotify_data.zip
+```
+
+| Flag | What it does |
+|---|---|
+| `--tz America/Los_Angeles` | local zone for the hour-of-day chart |
+| `--no-genres` | skip genre lookups entirely; the family-mix chart is then hidden |
+| `--resolve-share 0.9` | look up genres for the most-played artists until this share of play time is covered |
+| `--resolve-limit N` | cap lookups for this run (it checkpoints every 50 and resumes) |
+| `--dry-run` | print the summary, write nothing |
+
+Genres use the same rule table and providers as the genre build, matched on
+artist **name** because the export has no ids. Lookups are cached in
+`.cache/spotify/history-artists.json`; the genre page's own data seeds it, so a
+fresh clone starts about a third resolved. Without `LASTFM_API_KEY` it falls
+back to MusicBrainz at one request a second — budget most of an hour for a
+first run, and expect roughly half the obscure names to come back empty. The
+page hides the family-mix chart unless at least half of play time is classified.
+
+Only aggregates are written: totals, per-month counts, a weekday × hour grid,
+the top 20 artists and top 12 tracks, and family shares. No individual plays,
+no timestamps finer than the hour.

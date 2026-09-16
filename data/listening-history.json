@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-16T11:03:31.036Z",
+  "generatedBy": "scripts/build-listening-history.js",
+  "provenance": {
+    "listening": "Spotify account-data export (StreamingHistory_music_*.json): every play in the last ~12 months, with duration",
+    "genres": null,
+    "timezone": "America/Los_Angeles"
+  },
+  "notes": {
+    "fullPlay": "A \"full play\" is 30s or longer, Spotify's own threshold for counting a stream. Shorter ones are skips.",
+    "hourOfDay": "Each play is attributed to the local hour it started, not the hour it ended.",
+    "newArtists": "An artist is new in the month it first appears in this window. The first month is null by construction.",
+    "partialMonths": "Months with fewer than 7 days of listening are flagged partial; they sit in the totals but should not be drawn.",
+    "genres": null
+  },
+  "span": {
+    "from": "2025-09-02",
+    "to": "2026-09-03",
+    "days": 343
+  },
+  "totals": {
+    "plays": 14183,
+    "fullPlays": 9346,
+    "skips": 4837,
+    "skipShare": 0.341,
+    "hours": 494.8,
+    "hoursPerDay": 1.44,
+    "artists": 2987,
+    "tracks": 6959,
+    "podcastHours": 25.3,
+    "podcastPlays": 54
+  },
+  "months": [
+    {
+      "month": "2025-09",
+      "hours": 29.84,
+      "plays": 852,
+      "fullPlays": 554,
+      "artists": 378,
+      "newArtists": null,
+      "daysCovered": 22,
+      "daysInMonth": 30,
+      "partial": false
+    },
+    {
+      "month": "2025-10",
+      "hours": 54.17,
+      "plays": 1458,
+      "fullPlays": 1031,
+      "artists": 535,
+      "newArtists": 439,
+      "daysCovered": 29,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2025-11",
+      "hours": 46.78,
+      "plays": 1772,
+      "fullPlays": 882,
+      "artists": 605,
+      "newArtists": 361,
+      "daysCovered": 28,
+      "daysInMonth": 30,
+      "partial": false
+    },
+    {
+      "month": "2025-12",
+      "hours": 74.72,
+      "plays": 1871,
+      "fullPlays": 1422,
+      "artists": 651,
+      "newArtists": 357,
+      "daysCovered": 31,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-01",
+      "hours": 58.72,
+      "plays": 1668,
+      "fullPlays": 1144,
+      "artists": 653,
+      "newArtists": 325,
+      "daysCovered": 31,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-02",
+      "hours": 47.65,
+      "plays": 1225,
+      "fullPlays": 889,
+      "artists": 420,
+      "newArtists": 201,
+      "daysCovered": 28,
+      "daysInMonth": 28,
+      "partial": false
+    },
+    {
+      "month": "2026-03",
+      "hours": 40.48,
+      "plays": 1124,
+      "fullPlays": 800,
+      "artists": 449,
+      "newArtists": 226,
+      "daysCovered": 31,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-04",
+      "hours": 24.54,
+      "plays": 902,
+      "fullPlays": 483,
+      "artists": 341,
+      "newArtists": 98,
+      "daysCovered": 29,
+      "daysInMonth": 30,
+      "partial": false
+    },
+    {
+      "month": "2026-05",
+      "hours": 27.74,
+      "plays": 901,
+      "fullPlays": 541,
+      "artists": 407,
+      "newArtists": 187,
+      "daysCovered": 31,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-06",
+      "hours": 23.53,
+      "plays": 635,
+      "fullPlays": 460,
+      "artists": 256,
+      "newArtists": 134,
+      "daysCovered": 26,
+      "daysInMonth": 30,
+      "partial": false
+    },
+    {
+      "month": "2026-07",
+      "hours": 27.99,
+      "plays": 838,
+      "fullPlays": 493,
+      "artists": 412,
+      "newArtists": 142,
+      "daysCovered": 25,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-08",
+      "hours": 35.35,
+      "plays": 855,
+      "fullPlays": 572,
+      "artists": 339,
+      "newArtists": 136,
+      "daysCovered": 29,
+      "daysInMonth": 31,
+      "partial": false
+    },
+    {
+      "month": "2026-09",
+      "hours": 3.3,
+      "plays": 82,
+      "fullPlays": 75,
+      "artists": 13,
+      "newArtists": 3,
+      "daysCovered": 3,
+      "daysInMonth": 30,
+      "partial": true
+    }
+  ],
+  "weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+  ],
+  "weekHours": [
+    [
+      0.333,
+      2.332,
+      2.639,
+      2.869,
+      2.717,
+      3.468,
+      1.743,
+      1.697,
+      3.045,
+      4.328,
+      4.694,
+      3.497,
+      3.261,
+      3.538,
+      5.368,
+      6.506,
+      7.616,
+      5.866,
+      6.532,
+      6.067,
+      3.223,
+      4.103,
+      2.351,
+      1.094
+    ],
+    [
+      1.086,
+      0.434,
+      1.529,
+      2.036,
+      1.47,
+      1.673,
+      2.161,
+      0.653,
+      2.961,
+      4.53,
+      5.213,
+      6.129,
+      4.906,
+      5.914,
+      3.708,
+      4.874,
+      6.565,
+      5.586,
+      3.708,
+      2.525,
+      1.32,
+      0.736,
+      2.115,
+      3.018
+    ],
+    [
+      2.7,
+      4.441,
+      3.363,
+      1.098,
+      2.304,
+      2.021,
+      0.905,
+      2.502,
+      1.428,
+      1.489,
+      4.56,
+      8.218,
+      5.33,
+      4.472,
+      5.258,
+      3.564,
+      6.074,
+      5.959,
+      5.715,
+      4.766,
+      3.073,
+      3.494,
+      0.616,
+      2.594
+    ],
+    [
+      1.919,
+      2.174,
+      1.635,
+      2.6,
+      3.59,
+      2.466,
+      0.668,
+      1.924,
+      3.557,
+      2.791,
+      4.723,
+      5.41,
+      4.47,
+      6.247,
+      3.715,
+      4.061,
+      6.241,
+      3.041,
+      3.668,
+      2.933,
+      2.82,
+      1.879,
+      4.002,
+      2.062
+    ],
+    [
+      1.092,
+      1.285,
+      2.459,
+      2.2,
+      2.368,
+      1.995,
+      1.931,
+      2.381,
+      2.261,
+      2.837,
+      2.699,
+      3.816,
+      4.722,
+      4.317,
+      5.195,
+      3.226,
+      5.017,
+      3.42,
+      4.341,
+      3.556,
+      2.67,
+      1.119,
+      0.374,
+      0.637
+    ],
+    [
+      0.713,
+      0.615,
+      1.589,
+      1.482,
+      1.915,
+      0.927,
+      1.525,
+      2.872,
+      1.157,
+      1.818,
+      0.573,
+      0.275,
+      1.645,
+      2.087,
+      4.419,
+      5.198,
+      5.799,
+      2.623,
+      4.001,
+      5.068,
+      3.467,
+      0.996,
+      1.171,
+      3.166
+    ],
+    [
+      3.722,
+      1.692,
+      0.875,
+      0.291,
+      0.962,
+      0.995,
+      0.778,
+      0.411,
+      0.239,
+      0.272,
+      1.068,
+      2.892,
+      2.385,
+      4.6,
+      4.98,
+      3.313,
+      2.76,
+      2.112,
+      1.331,
+      2.12,
+      3.335,
+      3.551,
+      0.845,
+      0.004
+    ]
+  ],
+  "topArtists": [
+    {
+      "name": "Fred again..",
+      "hours": 5.93,
+      "plays": 98,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "Mount Kimbie",
+      "hours": 5.55,
+      "plays": 86,
+      "firstSeen": "2025-09"
+    },
+    {
+      "name": "You'll Never Get to Heaven",
+      "hours": 4.78,
+      "plays": 95,
+      "firstSeen": "2026-03"
+    },
+    {
+      "name": "Caroline Polachek",
+      "hours": 4.13,
+      "plays": 71,
+      "firstSeen": "2025-11"
+    },
+    {
+      "name": "Overmono",
+      "hours": 4.01,
+      "plays": 70,
+      "firstSeen": "2025-09"
+    },
+    {
+      "name": "Jadu Heart",
+      "hours": 3.83,
+      "plays": 66,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "Joji",
+      "hours": 3.67,
+      "plays": 104,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "_BY.ALEXANDER",
+      "hours": 3.66,
+      "plays": 68,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "fakemink",
+      "hours": 2.97,
+      "plays": 88,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "Weval",
+      "hours": 2.77,
+      "plays": 46,
+      "firstSeen": "2025-09"
+    },
+    {
+      "name": "Ivy Lab",
+      "hours": 2.76,
+      "plays": 51,
+      "firstSeen": "2025-11"
+    },
+    {
+      "name": "Douvelle19",
+      "hours": 2.61,
+      "plays": 47,
+      "firstSeen": "2026-01"
+    },
+    {
+      "name": "Pink Floyd",
+      "hours": 2.5,
+      "plays": 25,
+      "firstSeen": "2025-11"
+    },
+    {
+      "name": "Via App",
+      "hours": 2.48,
+      "plays": 34,
+      "firstSeen": "2025-12"
+    },
+    {
+      "name": "Loukeman",
+      "hours": 2.48,
+      "plays": 58,
+      "firstSeen": "2025-09"
+    },
+    {
+      "name": "Way Dynamic",
+      "hours": 2.41,
+      "plays": 45,
+      "firstSeen": "2025-11"
+    },
+    {
+      "name": "Ramadanman",
+      "hours": 2.37,
+      "plays": 32,
+      "firstSeen": "2025-10"
+    },
+    {
+      "name": "Cardinals",
+      "hours": 2.32,
+      "plays": 44,
+      "firstSeen": "2025-12"
+    },
+    {
+      "name": "ZEP",
+      "hours": 2.22,
+      "plays": 58,
+      "firstSeen": "2025-09"
+    },
+    {
+      "name": "SHIMA",
+      "hours": 2.21,
+      "plays": 47,
+      "firstSeen": "2025-09"
+    }
+  ],
+  "topTracks": [
+    {
+      "artist": "Soren Aris",
+      "track": "White Noise Machine: A Lite Sleep Pillow Ambiance",
+      "plays": 66,
+      "hours": 2.09
+    },
+    {
+      "artist": "CURRO",
+      "track": "Lágrimas Y Suspiros",
+      "plays": 24,
+      "hours": 1.18
+    },
+    {
+      "artist": "DJ Seinfeld",
+      "track": "The Right",
+      "plays": 14,
+      "hours": 0.88
+    },
+    {
+      "artist": "Way Dynamic",
+      "track": "Miffed It",
+      "plays": 14,
+      "hours": 0.85
+    },
+    {
+      "artist": "You'll Never Get to Heaven",
+      "track": "Setting Sun",
+      "plays": 13,
+      "hours": 0.62
+    },
+    {
+      "artist": "ZEP",
+      "track": "TRYING TO SAY SOMETHING",
+      "plays": 13,
+      "hours": 0.43
+    },
+    {
+      "artist": "Royel Otis",
+      "track": "Warm Nights",
+      "plays": 12,
+      "hours": 0.65
+    },
+    {
+      "artist": "Posij",
+      "track": "Fuego Maquinista",
+      "plays": 12,
+      "hours": 0.58
+    },
+    {
+      "artist": "maxime.",
+      "track": "the life and death of a dog",
+      "plays": 10,
+      "hours": 0.54
+    },
+    {
+      "artist": "1tbsp",
+      "track": "Sleeves Touch My Elbows",
+      "plays": 10,
+      "hours": 0.52
+    },
+    {
+      "artist": "Jadu Heart",
+      "track": "U",
+      "plays": 10,
+      "hours": 0.52
+    },
+    {
+      "artist": "Jan P. Muchow",
+      "track": "Lucky Boy",
+      "plays": 10,
+      "hours": 0.52
+    }
+  ],
+  "genreCoverage": null,
+  "familiesYear": null,
+  "familiesByMonth": null
+}

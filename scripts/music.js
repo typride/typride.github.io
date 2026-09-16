@@ -1405,6 +1405,452 @@
     }
   }
 
+  // ---------- 7. a year of plays (from the account-data export) ----------
+  //
+  // Everything above is drawn from data/spotify-genres.json. This block reads
+  // data/listening-history.json, built from Spotify's export, and is the only
+  // continuous record on the page. It fails independently: no history file,
+  // no section — the genre charts never wait on it.
+
+  var MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var MONTH_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var DAY_LONG = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+  function monthShort(ym, withYear) {
+    var m = +ym.slice(5, 7);
+    return MONTH_NAMES[m - 1] + (withYear ? " ’" + ym.slice(2, 4) : "");
+  }
+
+  // Twelve "Sep ’25"s don't fit in a phone-width band scale; below ~34px a
+  // bar, fall back to initials and let the year ride on the first one only.
+  function monthTick(ym, i, bandwidth) {
+    var narrow = bandwidth < 34;
+    var isYearMark = i === 0 || ym.slice(5, 7) === "01";
+    if (!narrow) return monthShort(ym, isYearMark);
+    var initial = MONTH_NAMES[+ym.slice(5, 7) - 1].charAt(0);
+    return i === 0 ? initial + " ’" + ym.slice(2, 4) : initial;
+  }
+
+  function monthLong(ym) {
+    return MONTH_LONG[+ym.slice(5, 7) - 1] + " " + ym.slice(0, 4);
+  }
+
+  function hoursText(h) {
+    if (h === null || h === undefined) return "—";
+    return (h >= 10 ? Math.round(h) : h.toFixed(1)) + "h";
+  }
+
+  function hourLabel(h) {
+    if (h === 0) return "12am";
+    if (h === 12) return "12pm";
+    return h < 12 ? h + "am" : (h - 12) + "pm";
+  }
+
+  function commas(n) {
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  function drawnMonths(h) {
+    return (h.months || []).filter(function (m) { return !m.partial; });
+  }
+
+  function renderYearHeadline(h) {
+    var t = h.totals || {};
+    countUp(document.getElementById("year-hours"), t.hours || 0, 0);
+    countUp(document.getElementById("year-plays"), t.fullPlays || 0, 0);
+    countUp(document.getElementById("year-artists"), t.artists || 0, 0);
+    var sk = document.getElementById("year-skips");
+    if (sk) {
+      // countUp writes a bare number; the label needs a percent sign after it.
+      if (reducedMotion) sk.textContent = pct(t.skipShare, 0);
+      else {
+        countUp(sk, (t.skipShare || 0) * 100, 0);
+        setTimeout(function () { sk.textContent = pct(t.skipShare, 0); }, 1350);
+      }
+    }
+    var span = document.getElementById("year-span");
+    if (span && h.span) {
+      span.textContent = monthShort(h.span.from.slice(0, 7), true) + " to " + monthShort(h.span.to.slice(0, 7), true);
+    }
+    var to = document.getElementById("method-history-to");
+    if (to && h.span) to.textContent = h.span.to;
+  }
+
+  // Two small multiples on one x-axis: hours listened, then artists heard for
+  // the first time. Two measures of different scale — so two panels, never a
+  // second y-axis on one.
+  function renderYearMonths(h) {
+    var width = widthOf("year-months-holder");
+    if (!width) return;
+    var months = drawnMonths(h);
+    var partial = (h.months || []).filter(function (m) { return m.partial; });
+    if (!months.length) return;
+
+    var margin = { top: 30, right: 12, bottom: 24, left: 44 };
+    var panelH = 150;
+    var gap = 72; // the first panel's x labels plus the second panel's title
+    var innerW = Math.max(120, width - margin.left - margin.right);
+    var height = margin.top + panelH + gap + panelH + margin.bottom;
+
+    var svg = d3.select("#year-months-svg")
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("width", width).attr("height", height);
+    svg.selectAll("*").remove();
+
+    var x = d3.scaleBand().domain(months.map(function (m) { return m.month; })).range([0, innerW]).padding(0.24);
+    var fill = SEQ[2];
+
+    function panel(top, title, sub, accessor, fmt, labelFmt, tipFn, skipFirst) {
+      var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + top + ")");
+      g.append("text").attr("class", "chart-title").attr("x", 0).attr("y", -16).text(title);
+      // The subtitle collides with the title under ~420px of plot; drop it there.
+      if (sub && innerW >= 420) g.append("text").attr("class", "chart-sub").attr("x", innerW).attr("y", -16).attr("text-anchor", "end").text(sub);
+
+      var rows = months.filter(function (m) { return accessor(m) !== null && accessor(m) !== undefined; });
+      // 12% headroom so the peak's direct label never touches the title.
+      var y = d3.scaleLinear().domain([0, (d3.max(rows, accessor) || 1) * 1.12]).nice().range([panelH, 0]);
+
+      g.selectAll("line.grid-line").data(y.ticks(4)).join("line")
+        .attr("class", "grid-line")
+        .attr("x1", 0).attr("x2", innerW)
+        .attr("y1", function (d) { return y(d); }).attr("y2", function (d) { return y(d); });
+      g.selectAll("text.ytick").data(y.ticks(4)).join("text")
+        .attr("class", "tick-label")
+        .attr("x", -8).attr("y", function (d) { return y(d); })
+        .attr("dy", "0.35em").attr("text-anchor", "end")
+        .text(fmt);
+
+      var bars = g.selectAll("rect.bar").data(rows).join("rect")
+        .attr("class", "bar")
+        .attr("x", function (m) { return x(m.month); })
+        .attr("width", x.bandwidth())
+        .attr("y", function (m) { return y(accessor(m)); })
+        .attr("height", function (m) { return Math.max(0, panelH - y(accessor(m))); })
+        .attr("rx", 4)
+        .attr("fill", fill);
+      bindTip(bars, tipFn);
+
+      // One direct label — the peak — rather than a number on every bar.
+      var peak = rows.reduce(function (a, m) { return accessor(m) > accessor(a) ? m : a; }, rows[0]);
+      g.append("text").attr("class", "value-label")
+        .attr("x", x(peak.month) + x.bandwidth() / 2).attr("y", y(accessor(peak)) - 6)
+        .attr("text-anchor", "middle")
+        .text(labelFmt(accessor(peak)));
+
+      if (skipFirst && months[0] && accessor(months[0]) === null) {
+        g.append("text").attr("class", "chart-sub")
+          .attr("x", x(months[0].month) + x.bandwidth() / 2).attr("y", panelH - 6)
+          .attr("text-anchor", "middle")
+          .text("n/a");
+      }
+
+      g.append("line").attr("class", "axis-line").attr("x1", 0).attr("x2", innerW).attr("y1", panelH).attr("y2", panelH);
+      g.selectAll("text.xtick").data(months).join("text")
+        .attr("class", "tick-label xtick")
+        .attr("x", function (m) { return x(m.month) + x.bandwidth() / 2; })
+        .attr("y", panelH + 15)
+        .attr("text-anchor", "middle")
+        .text(function (m, i) { return monthTick(m.month, i, x.bandwidth()); });
+      return g;
+    }
+
+    panel(margin.top, "Hours listened", "by month", function (m) { return m.hours; }, function (v) { return v + "h"; }, hoursText, function (m) {
+      return "<strong>" + monthLong(m.month) + "</strong><span class='tt-meta'>" +
+        hoursText(m.hours) + " · " + commas(m.fullPlays) + " plays · " + commas(m.artists) + " artists</span>";
+    });
+    panel(margin.top + panelH + gap, "Artists heard for the first time", "within this window", function (m) { return m.newArtists; }, function (v) { return String(v); }, commas, function (m) {
+      return "<strong>" + monthLong(m.month) + "</strong><span class='tt-meta'>" +
+        commas(m.newArtists) + " artists not heard earlier in the year, of " + commas(m.artists) + " played</span>";
+    }, true);
+
+    var cap = document.getElementById("year-months-caption");
+    if (cap) {
+      var peak = months.reduce(function (a, m) { return m.hours > a.hours ? m : a; }, months[0]);
+      var low = months.reduce(function (a, m) { return m.hours < a.hours ? m : a; }, months[0]);
+      var ratio = low.hours > 0 ? (peak.hours / low.hours).toFixed(1) : "—";
+      var first = months[0];
+      var text = monthLong(peak.month) + " was the heaviest month at " + hoursText(peak.hours) +
+        ", " + ratio + "× " + monthLong(low.month) + ". " +
+        "“First time” is relative to this window, so " + monthShort(first.month, true) +
+        " has no honest value: every artist is new in month one.";
+      if (partial.length) {
+        text += " " + partial.map(function (m) {
+          return monthShort(m.month, true) + " (" + m.daysCovered + " day" + (m.daysCovered === 1 ? "" : "s") + ")";
+        }).join(", ") + " sits in the totals but isn't drawn.";
+      }
+      cap.textContent = text;
+    }
+  }
+
+  function renderYearWeek(h) {
+    var width = widthOf("year-week-holder");
+    if (!width || !h.weekHours) return;
+    var days = h.weekdays || ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+    var margin = { top: 26, right: 4, bottom: 22, left: 34 };
+    var innerW = Math.max(120, width - margin.left - margin.right);
+    var cellW = innerW / 24;
+    var cellH = Math.max(18, Math.min(26, cellW * 1.15));
+    var height = margin.top + cellH * 7 + margin.bottom;
+
+    var svg = d3.select("#year-week-svg")
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("width", width).attr("height", height);
+    svg.selectAll("*").remove();
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    g.append("text").attr("class", "chart-title").attr("x", 0).attr("y", -12).text("When");
+    if (innerW >= 420) {
+      g.append("text").attr("class", "chart-sub").attr("x", innerW).attr("y", -12).attr("text-anchor", "end")
+        .text("hours over the year, " + ((h.provenance && h.provenance.timezone) || "local time").replace("_", " "));
+    }
+
+    var cells = [];
+    h.weekHours.forEach(function (row, d) {
+      row.forEach(function (v, hr) { cells.push({ d: d, h: hr, v: v || 0 }); });
+    });
+    var positive = cells.map(function (c) { return c.v; }).filter(function (v) { return v > 0; });
+    var seq = d3.scaleQuantile().domain(positive).range(SEQ);
+
+    var rects = g.selectAll("rect.heat-cell").data(cells).join("rect")
+      .attr("class", "heat-cell")
+      .attr("x", function (c) { return c.h * cellW; })
+      .attr("y", function (c) { return c.d * cellH; })
+      .attr("width", cellW).attr("height", cellH)
+      .attr("rx", 3)
+      .attr("fill", function (c) { return c.v > 0 ? seq(c.v) : PAPER2; });
+    bindTip(rects, function (c) {
+      return "<strong>" + DAY_LONG[c.d] + " · " + hourLabel(c.h) + "–" + hourLabel((c.h + 1) % 24) + "</strong>" +
+        "<span class='tt-meta'>" + (c.v > 0 ? c.v.toFixed(1) + " hours over the year" : "nothing played") + "</span>";
+    });
+
+    g.selectAll("text.ytick").data(days).join("text")
+      .attr("class", "tick-label tick-label--strong")
+      .attr("x", -8).attr("y", function (d, i) { return i * cellH + cellH / 2; })
+      .attr("dy", "0.35em").attr("text-anchor", "end")
+      .text(function (d) { return d; });
+
+    g.selectAll("text.xtick").data([0, 6, 12, 18]).join("text")
+      .attr("class", "tick-label")
+      .attr("x", function (hr) { return hr * cellW; })
+      .attr("y", cellH * 7 + 15)
+      .attr("text-anchor", "start")
+      .text(hourLabel);
+
+    var cap = document.getElementById("year-week-caption");
+    if (cap) {
+      var best = cells.reduce(function (a, c) { return c.v > a.v ? c : a; }, cells[0]);
+      var byHour = [];
+      for (var hr = 0; hr < 24; hr++) byHour.push({ h: hr, v: d3.sum(cells.filter(function (c) { return c.h === hr; }), function (c) { return c.v; }) });
+      var bestHour = byHour.reduce(function (a, c) { return c.v > a.v ? c : a; }, byHour[0]);
+      var night = d3.sum(cells.filter(function (c) { return c.h >= 0 && c.h < 6; }), function (c) { return c.v; });
+      var total = d3.sum(cells, function (c) { return c.v; });
+      cap.textContent = "The single busiest hour is " + DAY_LONG[best.d] + " " + hourLabel(best.h) + "–" +
+        hourLabel((best.h + 1) % 24) + "; across the week it's " + hourLabel(bestHour.h) + "–" + hourLabel((bestHour.h + 1) % 24) +
+        ". " + pct(total ? night / total : 0, 0) + " of listening starts between midnight and 6am. " +
+        "Each play counts toward the hour it started, in Pacific time.";
+    }
+  }
+
+  function renderYearArtists(h) {
+    var width = widthOf("year-artists-holder");
+    if (!width || !h.topArtists) return;
+    var rows = h.topArtists.slice(0, 12);
+    if (!rows.length) return;
+
+    var rowH = 26;
+    var margin = { top: 26, right: 44, bottom: 4, left: 132 };
+    var innerW = Math.max(100, width - margin.left - margin.right);
+    var height = margin.top + rows.length * rowH + margin.bottom;
+
+    var svg = d3.select("#year-artists-svg")
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("width", width).attr("height", height);
+    svg.selectAll("*").remove();
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    g.append("text").attr("class", "chart-title").attr("x", -margin.left).attr("y", -12).text("Most played");
+    g.append("text").attr("class", "chart-sub").attr("x", innerW + margin.right - 4).attr("y", -12).attr("text-anchor", "end").text("hours over the year");
+
+    var x = d3.scaleLinear().domain([0, d3.max(rows, function (d) { return d.hours; })]).nice().range([0, innerW]);
+    var y = d3.scaleBand().domain(rows.map(function (d) { return d.name; })).range([0, rows.length * rowH]).padding(0.26);
+    var seq = d3.scaleQuantile().domain(rows.map(function (d) { return d.hours; })).range(SEQ);
+
+    g.selectAll("line.grid-line").data(x.ticks(4)).join("line")
+      .attr("class", "grid-line")
+      .attr("x1", function (d) { return x(d); }).attr("x2", function (d) { return x(d); })
+      .attr("y1", 0).attr("y2", rows.length * rowH);
+
+    var bars = g.selectAll("rect.bar").data(rows).join("rect")
+      .attr("class", "bar")
+      .attr("x", 0).attr("y", function (d) { return y(d.name); })
+      .attr("height", y.bandwidth()).attr("rx", 4)
+      .attr("fill", function (d) { return seq(d.hours); })
+      .attr("width", function (d) { return Math.max(2, x(d.hours)); });
+    bindTip(bars, function (d) {
+      return "<strong>" + d.name + "</strong><span class='tt-meta'>" + hoursText(d.hours) + " · " +
+        commas(d.plays) + " plays · first heard " + monthShort(d.firstSeen, true) + "</span>";
+    });
+
+    var maxChars = Math.max(10, Math.floor((margin.left - 14) / 6.4));
+    g.selectAll("text.tick-label").data(rows).join("text")
+      .attr("class", "tick-label tick-label--strong")
+      .attr("x", -10).attr("y", function (d) { return y(d.name) + y.bandwidth() / 2; })
+      .attr("dy", "0.35em").attr("text-anchor", "end")
+      .text(function (d) { return d.name.length > maxChars ? d.name.slice(0, maxChars - 1) + "…" : d.name; });
+
+    g.selectAll("text.value-label").data(rows).join("text")
+      .attr("class", "value-label")
+      .attr("x", function (d) { return x(d.hours) + 6; })
+      .attr("y", function (d) { return y(d.name) + y.bandwidth() / 2; })
+      .attr("dy", "0.35em")
+      .text(function (d) { return hoursText(d.hours); });
+
+    var cap = document.getElementById("year-artists-caption");
+    if (cap) {
+      var t = h.totals || {};
+      var topShare = t.hours ? d3.sum(rows, function (d) { return d.hours; }) / t.hours : null;
+      var tt = (h.topTracks || [])[0];
+      cap.textContent = "These twelve are " + pct(topShare, 0) + " of the year; the other " +
+        commas((t.artists || 0) - rows.length) + " artists share the rest. " +
+        (tt ? "The most-repeated single track was “" + tt.track + "” by " + tt.artist + ", " + tt.plays + " plays." : "");
+    }
+  }
+
+  function renderYearFamilies(h) {
+    var card = document.getElementById("year-fam-card");
+    if (!card) return;
+    var rowsAll = h.familiesByMonth;
+    var cov = h.genreCoverage;
+    if (!rowsAll || !cov || !(cov.timeShare >= 0.5)) {
+      // Under half the play time classified — the chart would be a guess.
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+    var width = widthOf("year-fam-holder");
+    if (!width) return;
+
+    var drawn = drawnMonths(h).map(function (m) { return m.month; });
+    var rows = rowsAll.filter(function (r) { return drawn.indexOf(r.month) >= 0; });
+    if (!rows.length) return;
+
+    var ranked = (h.familiesYear || [])
+      .filter(function (f) { return f.family !== "Other" && f.family !== "Unclassified"; })
+      .map(function (f) { return f.family; });
+    var colored = ranked.slice(0, 6);
+    var restLabel = "Everything else";
+    var keys = colored.concat([restLabel]);
+
+    var stackRows = rows.map(function (r) {
+      var o = { month: r.month, coveredShare: r.coveredShare };
+      var rest = 0;
+      Object.keys(r.families).forEach(function (f) {
+        if (colored.indexOf(f) >= 0) o[f] = r.families[f];
+        else rest += r.families[f];
+      });
+      colored.forEach(function (f) { if (o[f] === undefined) o[f] = 0; });
+      o[restLabel] = rest;
+      return o;
+    });
+
+    var margin = { top: 26, right: 12, bottom: 24, left: 44 };
+    var innerW = Math.max(120, width - margin.left - margin.right);
+    var innerH = 240;
+    var height = margin.top + innerH + margin.bottom;
+
+    var svg = d3.select("#year-fam-svg")
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("width", width).attr("height", height);
+    svg.selectAll("*").remove();
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    g.append("text").attr("class", "chart-title").attr("x", 0).attr("y", -12).text("Family mix by month");
+    if (innerW >= 420) g.append("text").attr("class", "chart-sub").attr("x", innerW).attr("y", -12).attr("text-anchor", "end").text("share of classified listening time");
+
+    var x = d3.scaleBand().domain(drawn).range([0, innerW]).padding(0.24);
+    var y = d3.scaleLinear().domain([0, 1]).range([innerH, 0]);
+    // Biggest family at the baseline; the grey remainder on top.
+    var series = d3.stack().keys(keys)(stackRows);
+    var colorOf = function (k) { var i = colored.indexOf(k); return i >= 0 ? CAT[i] : OTHER; };
+
+    g.selectAll("line.grid-line").data(y.ticks(4)).join("line")
+      .attr("class", "grid-line")
+      .attr("x1", 0).attr("x2", innerW)
+      .attr("y1", function (d) { return y(d); }).attr("y2", function (d) { return y(d); });
+    g.selectAll("text.ytick").data(y.ticks(4)).join("text")
+      .attr("class", "tick-label")
+      .attr("x", -8).attr("y", function (d) { return y(d); })
+      .attr("dy", "0.35em").attr("text-anchor", "end")
+      .text(function (d) { return pct(d, 0); });
+
+    var layers = g.selectAll("g.layer").data(series).join("g")
+      .attr("class", "layer")
+      .attr("fill", function (s) { return colorOf(s.key); });
+    var segs = layers.selectAll("rect").data(function (s) {
+      return s.map(function (d) { return { key: s.key, month: d.data.month, share: d.data[s.key], covered: d.data.coveredShare, y0: d[0], y1: d[1] }; });
+    }).join("rect")
+      .attr("class", "bar")
+      .attr("x", function (d) { return x(d.month); })
+      .attr("width", x.bandwidth())
+      .attr("y", function (d) { return y(d.y1); })
+      .attr("height", function (d) { return Math.max(0, y(d.y0) - y(d.y1)); });
+    bindTip(segs, function (d) {
+      return "<strong>" + d.key + "</strong><span class='tt-meta'>" + pct(d.share, 0) + " of " +
+        monthLong(d.month) + " · " + pct(d.covered, 0) + " of that month's time is classified</span>";
+    });
+
+    g.append("line").attr("class", "axis-line").attr("x1", 0).attr("x2", innerW).attr("y1", innerH).attr("y2", innerH);
+    g.selectAll("text.xtick").data(drawn).join("text")
+      .attr("class", "tick-label xtick")
+      .attr("x", function (m) { return x(m) + x.bandwidth() / 2; })
+      .attr("y", innerH + 15)
+      .attr("text-anchor", "middle")
+      .text(function (m, i) { return monthTick(m, i, x.bandwidth()); });
+
+    var legend = clear("year-fam-legend");
+    if (legend) {
+      keys.forEach(function (k) {
+        var item = document.createElement("span");
+        item.className = "legend-item";
+        var sw = document.createElement("span");
+        sw.className = "legend-swatch";
+        sw.style.background = colorOf(k);
+        var t = document.createElement("span");
+        t.textContent = k === restLabel ? restLabel + " (" + Math.max(0, ranked.length - colored.length) + " families)" : k;
+        item.appendChild(sw); item.appendChild(t);
+        legend.appendChild(item);
+      });
+    }
+
+    var cap = document.getElementById("year-fam-caption");
+    if (cap) {
+      var top = (h.familiesYear || [])[0];
+      var src = cov.sources || {};
+      var srcText = Object.keys(src).sort(function (a, b) { return src[b] - src[a]; }).map(function (k) {
+        return commas(src[k]) + " via " + (k === "site" ? "the library build" : k === "lastfm" ? "Last.fm" : k === "musicbrainz" ? "MusicBrainz" : k);
+      }).join(", ");
+      cap.textContent = (top ? top.family + " is " + pct(top.share, 0) + " of the classified year. " : "") +
+        "Genres were found for " + pct(cov.timeShare, 0) + " of play time (" + commas(cov.artistsResolved) + " of " +
+        commas(cov.artistsTotal) + " artists: " + srcText + "); the rest is left out rather than guessed. " +
+        "Weighted by minutes, not plays, with an artist's time split evenly across its genres.";
+    }
+  }
+
+  function renderYear(h) {
+    var sec = document.getElementById("plays");
+    if (!sec || !h || !h.totals || !h.months) return;
+    sec.hidden = false;
+    renderYearHeadline(h);
+    redrawYear(h);
+  }
+
+  function redrawYear(h) {
+    renderYearMonths(h);
+    renderYearWeek(h);
+    renderYearArtists(h);
+    renderYearFamilies(h);
+  }
+
   // ---------- boot ----------
 
   function renderAll(data) {
@@ -1454,11 +1900,28 @@
 
       renderAll(data);
 
+      var history = null;
       var t = null;
       window.addEventListener("resize", function () {
         clearTimeout(t);
-        t = setTimeout(function () { redrawResponsive(data); }, 220);
+        t = setTimeout(function () {
+          redrawResponsive(data);
+          if (history) redrawYear(history);
+        }, 220);
       });
+
+      // The export-derived file is optional and loads after the library data,
+      // so a missing or stale export never blanks the genre charts.
+      return fetch("data/listening-history.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (h) {
+          if (!h) return;
+          history = h;
+          renderYear(h);
+        })
+        .catch(function () {
+          /* no history file — section 07 stays hidden */
+        });
     })
     .catch(function () {
       /* no data file yet — the empty-state note stays visible */

@@ -655,3 +655,41 @@
 .disc-solo-col li span { display: block; font-size: 0.74rem; color: var(--muted); }
 
 @media (max-width: 880px) { .disc-solo { grid-template-columns: 1fr; gap: 1.6rem; } }
+
+/* ---------- 07 a year of plays ---------- */
+
+#plays .hero-stats { margin: 0 0 1.4rem; }
+#plays .viz-card + .viz-card,
+#plays .year-grid + .viz-card,
+#plays .viz-card + .year-grid { margin-top: 1.4rem; }
+
+.year-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.4rem;
+  align-items: start;
+}
+
+/* Small chart titles drawn inside the SVG, so they scroll with the marks. */
+.chart-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+.chart-sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  fill: var(--faint);
+}
+
+/* Heat cells keep the same 2px surface gap as bars. */
+.heat-cell { stroke: var(--paper-2); stroke-width: 2; }
+
+/* A hatched, de-emphasised bar for months the window only partly covers. */
+.bar--partial { fill: var(--deemph); }
+
+@media (max-width: 1024px) {
+  .year-grid { grid-template-columns: 1fr; }
+}
