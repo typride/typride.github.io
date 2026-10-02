@@ -903,6 +903,10 @@ em { font-style: italic; }
 
 .rotation-track em { color: var(--muted); }
 
+/* .rotation-live/-artists/-play set their own display, which beats the UA's
+   [hidden] rule — without this the "Live" badge shows when nothing is playing. */
+.rotation-bar [hidden] { display: none; }
+
 .rotation-live {
   display: inline-flex;
   align-items: center;
