@@ -9,7 +9,7 @@ Powers `music.html`. Regenerate with:
 
 ```sh
 set -a; source .env.local; set +a      # never commit this file
-node scripts/build-spotify-genres.js
+node scripts/build-spotify-genres.js --playlist-names public
 ```
 
 Then commit the result. Useful flags:
@@ -62,9 +62,11 @@ than three minutes in.
 
 ### Things worth knowing
 
-- **Playlist names are not committed.** This repo is public, so playlists are
-  analysed but labelled generically. `--playlist-names full` overrides that;
-  think before you use it.
+- **Only public playlist names are committed.** The site is built with
+  `--playlist-names public`: playlists Spotify marks public get their real name
+  and a link; private ones are analysed but labelled "Playlist N". The default
+  (`omit`) labels everything generically, and `full` names private playlists
+  too. This repo is public, so think before you use `full`.
 - **Reruns should produce a one-line diff.** Every array is sorted by a stable
   key and floats are rounded at serialization, so if nothing changed upstream
   only `asOf` moves. A noisy diff means something actually changed.

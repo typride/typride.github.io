@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": 1,
-  "asOf": "2026-10-02T00:08:25.118Z",
+  "asOf": "2026-10-02T00:33:34.140Z",
   "generatedBy": "scripts/build-spotify-genres.js",
   "provenance": {
     "listening": "Spotify Web API (saved tracks, playlists, top artists/tracks, recent plays)",
@@ -17,7 +17,7 @@
   "notes": {
     "history": "topArtists/topTracks are three API snapshots (~4 weeks / ~6 months / ~1 year), not continuous history. recent is capped at the last 50 plays by the API.",
     "weighting": "An artist with N genres contributes 1/N to each, so every item's weights sum to 1. `weight` drives all metrics; `tracks` is a display-only integer and sums to more than `items`.",
-    "playlistNames": "omit"
+    "playlistNames": "public"
   },
   "profile": {
     "displayName": "Tyler Milligan",
@@ -8713,7 +8713,8 @@
   },
   "playlists": [
     {
-      "label": "Playlist 1",
+      "label": "Indie Folk",
+      "url": "https://open.spotify.com/playlist/005ZvErpUF052yb73WNeaM",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -8735,7 +8736,8 @@
       ]
     },
     {
-      "label": "Playlist 2",
+      "label": "Best Tracks of 2019",
+      "url": "https://open.spotify.com/playlist/00hQZpTyzfd54BWM3Fjdv3",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8744,7 +8746,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 3",
+      "label": "pumpers (indie, alternative rock)",
+      "url": "https://open.spotify.com/playlist/03eJeP8li2Qz2zw5fZJyrW",
       "owned": true,
       "collaborative": false,
       "items": 323,
@@ -8766,7 +8769,8 @@
       ]
     },
     {
-      "label": "Playlist 4",
+      "label": "Juliana Huxtable MIXX",
+      "url": "https://open.spotify.com/playlist/0409tDaycSEM0A4BTGuwVh",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8775,7 +8779,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 5",
+      "label": "Modern Piano",
+      "url": "https://open.spotify.com/playlist/0a1EhO7XPtJ8w788wApTzN",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -8797,7 +8802,8 @@
       ]
     },
     {
-      "label": "Playlist 6",
+      "label": "PuMp",
+      "url": "https://open.spotify.com/playlist/0AquBW4aUS1HI2zPPAXSb3",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8806,7 +8812,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 7",
+      "label": "KEXP - Top Songs",
+      "url": "https://open.spotify.com/playlist/0b1pmCdov9Jq73pNWhyfVh",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -8828,7 +8835,8 @@
       ]
     },
     {
-      "label": "Playlist 8",
+      "label": "savory folk",
+      "url": "https://open.spotify.com/playlist/0CBNOF4p3DU9Z4S2DjOzxM",
       "owned": true,
       "collaborative": false,
       "items": 206,
@@ -8850,7 +8858,8 @@
       ]
     },
     {
-      "label": "Playlist 9",
+      "label": "CHBP 2019",
+      "url": "https://open.spotify.com/playlist/0Ea7m9M8NOhyKQdoJUZYRH",
       "owned": true,
       "collaborative": true,
       "items": 24,
@@ -8872,7 +8881,8 @@
       ]
     },
     {
-      "label": "Playlist 10",
+      "label": "Disco Rock",
+      "url": "https://open.spotify.com/playlist/0EevCp4WB83NEHZQKHyh30",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -8894,7 +8904,8 @@
       ]
     },
     {
-      "label": "Playlist 11",
+      "label": "Songs I listen to when it’s rainy and I’m thinking about you ",
+      "url": "https://open.spotify.com/playlist/0F6sHN5VAp7FnycA7ihHQ7",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8903,7 +8914,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 12",
+      "label": "Zoey July 2019",
+      "url": "https://open.spotify.com/playlist/0hc62wnWeurugaXX8tRsfZ",
       "owned": true,
       "collaborative": true,
       "items": 14,
@@ -8925,7 +8937,8 @@
       ]
     },
     {
-      "label": "Playlist 13",
+      "label": "2001 Sony Ad vibes (its blue)",
+      "url": "https://open.spotify.com/playlist/0hyDhLLq42oFhqbZtAJZ8f",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8934,7 +8947,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 14",
+      "label": "Japanese Feels",
+      "url": "https://open.spotify.com/playlist/0i8hoNOZa6TOUOZtXWjZCq",
       "owned": true,
       "collaborative": false,
       "items": 15,
@@ -8983,7 +8997,8 @@
       ]
     },
     {
-      "label": "Playlist 17",
+      "label": "Nujabes",
+      "url": "https://open.spotify.com/playlist/0LhRXR7Q0SEr83H2MyYsM0",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8992,7 +9007,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 18",
+      "label": "DJ set",
+      "url": "https://open.spotify.com/playlist/0lUlrvCv1zMFDzQxEq9B55",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -9014,7 +9030,8 @@
       ]
     },
     {
-      "label": "Playlist 19",
+      "label": "Brits Rip",
+      "url": "https://open.spotify.com/playlist/0N8aKW0jgOBBnx4SY61zhu",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -9036,7 +9053,8 @@
       ]
     },
     {
-      "label": "Playlist 20",
+      "label": "Latin Alt",
+      "url": "https://open.spotify.com/playlist/0nXKg8qyN2PZMEUwhJdYsf",
       "owned": true,
       "collaborative": false,
       "items": 28,
@@ -9058,7 +9076,8 @@
       ]
     },
     {
-      "label": "Playlist 21",
+      "label": "August 2018",
+      "url": "https://open.spotify.com/playlist/0OpjienNZlhJ9UT9bhtlxd",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9080,7 +9099,8 @@
       ]
     },
     {
-      "label": "Playlist 22",
+      "label": "white noise ",
+      "url": "https://open.spotify.com/playlist/0QNKRHfWV0IMxdXawPNxjp",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -9089,7 +9109,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 23",
+      "label": "Experimental Jazz",
+      "url": "https://open.spotify.com/playlist/0RAgTXBJVDsJlAgBKfpG1P",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -9111,7 +9132,8 @@
       ]
     },
     {
-      "label": "Playlist 24",
+      "label": "Jazz",
+      "url": "https://open.spotify.com/playlist/0tRLDIq2KelqwfHTzxNVe1",
       "owned": true,
       "collaborative": false,
       "items": 55,
@@ -9133,7 +9155,8 @@
       ]
     },
     {
-      "label": "Playlist 25",
+      "label": "Women Who Make Me Happy and Sad",
+      "url": "https://open.spotify.com/playlist/0vkWQLafAEJybEXJghcmSW",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9142,7 +9165,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 26",
+      "label": "Lofi Girl - beats to relax/study to",
+      "url": "https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9151,7 +9175,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 27",
+      "label": "last night",
+      "url": "https://open.spotify.com/playlist/0WAsbeZ708VEW5sTQSlNaY",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9160,7 +9185,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 28",
+      "label": "clear queue",
+      "url": "https://open.spotify.com/playlist/0WrCT3liiPf3zL3HlKkD5x",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9182,7 +9208,8 @@
       ]
     },
     {
-      "label": "Playlist 29",
+      "label": "Korea",
+      "url": "https://open.spotify.com/playlist/0wVvTWaNSTSnvIAMwKZ0RS",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -9200,7 +9227,8 @@
       ]
     },
     {
-      "label": "Playlist 30",
+      "label": "Casual bass ",
+      "url": "https://open.spotify.com/playlist/0x5yBZnaY8KVYaNyjGJGT7",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -9222,7 +9250,8 @@
       ]
     },
     {
-      "label": "Playlist 31",
+      "label": "faith",
+      "url": "https://open.spotify.com/playlist/0yvohnc4ODz7alp8oJu2K1",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -9262,7 +9291,8 @@
       ]
     },
     {
-      "label": "Playlist 33",
+      "label": "british rock/pop playlist",
+      "url": "https://open.spotify.com/playlist/10OOMU1YV0apekG9lRLFOE",
       "owned": true,
       "collaborative": false,
       "items": 9,
@@ -9284,7 +9314,8 @@
       ]
     },
     {
-      "label": "Playlist 34",
+      "label": "Arctic humans",
+      "url": "https://open.spotify.com/playlist/13BMdN3JgcPxwpWc4hHa2F",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -9306,7 +9337,8 @@
       ]
     },
     {
-      "label": "Playlist 35",
+      "label": "Music inspo",
+      "url": "https://open.spotify.com/playlist/13LGpvDqf3cfHbbzpZuqJj",
       "owned": true,
       "collaborative": false,
       "items": 19,
@@ -9328,7 +9360,8 @@
       ]
     },
     {
-      "label": "Playlist 36",
+      "label": "see you soon",
+      "url": "https://open.spotify.com/playlist/13s51oHBMRYYjlB0fYpqMw",
       "owned": false,
       "collaborative": true,
       "items": 578,
@@ -9350,7 +9383,8 @@
       ]
     },
     {
-      "label": "Playlist 37",
+      "label": "After the DJ leaves",
+      "url": "https://open.spotify.com/playlist/17OjnGVMdJd7bpssZcxzVE",
       "owned": false,
       "collaborative": false,
       "items": 131,
@@ -9372,7 +9406,8 @@
       ]
     },
     {
-      "label": "Playlist 38",
+      "label": "metal plated ",
+      "url": "https://open.spotify.com/playlist/1BFEm7ELx9JASexijC6jZg",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -9394,7 +9429,8 @@
       ]
     },
     {
-      "label": "Playlist 39",
+      "label": "palm tree house ",
+      "url": "https://open.spotify.com/playlist/1BFIeiTb80NgQLv9EtYPMW",
       "owned": true,
       "collaborative": false,
       "items": 28,
@@ -9416,7 +9452,8 @@
       ]
     },
     {
-      "label": "Playlist 40",
+      "label": "RapPop",
+      "url": "https://open.spotify.com/playlist/1bYG9AH0p6CGnyL96mP2m2",
       "owned": true,
       "collaborative": false,
       "items": 15,
@@ -9438,7 +9475,8 @@
       ]
     },
     {
-      "label": "Playlist 41",
+      "label": "What the f",
+      "url": "https://open.spotify.com/playlist/1e0xN11dpGbBXjXmKDQvum",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9456,7 +9494,8 @@
       ]
     },
     {
-      "label": "Playlist 42",
+      "label": "Calm",
+      "url": "https://open.spotify.com/playlist/1EjsxUiuEG9kMwNqUMDusL",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -9478,7 +9517,8 @@
       ]
     },
     {
-      "label": "Playlist 43",
+      "label": "Denmark",
+      "url": "https://open.spotify.com/playlist/1FH10EjYrQxhfTce7NIopl",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -9500,7 +9540,8 @@
       ]
     },
     {
-      "label": "Playlist 44",
+      "label": "Real Here Now",
+      "url": "https://open.spotify.com/playlist/1frGZWq6emKt40EZY4Tm8A",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -9522,7 +9563,8 @@
       ]
     },
     {
-      "label": "Playlist 45",
+      "label": "10 s 36th st",
+      "url": "https://open.spotify.com/playlist/1GIuooF0lY8o31U6aoO3Va",
       "owned": true,
       "collaborative": true,
       "items": 15,
@@ -9544,7 +9586,8 @@
       ]
     },
     {
-      "label": "Playlist 46",
+      "label": "Top Songs of Spring",
+      "url": "https://open.spotify.com/playlist/1gPP9umtBal1ZeXsNcRjFE",
       "owned": true,
       "collaborative": false,
       "items": 63,
@@ -9566,7 +9609,8 @@
       ]
     },
     {
-      "label": "Playlist 47",
+      "label": "Think again",
+      "url": "https://open.spotify.com/playlist/1H53pzkoYj0e1wD3x6C3dX",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -9588,7 +9632,8 @@
       ]
     },
     {
-      "label": "Playlist 48",
+      "label": "Starred",
+      "url": "https://open.spotify.com/playlist/1heA1TiQjt9bV6QTgvSjCD",
       "owned": true,
       "collaborative": false,
       "items": 31,
@@ -9610,7 +9655,8 @@
       ]
     },
     {
-      "label": "Playlist 49",
+      "label": "Put Your Friends On Afrobeats",
+      "url": "https://open.spotify.com/playlist/1jbAuP5zaaMtdXpdN0Szqt",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9619,7 +9665,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 50",
+      "label": "Mute Jazz",
+      "url": "https://open.spotify.com/playlist/1jsgrCJ4sWfdJfRBqO5gRe",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -9641,7 +9688,8 @@
       ]
     },
     {
-      "label": "Playlist 51",
+      "label": "the new surf playlist",
+      "url": "https://open.spotify.com/playlist/1lzpjkjwJZpfG9HBPSWrb5",
       "owned": true,
       "collaborative": false,
       "items": 22,
@@ -9663,7 +9711,8 @@
       ]
     },
     {
-      "label": "Playlist 52",
+      "label": "Best Tracks of 2015",
+      "url": "https://open.spotify.com/playlist/1mbBK2dHVjuTSexTOqez44",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9672,7 +9721,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 53",
+      "label": "garage rock",
+      "url": "https://open.spotify.com/playlist/1mbk1GJizzJG5ckoOurXr4",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9694,7 +9744,8 @@
       ]
     },
     {
-      "label": "Playlist 54",
+      "label": "Best Tracks of 2025",
+      "url": "https://open.spotify.com/playlist/1PouIaDe83WqTYV64m4Bon",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9703,7 +9754,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 55",
+      "label": "Ali birra",
+      "url": "https://open.spotify.com/playlist/1PxUCTmHjEzlBuYq5ygqtH",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9712,7 +9764,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 56",
+      "label": "Bounce",
+      "url": "https://open.spotify.com/playlist/1QRjJcpOM9oB2bd2ripCP0",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -9734,7 +9787,8 @@
       ]
     },
     {
-      "label": "Playlist 57",
+      "label": "Afternoon bike ride",
+      "url": "https://open.spotify.com/playlist/1ReMqYFtz3mXHlr37yFSgv",
       "owned": false,
       "collaborative": true,
       "items": 18,
@@ -9756,7 +9810,8 @@
       ]
     },
     {
-      "label": "Playlist 58",
+      "label": "Death metal",
+      "url": "https://open.spotify.com/playlist/1RNOO9Vx6b9MClyysvsEBU",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9770,7 +9825,8 @@
       ]
     },
     {
-      "label": "Playlist 59",
+      "label": "Covers",
+      "url": "https://open.spotify.com/playlist/1tutIqPxSRigXlQofG2dN5",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9788,7 +9844,8 @@
       ]
     },
     {
-      "label": "Playlist 60",
+      "label": "Daytimers x No Nazar: a playlist in solidarity with Indian farmers",
+      "url": "https://open.spotify.com/playlist/1UCPlVOWnq1I0jCGFyVcuO",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9797,7 +9854,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 61",
+      "label": "Sad relationships",
+      "url": "https://open.spotify.com/playlist/1wNBj9k4IsjTdoRlc8E0ox",
       "owned": true,
       "collaborative": false,
       "items": 9,
@@ -9819,7 +9877,8 @@
       ]
     },
     {
-      "label": "Playlist 62",
+      "label": "punky",
+      "url": "https://open.spotify.com/playlist/1XcCgp68zLP17am2UklFRL",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -9841,7 +9900,8 @@
       ]
     },
     {
-      "label": "Playlist 63",
+      "label": "Ambient Indian",
+      "url": "https://open.spotify.com/playlist/1xXljNVNWW4Fuq6mSrrLXv",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -9855,7 +9915,8 @@
       ]
     },
     {
-      "label": "Playlist 64",
+      "label": "Jigs/Celtic/Highland folk",
+      "url": "https://open.spotify.com/playlist/1YRm4LlSyfOKE3e1Id0IFK",
       "owned": true,
       "collaborative": false,
       "items": 9,
@@ -9877,7 +9938,8 @@
       ]
     },
     {
-      "label": "Playlist 65",
+      "label": "180 degrees south",
+      "url": "https://open.spotify.com/playlist/1zvWord2xI373bH1OizgQi",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -9886,7 +9948,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 66",
+      "label": "Z 26'",
+      "url": "https://open.spotify.com/playlist/20gbemnLmDwu3qziUTCg3t",
       "owned": true,
       "collaborative": false,
       "items": 18,
@@ -9908,7 +9971,8 @@
       ]
     },
     {
-      "label": "Playlist 67",
+      "label": "drums",
+      "url": "https://open.spotify.com/playlist/24dIRIuqNkNiQr6RdbYbtt",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -9930,7 +9994,8 @@
       ]
     },
     {
-      "label": "Playlist 68",
+      "label": "indie pop",
+      "url": "https://open.spotify.com/playlist/274cIWk5eOXC2Un2SJQdHC",
       "owned": true,
       "collaborative": false,
       "items": 26,
@@ -9952,7 +10017,8 @@
       ]
     },
     {
-      "label": "Playlist 69",
+      "label": "Czech",
+      "url": "https://open.spotify.com/playlist/27Gn4KLQ3nM5qF9lECZEZZ",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -9974,7 +10040,8 @@
       ]
     },
     {
-      "label": "Playlist 70",
+      "label": "Afrobeats, dancehall",
+      "url": "https://open.spotify.com/playlist/28irL8PFvwHyZaktsHqJgP",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -10018,7 +10085,8 @@
       ]
     },
     {
-      "label": "Playlist 72",
+      "label": "Berghein",
+      "url": "https://open.spotify.com/playlist/2AJPgn575Pl3XOMLbZmdhw",
       "owned": true,
       "collaborative": false,
       "items": 15,
@@ -10040,7 +10108,8 @@
       ]
     },
     {
-      "label": "Playlist 73",
+      "label": "Summer 2022 - Mornings",
+      "url": "https://open.spotify.com/playlist/2apU3EI1UAGcDjWOMiApEU",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -10062,7 +10131,8 @@
       ]
     },
     {
-      "label": "Playlist 74",
+      "label": "Surf!",
+      "url": "https://open.spotify.com/playlist/2cFGeD4GlOBqilPVu8Xo5y",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10071,7 +10141,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 75",
+      "label": "Table work",
+      "url": "https://open.spotify.com/playlist/2cvzB9SwVi7P6sfZM59Pao",
       "owned": true,
       "collaborative": false,
       "items": 155,
@@ -10093,7 +10164,8 @@
       ]
     },
     {
-      "label": "Playlist 76",
+      "label": "Italian 70s",
+      "url": "https://open.spotify.com/playlist/2deNQSmvuC2cGkeMKSAQuO",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -10115,7 +10187,8 @@
       ]
     },
     {
-      "label": "Playlist 77",
+      "label": "bitchin",
+      "url": "https://open.spotify.com/playlist/2dhRBfl05U06XFWkkTo5Im",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10124,7 +10197,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 78",
+      "label": "LCD Rock",
+      "url": "https://open.spotify.com/playlist/2dZNCNHdah7ziwBNVikmcm",
       "owned": true,
       "collaborative": false,
       "items": 24,
@@ -10146,7 +10220,8 @@
       ]
     },
     {
-      "label": "Playlist 79",
+      "label": "Sympathetic Hindu",
+      "url": "https://open.spotify.com/playlist/2EbSgYiXatSywjlTQ7aygJ",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10155,7 +10230,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 80",
+      "label": "Norway",
+      "url": "https://open.spotify.com/playlist/2edNW0wUBVbrEPTK4Vbv9a",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -10164,7 +10240,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 81",
+      "label": "Seu Jorge - The Life Aquatic Exclusive Studio Sessions Featuring Seu Jorge",
+      "url": "https://open.spotify.com/playlist/2ginWXOaCgkWP4MaJAL4OP",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10173,7 +10250,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 82",
+      "label": "music you can taste with your ears dude",
+      "url": "https://open.spotify.com/playlist/2GR5iEG3oClI86yHrZ5iB3",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10182,7 +10260,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 83",
+      "label": "Listen later",
+      "url": "https://open.spotify.com/playlist/2HySylv3L0AyAX9gmB3J8i",
       "owned": true,
       "collaborative": false,
       "items": 1000,
@@ -10204,7 +10283,8 @@
       ]
     },
     {
-      "label": "Playlist 84",
+      "label": "FireFlowers",
+      "url": "https://open.spotify.com/playlist/2i0ph6yiWaxGwxkMmTq0f4",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10213,7 +10293,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 85",
+      "label": "Serendyler",
+      "url": "https://open.spotify.com/playlist/2iOArLcbLhBmajrWvnSWQO",
       "owned": true,
       "collaborative": false,
       "items": 90,
@@ -10249,7 +10330,8 @@
       ]
     },
     {
-      "label": "Playlist 87",
+      "label": "French musique",
+      "url": "https://open.spotify.com/playlist/2JlxVdiGzLr71XdMYUmL8B",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -10267,7 +10349,8 @@
       ]
     },
     {
-      "label": "Playlist 88",
+      "label": "Trance",
+      "url": "https://open.spotify.com/playlist/2JoV5Fmt446ruFVhxrueru",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -10289,7 +10372,8 @@
       ]
     },
     {
-      "label": "Playlist 89",
+      "label": "DJ MONKEY LOFT",
+      "url": "https://open.spotify.com/playlist/2KCvxfypQUt4XhYojVPSNZ",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -10311,7 +10395,8 @@
       ]
     },
     {
-      "label": "Playlist 90",
+      "label": "Afro Psych",
+      "url": "https://open.spotify.com/playlist/2kvHVgnJSf264hJL8R1bFZ",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -10333,7 +10418,8 @@
       ]
     },
     {
-      "label": "Playlist 91",
+      "label": "Collab Playstuff",
+      "url": "https://open.spotify.com/playlist/2loCUcvKfo3it8hYsaGv5d",
       "owned": true,
       "collaborative": true,
       "items": 34,
@@ -10355,7 +10441,8 @@
       ]
     },
     {
-      "label": "Playlist 92",
+      "label": "El Sonido - KEXP",
+      "url": "https://open.spotify.com/playlist/2MbLnAPOXFI7LfwtT5VKQN",
       "owned": true,
       "collaborative": false,
       "items": 18,
@@ -10377,7 +10464,8 @@
       ]
     },
     {
-      "label": "Playlist 93",
+      "label": "Canta En Español Con Los Panchos",
+      "url": "https://open.spotify.com/playlist/2OECjRYAjg6C9BA9eA1UFE",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -10395,7 +10483,8 @@
       ]
     },
     {
-      "label": "Playlist 94",
+      "label": "singin the blues",
+      "url": "https://open.spotify.com/playlist/2PcaDov959SQuuyFRQurbv",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -10413,7 +10502,8 @@
       ]
     },
     {
-      "label": "Playlist 95",
+      "label": "Christmas",
+      "url": "https://open.spotify.com/playlist/2PKuCKnB73wCtTJBAAxdHx",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -10435,7 +10525,8 @@
       ]
     },
     {
-      "label": "Playlist 96",
+      "label": "Bangerss",
+      "url": "https://open.spotify.com/playlist/2qIgQyuHOIDXTmIOW1MZIW",
       "owned": true,
       "collaborative": false,
       "items": 19,
@@ -10457,7 +10548,8 @@
       ]
     },
     {
-      "label": "Playlist 97",
+      "label": "Pentacoastal",
+      "url": "https://open.spotify.com/playlist/2QK5nNouSmmHKC16MgjzY3",
       "owned": true,
       "collaborative": true,
       "items": 4,
@@ -10479,7 +10571,8 @@
       ]
     },
     {
-      "label": "Playlist 98",
+      "label": "Great Albums",
+      "url": "https://open.spotify.com/playlist/2qN4tEM1FFNYf1NgLT79KM",
       "owned": true,
       "collaborative": false,
       "items": 337,
@@ -10501,7 +10594,8 @@
       ]
     },
     {
-      "label": "Playlist 99",
+      "label": "My Shazam Tracks",
+      "url": "https://open.spotify.com/playlist/2qX7IcP9H9AeRe8w7A2c5A",
       "owned": true,
       "collaborative": false,
       "items": 194,
@@ -10523,7 +10617,8 @@
       ]
     },
     {
-      "label": "Playlist 100",
+      "label": "tea time",
+      "url": "https://open.spotify.com/playlist/2ss1rJfItasb07vZ8gQXoQ",
       "owned": true,
       "collaborative": false,
       "items": 322,
@@ -10545,7 +10640,8 @@
       ]
     },
     {
-      "label": "Playlist 101",
+      "label": "Basssssssssssssss",
+      "url": "https://open.spotify.com/playlist/2sUM7s1nqyOZnplPeWy4xZ",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -10567,7 +10663,8 @@
       ]
     },
     {
-      "label": "Playlist 102",
+      "label": "Ominous",
+      "url": "https://open.spotify.com/playlist/2SWvN2tcA4jKEKy6cRaPkr",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -10589,7 +10686,8 @@
       ]
     },
     {
-      "label": "Playlist 103",
+      "label": "Unique Jazz",
+      "url": "https://open.spotify.com/playlist/2TsyTrjCVaqOIxc4uM7xUP",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -10611,7 +10709,8 @@
       ]
     },
     {
-      "label": "Playlist 104",
+      "label": "A HOOD CHRISTMAS",
+      "url": "https://open.spotify.com/playlist/2U1hUfPLGdljHoLAGqJoXo",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10620,7 +10719,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 105",
+      "label": "Indie Punk/Grunge",
+      "url": "https://open.spotify.com/playlist/2UqXHpcDVjaSWRHOBNSbJZ",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -10642,7 +10742,8 @@
       ]
     },
     {
-      "label": "Playlist 106",
+      "label": "🪐🪐🪐🪐🪐🪐🪐🪐☼:̴͓̞̑̌̂̆̊͋̀:̸͎̟̯̂̓̌:̶̢͙͙͕̠̩͆　⃝🟠 ̴̤̻̀(̵̙̺̳̩͐͗́͑͋̓̕͜ͅ(̵̺͖̤͌͂͑̐̕o̶̢̘͔̒̈̑̒͊v̴̢͚͚͎͎̞͒͊̎ȯ̶̞̮͖̑̈́̿ ☼:̴͓̞̑̌̂̆̊͋̀:̸͎̟̯̂̓̌:̶̢͙͙͕̠̩͆(̷̮͍͚̫͚͂̍)̵̳̗̊( 🟠🟢⦿🔵🟡\\̸̧͔̰̳̦̣̪̈̏̓ ̴̡̛̅͐͛̀̽/̶̱̼̣̤̰̲̣̈́̋͌̿̄̍̊\\̴̲̣̝̀͜ͅ🔴🫧✨🫧 ̵̨̛̱̥͕́̎́̐͝/̸̠̜̅̐͊̋̿̐̓\\̸̧͔̰̳̦̣̪̈̏̓ ̴̡̛̅͐͛̀̽🥏🟠/̶̱̼̣̤̰̲̣̈́̋͌̿̄̍̊\\̴̲̣̝̀͜ͅ💥 ̸̝̮̟̹̀̆̋̿ ̴̤̻̀🥭(̵̙̺̳̩͐͗́͑͋̓̕͜ͅ(̵̺͖̤͌͂͑̐̕o̶̢̘͔̒̈̑̒͊🔵:̸͎̟̯̂̓̌:̶̢͙͙͕̠̩͆(̷̮͍͚̫͚͂̍)̵̳̗̊(🟠🪐",
+      "url": "https://open.spotify.com/playlist/2uzbATYxs9V8YQi5lf89WG",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10651,7 +10752,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 107",
+      "label": "Sleeping in nature",
+      "url": "https://open.spotify.com/playlist/2VaPElPxUb0fgTZEs3rgU0",
       "owned": true,
       "collaborative": false,
       "items": 26,
@@ -10669,7 +10771,8 @@
       ]
     },
     {
-      "label": "Playlist 108",
+      "label": "i'm in luv",
+      "url": "https://open.spotify.com/playlist/2wsvASuNTZK6mTOAF8b7nG",
       "owned": false,
       "collaborative": true,
       "items": 9,
@@ -10691,7 +10794,8 @@
       ]
     },
     {
-      "label": "Playlist 109",
+      "label": "Classics",
+      "url": "https://open.spotify.com/playlist/2XHBRZXMmiilgrtJXDex6B",
       "owned": true,
       "collaborative": false,
       "items": 12,
@@ -10713,7 +10817,8 @@
       ]
     },
     {
-      "label": "Playlist 110",
+      "label": "Electronic Melody",
+      "url": "https://open.spotify.com/playlist/32aYcpu2Dsut5qt321FZnG",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -10735,7 +10840,8 @@
       ]
     },
     {
-      "label": "Playlist 111",
+      "label": "podcasts",
+      "url": "https://open.spotify.com/playlist/32bsBduCD1Xuu8vJ4oXQkS",
       "owned": true,
       "collaborative": false,
       "items": 0,
@@ -10744,7 +10850,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 112",
+      "label": "Krvavá práce",
+      "url": "https://open.spotify.com/playlist/338rozCgxiCPdqwhy3NoWt",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -10758,7 +10865,8 @@
       ]
     },
     {
-      "label": "Playlist 113",
+      "label": "Black Out Spook Out",
+      "url": "https://open.spotify.com/playlist/35DXADhVn4O4c7C8gjhNww",
       "owned": true,
       "collaborative": true,
       "items": 13,
@@ -10780,7 +10888,8 @@
       ]
     },
     {
-      "label": "Playlist 114",
+      "label": "Dance Music",
+      "url": "https://open.spotify.com/playlist/38CIRVFmWqzmdm6u7aARkV",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10789,7 +10898,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 115",
+      "label": "90’s Gabber Classics",
+      "url": "https://open.spotify.com/playlist/3ac0B2d77mmrpTu2S0vM09",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10798,7 +10908,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 116",
+      "label": "ZOEY THIS 4 WRKOUT",
+      "url": "https://open.spotify.com/playlist/3aClT0Qumw93kzv8vpGDDO",
       "owned": true,
       "collaborative": false,
       "items": 22,
@@ -10820,7 +10931,8 @@
       ]
     },
     {
-      "label": "Playlist 117",
+      "label": "La Musica de Español ",
+      "url": "https://open.spotify.com/playlist/3Ccit4OlVyckqQ9FscZWwz",
       "owned": true,
       "collaborative": false,
       "items": 28,
@@ -10856,7 +10968,8 @@
       ]
     },
     {
-      "label": "Playlist 119",
+      "label": "Disco Dancer",
+      "url": "https://open.spotify.com/playlist/3cUaxhhoii9npy9LL0LpOY",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -10878,7 +10991,8 @@
       ]
     },
     {
-      "label": "Playlist 120",
+      "label": "Oliver Sacks iPod Playlist",
+      "url": "https://open.spotify.com/playlist/3DLbtWAS7p2RMNIaom6kXh",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -10892,7 +11006,8 @@
       ]
     },
     {
-      "label": "Playlist 121",
+      "label": "Djent Instrumental",
+      "url": "https://open.spotify.com/playlist/3e3kWn88c8JyzYXvcFa9Bs",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10901,7 +11016,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 122",
+      "label": "CRSSD Festival [Fall '26]",
+      "url": "https://open.spotify.com/playlist/3EioeVIOJxZQARH4GlGw2I",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10910,7 +11026,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 123",
+      "label": "ZOEY THIS 4 YOU",
+      "url": "https://open.spotify.com/playlist/3eKtAt1OxCY1ngdL3sCAK6",
       "owned": true,
       "collaborative": false,
       "items": 45,
@@ -10932,7 +11049,8 @@
       ]
     },
     {
-      "label": "Playlist 124",
+      "label": "Sayulita, SUN & Sombreros",
+      "url": "https://open.spotify.com/playlist/3Gmt7hZFgKLluNzLOImE2E",
       "owned": true,
       "collaborative": true,
       "items": 24,
@@ -10954,7 +11072,8 @@
       ]
     },
     {
-      "label": "Playlist 125",
+      "label": "summer in snow",
+      "url": "https://open.spotify.com/playlist/3iQ9y7ug45Yxoxd5s5b8hp",
       "owned": true,
       "collaborative": false,
       "items": 19,
@@ -10976,7 +11095,8 @@
       ]
     },
     {
-      "label": "Playlist 126",
+      "label": "1970s vietnamese soul",
+      "url": "https://open.spotify.com/playlist/3jVA3AuxV9aPO07YPt3Ist",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10985,7 +11105,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 127",
+      "label": "Mood",
+      "url": "https://open.spotify.com/playlist/3lcm8r7z6Runuowfw2V0In",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -10994,7 +11115,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 128",
+      "label": "karaoke",
+      "url": "https://open.spotify.com/playlist/3M3UWz07Ne3GgPpJGqRzvh",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -11016,7 +11138,8 @@
       ]
     },
     {
-      "label": "Playlist 129",
+      "label": "Electro Music Inspo",
+      "url": "https://open.spotify.com/playlist/3ML9lq7dp3kzeV9tZMlqy9",
       "owned": true,
       "collaborative": false,
       "items": 39,
@@ -11038,7 +11161,8 @@
       ]
     },
     {
-      "label": "Playlist 130",
+      "label": "Habibi Funk - Essentials",
+      "url": "https://open.spotify.com/playlist/3O1NpEcpTFkWNwABJug8RW",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11047,7 +11171,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 131",
+      "label": "Austin & Tyler (incel bro’s)",
+      "url": "https://open.spotify.com/playlist/3oX7FHFVJrQ6j44B72ZceU",
       "owned": true,
       "collaborative": true,
       "items": 8,
@@ -11069,7 +11194,8 @@
       ]
     },
     {
-      "label": "Playlist 132",
+      "label": "Latin Dance",
+      "url": "https://open.spotify.com/playlist/3S0NZ80pQ1cofxqqiurRgo",
       "owned": true,
       "collaborative": false,
       "items": 11,
@@ -11091,7 +11217,8 @@
       ]
     },
     {
-      "label": "Playlist 133",
+      "label": "Future Garage",
+      "url": "https://open.spotify.com/playlist/3ScHGVL32F0AbCmyhEkAja",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -11113,7 +11240,8 @@
       ]
     },
     {
-      "label": "Playlist 134",
+      "label": "Cphb 2023",
+      "url": "https://open.spotify.com/playlist/3vVsvaJTK2LufNE6fUXs1t",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -11135,7 +11263,8 @@
       ]
     },
     {
-      "label": "Playlist 135",
+      "label": "life shared",
+      "url": "https://open.spotify.com/playlist/3WesiNKuPEjkKtYdqF6DVQ",
       "owned": true,
       "collaborative": false,
       "items": 24,
@@ -11171,7 +11300,8 @@
       ]
     },
     {
-      "label": "Playlist 137",
+      "label": "Indie now",
+      "url": "https://open.spotify.com/playlist/3yEuoeucbnSPPnos0LfbzV",
       "owned": true,
       "collaborative": false,
       "items": 26,
@@ -11220,7 +11350,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 140",
+      "label": "Foreign fantasies",
+      "url": "https://open.spotify.com/playlist/47wq1s9zQxiA8dhNsFnCd7",
       "owned": true,
       "collaborative": false,
       "items": 32,
@@ -11242,7 +11373,8 @@
       ]
     },
     {
-      "label": "Playlist 141",
+      "label": "Electronic history",
+      "url": "https://open.spotify.com/playlist/49M1vUha87LZyPXL2GQvxL",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -11264,7 +11396,8 @@
       ]
     },
     {
-      "label": "Playlist 142",
+      "label": "Agg Intimacy",
+      "url": "https://open.spotify.com/playlist/49PjgpRkacgUzoRkk2Gzhr",
       "owned": true,
       "collaborative": false,
       "items": 0,
@@ -11273,7 +11406,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 143",
+      "label": "Poland",
+      "url": "https://open.spotify.com/playlist/4AeeVZXZTLdzbqvCyi7UWJ",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -11295,7 +11429,8 @@
       ]
     },
     {
-      "label": "Playlist 144",
+      "label": "Quirky pop",
+      "url": "https://open.spotify.com/playlist/4AWNENepEGTbKsJHap1LNx",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -11317,7 +11452,8 @@
       ]
     },
     {
-      "label": "Playlist 145",
+      "label": "Modern country",
+      "url": "https://open.spotify.com/playlist/4cF6qN9nZUuoe45vEJ7PIy",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11331,7 +11467,8 @@
       ]
     },
     {
-      "label": "Playlist 146",
+      "label": "synth and electronica ambience",
+      "url": "https://open.spotify.com/playlist/4Cj96N2pJGM9iGKWTRmI52",
       "owned": true,
       "collaborative": false,
       "items": 105,
@@ -11353,7 +11490,8 @@
       ]
     },
     {
-      "label": "Playlist 147",
+      "label": "Feel good music",
+      "url": "https://open.spotify.com/playlist/4Cu993TwRDn4F1Co6zvGp4",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -11375,7 +11513,8 @@
       ]
     },
     {
-      "label": "Playlist 148",
+      "label": "dwntmpo intimacy",
+      "url": "https://open.spotify.com/playlist/4dm8CdphSG66limyhgT4n8",
       "owned": true,
       "collaborative": false,
       "items": 20,
@@ -11397,7 +11536,8 @@
       ]
     },
     {
-      "label": "Playlist 149",
+      "label": "Papa trip to Tofino",
+      "url": "https://open.spotify.com/playlist/4dNBt5BU0mtGodJhYzheaY",
       "owned": true,
       "collaborative": false,
       "items": 23,
@@ -11419,7 +11559,8 @@
       ]
     },
     {
-      "label": "Playlist 150",
+      "label": "R & my BB",
+      "url": "https://open.spotify.com/playlist/4dtLq6WzLpiomAk7Cc012a",
       "owned": true,
       "collaborative": false,
       "items": 9,
@@ -11441,7 +11582,8 @@
       ]
     },
     {
-      "label": "Playlist 151",
+      "label": "Indie 2022",
+      "url": "https://open.spotify.com/playlist/4eCol7ps1Oxwf0flTkcWwT",
       "owned": true,
       "collaborative": false,
       "items": 16,
@@ -11463,7 +11605,8 @@
       ]
     },
     {
-      "label": "Playlist 152",
+      "label": "Electronic/Chillwave/Lo-Fi/Glo-Fi",
+      "url": "https://open.spotify.com/playlist/4eNeBdosKhY01RKni4Zpsm",
       "owned": true,
       "collaborative": false,
       "items": 17,
@@ -11485,7 +11628,8 @@
       ]
     },
     {
-      "label": "Playlist 153",
+      "label": "Neurociencia",
+      "url": "https://open.spotify.com/playlist/4fAH2QKG9b3WnJplMJ6ewl",
       "owned": false,
       "collaborative": false,
       "items": 29,
@@ -11507,7 +11651,8 @@
       ]
     },
     {
-      "label": "Playlist 154",
+      "label": "Grungy",
+      "url": "https://open.spotify.com/playlist/4gTBdFaRBukkqzcccajHuk",
       "owned": true,
       "collaborative": false,
       "items": 16,
@@ -11529,7 +11674,8 @@
       ]
     },
     {
-      "label": "Playlist 155",
+      "label": "Electronic",
+      "url": "https://open.spotify.com/playlist/4gvY8rlzgmgfgKQ5MmoDZa",
       "owned": true,
       "collaborative": false,
       "items": 13,
@@ -11565,7 +11711,8 @@
       ]
     },
     {
-      "label": "Playlist 157",
+      "label": "Low-Key",
+      "url": "https://open.spotify.com/playlist/4LOQaoz5BnVA6XAfkh3n5C",
       "owned": true,
       "collaborative": false,
       "items": 19,
@@ -11587,7 +11734,8 @@
       ]
     },
     {
-      "label": "Playlist 158",
+      "label": "Amapiano Is Here ",
+      "url": "https://open.spotify.com/playlist/4maK1El66HhKIRw3vQvmN6",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11596,7 +11744,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 159",
+      "label": "Movement 2022 Official Playlist",
+      "url": "https://open.spotify.com/playlist/4MlOBDrliq2za7WuO5v84G",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11605,7 +11754,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 160",
+      "label": "Darkwave",
+      "url": "https://open.spotify.com/playlist/4mnJ5JVBVFipVo7YEwvFl7",
       "owned": true,
       "collaborative": false,
       "items": 18,
@@ -11627,7 +11777,8 @@
       ]
     },
     {
-      "label": "Playlist 161",
+      "label": "Life is slow n hard",
+      "url": "https://open.spotify.com/playlist/4OazaeOlLo7KINJRvWELjD",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -11649,7 +11800,8 @@
       ]
     },
     {
-      "label": "Playlist 162",
+      "label": "Now That's What I Call Content Summit 2023",
+      "url": "https://open.spotify.com/playlist/4PB00z3GGJulSzF6pB7ulW",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11658,7 +11810,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 163",
+      "label": "Lisztemania",
+      "url": "https://open.spotify.com/playlist/4PGi4KwtEtHMsmZ4HBf7dc",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -11672,7 +11825,8 @@
       ]
     },
     {
-      "label": "Playlist 164",
+      "label": "Guitar",
+      "url": "https://open.spotify.com/playlist/4QRkkBMkfmOFAljFTMfHRZ",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -11716,7 +11870,8 @@
       ]
     },
     {
-      "label": "Playlist 166",
+      "label": "the gold old stuff",
+      "url": "https://open.spotify.com/playlist/4SvailHBWoi2XisQIL83Py",
       "owned": false,
       "collaborative": true,
       "items": 224,
@@ -11738,7 +11893,8 @@
       ]
     },
     {
-      "label": "Playlist 167",
+      "label": "Sleep",
+      "url": "https://open.spotify.com/playlist/4t1lWzvRlI3pfsdYhHopYC",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11747,7 +11903,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 168",
+      "label": "sautéing and slow dancing",
+      "url": "https://open.spotify.com/playlist/4TvFtTlSUlfGqqBvi9TIim",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11756,7 +11913,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 169",
+      "label": "Chill indie folk moods - 2022",
+      "url": "https://open.spotify.com/playlist/4UFNC4rHYX1chG5dB66LYR",
       "owned": true,
       "collaborative": false,
       "items": 23,
@@ -11778,7 +11936,8 @@
       ]
     },
     {
-      "label": "Playlist 170",
+      "label": "Popular Music that's ok",
+      "url": "https://open.spotify.com/playlist/4umTPH8TkqWumIMcsKNfmp",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -11800,7 +11959,8 @@
       ]
     },
     {
-      "label": "Playlist 171",
+      "label": "put me to sleep",
+      "url": "https://open.spotify.com/playlist/4uP4YhC3SnhepVnv5SniAZ",
       "owned": true,
       "collaborative": false,
       "items": 32,
@@ -11822,7 +11982,8 @@
       ]
     },
     {
-      "label": "Playlist 172",
+      "label": "Aayna | Boiler Room : Pune",
+      "url": "https://open.spotify.com/playlist/4vaG144e7HSLN9JRHnRORR",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11840,7 +12001,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 174",
+      "label": "Beats",
+      "url": "https://open.spotify.com/playlist/4WfRTDMFoL7srK7YeB68gD",
       "owned": true,
       "collaborative": false,
       "items": 13,
@@ -11862,7 +12024,8 @@
       ]
     },
     {
-      "label": "Playlist 175",
+      "label": "Electroworkout4Zo",
+      "url": "https://open.spotify.com/playlist/4YZWxF6xcNuXoDUNPIq8vy",
       "owned": true,
       "collaborative": true,
       "items": 14,
@@ -11884,7 +12047,8 @@
       ]
     },
     {
-      "label": "Playlist 176",
+      "label": "Call it can head 62 degrees Coronavirus summertime bitch",
+      "url": "https://open.spotify.com/playlist/4ZXS6HEiJhgkEz9214Lxk9",
       "owned": false,
       "collaborative": true,
       "items": 78,
@@ -11906,7 +12070,8 @@
       ]
     },
     {
-      "label": "Playlist 177",
+      "label": "Pop Punk",
+      "url": "https://open.spotify.com/playlist/50AQkPKFLJI62KbBW06zF1",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11924,7 +12089,8 @@
       ]
     },
     {
-      "label": "Playlist 178",
+      "label": "Scandalnavians 2 Soundtrack",
+      "url": "https://open.spotify.com/playlist/50mmihUSuYSJgFZvF3YSeC",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -11933,7 +12099,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 179",
+      "label": "Movement 2022",
+      "url": "https://open.spotify.com/playlist/58ru1tDi8KU4cEalDV9K7y",
       "owned": true,
       "collaborative": false,
       "items": 18,
@@ -11955,7 +12122,8 @@
       ]
     },
     {
-      "label": "Playlist 180",
+      "label": "High BPM",
+      "url": "https://open.spotify.com/playlist/59hCZzpeVXvW2Bt85SWp7a",
       "owned": true,
       "collaborative": false,
       "items": 15,
@@ -11977,7 +12145,8 @@
       ]
     },
     {
-      "label": "Playlist 181",
+      "label": "hardstyle/edm",
+      "url": "https://open.spotify.com/playlist/5bOdS5d4XpbB0DH3gjsORB",
       "owned": true,
       "collaborative": false,
       "items": 54,
@@ -11999,7 +12168,8 @@
       ]
     },
     {
-      "label": "Playlist 182",
+      "label": "Surf edit music",
+      "url": "https://open.spotify.com/playlist/5FbagGZ6E7xMnK56L6mEmx",
       "owned": true,
       "collaborative": false,
       "items": 23,
@@ -12021,7 +12191,8 @@
       ]
     },
     {
-      "label": "Playlist 183",
+      "label": "Podcasts ",
+      "url": "https://open.spotify.com/playlist/5g5QTV77oD8EeHHiMRp0fB",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12030,7 +12201,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 184",
+      "label": "Lofi Chielll",
+      "url": "https://open.spotify.com/playlist/5GDYSMoaT1facQsqudRfxD",
       "owned": true,
       "collaborative": false,
       "items": 20,
@@ -12052,7 +12224,8 @@
       ]
     },
     {
-      "label": "Playlist 185",
+      "label": "Latin Ambient",
+      "url": "https://open.spotify.com/playlist/5GQHdiYZdRTDI71yvBRkyk",
       "owned": true,
       "collaborative": false,
       "items": 6,
@@ -12074,7 +12247,8 @@
       ]
     },
     {
-      "label": "Playlist 186",
+      "label": "hallomeme",
+      "url": "https://open.spotify.com/playlist/5HddQYLpUvFRnIQmTkIiSt",
       "owned": false,
       "collaborative": true,
       "items": 77,
@@ -12096,7 +12270,8 @@
       ]
     },
     {
-      "label": "Playlist 187",
+      "label": "Dance modern Electro",
+      "url": "https://open.spotify.com/playlist/5hSLOlzLXjoAOVaXtmAyYD",
       "owned": true,
       "collaborative": false,
       "items": 41,
@@ -12118,7 +12293,8 @@
       ]
     },
     {
-      "label": "Playlist 188",
+      "label": "Schranz",
+      "url": "https://open.spotify.com/playlist/5igmlcnaRfg89fORfyomR3",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -12136,7 +12312,8 @@
       ]
     },
     {
-      "label": "Playlist 189",
+      "label": "Them Feels",
+      "url": "https://open.spotify.com/playlist/5KWJq80P2L9cvt3pM6pPSZ",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12145,7 +12322,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 190",
+      "label": "chillrap",
+      "url": "https://open.spotify.com/playlist/5l64Db7oLF4JgwLQyxSt7r",
       "owned": true,
       "collaborative": false,
       "items": 67,
@@ -12167,7 +12345,8 @@
       ]
     },
     {
-      "label": "Playlist 191",
+      "label": "Liked from Radio",
+      "url": "https://open.spotify.com/playlist/5LUCSaN3iw3tqUvuP6nG7B",
       "owned": true,
       "collaborative": false,
       "items": 16,
@@ -12189,7 +12368,8 @@
       ]
     },
     {
-      "label": "Playlist 192",
+      "label": "Djent",
+      "url": "https://open.spotify.com/playlist/5Ma3RwBVF0ZtFImmxEslxu",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -12211,7 +12391,8 @@
       ]
     },
     {
-      "label": "Playlist 193",
+      "label": "Afro House 2025 📀 (Top 100)",
+      "url": "https://open.spotify.com/playlist/5Mn60WcWj9ycg9XhOPpUan",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12220,7 +12401,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 194",
+      "label": "Latin mushpot",
+      "url": "https://open.spotify.com/playlist/5mTKoQlIbSWkT2gycMOq11",
       "owned": true,
       "collaborative": false,
       "items": 28,
@@ -12242,7 +12424,8 @@
       ]
     },
     {
-      "label": "Playlist 195",
+      "label": "swinging in the 20's",
+      "url": "https://open.spotify.com/playlist/5NOE2ak99SaST8TlQ3kQJU",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -12264,7 +12447,8 @@
       ]
     },
     {
-      "label": "Playlist 196",
+      "label": "6/8 Soul",
+      "url": "https://open.spotify.com/playlist/5pGJHs1M5WyDJTyepCMgvS",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12273,7 +12457,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 197",
+      "label": "Workout Harder",
+      "url": "https://open.spotify.com/playlist/5QbbHMnEcAxJi5nbz5rvAm",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -12295,7 +12480,8 @@
       ]
     },
     {
-      "label": "Playlist 198",
+      "label": "jzz jazz",
+      "url": "https://open.spotify.com/playlist/5QPrAzeiPmlSWxYmdHkvr8",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12304,7 +12490,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 199",
+      "label": " erryone listens to it",
+      "url": "https://open.spotify.com/playlist/5R8OI4CHCC8dYCmdDYCevV",
       "owned": true,
       "collaborative": true,
       "items": 26,
@@ -12326,7 +12513,8 @@
       ]
     },
     {
-      "label": "Playlist 200",
+      "label": "kexp radio faves",
+      "url": "https://open.spotify.com/playlist/5rq50EdTGsi5cvMua9xUo1",
       "owned": true,
       "collaborative": false,
       "items": 21,
@@ -12348,7 +12536,8 @@
       ]
     },
     {
-      "label": "Playlist 201",
+      "label": "Ambient Electronic Reimagined",
+      "url": "https://open.spotify.com/playlist/5Rx9osrFdyUPzwwg8x7kiv",
       "owned": true,
       "collaborative": false,
       "items": 50,
@@ -12370,7 +12559,8 @@
       ]
     },
     {
-      "label": "Playlist 202",
+      "label": "Bumbershoot 2K14",
+      "url": "https://open.spotify.com/playlist/5TSYLZoJIlOuFgk9ejnmyZ",
       "owned": true,
       "collaborative": true,
       "items": 131,
@@ -12392,7 +12582,8 @@
       ]
     },
     {
-      "label": "Playlist 203",
+      "label": "Hard ripps",
+      "url": "https://open.spotify.com/playlist/5Vl8iR6HNJOnSrrCsak4NJ",
       "owned": true,
       "collaborative": false,
       "items": 13,
@@ -12414,7 +12605,8 @@
       ]
     },
     {
-      "label": "Playlist 204",
+      "label": "Techno",
+      "url": "https://open.spotify.com/playlist/5y9Mx8F5FmG92FcCems0Wz",
       "owned": true,
       "collaborative": false,
       "items": 47,
@@ -12436,7 +12628,8 @@
       ]
     },
     {
-      "label": "Playlist 205",
+      "label": "The weird playlist",
+      "url": "https://open.spotify.com/playlist/60Klg7h21l9qLPo2HkRHEh",
       "owned": true,
       "collaborative": false,
       "items": 47,
@@ -12458,7 +12651,8 @@
       ]
     },
     {
-      "label": "Playlist 206",
+      "label": "learn-not really",
+      "url": "https://open.spotify.com/playlist/648BGQsydYxWv6H9pbtsQJ",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -12480,7 +12674,8 @@
       ]
     },
     {
-      "label": "Playlist 207",
+      "label": "NYTimes Curated Songs",
+      "url": "https://open.spotify.com/playlist/65nWIyGIYj5GYiQrqn8yzr",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -12502,7 +12697,8 @@
       ]
     },
     {
-      "label": "Playlist 208",
+      "label": "This",
+      "url": "https://open.spotify.com/playlist/69mm2ge2qy4ya6a1GF1w5z",
       "owned": true,
       "collaborative": false,
       "items": 13,
@@ -12546,7 +12742,8 @@
       ]
     },
     {
-      "label": "Playlist 210",
+      "label": "Comedy",
+      "url": "https://open.spotify.com/playlist/6AtIPGnxt09VjFiyh8yt0R",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -12560,7 +12757,8 @@
       ]
     },
     {
-      "label": "Playlist 211",
+      "label": "ModRap",
+      "url": "https://open.spotify.com/playlist/6Ebw0VHtSC8YYxaLyDwNud",
       "owned": true,
       "collaborative": false,
       "items": 23,
@@ -12582,7 +12780,8 @@
       ]
     },
     {
-      "label": "Playlist 212",
+      "label": "podcasts",
+      "url": "https://open.spotify.com/playlist/6fg68mJsRVeK5O0yzX0si2",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -12604,7 +12803,8 @@
       ]
     },
     {
-      "label": "Playlist 213",
+      "label": "ContempMix",
+      "url": "https://open.spotify.com/playlist/6GgCImmpuc1uPEl595JVCs",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -12626,7 +12826,8 @@
       ]
     },
     {
-      "label": "Playlist 214",
+      "label": "Saharan feels",
+      "url": "https://open.spotify.com/playlist/6hL1cAhQYBr6o3bBz3QAN3",
       "owned": true,
       "collaborative": false,
       "items": 63,
@@ -12648,7 +12849,8 @@
       ]
     },
     {
-      "label": "Playlist 215",
+      "label": "electrowork",
+      "url": "https://open.spotify.com/playlist/6iMfGVkj8HUGgn5Ii9f5Kg",
       "owned": true,
       "collaborative": false,
       "items": 10,
@@ -12670,7 +12872,8 @@
       ]
     },
     {
-      "label": "Playlist 216",
+      "label": "Middleast",
+      "url": "https://open.spotify.com/playlist/6iww9O6rfCc3yF0x8FdxK2",
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -12692,7 +12895,8 @@
       ]
     },
     {
-      "label": "Playlist 217",
+      "label": "rastamann",
+      "url": "https://open.spotify.com/playlist/6KEvGCNCGSmC0t3dYfvfPH",
       "owned": true,
       "collaborative": false,
       "items": 49,
@@ -12714,7 +12918,8 @@
       ]
     },
     {
-      "label": "Playlist 218",
+      "label": "Intimacy",
+      "url": "https://open.spotify.com/playlist/6kjjd77OJ9RcuZzxn9Lj24",
       "owned": true,
       "collaborative": false,
       "items": 21,
@@ -12736,7 +12941,8 @@
       ]
     },
     {
-      "label": "Playlist 219",
+      "label": "Misc",
+      "url": "https://open.spotify.com/playlist/6lWLsHO7Z8bgqL1I73UQiS",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -12758,7 +12964,8 @@
       ]
     },
     {
-      "label": "Playlist 220",
+      "label": "Indie, Alt Rock",
+      "url": "https://open.spotify.com/playlist/6lXnRMGKvLHAdxjHuxbvOl",
       "owned": true,
       "collaborative": false,
       "items": 50,
@@ -12780,7 +12987,8 @@
       ]
     },
     {
-      "label": "Playlist 221",
+      "label": "Zoey new & improved workout",
+      "url": "https://open.spotify.com/playlist/6NMRi8BbBjhlKaep2IqXr3",
       "owned": true,
       "collaborative": true,
       "items": 38,
@@ -12802,7 +13010,8 @@
       ]
     },
     {
-      "label": "Playlist 222",
+      "label": "Best Tracks of 2024",
+      "url": "https://open.spotify.com/playlist/6nYJOB0JQC3jrO94mO79Yn",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12811,7 +13020,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 223",
+      "label": "The mushpot ",
+      "url": "https://open.spotify.com/playlist/6NYpj8RXaJXOzN2G131eUq",
       "owned": true,
       "collaborative": false,
       "items": 815,
@@ -12833,7 +13043,8 @@
       ]
     },
     {
-      "label": "Playlist 224",
+      "label": "Modern rap",
+      "url": "https://open.spotify.com/playlist/6QG3BVGyXRq5SPjE0ODLQS",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -12855,7 +13066,8 @@
       ]
     },
     {
-      "label": "Playlist 225",
+      "label": "twang",
+      "url": "https://open.spotify.com/playlist/6QMUrrtmJ9676YV9yTSH6A",
       "owned": true,
       "collaborative": false,
       "items": 6,
@@ -12877,7 +13089,8 @@
       ]
     },
     {
-      "label": "Playlist 226",
+      "label": "Podcasts",
+      "url": "https://open.spotify.com/playlist/6QOJd797NIyOdQ6FzNS2Hs",
       "owned": true,
       "collaborative": false,
       "items": 0,
@@ -12886,7 +13099,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 227",
+      "label": "Zoeys Colfax EDM Playlist",
+      "url": "https://open.spotify.com/playlist/6qXVLm550iSRrsNR0biyFz",
       "owned": true,
       "collaborative": false,
       "items": 20,
@@ -12908,7 +13122,8 @@
       ]
     },
     {
-      "label": "Playlist 228",
+      "label": "Indie Rock",
+      "url": "https://open.spotify.com/playlist/6REqlKOaiXnb83YdSCQwpJ",
       "owned": true,
       "collaborative": false,
       "items": 14,
@@ -12930,7 +13145,8 @@
       ]
     },
     {
-      "label": "Playlist 229",
+      "label": "Afro R&B",
+      "url": "https://open.spotify.com/playlist/6RGPgwkl7iO7WmuDrEvKQs",
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -12974,7 +13190,8 @@
       ]
     },
     {
-      "label": "Playlist 231",
+      "label": "Upbeat Dance Electro",
+      "url": "https://open.spotify.com/playlist/6SfRXrAhjLV95vIlU5u9H2",
       "owned": true,
       "collaborative": false,
       "items": 44,
@@ -12996,7 +13213,8 @@
       ]
     },
     {
-      "label": "Playlist 232",
+      "label": "rippp",
+      "url": "https://open.spotify.com/playlist/6tqbC4aSdF4jPBTOJwcFVu",
       "owned": true,
       "collaborative": false,
       "items": 227,
@@ -13018,7 +13236,8 @@
       ]
     },
     {
-      "label": "Playlist 233",
+      "label": "uber classic",
+      "url": "https://open.spotify.com/playlist/6uHPfWKkC7w2WFImFLvhQ8",
       "owned": true,
       "collaborative": false,
       "items": 63,
@@ -13040,7 +13259,8 @@
       ]
     },
     {
-      "label": "Playlist 234",
+      "label": "Soft n sweet",
+      "url": "https://open.spotify.com/playlist/6uN0iefvoX1Cuy3H4qW2bT",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -13062,7 +13282,8 @@
       ]
     },
     {
-      "label": "Playlist 235",
+      "label": "Modern Jazz",
+      "url": "https://open.spotify.com/playlist/6vLpkeqThJgWoizgdwLniJ",
       "owned": true,
       "collaborative": false,
       "items": 15,
@@ -13084,7 +13305,8 @@
       ]
     },
     {
-      "label": "Playlist 236",
+      "label": "my dad would enjoy this",
+      "url": "https://open.spotify.com/playlist/6Vy19W0P67MZXd3vWkJBzV",
       "owned": true,
       "collaborative": false,
       "items": 29,
@@ -13106,7 +13328,8 @@
       ]
     },
     {
-      "label": "Playlist 237",
+      "label": "Eclectic",
+      "url": "https://open.spotify.com/playlist/6WV3NzHmSEPKw63bM6W4uX",
       "owned": true,
       "collaborative": false,
       "items": 7,
@@ -13128,7 +13351,8 @@
       ]
     },
     {
-      "label": "Playlist 238",
+      "label": "Intimate - Nymph_o",
+      "url": "https://open.spotify.com/playlist/6XV4OUWcwRedpagbkmeEos",
       "owned": true,
       "collaborative": false,
       "items": 23,
@@ -13164,7 +13388,8 @@
       ]
     },
     {
-      "label": "Playlist 240",
+      "label": "Afro Jazz/Soul",
+      "url": "https://open.spotify.com/playlist/6YqcrN561DcnIaQzf2ZSFs",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -13186,7 +13411,8 @@
       ]
     },
     {
-      "label": "Playlist 241",
+      "label": "+++ DAPHNI +++",
+      "url": "https://open.spotify.com/playlist/6zMalWpFN0AGbh5gxyvfna",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -13195,7 +13421,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 242",
+      "label": "2024 | 28/~80",
+      "url": "https://open.spotify.com/playlist/70TtLGElcpqg9XBv4LOrac",
       "owned": true,
       "collaborative": false,
       "items": 62,
@@ -13217,7 +13444,8 @@
       ]
     },
     {
-      "label": "Playlist 243",
+      "label": "Songs for normal people and girls I want to impress with my extensive indie knowledge",
+      "url": "https://open.spotify.com/playlist/72zA55YKBgO3Sw1lz1wTCr",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -13226,7 +13454,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 244",
+      "label": "30 days of Music",
+      "url": "https://open.spotify.com/playlist/746q7qeyZTRy0CnNr9NhwL",
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -13248,7 +13477,8 @@
       ]
     },
     {
-      "label": "Playlist 245",
+      "label": "electronica/chillwave/house",
+      "url": "https://open.spotify.com/playlist/74vzPjlOD7ofZCRoLt0j6e",
       "owned": true,
       "collaborative": false,
       "items": 253,
@@ -13270,7 +13500,8 @@
       ]
     },
     {
-      "label": "Playlist 246",
+      "label": "Funky",
+      "url": "https://open.spotify.com/playlist/74Xr8gdcJ9Hx0PFjQDpXCj",
       "owned": true,
       "collaborative": false,
       "items": 37,
@@ -13292,7 +13523,8 @@
       ]
     },
     {
-      "label": "Playlist 247",
+      "label": "Sitting on the living room floor",
+      "url": "https://open.spotify.com/playlist/7aPQD98EOaumJiqVFzAzVe",
       "owned": true,
       "collaborative": false,
       "items": 27,
@@ -13314,7 +13546,8 @@
       ]
     },
     {
-      "label": "Playlist 248",
+      "label": "Strong indie babes",
+      "url": "https://open.spotify.com/playlist/7BqEY8kTadc2z5jR6lPV8j",
       "owned": true,
       "collaborative": false,
       "items": 14,
@@ -13336,7 +13569,8 @@
       ]
     },
     {
-      "label": "Playlist 249",
+      "label": "80's ",
+      "url": "https://open.spotify.com/playlist/7FyEaUG1gxWX7z7PxPtV0N",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -13354,7 +13588,8 @@
       ]
     },
     {
-      "label": "Playlist 250",
+      "label": "Top Rips",
+      "url": "https://open.spotify.com/playlist/7GTgB5s3BzzqJjFuo6yn3N",
       "owned": true,
       "collaborative": false,
       "items": 82,
@@ -13376,7 +13611,8 @@
       ]
     },
     {
-      "label": "Playlist 251",
+      "label": "house drops",
+      "url": "https://open.spotify.com/playlist/7gtkDSry2HXMpueIG7aH4F",
       "owned": true,
       "collaborative": false,
       "items": 13,
@@ -13398,7 +13634,8 @@
       ]
     },
     {
-      "label": "Playlist 252",
+      "label": "og folk",
+      "url": "https://open.spotify.com/playlist/7Ii2JnCbiVDEzlQobrhQyx",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -13420,7 +13657,8 @@
       ]
     },
     {
-      "label": "Playlist 253",
+      "label": "4 o'clock slouchers ",
+      "url": "https://open.spotify.com/playlist/7iJA7JOAACVcsUZpuUL05N",
       "owned": true,
       "collaborative": false,
       "items": 87,
@@ -13442,7 +13680,8 @@
       ]
     },
     {
-      "label": "Playlist 254",
+      "label": "Ethereal/Ambient Soundscapes",
+      "url": "https://open.spotify.com/playlist/7l6rccdEfChKbH4cxsJLzc",
       "owned": true,
       "collaborative": false,
       "items": 21,
@@ -13464,7 +13703,8 @@
       ]
     },
     {
-      "label": "Playlist 255",
+      "label": "Porn/Fucking Music",
+      "url": "https://open.spotify.com/playlist/7Le28xPMUYGmQCeT9Tidgg",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -13473,7 +13713,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 256",
+      "label": "You Should Probably Leave",
+      "url": "https://open.spotify.com/playlist/7ljx72arnMz34a0Pi6v7ic",
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -13487,7 +13728,8 @@
       ]
     },
     {
-      "label": "Playlist 257",
+      "label": "Soul",
+      "url": "https://open.spotify.com/playlist/7mDNbukdOSLkEbfUfd02VP",
       "owned": true,
       "collaborative": false,
       "items": 5,
@@ -13531,7 +13773,8 @@
       ]
     },
     {
-      "label": "Playlist 259",
+      "label": "In this economy?",
+      "url": "https://open.spotify.com/playlist/7o6bGUxa4OGoSPLnZDzQB7",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -13540,7 +13783,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 260",
+      "label": "Afrorap",
+      "url": "https://open.spotify.com/playlist/7qQfLTEsQjCYwRWjwtu1WW",
       "owned": true,
       "collaborative": false,
       "items": 0,
@@ -13549,7 +13793,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 261",
+      "label": "LoFi vibes we need",
+      "url": "https://open.spotify.com/playlist/7reaA0aX7UrtkMQ0Gzt78P",
       "owned": true,
       "collaborative": false,
       "items": 8,
@@ -13571,7 +13816,8 @@
       ]
     },
     {
-      "label": "Playlist 262",
+      "label": "Schmidty",
+      "url": "https://open.spotify.com/playlist/7zmdlnThi4SCsZmMC4PLb8",
       "owned": true,
       "collaborative": false,
       "items": 124,

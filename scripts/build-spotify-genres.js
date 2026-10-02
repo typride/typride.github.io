@@ -6,7 +6,7 @@
  *   1. Put credentials in your shell — never in a committed file:
  *        set -a; source .env.local; set +a
  *      (.env.local is gitignored. Mint a token with scripts/spotify-auth.js.)
- *   2. Run:  node scripts/build-spotify-genres.js
+ *   2. Run:  node scripts/build-spotify-genres.js --playlist-names public
  *      Tuning the taxonomy? Add --cache so reruns hit disk instead of Spotify.
  *   3. Read the "unmatched genres" list in the summary, add rules, rerun.
  *   4. Commit + push. music.html picks up the new data/spotify-genres.json.
@@ -24,7 +24,8 @@
  *   --no-playlists      skip the slowest crawl
  *   --dry-run           compute and log, write nothing
  *   --out <path>        override the output path
- *   --playlist-names <omit|full>   default omit; this repo is public
+ *   --playlist-names <omit|public|full>   default omit; this repo is public.
+ *                       public = name and link only playlists Spotify marks public
  *   --no-musicbrainz    skip the slow fallback; faster, thinner genre coverage
  *   --no-discovery      skip the Last.fm suggestion lookups
  *
@@ -160,8 +161,8 @@ function parseArgs(argv) {
     else if (a === "--help" || a === "-h") opts.help = true;
     else throw new Error(`unknown flag: ${a}`);
   }
-  if (!["omit", "full"].includes(opts.playlistNames)) {
-    throw new Error(`--playlist-names must be "omit" or "full"`);
+  if (!["omit", "public", "full"].includes(opts.playlistNames)) {
+    throw new Error(`--playlist-names must be "omit", "public" or "full"`);
   }
   return opts;
 }
@@ -570,6 +571,8 @@ async function fetchPlaylists(env, meId, opts) {
         name: pl.name || "",
         owned: !!(pl.owner && pl.owner.id === meId),
         collaborative: !!pl.collaborative,
+        public: pl.public === true,
+        url: (pl.external_urls && pl.external_urls.spotify) || null,
         href: ref.href,
         total: ref.total,
       };
@@ -2102,9 +2105,14 @@ async function main() {
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
         .slice(0, 3)
         .map(([f, w]) => [f, own.mass > 0 ? r(w / own.mass, 4) : null]);
+      // Playlist NAMES are personal and this repo is public — omitted by default.
+      // "public" names only what Spotify already shows anyone; private stay generic.
+      const named =
+        !!p.meta.name &&
+        (opts.playlistNames === "full" || (opts.playlistNames === "public" && p.meta.public));
       playlistBlocks.push({
-        // Playlist NAMES are personal and this repo is public — omitted by default.
-        label: opts.playlistNames === "full" ? p.meta.name : `Playlist ${i + 1}`,
+        label: named ? p.meta.name : `Playlist ${i + 1}`,
+        ...(named && p.meta.url ? { url: p.meta.url } : {}),
         owned: p.meta.owned,
         collaborative: p.meta.collaborative,
         items: own.items,

@@ -30,6 +30,14 @@
     return n.toFixed(dp === undefined ? 0 : dp);
   }
 
+  // Tooltips are innerHTML. Anything someone else can name — a followed
+  // playlist, say — goes through this first.
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
   // Matches home.js's counter feel exactly (1300ms, ease-out cubic) without
   // depending on its [data-count] path, which fires before this fetch lands.
   function countUp(el, target, dp) {
@@ -822,22 +830,45 @@
     // 189 playlists is a 4,000px-tall chart. Cap it — and say so in the caption
     // rather than silently truncating.
     var PLAYLIST_CAP = 40;
-    var rows = all.slice(0, PLAYLIST_CAP);
+    // Keyed by rank, not label: real playlist names can repeat.
+    var rows = all.slice(0, PLAYLIST_CAP).map(function (d, i) {
+      return Object.assign({ key: "r" + i }, d);
+    });
     var omitted = all.length - rows.length;
 
+    // Real names are long. Clip to a width that suits the viewport; the full
+    // name stays in the tooltip and the link title.
+    var narrow = width < 560;
+    var maxChars = narrow ? 12 : 30;
+    var shortLabel = function (s) {
+      return s.length > maxChars ? s.slice(0, maxChars - 1).trim() + "…" : s;
+    };
+
+    var svg = d3.select("#playlists-svg");
+    svg.selectAll("*").remove();
+    var probe = svg.append("text").attr("class", "tick-label");
+    var labelW = d3.max(rows, function (d) {
+      probe.text(shortLabel(d.label));
+      return probe.node().getComputedTextLength() || shortLabel(d.label).length * 6.2;
+    });
+    probe.remove();
+
     var rowH = 22;
-    var margin = { top: 8, right: 130, bottom: 26, left: 92 };
-    var innerW = Math.max(120, width - margin.left - margin.right);
+    // On a phone every pixel of label column comes out of the bars, and a hard
+    // 120px bar floor pushed the right-hand labels past the card. Fit, don't floor.
+    var margin = {
+      top: 8, right: 130, bottom: 26,
+      left: Math.max(narrow ? 72 : 92, Math.min(Math.ceil(labelW) + 18, narrow ? 92 : Math.round(width * 0.42))),
+    };
+    var innerW = Math.max(80, width - margin.left - margin.right);
     var height = rows.length * rowH + margin.top + margin.bottom;
 
-    var svg = d3.select("#playlists-svg")
-      .attr("viewBox", "0 0 " + width + " " + height)
+    svg.attr("viewBox", "0 0 " + width + " " + height)
       .attr("width", width).attr("height", height);
-    svg.selectAll("*").remove();
     var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var x = d3.scaleLinear().domain([0, d3.max(rows, function (d) { return d.effectiveGenres; })]).nice().range([0, innerW]);
-    var y = d3.scaleBand().domain(rows.map(function (d) { return d.label; })).range([0, rows.length * rowH]).padding(0.24);
+    var y = d3.scaleBand().domain(rows.map(function (d) { return d.key; })).range([0, rows.length * rowH]).padding(0.24);
     var seq = d3.scaleQuantile().domain(rows.map(function (d) { return d.effectiveGenres; })).range(SEQ);
 
     g.selectAll("line.grid-line").data(x.ticks(5)).join("line")
@@ -847,30 +878,43 @@
 
     var bars = g.selectAll("rect").data(rows).join("rect")
       .attr("class", "bar")
-      .attr("x", 0).attr("y", function (d) { return y(d.label); })
+      .attr("x", 0).attr("y", function (d) { return y(d.key); })
       .attr("height", y.bandwidth()).attr("rx", 3)
       .attr("fill", function (d) { return seq(d.effectiveGenres); })
       .attr("width", function (d) { return Math.max(2, x(d.effectiveGenres)); });
 
     bindTip(bars, function (d) {
       var top = (d.topFamilies || []).map(function (f) { return f[0] + " " + pct(f[1], 0); }).join(" · ");
-      return "<strong>" + d.label + "</strong><span class='tt-meta'>" +
+      return "<strong>" + esc(d.label) + "</strong><span class='tt-meta'>" +
         num(d.effectiveGenres, 1) + " effective genres · " + d.items + " tracks" +
         (d.owned ? "" : " · followed") + (top ? "<br>" + top : "") + "</span>";
     });
 
-    g.selectAll("text.tick-label").data(rows).join("text")
-      .attr("class", "tick-label")
-      .attr("x", -10).attr("y", function (d) { return y(d.label) + y.bandwidth() / 2; })
-      .attr("dy", "0.35em").attr("text-anchor", "end")
-      .text(function (d) { return d.label; });
+    // Public playlists link out to Spotify; private ones stay plain "Playlist N".
+    g.selectAll("g.pl-label").data(rows).join("g")
+      .attr("class", "pl-label")
+      .each(function (d) {
+        var host = d3.select(this);
+        if (d.url) {
+          host = host.append("a").attr("class", "pl-link")
+            .attr("href", d.url).attr("target", "_blank").attr("rel", "noopener");
+        }
+        var t = host.append("text")
+          .attr("class", "tick-label" + (d.url ? " tick-label--link" : ""))
+          .attr("x", -10).attr("y", y(d.key) + y.bandwidth() / 2)
+          .attr("dy", "0.35em").attr("text-anchor", "end")
+          .text(shortLabel(d.label));
+        if (d.url || shortLabel(d.label) !== d.label) {
+          t.append("title").text(d.label + (d.url ? " — open on Spotify" : ""));
+        }
+      });
 
     // Direct-label the dominant family instead of colouring by it — 15 families
     // is far past the categorical token ceiling.
     g.selectAll("text.value-label").data(rows).join("text")
       .attr("class", "value-label")
       .attr("x", function (d) { return x(d.effectiveGenres) + 8; })
-      .attr("y", function (d) { return y(d.label) + y.bandwidth() / 2; })
+      .attr("y", function (d) { return y(d.key) + y.bandwidth() / 2; })
       .attr("dy", "0.35em")
       .text(function (d) {
         var top = d.topFamilies && d.topFamilies[0] ? d.topFamilies[0][0] : "";
@@ -899,8 +943,17 @@
           : all.length + " playlists (" + owned + " mine, " + (all.length - owned) +
             " followed). ") +
         "Ranked by effective genre count; the label on the right is the " +
-        "playlist's dominant family.";
+        "playlist's dominant family." + namesNote(data, all);
     }
+  }
+
+  function namesNote(data, shown) {
+    var mode = data.notes && data.notes.playlistNames;
+    if (mode !== "public" && mode !== "full") return " Names are left off.";
+    var unnamed = shown.filter(function (d) { return !d.url; }).length;
+    return " Click a name to open it on Spotify." +
+      (unnamed ? " The " + unnamed + " that " + (unnamed === 1 ? "is" : "are") +
+        " private or untitled " + (unnamed === 1 ? "is" : "are") + " counted but left unnamed." : "");
   }
 
   // ---------- 6. drift ----------

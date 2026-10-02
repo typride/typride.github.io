@@ -226,6 +226,11 @@
 
 .tick-label--strong { fill: var(--ink); font-weight: 500; }
 
+.tick-label--link { fill: var(--rust); }
+.pl-link:hover .tick-label--link,
+.pl-link:focus-visible .tick-label--link { fill: var(--rust-deep); text-decoration: underline; }
+.pl-link:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+
 .value-label {
   font-family: var(--font-mono);
   font-size: 11px;
