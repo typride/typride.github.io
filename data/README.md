@@ -64,8 +64,9 @@ than three minutes in.
 
 - **Only public playlist names are committed.** The site is built with
   `--playlist-names public`: playlists Spotify marks public get their real name
-  and a link; private ones are analysed but labelled "Playlist N". The default
-  (`omit`) labels everything generically, and `full` names private playlists
+  and a link; private ones are analysed but labelled "Private playlist". Liked
+  Songs is added as its own row (no link: Spotify can't share it). The default
+  (`omit`) labels everything "Playlist N", and `full` names private playlists
   too. This repo is public, so think before you use `full`.
 - **Reruns should produce a one-line diff.** Every array is sorted by a stable
   key and floats are rounded at serialization, so if nothing changed upstream

@@ -844,14 +844,18 @@
       return s.length > maxChars ? s.slice(0, maxChars - 1).trim() + "…" : s;
     };
 
+    var labelClass = function (d) {
+      return "tick-label" + (d.liked ? " tick-label--strong" : d.url ? " tick-label--link" : "");
+    };
+
     var svg = d3.select("#playlists-svg");
     svg.selectAll("*").remove();
-    var probe = svg.append("text").attr("class", "tick-label");
-    var labelW = d3.max(rows, function (d) {
-      probe.text(shortLabel(d.label));
-      return probe.node().getComputedTextLength() || shortLabel(d.label).length * 6.2;
-    });
-    probe.remove();
+    var probe = svg.append("text");
+    var measure = function (d, s) {
+      probe.attr("class", labelClass(d)).text(s);
+      return probe.node().getComputedTextLength() || s.length * 6.2;
+    };
+    var labelW = d3.max(rows, function (d) { return measure(d, shortLabel(d.label)); });
 
     var rowH = 22;
     // On a phone every pixel of label column comes out of the bars, and a hard
@@ -862,6 +866,16 @@
     };
     var innerW = Math.max(80, width - margin.left - margin.right);
     var height = rows.length * rowH + margin.top + margin.bottom;
+
+    // Characters are a proxy; pixels are the rule. Clip anything still wider
+    // than the label column so no name runs past the card's left edge.
+    var room = margin.left - 14;
+    rows.forEach(function (d) {
+      var s = shortLabel(d.label);
+      while (s.length > 2 && measure(d, s) > room) s = s.slice(0, -2).trim() + "…";
+      d.shown = s;
+    });
+    probe.remove();
 
     svg.attr("viewBox", "0 0 " + width + " " + height)
       .attr("width", width).attr("height", height);
@@ -876,21 +890,25 @@
       .attr("x1", function (d) { return x(d); }).attr("x2", function (d) { return x(d); })
       .attr("y1", 0).attr("y2", rows.length * rowH);
 
+    // Mine are solid, followed are outlined — shape carries ownership, so it
+    // never rests on colour alone (colour already encodes variety).
     var bars = g.selectAll("rect").data(rows).join("rect")
-      .attr("class", "bar")
+      .attr("class", function (d) { return "bar" + (d.owned ? "" : " bar--followed"); })
       .attr("x", 0).attr("y", function (d) { return y(d.key); })
       .attr("height", y.bandwidth()).attr("rx", 3)
       .attr("fill", function (d) { return seq(d.effectiveGenres); })
+      .style("stroke", function (d) { return d.owned ? null : seq(d.effectiveGenres); }) // beats .bar's stroke
       .attr("width", function (d) { return Math.max(2, x(d.effectiveGenres)); });
 
     bindTip(bars, function (d) {
       var top = (d.topFamilies || []).map(function (f) { return f[0] + " " + pct(f[1], 0); }).join(" · ");
+      var whose = d.liked ? "my liked songs" : d.owned ? "made by me" : "followed";
       return "<strong>" + esc(d.label) + "</strong><span class='tt-meta'>" +
-        num(d.effectiveGenres, 1) + " effective genres · " + d.items + " tracks" +
-        (d.owned ? "" : " · followed") + (top ? "<br>" + top : "") + "</span>";
+        num(d.effectiveGenres, 1) + " effective genres · " + commas(d.items) + " tracks · " + whose +
+        (top ? "<br>" + top : "") + "</span>";
     });
 
-    // Public playlists link out to Spotify; private ones stay plain "Playlist N".
+    // Public playlists link out to Spotify; private ones and Liked Songs can't.
     g.selectAll("g.pl-label").data(rows).join("g")
       .attr("class", "pl-label")
       .each(function (d) {
@@ -900,11 +918,11 @@
             .attr("href", d.url).attr("target", "_blank").attr("rel", "noopener");
         }
         var t = host.append("text")
-          .attr("class", "tick-label" + (d.url ? " tick-label--link" : ""))
+          .attr("class", labelClass(d))
           .attr("x", -10).attr("y", y(d.key) + y.bandwidth() / 2)
           .attr("dy", "0.35em").attr("text-anchor", "end")
-          .text(shortLabel(d.label));
-        if (d.url || shortLabel(d.label) !== d.label) {
+          .text(d.shown);
+        if (d.url || d.shown !== d.label) {
           t.append("title").text(d.label + (d.url ? " — open on Spotify" : ""));
         }
       });
@@ -932,16 +950,35 @@
       .attr("text-anchor", "middle")
       .text(function (d) { return d; });
 
-    var owned = all.filter(function (d) { return d.owned; }).length;
+    var legend = clear("playlists-legend");
+    if (legend) {
+      [["Made by me", false], ["Followed", true]].forEach(function (k) {
+        var item = document.createElement("span");
+        item.className = "legend-item";
+        var sw = document.createElement("span");
+        sw.className = "legend-swatch" + (k[1] ? " legend-swatch--outline" : "");
+        sw.style.background = k[1] ? "transparent" : SEQ[SEQ.length - 1];
+        if (k[1]) sw.style.borderColor = SEQ[SEQ.length - 1];
+        var t = document.createElement("span");
+        t.textContent = k[0];
+        item.appendChild(sw); item.appendChild(t);
+        legend.appendChild(item);
+      });
+    }
+
+    // Liked Songs is drawn with the playlists but isn't counted as one.
+    var lists = all.filter(function (d) { return !d.liked; });
+    var hasLiked = lists.length < all.length;
+    var owned = lists.filter(function (d) { return d.owned; }).length;
+    var set = lists.length + " playlists" + (hasLiked ? " plus Liked Songs" : "") +
+      " (" + owned + " mine, " + (lists.length - owned) + " followed)";
     var cap = document.getElementById("playlists-caption");
     if (cap) {
       cap.textContent =
         (omitted
-          ? "The " + rows.length + " most varied of " + all.length + " playlists (" +
-            owned + " mine, " + (all.length - owned) + " followed); " + omitted +
+          ? "The " + rows.length + " most varied of " + set + "; " + omitted +
             " less varied ones aren't drawn. "
-          : all.length + " playlists (" + owned + " mine, " + (all.length - owned) +
-            " followed). ") +
+          : set + ". ") +
         "Ranked by effective genre count; the label on the right is the " +
         "playlist's dominant family." + namesNote(data, all);
     }
@@ -950,10 +987,12 @@
   function namesNote(data, shown) {
     var mode = data.notes && data.notes.playlistNames;
     if (mode !== "public" && mode !== "full") return " Names are left off.";
-    var unnamed = shown.filter(function (d) { return !d.url; }).length;
+    var priv = shown.filter(function (d) { return d.private; }).length;
+    var liked = shown.some(function (d) { return d.liked; });
     return " Click a name to open it on Spotify." +
-      (unnamed ? " The " + unnamed + " that " + (unnamed === 1 ? "is" : "are") +
-        " private or untitled " + (unnamed === 1 ? "is" : "are") + " counted but left unnamed." : "");
+      (priv ? " " + commas(priv) + " private playlist" + (priv === 1 ? " is" : "s are") +
+        " counted without a name or link." : "") +
+      (liked ? " Liked Songs can't be shared on Spotify, so it has no link." : "");
   }
 
   // ---------- 6. drift ----------

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": 1,
-  "asOf": "2026-10-02T00:33:34.140Z",
+  "asOf": "2026-10-02T00:45:41.899Z",
   "generatedBy": "scripts/build-spotify-genres.js",
   "provenance": {
     "listening": "Spotify Web API (saved tracks, playlists, top artists/tracks, recent plays)",
@@ -8713,6 +8713,29 @@
   },
   "playlists": [
     {
+      "label": "Liked Songs",
+      "liked": true,
+      "owned": true,
+      "collaborative": false,
+      "items": 1790,
+      "truncated": false,
+      "effectiveGenres": 105.7854,
+      "topFamilies": [
+        [
+          "Electronic",
+          0.3092
+        ],
+        [
+          "Rock",
+          0.1858
+        ],
+        [
+          "Hip Hop",
+          0.1117
+        ]
+      ]
+    },
+    {
       "label": "Indie Folk",
       "url": "https://open.spotify.com/playlist/005ZvErpUF052yb73WNeaM",
       "owned": true,
@@ -8970,7 +8993,8 @@
       ]
     },
     {
-      "label": "Playlist 15",
+      "label": "Untitled playlist",
+      "url": "https://open.spotify.com/playlist/0ixcscG8yW4S7OtzvErdgl",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -8979,7 +9003,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 16",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 2,
@@ -9273,7 +9298,8 @@
       ]
     },
     {
-      "label": "Playlist 32",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -10063,7 +10089,8 @@
       ]
     },
     {
-      "label": "Playlist 71",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 3,
@@ -10316,7 +10343,8 @@
       ]
     },
     {
-      "label": "Playlist 86",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -10954,7 +10982,8 @@
       ]
     },
     {
-      "label": "Playlist 118",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 4,
@@ -11286,7 +11315,8 @@
       ]
     },
     {
-      "label": "Playlist 136",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11323,7 +11353,8 @@
       ]
     },
     {
-      "label": "Playlist 138",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11341,7 +11372,8 @@
       ]
     },
     {
-      "label": "Playlist 139",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11697,7 +11729,8 @@
       ]
     },
     {
-      "label": "Playlist 156",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11848,7 +11881,8 @@
       ]
     },
     {
-      "label": "Playlist 165",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -11992,7 +12026,8 @@
       "topFamilies": []
     },
     {
-      "label": "Playlist 173",
+      "label": "Untitled playlist",
+      "url": "https://open.spotify.com/playlist/4vmf9YsjjcZPohyRK8zgPr",
       "owned": false,
       "collaborative": false,
       "items": 0,
@@ -12720,7 +12755,8 @@
       ]
     },
     {
-      "label": "Playlist 209",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -13168,7 +13204,8 @@
       ]
     },
     {
-      "label": "Playlist 230",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -13374,7 +13411,8 @@
       ]
     },
     {
-      "label": "Playlist 239",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 1,
@@ -13751,7 +13789,8 @@
       ]
     },
     {
-      "label": "Playlist 258",
+      "label": "Private playlist",
+      "private": true,
       "owned": true,
       "collaborative": false,
       "items": 2,

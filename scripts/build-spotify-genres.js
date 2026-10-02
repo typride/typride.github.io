@@ -2087,6 +2087,14 @@ async function main() {
   const bagSaved = newBag("track");
   saved.forEach((t) => addTrack(bagSaved, t, artistIndex));
 
+  const topFamiliesOf = (bag) => {
+    const { familyW } = splitBag(bag);
+    return [...familyW.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 3)
+      .map(([f, w]) => [f, bag.mass > 0 ? r(w / bag.mass, 4) : null]);
+  };
+
   const bagOwned = newBag("track");
   const bagFollowed = newBag("track");
   const playlistBlocks = [];
@@ -2100,27 +2108,42 @@ async function main() {
         addTrack(target, t, artistIndex);
         addTrack(own, t, artistIndex);
       });
-      const { familyW } = splitBag(own);
-      const topFamilies = [...familyW.entries()]
-        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-        .slice(0, 3)
-        .map(([f, w]) => [f, own.mass > 0 ? r(w / own.mass, 4) : null]);
       // Playlist NAMES are personal and this repo is public — omitted by default.
-      // "public" names only what Spotify already shows anyone; private stay generic.
-      const named =
-        !!p.meta.name &&
-        (opts.playlistNames === "full" || (opts.playlistNames === "public" && p.meta.public));
+      // "public" names and links only what Spotify already shows anyone; a
+      // private playlist is labelled as such, never by its name.
+      const nameable =
+        opts.playlistNames === "full" || (opts.playlistNames === "public" && p.meta.public);
+      const isPrivate = opts.playlistNames === "public" && !p.meta.public;
       playlistBlocks.push({
-        label: named ? p.meta.name : `Playlist ${i + 1}`,
-        ...(named && p.meta.url ? { url: p.meta.url } : {}),
+        label: nameable
+          ? p.meta.name || "Untitled playlist"
+          : isPrivate
+            ? "Private playlist"
+            : `Playlist ${i + 1}`,
+        ...(nameable && p.meta.url ? { url: p.meta.url } : {}),
+        ...(isPrivate ? { private: true } : {}),
         owned: p.meta.owned,
         collaborative: p.meta.collaborative,
         items: own.items,
         truncated: !!p.truncated,
         effectiveGenres: computeMetrics(own.w).effectiveGenres,
-        topFamilies,
+        topFamilies: topFamiliesOf(own),
       });
     });
+  // Liked Songs isn't a playlist to the API (it's /me/tracks), but it is one in
+  // Spotify's own UI and the biggest collection here. It can't be shared, so no link.
+  if (bagSaved.items) {
+    playlistBlocks.unshift({
+      label: "Liked Songs",
+      liked: true,
+      owned: true,
+      collaborative: false,
+      items: bagSaved.items,
+      truncated: false,
+      effectiveGenres: computeMetrics(bagSaved.w).effectiveGenres,
+      topFamilies: topFamiliesOf(bagSaved),
+    });
+  }
 
   const bagTopArtists = newBag("artist");
   const bagTopTracks = newBag("track");

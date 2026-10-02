@@ -230,6 +230,7 @@
 .pl-link:hover .tick-label--link,
 .pl-link:focus-visible .tick-label--link { fill: var(--rust-deep); text-decoration: underline; }
 .pl-link:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+.legend-swatch--outline { border: 1.5px solid; box-sizing: border-box; }
 
 .value-label {
   font-family: var(--font-mono);
@@ -243,6 +244,7 @@
 
 /* 2px surface gap between adjacent fills, per the mark spec. */
 .bar { stroke: var(--paper-2); stroke-width: 2; }
+.bar--followed { fill-opacity: 0.2; stroke-width: 1.5; }
 
 .node-circle { stroke: var(--paper-2); stroke-width: 1.5; }
 .link-line { stroke: var(--hairline); fill: none; }
