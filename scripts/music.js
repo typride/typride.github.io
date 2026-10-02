@@ -698,10 +698,19 @@
         ? " The saved library here is a " + data.sources.saved.items + "-track sample of " +
           sx.libraryTotal + ", so read that column as indicative."
         : "";
+      // Bars are shares of ALL items, unclassified included — so a source that is
+      // mostly genre-less draws short bars. Say so rather than let it read as taste.
+      var thinNote = series.map(function (s) {
+        var un = (data.sources[s.key].coverage || {}).unclassifiedShare || 0;
+        return un > 0.25
+          ? " " + s.label + " has a genre for only " + pct(1 - un, 0) + " of its " +
+            data.sources[s.key].unit + "s, so its bars run short; the rest is unclassified, not guessed."
+          : "";
+      }).join("");
       cap.textContent =
         "Effective genres: " + num(sv) + " across the saved library versus " + num(rc) +
         " across recent plays. Recent plays are the last 50 tracks only, so that " +
-        "number is naturally the twitchiest of the three." + samplingNote;
+        "number is naturally the twitchiest of the three." + samplingNote + thinNote;
     }
   }
 
