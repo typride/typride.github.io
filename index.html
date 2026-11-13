@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Moved to tylermilligan.com</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://tylermilligan.com/">
+  <script>
+    // Same page on the new domain: path, query and #section all carry over.
+    // The old /ai-tools copy of Stack Map goes to its real home.
+    (function () {
+      var p = location.pathname, rest = location.search + location.hash;
+      var to = /^\/ai-tools(\/|$)/.test(p)
+        ? "https://www.thestackmap.com" + (p.replace(/^\/ai-tools/, "") || "/")
+        : "https://tylermilligan.com" + p;
+      location.replace(to + rest);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=https://tylermilligan.com/"></noscript>
+  <style>body{font:16px/1.6 -apple-system,system-ui,sans-serif;background:#f7f3ec;color:#211d18;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#b4490f}</style>
+</head>
+<body>
+  <p>This site moved to <a href="https://tylermilligan.com/">tylermilligan.com</a>.</p>
+</body>
+</html>
